@@ -75,7 +75,7 @@ projects[] = page_manager
 projects[] = openpublish_core
 projects[openpublish_core][type] = module
 projects[openpublish_core][download][type] = git
-projects[openpublish_core][download][url] = git://github.com/phase2/openpublish_theme.git
+projects[openpublish_core][download][url] = git://github.com/phase2/openpublish_core.git
 
 ;themes
 projects[] = rootcandy
