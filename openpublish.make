@@ -38,7 +38,7 @@ projects[] = cck
 projects[] = emfield
 projects[] = filefield
 projects[] = imagefield
-projects[] = link
+projects[link] = 2.6
 
 ;Calais
 projects[] = opencalais
