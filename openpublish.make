@@ -63,6 +63,14 @@ projects[] = panels
 
 projects[] = topichubs
 
+projects[] = contenture
+
+projects[] = quantcast
+projects[] = ctools
+projects[] = views_content
+projects[] = page_manager
+
+
 ;Custom modules developed for OpenPublish
 projects[] = openpublish_core
 projects[openpublish_core][type] = module
