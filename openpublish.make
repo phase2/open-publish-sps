@@ -1,6 +1,6 @@
 core = 6.x
-projects[] = drupal
-
+; set path to drupal root
+install_path = sites/all
 ;misc stand-alone, required by others
 projects[] = install_profile_api
 projects[] = admin_menu
