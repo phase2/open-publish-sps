@@ -1,13 +1,6 @@
 core = 6.x
 projects[] = drupal
 
-; openpublish profile
-projects[] = openpublish
-projects[openpublish][type] = profile
-projects[openpublish][download][type] = cvs
-projects[openpublish][download][module] = contributions/profiles/openpublish/
-projects[openpublish][download][revision] = HEAD
-
 ;misc stand-alone, required by others
 projects[] = install_profile_api
 projects[] = admin_menu
