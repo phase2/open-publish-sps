@@ -36,17 +36,18 @@ function openpublish_profile_task_list() {
  */
 function openpublish_profile_modules() {
   $core_modules = array(
-    // Required core modules.
+    // Required core modules
     'block', 'filter', 'node', 'system', 'user',
 
     // Optional core modules.
     'dblog','blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path', 'ping', 
-	  'profile', 'search', 'statistics', 'taxonomy', 'translation', 'upload', 'install_profile_api'
+	  'profile', 'search', 'statistics', 'taxonomy', 'translation', 'upload', 'install_profile_api',
+	  'php'
   );
 
   $contributed_modules = array(
     //misc stand-alone, required by others
-    'admin_menu', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture',
+    'admin_menu', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
     'fckeditor', 'flag', 'imce', 'login_destination', 'mollom', 'nodewords', 'paging',
     'pathauto', 'tabs',
   
@@ -63,6 +64,9 @@ function openpublish_profile_modules() {
 	
     // Calais
     'calais_api', 'calais', 'calais_geo', 'calais_tagmods',
+    
+    // 3rd-party integrations
+    'contenture', 'quantcast',
 	
     // Feed API
     'feedapi', 'feedapi_node', 'feedapi_inherit', 'feedapi_mapper', 'parser_simplepie', 
@@ -78,7 +82,8 @@ function openpublish_profile_modules() {
     'views', 'views_export', 'views_ui',
 	
     //topic hubs
-    'panels', 'panels_node', 'panels_node_content', 'panels_views',
+    'ctools', 
+    'views_content', 'page_manager', 'panels', 'panels_node', 
     'topichubs', 'topichubs_calais_geo', 'topichubs_contributors', 'topichubs_most_comments',
     'topichubs_most_recent', 'topichubs_most_viewed', 'topichubs_panels', 'topichubs_recent_comments',
     'topichubs_related_topics',
@@ -97,8 +102,8 @@ function openpublish_profile_tasks(&$task, $url) {
   
   if($task == 'profile') {
     $task = 'api-info';
-    drupal_set_title(st('Calais API Configuration'));
-    return drupal_get_form('calais_api_info', $url);
+    drupal_set_title(st('Keys Configuration'));
+    return drupal_get_form('key_settings', $url);
   }
   
   if($task == 'api-info') {
@@ -129,29 +134,193 @@ function openpublish_profile_tasks(&$task, $url) {
   }
 } 
 
-function calais_api_info($form_state, $url) {
+function key_settings($form_state, $url) {
   $form = array();
 
+  $form['intro_message'] = array(
+    '#value' => t('The following keys are needed in order to utilize all of the features of OpenPublish. If you do not enter these now, you can enter them after installation in their respective settings pages.'),
+  );
+   
+   
+  $calais_url = array(
+    '!calais_url' => l(t('Get your key here'), 'http://www.opencalais.com/user/register', array('attributes' => array('target' => '_blank'))),
+  );
   $form['calais'] = array(
     '#type' => 'fieldset',
     '#title' => t('Calais Configuration'),
     '#collapsible' => FALSE,
   );
-  $calais_url = array(
-    '!calaisurl' => l(t('Need One'), 'http://www.opencalais.com/user/register', array('attributes' => array('target' => '_blank'))),
+  $form['calais']['intro'] = array(
+     '#value' => t('The Calais Collection is an integration of the Thomson Reuters Calais web service into the Drupal platform. The Calais Web Service automatically creates rich semantic metadata for your content. !calais_url.', $calais_url),
   );
   $form['calais']['calais_api_key'] = array(
     '#type' => 'textfield',
     '#title' => t('Calais API Key'),
     '#default_value' => $form_state['values']['calais_api_key'],
     '#size' => 60,
-    '#description' => t('Required to utilize the Calais service. !calaisurl?', $calais_url),
   );
+  
+  
+  $flickr_url = array(
+    '!flickr_url' => l(t('Get them here'), 'http://www.flickr.com/services/api/misc.api_keys.html', array('attributes' => array('target' => '_blank'))),
+  );
+  $form['flickr'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Flickr Configuration'),
+    '#collapsible' => FALSE,
+  );
+  $form['flickr'] ['intro'] = array(
+     '#value' => t('The More Like This module allows you to include related images from Flickr. To take advantage of this feature, you will need API keys from Flickr. !flickr_url.', $flickr_url),
+  );
+  $form['flickr']['flickrapi_api_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Flickr API Key'),
+    '#default_value' => $form_state['values']['flickrapi_api_key'],
+    '#size' => 60,
+    '#description' => t('API Key from Flickr'),
+  );
+  $form['flickr']['flickrapi_api_secret'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Flickr API Shared Secret'),
+    '#default_value' => $form_state['values']['flickrapi_api_secret'],
+    '#size' => 60,
+    '#description' => t("API key's secret from Flickr."),
+  );
+  
+  
+  $yahoo_url = array(
+    '!yahoo_url' => l(t('Learn more about Yahoo! BOSS'), 'http://developer.yahoo.com/search/boss/', array('attributes' => array('target' => '_blank'))),
+  );
+  $form['yahoo'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Yahoo! BOSS Configuration'),
+    '#collapsible' => FALSE,
+  );
+  $form['yahoo'] ['intro'] = array(
+     '#value' => t('The More Like This module allows you to incorporate content and images from Yahoo! BOSS. !yahoo_url.', $yahoo_url),
+  );
+  $form['yahoo']['morelikethis_yboss_appid'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Yahoo! BOSS App ID'),
+    '#default_value' => $form_state['values']['morelikethis_yboss_appid'],
+    '#size' => 60,
+  );
+  $form['yahoo']['morelikethis_ybossimg_appid'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Yahoo! BOSS Images App ID'),
+    '#default_value' => $form_state['values']['morelikethis_ybossimg_appid'],
+    '#size' => 60,
+    '#description' => t('This can be the same as the regular App ID'),
+  );
+ 
+   
+  $google_url = array(
+    '!google_url' => l(t('Get it here'), 'http://code.google.com/apis/maps/index.html', array('attributes' => array('target' => '_blank'))),
+  ); 
+  $form['google'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Goolge Maps Configuration'),
+    '#collapsible' => FALSE,
+  );
+  $form['google'] ['intro'] = array(
+     '#value' => t('Calais Geo functionality allows mapping of your content. Topic Hubs take advantage of this feature. To utilize this functionality you will need a google maps API key. !google_url.', $google_url),
+  );
+  $form['google']['googlemap_api_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Goolge Maps API Key'),
+    '#default_value' => $form_state['values']['googlemap_api_key'],
+    '#size' => 60,
+  );
+  
+  
+  $mollom_url = array(
+    '!mollom_url' => l(t('Sign up for Mollom'), 'http://mollom.com/user/register', array('attributes' => array('target' => '_blank'))),
+  );
+  $form['mollom'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Mollom'),
+    '#collapsible' => FALSE,
+  );
+  $form['mollom'] ['intro'] = array(
+     '#value' => t('Mollom is a service that is used to block spam from your forms. You need to sign up and register your site to obtain your keys. !mollom_url.', $mollom_url),
+  );
+  $form['mollom']['mollom_private_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mollom Private Key'),
+    '#default_value' => $form_state['values']['mollom_private_key'],
+    '#size' => 60,
+  );
+  $form['mollom']['mollom_public_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mollom Public Key'),
+    '#default_value' => $form_state['values']['mollom_public_key'],
+    '#size' => 60,
+  );
+
+  $form['mollom']['mollom_public_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mollom Public Key'),
+    '#default_value' => $form_state['values']['mollom_public_key'],
+    '#size' => 60,
+  );
+
+
+ $form['contenture'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Contenture'),
+    '#collapsible' => FALSE,
+  );
+  
+ $form['contenture']['intro'] = array(
+     '#value' => t('Contenture is a revolutionary micropayments system. If you do not have Contenture Site ID and Database server information, please register with !url. Once you are registered, go to the control panel at: !dashboard, register this website\'s URL with Contenture and it will show you the site ID and database server for the website.',
+                  array('!url' => l('contenture.com', 'http://contenture.com/user/register'),
+                        '!dashboard' => l('http://contenture.com/user/','http://contenture.com/user/')
+                       )
+                  )
+  );
+
+ $form['contenture']['contenture_site_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Contenture site ID'),
+    '#default_value' => $form_state['values']['contenture_site_id'],
+    '#size' => 60,
+  );
+
+  $form['contenture']['contenture_db_server'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Contenture database server'),
+    '#default_value' => $form_state['values']['contenture_db_server'],
+    '#size' => 60,
+  );
+  
+  
+  $form['quantcast'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Quantcast'),
+    '#collapsible' => FALSE,
+  );
+  
+  $form['quantcast']['intro'] = array(
+     '#value' => t('Quantcast is a powerful ad-targeting solution for publishers. If you do not already have a Quantcast Tag, please acquire it by registering at: !link', array('!link'=>l('http://www.quantcast.com/user/signup','http://www.quantcast.com/user/signup'))),
+   );
+
+  $form['quantcast']['quantcast_tag'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Quantcast Tag'),
+    '#default_value' => variable_get('quantcast_tag', ''),
+    '#size' => 60,
+    '#rows' => 7,
+    '#description' => t('If you do not already have a Quantcast Tag, please acquire it by registering at: !link', array('!link'=>l('http://www.quantcast.com/user/signup','http://www.quantcast.com/user/signup'))),
+  );
+  
+    
   $maxtime = ini_get('max_execution_time');
-  $form['calais']['message'] = array(
+  
+  $form['continue_message'] = array(
     '#type' => 'markup',
-    '#value' => t('The next step, configuring your OpenPublish site, can take quite some time to complete. Please bear with us. Make sure your PHP setting for max_execution_time is 60 or greater. It is currently set to @time. We will also try setting it automatically, but server security settings might not allow it.', array('@time' => $maxtime)),
+    '#value' => t('The next step, configuring your OpenPublish site, can take quite some time to complete. Please bear with us. Make sure your PHP setting for max_execution_time is 60 or greater. It is currently set to @time. We will also try setting it automatically, but server security settings might not allow it.', array('@time' => $maxtime)).'<br/>',
   );
+  
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Save and continue'),
@@ -162,7 +331,7 @@ function calais_api_info($form_state, $url) {
   return $form;
 }
 
-function calais_api_info_submit($form, &$form_state) {
+function key_settings_submit($form, &$form_state) {
   // Don't think this ever gets called.
 }
 
@@ -711,10 +880,38 @@ function _openpublish_initialize_settings(){
   db_query('INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)', 1, $admin_rid);
 
   //Image cache
-  install_imagecache_add_preset('featured_image', array(0=>array('action' => 'imagecache_scale', 'data' => unserialize('a:3:{s:5:"width";s:3:"200";s:6:"height";s:0:"";s:7:"upscale";i:1;}'))));
-  install_imagecache_add_preset('thumbnail', array(0=>array('action' => 'imagecache_scale', 'data' => unserialize('a:3:{s:5:"width";s:3:"100";s:6:"height";s:0:"";s:7:"upscale";i:1;}'))));
-  install_imagecache_add_preset('spotlight_homepage', array(0=>array('action' => 'imagecache_scale', 'data' => unserialize('a:3:{s:5:"width";s:3:"290";s:6:"height";s:0:"";s:7:"upscale";i:1;}'))));
-  install_imagecache_add_preset('package_featured', array(0=>array('action' => 'imagecache_scale', 'data' => unserialize('a:3:{s:5:"width";s:5:"425px";s:6:"height";s:0:"";s:7:"upscale";i:0;}'))));
+  $imagecachepreset = imagecache_preset_save(array('presetname' => 'featured_image'));
+  $imagecacheaction = new stdClass ();
+  $imagecacheaction->presetid = $imagecachepreset['presetid'];
+  $imagecacheaction->module = 'imagecache';
+  $imagecacheaction->action = 'imagecache_scale';
+  $imagecacheaction->data = array('width' => '200', 'height' => '', 'upscale' => 1);
+  drupal_write_record('imagecache_action', $imagecacheaction);
+  
+  $imagecachepreset = imagecache_preset_save(array('presetname' => 'thumbnail'));
+  $imagecacheaction = new stdClass ();
+  $imagecacheaction->presetid = $imagecachepreset['presetid'];
+  $imagecacheaction->module = 'imagecache';
+  $imagecacheaction->action = 'imagecache_scale';
+  $imagecacheaction->data = array('width' => '100', 'height' => '', 'upscale' => 1);
+  drupal_write_record('imagecache_action', $imagecacheaction);
+  
+  $imagecachepreset = imagecache_preset_save(array('presetname' => 'spotlight_homepage'));
+  $imagecacheaction = new stdClass ();
+  $imagecacheaction->presetid = $imagecachepreset['presetid'];
+  $imagecacheaction->module = 'imagecache';
+  $imagecacheaction->action = 'imagecache_scale';
+  $imagecacheaction->data = array('width' => '290', 'height' => '', 'upscale' => 1);
+  drupal_write_record('imagecache_action', $imagecacheaction);
+  
+  $imagecachepreset = imagecache_preset_save(array('presetname' => 'package_featured'));
+  $imagecacheaction = new stdClass ();
+  $imagecacheaction->presetid = $imagecachepreset['presetid'];
+  $imagecacheaction->module = 'imagecache';
+  $imagecacheaction->action = 'imagecache_scale';
+  $imagecacheaction->data = array('width' => '425', 'height' => '', 'upscale' => 0);
+  drupal_write_record('imagecache_action', $imagecacheaction);
+     
  
   //Pathauto
   variable_set('pathauto_node_pattern', '[title-raw]');
@@ -885,6 +1082,12 @@ user/login');
   variable_set('swftools_mp3_display', 'flowplayer3_mediaplayer');
   variable_set('swftools_mp3_display', 'flowplayer3_mediaplayer');
   variable_set('swftools_mp3_display_list', 'flowplayer3_mediaplayer');
+  variable_set('emfield_emvideo_allow_youtube', 1);
+  variable_set('flowplayer3_mediaplayer_file', 'flowplayer-3.1.1.swf');
+  variable_set('flowplayer3_mediaplayer_stream_plugin', 'flowplayer.rtmp-3.0.2.swf');
+  
+  // default filter to full 
+  variable_set('filter_default_format', '2');
 
   variable_set('user_pictures', '1');
 
@@ -1120,11 +1323,18 @@ function _openpublish_setup_blocks() {
 
   // install the five manual blocks create through the UI
   install_create_custom_block('Powered by: <a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a>', 'Powered by Phase2', 1);
-  install_create_custom_block('<img src="/sites/all/themes/openpublish/images/placeholder_ad_banner.gif" class="float-left"/>
-<div class="clear"></div>', 'Top Banner Ad', 2);
-  install_create_custom_block('<p><img src="/sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif" /></p>', 'Right Block Square Ad', 2);
-  install_create_custom_block('<p><img src="/sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif" /></p>', 'Homepage Ad Block 1', 2);
-  install_create_custom_block('<p><img src="/sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif" /></p>', 'Homepage Ad Block 2', 2);
+  install_create_custom_block('<?php 
+  //placeholder ad
+  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_banner.gif"); ?><div class="clear"></div>', 'Top Banner Ad', 3);
+  install_create_custom_block('<p><?php 
+  //placeholder ad
+  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Right Block Square Ad', 3);
+  install_create_custom_block('<p><?php 
+  //placeholder ad
+  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 1', 3);
+  install_create_custom_block('<p><?php 
+  //placeholder ad
+  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 2', 3);
    
   // put the above newly created in the blocks table
   _block_rehash();
