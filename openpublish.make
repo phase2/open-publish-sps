@@ -39,6 +39,7 @@ projects[emfield][install_path] = sites/all
 projects[filefield][install_path] = sites/all
 projects[imagefield][install_path] = sites/all
 projects[link] = 2.6
+projects[link][install_path] = sites/all
 
 ;Calais
 projects[opencalais][install_path] = sites/all
