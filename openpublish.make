@@ -13,6 +13,13 @@ projects[autoload][install_path] = sites/all
 projects[apture][install_path] = sites/all
 
 projects[fckeditor][install_path] = sites/all
+libraries[fckeditorlib][download][type] = get
+libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
+libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
+libraries[fckeditorlib][directory_name] = ./
+libraries[fckeditorlib][install_path] = sites/all
+
+
 projects[flag][install_path] = sites/all
 projects[imce][install_path] = sites/all
 projects[login_destination][install_path] = sites/all
