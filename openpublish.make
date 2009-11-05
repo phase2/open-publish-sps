@@ -10,7 +10,6 @@ projects[ctools][install_path] = sites/all
 projects[admin_menu][install_path] = sites/all
 
 ; Misc stand-alone
-projects[apture][install_path] = sites/all
 projects[swftools][install_path] = sites/all
 projects[flag][install_path] = sites/all
 projects[login_destination][install_path] = sites/all
@@ -24,6 +23,7 @@ projects[custompage][install_path] = sites/all
 ; Acquia Modules
 projects[acquia_connector][install_path] = sites/all
 projects[acquia_search][install_path] = sites/all
+projects[acquia_search][type] = module
 projects[acquia_search][download][type] = get
 projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
 
@@ -61,9 +61,9 @@ projects[feedapi_mapper][install_path] = sites/all
 
 ; Views
 projects[views][install_path] = sites/all
-projects[views_content][install_path] = sites/all
 
 ; Publishers Extras
+projects[apture][install_path] = sites/all
 projects[contenture][install_path] = sites/all
 projects[quantcast][install_path] = sites/all
 
