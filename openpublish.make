@@ -2,7 +2,7 @@ core = 6.x
 ; set path to drupal root
 install_path = sites/all
 ;misc stand-alone, required by others
-projects[drupal] = ./
+projects[drupal][install_path] = ./
 projects[install_profile_api][install_path] = sites/all
 projects[admin_menu][install_path] = sites/all
 projects[rdf][install_path] = sites/all
