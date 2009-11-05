@@ -1,45 +1,42 @@
 core = 6.x
-; set path to drupal root
-install_path = sites/all
-;misc stand-alone, required by others
-projects[drupal][install_path] = ./
+
+; Utilities
 projects[install_profile_api][install_path] = sites/all
-projects[admin_menu][install_path] = sites/all
-projects[rdf][install_path] = sites/all
 projects[token][install_path] = sites/all
-projects[gmap][install_path] = sites/all
 projects[devel][install_path] = sites/all
-projects[flickrapi][install_path] = sites/all
 projects[autoload][install_path] = sites/all
-projects[apture][install_path] = sites/all
-
-projects[fckeditor][install_path] = sites/all
-libraries[fckeditorlib][download][type] = get
-libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
-libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
-libraries[fckeditorlib][directory_name] = ./
-libraries[fckeditorlib][install_path] = sites/all
-
-
-projects[flag][install_path] = sites/all
-projects[imce][install_path] = sites/all
-projects[login_destination][install_path] = sites/all
 projects[mollom][install_path] = sites/all
+projects[ctools][install_path] = sites/all
+projects[admin_menu][install_path] = sites/all
+
+; Misc stand-alone
+projects[apture][install_path] = sites/all
+projects[swftools][install_path] = sites/all
+projects[flag][install_path] = sites/all
+projects[login_destination][install_path] = sites/all
 projects[nodewords][install_path] = sites/all
 projects[paging][install_path] = sites/all
-
 projects[pathauto][install_path] = sites/all
 projects[tabs][install_path] = sites/all
+projects[panels][install_path] = sites/all
+projects[custompage][install_path] = sites/all
 
+; Acquia Modules
+projects[acquia_connector][install_path] = sites/all
+projects[acquia_search][install_path] = sites/all
+projects[acquia_search][download][type] = get
+projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
+
+; wysiwyg
+projects[fckeditor][install_path] = sites/all
+projects[imce][install_path] = sites/all
 
 ;date
 projects[date][install_path] = sites/all
 
-
 ;imagecache
 projects[imageapi][install_path] = sites/all
 projects[imagecache][install_path] = sites/all
-
 
 ;cck
 projects[cck][install_path] = sites/all
@@ -49,51 +46,53 @@ projects[imagefield][install_path] = sites/all
 projects[link] = 2.6
 projects[link][install_path] = sites/all
 
-;Calais
-projects[opencalais][install_path] = sites/all
+; Calais Collection
+projects[rdf][install_path] = sites/all
 
-;Feed API
+projects[flickrapi][install_path] = sites/all
+projects[gmap][install_path] = sites/all
+projects[opencalais][install_path] = sites/all
+projects[morelikethis][install_path] = sites/all
+projects[topichubs][install_path] = sites/all
+
+; Feed API
 projects[feedapi][install_path] = sites/all
 projects[feedapi_mapper][install_path] = sites/all
 
-
-;More Like this
-projects[morelikethis][install_path] = sites/all
-
-;swftools
-projects[swftools][install_path] = sites/all
-
-;views
+; Views
 projects[views][install_path] = sites/all
-
-
-;topic hubs
-projects[panels][install_path] = sites/all
-
-projects[topichubs][install_path] = sites/all
-
-projects[contenture][install_path] = sites/all
-
-projects[quantcast][install_path] = sites/all
-projects[ctools][install_path] = sites/all
 projects[views_content][install_path] = sites/all
-projects[page_manager][install_path] = sites/all
 
+; Publishers Extras
+projects[contenture][install_path] = sites/all
+projects[quantcast][install_path] = sites/all
 
-;Custom modules developed for OpenPublish
+; OpenPublish custom modules
 projects[openpublish_core][install_path] = sites/all
 projects[openpublish_core][type] = module
 projects[openpublish_core][download][type] = git
 projects[openpublish_core][download][url] = git://github.com/phase2/openpublish_core.git
 
-;themes
+; Themes
 projects[rootcandy][install_path] = sites/all
 
-;Custom theme developed for OpenPublish
+; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
 projects[openpublish_theme][type] = theme
 projects[openpublish_theme][download][type] = git
 projects[openpublish_theme][download][url] = git://github.com/phase2/openpublish_theme.git
 
+; FCKEditor Library
+libraries[fckeditorlib][download][type] = get
+libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
+libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
+libraries[fckeditorlib][directory_name] = ./
+libraries[fckeditorlib][install_path] = sites/all
 
+; ARC2 Library required by RDF 
+;libraries[arc][download][type] = get
+;libraries[arc][download][url] = ;http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
+;libraries[arc][destination] = modules/rdf/vendor
+;libraries[arc][directory_name] = arc
+;libraries[arc][install_path] = sites/all
 
