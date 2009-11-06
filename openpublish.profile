@@ -103,9 +103,8 @@ function openpublish_profile_task_list() {
     'logo_path' => 'sites/all/themes/openpublish_theme/images/logo.png',
   );
   
-  $tasks['op-import-cck'] = st('Import Content Types');
-  $tasks['op-settings'] = st('Configure OpenPublish');
-  $tasks['op-content'] = st('Create Content');
+  $tasks['op-cck-import-batch'] = st('Import Content Types');
+  $tasks['op-config-batch'] = st('Configure OpenPublish');
   return $tasks;
 }
 
@@ -113,6 +112,8 @@ function openpublish_profile_task_list() {
  * Implementation of hook_profile_tasks().
  */
 function openpublish_profile_tasks(&$task, $url) {
+  $output = "";
+  
   install_include(openpublish_profile_modules());
 
   if($task == 'profile') {
@@ -128,39 +129,35 @@ function openpublish_profile_tasks(&$task, $url) {
     foreach ( $cck_files as $file ) {   
       $batch['operations'][] = array('_openpublish_import_cck', array($file));      
     }    
+    $batch['error_message'] = st('There was an error importing Content Types.');
     $batch['finished'] = '_openpublish_cck_import_finished';
-    variable_set('install_task', 'op-cck-import-status');
+    variable_set('install_task', 'op-cck-import-batch');
     batch_set($batch);
     batch_process($url, $url);
     return;
   }
      
   // Land here until the batch is done
-  if($task == 'op-cck-import-status') {
+  if (in_array($task, array('op-cck-import-batch', 'op-config-batch'))) {
     include_once 'includes/batch.inc';
-    return _batch_page();
+    $output = _batch_page();
   }
     
-  if($task == 'op-settings') {
-    _openpublish_initialize_settings();
-    _openpublish_log(t('OpenPublish configured'));
-    $task = "op-content";
+  if($task == 'op-config') {
+    $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
+    $batch['operations'][] = array('_openpublish_initialize_settings', array());      
+    $batch['operations'][] = array('_openpublish_placeholder_content', array());      
+    $batch['operations'][] = array('_openpublish_set_views', array());      
+    $batch['operations'][] = array('_openpublish_modify_menus', array());      
+    $batch['operations'][] = array('_openpublish_setup_blocks', array());      
+    $batch['finished'] = '_openpublish_config_finished';
+    variable_set('install_task', 'op-config-batch');
+    batch_set($batch);
+    batch_process($url, $url);
+    return;
   }
 
-  if($task == 'op-content') {
-    _openpublish_placeholder_content();
-    _openpublish_set_views();
-    _openpublish_modify_menus();
-    _openpublish_setup_blocks();
-
-    drupal_flush_all_caches();    
-    system_theme_data();
-    install_init_blocks();
-    views_invalidate_cache();
-
-    _openpublish_log(t('OpenPublish has been installed.'));
-    $task = 'profile-finished';
-  }  
+  return $output;
 } 
 
 /**
@@ -229,15 +226,29 @@ function _openpublish_import_cck($file) {
     install_content_copy_import_from_file($file->filename);
   }
   
-  _openpublish_log(st('Content Type @type setup', array('@type' => $file->filename)));
+  _openpublish_log(st('Content Type @type setup', array('@type' => $file->name)));
 }  
 
 /**
- * Batch process is finished, move on to the next step
+ * Import process is finished, move on to the next step
  */
 function _openpublish_cck_import_finished($success, $results) {
-  variable_set('install_task', 'op-settings');
+  variable_set('install_task', 'op-config');
 }
+
+/**
+ * Import process is finished, move on to the next step
+ */
+function _openpublish_config_finished($success, $results) {
+  drupal_flush_all_caches();    
+  system_theme_data();
+  install_init_blocks();
+  views_invalidate_cache();
+  _openpublish_log(t('OpenPublish has been installed.'));
+  
+  variable_set('install_task', 'profile-finished');
+}
+
 
 /**
  * Create some content of type "page" as placeholders for content
@@ -1085,6 +1096,15 @@ admin/*', 'openpublish_administration', '0', 'openpublish_theme');
   //install_add_block_role('openpublish_administration', '0', install_get_rid('editor'));
   //install_add_block_role('openpublish_administration', '0', install_get_rid('author'));
   //install_add_block_role('openpublish_administration', '0', install_get_rid('web editor'));  
+}
+
+/**
+ * Set OpenPublish as the default
+ */
+function system_form_install_select_profile_form_alter(&$form, $form_state) {
+  foreach($form['profile'] as $key => $element) {
+    $form['profile'][$key]['#value'] = 'openpublish';
+  }
 }
 
 function _openpublish_log($msg) {
