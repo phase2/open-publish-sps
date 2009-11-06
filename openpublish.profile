@@ -1,4 +1,18 @@
 <?php
+/**
+ * @file openpublish.profile
+ *
+ * TODO:
+ *  - Remove ping module
+ *  - Remove PHP module and any content that requires it
+ *  - Export the placeholder content to flat files or something. Slim this file down
+ *  - Cleanup Permissions
+ *  - Export imagecache presets as code
+ *  - More general variable handling
+ *  - Process Menus more generally
+ *  - Remove PHP from block bodies
+ *  - Integrate Content for better block handling
+ */
 
 /**
  * Implementation of hook_profile_details()
@@ -44,9 +58,6 @@ function openpublish_profile_modules() {
     // Calais
     'calais_api', 'calais', 'calais_geo', 'calais_tagmods',
     
-    // 3rd-party integrations
-    'contenture', 'quantcast',
-	
     // Feed API
     'feedapi', 'feedapi_node', 'feedapi_inherit', 'feedapi_mapper', 'parser_simplepie', 
 
@@ -220,8 +231,6 @@ function _openpublish_cck_import_finished($success, $results) {
 /**
  * Create some content of type "page" as placeholders for content
  * and so menu items can be created
- * 
- * TODO: Export the content to flat files or something. Slim this file down
  */
 function _openpublish_placeholder_content() {
   global $base_url;  
@@ -449,7 +458,6 @@ function _openpublish_initialize_settings(){
   $anon_rid = install_get_rid('anonymous user');
   $auth_rid = install_get_rid('authenticated user');
   
-  // TODO: Clean this up somehow.
   install_add_permissions($anon_rid, array('access calais rdf', 'access comments','view field_audio_file',
   		'view field_author','view field_center_intro','view field_center_main_image',
 		'view field_center_related','view field_center_title','view field_deck',
@@ -688,7 +696,6 @@ function _openpublish_initialize_settings(){
   db_query('INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)', 1, $admin_rid);
 
   // Image cache
-  // TODO: Export these to code.
   $imagecachepreset = imagecache_preset_save(array('presetname' => 'featured_image'));
   $imagecacheaction = new stdClass ();
   $imagecacheaction->presetid = $imagecachepreset['presetid'];
@@ -784,8 +791,6 @@ user/login');
   install_profile_field_add($profile_full_name);
   install_profile_field_add($profile_job_title);
   install_profile_field_add($profile_bio);
- 
-  // TODO: put these in arrays and process in loop.
  
   //Calais Settings
   $calais_all = calais_api_get_all_entities();
@@ -1128,23 +1133,17 @@ function _openpublish_setup_blocks() {
   cache_clear_all();
   
   //needs to set or blocks from modules get wrong region
-  global $theme_key; 
+  global $theme_key, $base_url; 
   $theme_key = 'openpublish_theme';
 
   // install the five manual blocks create through the UI
-  install_create_custom_block('Powered by: <a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a>', 'Powered by Phase2', 1);
-  install_create_custom_block('<?php 
-  //placeholder ad
-  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_banner.gif"); ?><div class="clear"></div>', 'Top Banner Ad', 3);
-  install_create_custom_block('<p><?php 
-  //placeholder ad
-  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Right Block Square Ad', 3);
-  install_create_custom_block('<p><?php 
-  //placeholder ad
-  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 1', 3);
-  install_create_custom_block('<p><?php 
-  //placeholder ad
-  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 2', 3);
+  install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a></p>', 'Credits');
+  
+  $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images';
+  install_create_custom_block('<img src="' . $ad_base . '/placeholder_ad_banner.gif"/><div class="clear"></div>', 'Top Banner Ad');
+  install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Right Block Square Ad');
+  install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 1');
+  install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 2');
    
   // put the above newly created in the blocks table
   _block_rehash();
