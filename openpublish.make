@@ -1,8 +1,7 @@
 core = 6.x
 
 ; Utilities
-;projects[install_profile_api][install_path] = sites/all
-projects[] = install_profile_api
+projects[install_profile_api][install_path] = sites/all
 projects[token][install_path] = sites/all
 projects[devel][install_path] = sites/all
 projects[autoload][install_path] = sites/all
