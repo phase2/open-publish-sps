@@ -26,6 +26,7 @@ projects[acquia_search][install_path] = sites/all
 projects[acquia_search][type] = module
 projects[acquia_search][download][type] = get
 projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
+projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-acquia-search-624792-2.patch
 projects[apachesolr][install_path] = sites/all
 
 ; wysiwyg
