@@ -11,28 +11,7 @@ function openpublish_profile_details() {
 } 
 
 /**
- * Return a list of tasks that this profile supports.
- *
- * @return
- *   A keyed array of tasks the profile will perform during
- *   the final stage. The keys of the array will be used internally,
- *   while the values will be displayed to the user in the installer
- *   task list.
- */
-function openpublish_profile_task_list() {
-  
-  global $conf;
-  $conf['site_name'] = 'OpenPublish';
-  $conf['theme_settings'] = array(
-    'default_logo' => 0,
-    'logo_path' => 'profiles/openpublish/logo.png',
-  );
-  
-  return array('api-info' => st('Calais API Key'));
-}
-
-/**
- * Implementation of hook_profile_modules()
+ * Implementation of hook_profile_modules().
  */
 function openpublish_profile_modules() {
   $core_modules = array(
@@ -96,247 +75,81 @@ function openpublish_profile_modules() {
 } 
 
 /**
+ * Return a list of tasks that this profile supports.
+ *
+ * @return
+ *   A keyed array of tasks the profile will perform during
+ *   the final stage. The keys of the array will be used internally,
+ *   while the values will be displayed to the user in the installer
+ *   task list.
+ */
+function openpublish_profile_task_list() {
+  
+  global $conf;
+  $conf['site_name'] = 'OpenPublish';
+  $conf['theme_settings'] = array(
+    'default_logo' => 0,
+    'logo_path' => 'sites/all/themes/openpublish_theme/logo.png',
+  );
+  
+  $tasks['op-import-cck'] = st('Import Content Types');
+  $tasks['op-settings'] = st('Configure OpenPublish');
+  $tasks['op-content'] = st('Create Content');
+  return $tasks;
+}
+
+/**
  * Implementation of hook_profile_tasks().
  */
 function openpublish_profile_tasks(&$task, $url) {
-  
-  if($task == 'profile') {
-    $task = 'api-info';
-    drupal_set_title(st('Keys Configuration'));
-    return drupal_get_form('key_settings', $url);
-  }
-  
-  if($task == 'api-info') {
-    // This takes a long time, so try to avoid a timeout.
-    if (ini_get('max_execution_time') < 240) {
-      set_time_limit(240);
-    }
-    
-    // Save values from the API form
-    $form_values = array('values' => $_POST);
-    system_settings_form_submit(array(), $form_values);
-    
-    _openpublish_log(t('Kicking off installation'));
-    install_include(openpublish_profile_modules());
+  install_include(openpublish_profile_modules());
 
+  if($task == 'profile') {
     drupal_set_title(t('OpenPublish Installation'));
+    _openpublish_log(t('Starting Installation'));
     _openpublish_base_settings();
-    _openpublish_set_cck_types();
+    $task = "op-cck-import";
+  }
+    
+  if($task == 'op-cck-import') {
+    $batch['title'] = st('Importing @drupal Content Types', array('@drupal' => drupal_install_profile_name()));
+    $cck_files = file_scan_directory ( dirname(__FILE__) . '/cck' , '.*\.inc$' );
+    foreach ( $cck_files as $file ) {   
+      $batch['operations'][] = array('_openpublish_import_cck', array($file));      
+    }    
+    $batch['finished'] = '_openpublish_cck_import_finished';
+    variable_set('install_task', 'op-cck-import-status');
+    batch_set($batch);
+    batch_process($url, $url);
+    return;
+  }
+     
+  // Land here until the batch is done
+  if($task == 'op-cck-import-status') {
+    include_once 'includes/batch.inc';
+    return _batch_page();
+  }
+    
+  if($task == 'op-settings') {
     _openpublish_initialize_settings();
+    _openpublish_log(t('OpenPublish configured'));
+    $task = "op-content";
+  }
+
+  if($task == 'op-content') {
     _openpublish_placeholder_content();
     _openpublish_set_views();
     _openpublish_modify_menus();
     _openpublish_setup_blocks();
-
     menu_rebuild();
     cache_clear_all();
+    _openpublish_log(t('OpenPublish has been installed.'));    
     $task = 'profile-finished';
-  }
+  }  
 } 
 
-function key_settings($form_state, $url) {
-  $form = array();
-
-  $form['intro_message'] = array(
-    '#value' => t('The following keys are needed in order to utilize all of the features of OpenPublish. If you do not enter these now, you can enter them after installation in their respective settings pages.'),
-  );
-   
-   
-  $calais_url = array(
-    '!calais_url' => l(t('Get your key here'), 'http://www.opencalais.com/user/register', array('attributes' => array('target' => '_blank'))),
-  );
-  $form['calais'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Calais Configuration'),
-    '#collapsible' => FALSE,
-  );
-  $form['calais']['intro'] = array(
-     '#value' => t('The Calais Collection is an integration of the Thomson Reuters Calais web service into the Drupal platform. The Calais Web Service automatically creates rich semantic metadata for your content. !calais_url.', $calais_url),
-  );
-  $form['calais']['calais_api_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Calais API Key'),
-    '#default_value' => $form_state['values']['calais_api_key'],
-    '#size' => 60,
-  );
-  
-  
-  $flickr_url = array(
-    '!flickr_url' => l(t('Get them here'), 'http://www.flickr.com/services/api/misc.api_keys.html', array('attributes' => array('target' => '_blank'))),
-  );
-  $form['flickr'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Flickr Configuration'),
-    '#collapsible' => FALSE,
-  );
-  $form['flickr'] ['intro'] = array(
-     '#value' => t('The More Like This module allows you to include related images from Flickr. To take advantage of this feature, you will need API keys from Flickr. !flickr_url.', $flickr_url),
-  );
-  $form['flickr']['flickrapi_api_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Flickr API Key'),
-    '#default_value' => $form_state['values']['flickrapi_api_key'],
-    '#size' => 60,
-    '#description' => t('API Key from Flickr'),
-  );
-  $form['flickr']['flickrapi_api_secret'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Flickr API Shared Secret'),
-    '#default_value' => $form_state['values']['flickrapi_api_secret'],
-    '#size' => 60,
-    '#description' => t("API key's secret from Flickr."),
-  );
-  
-  
-  $yahoo_url = array(
-    '!yahoo_url' => l(t('Learn more about Yahoo! BOSS'), 'http://developer.yahoo.com/search/boss/', array('attributes' => array('target' => '_blank'))),
-  );
-  $form['yahoo'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Yahoo! BOSS Configuration'),
-    '#collapsible' => FALSE,
-  );
-  $form['yahoo'] ['intro'] = array(
-     '#value' => t('The More Like This module allows you to incorporate content and images from Yahoo! BOSS. !yahoo_url.', $yahoo_url),
-  );
-  $form['yahoo']['morelikethis_yboss_appid'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Yahoo! BOSS App ID'),
-    '#default_value' => $form_state['values']['morelikethis_yboss_appid'],
-    '#size' => 60,
-  );
-  $form['yahoo']['morelikethis_ybossimg_appid'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Yahoo! BOSS Images App ID'),
-    '#default_value' => $form_state['values']['morelikethis_ybossimg_appid'],
-    '#size' => 60,
-    '#description' => t('This can be the same as the regular App ID'),
-  );
- 
-   
-  $google_url = array(
-    '!google_url' => l(t('Get it here'), 'http://code.google.com/apis/maps/index.html', array('attributes' => array('target' => '_blank'))),
-  ); 
-  $form['google'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Goolge Maps Configuration'),
-    '#collapsible' => FALSE,
-  );
-  $form['google'] ['intro'] = array(
-     '#value' => t('Calais Geo functionality allows mapping of your content. Topic Hubs take advantage of this feature. To utilize this functionality you will need a google maps API key. !google_url.', $google_url),
-  );
-  $form['google']['googlemap_api_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Goolge Maps API Key'),
-    '#default_value' => $form_state['values']['googlemap_api_key'],
-    '#size' => 60,
-  );
-  
-  
-  $mollom_url = array(
-    '!mollom_url' => l(t('Sign up for Mollom'), 'http://mollom.com/user/register', array('attributes' => array('target' => '_blank'))),
-  );
-  $form['mollom'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Mollom'),
-    '#collapsible' => FALSE,
-  );
-  $form['mollom'] ['intro'] = array(
-     '#value' => t('Mollom is a service that is used to block spam from your forms. You need to sign up and register your site to obtain your keys. !mollom_url.', $mollom_url),
-  );
-  $form['mollom']['mollom_private_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mollom Private Key'),
-    '#default_value' => $form_state['values']['mollom_private_key'],
-    '#size' => 60,
-  );
-  $form['mollom']['mollom_public_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mollom Public Key'),
-    '#default_value' => $form_state['values']['mollom_public_key'],
-    '#size' => 60,
-  );
-
-  $form['mollom']['mollom_public_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mollom Public Key'),
-    '#default_value' => $form_state['values']['mollom_public_key'],
-    '#size' => 60,
-  );
-
-
- $form['contenture'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Contenture'),
-    '#collapsible' => FALSE,
-  );
-  
- $form['contenture']['intro'] = array(
-     '#value' => t('Contenture is a revolutionary micropayments system. If you do not have Contenture Site ID and Database server information, please register with !url. Once you are registered, go to the control panel at: !dashboard, register this website\'s URL with Contenture and it will show you the site ID and database server for the website.',
-                  array('!url' => l('contenture.com', 'http://contenture.com/user/register'),
-                        '!dashboard' => l('http://contenture.com/user/','http://contenture.com/user/')
-                       )
-                  )
-  );
-
- $form['contenture']['contenture_site_id'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Contenture site ID'),
-    '#default_value' => $form_state['values']['contenture_site_id'],
-    '#size' => 60,
-  );
-
-  $form['contenture']['contenture_db_server'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Contenture database server'),
-    '#default_value' => $form_state['values']['contenture_db_server'],
-    '#size' => 60,
-  );
-  
-  
-  $form['quantcast'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Quantcast'),
-    '#collapsible' => FALSE,
-  );
-  
-  $form['quantcast']['intro'] = array(
-     '#value' => t('Quantcast is a powerful ad-targeting solution for publishers. If you do not already have a Quantcast Tag, please acquire it by registering at: !link', array('!link'=>l('http://www.quantcast.com/user/signup','http://www.quantcast.com/user/signup'))),
-   );
-
-  $form['quantcast']['quantcast_tag'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Quantcast Tag'),
-    '#default_value' => variable_get('quantcast_tag', ''),
-    '#size' => 60,
-    '#rows' => 7,
-    '#description' => t('If you do not already have a Quantcast Tag, please acquire it by registering at: !link', array('!link'=>l('http://www.quantcast.com/user/signup','http://www.quantcast.com/user/signup'))),
-  );
-  
-    
-  $maxtime = ini_get('max_execution_time');
-  
-  $form['continue_message'] = array(
-    '#type' => 'markup',
-    '#value' => t('The next step, configuring your OpenPublish site, can take quite some time to complete. Please bear with us. Make sure your PHP setting for max_execution_time is 60 or greater. It is currently set to @time. We will also try setting it automatically, but server security settings might not allow it.', array('@time' => $maxtime)).'<br/>',
-  );
-  
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => st('Save and continue'),
-  );
-  
-  $form['#action'] = $url;
-  $form['#redirect'] = FALSE;
-  return $form;
-}
-
-function key_settings_submit($form, &$form_state) {
-  // Don't think this ever gets called.
-}
-
 /**
- * First function called by install process, just do some basic setup
+ * Do some basic setup
  */
 function _openpublish_base_settings() {  
   $types = array(
@@ -362,58 +175,53 @@ function _openpublish_base_settings() {
   variable_set('node_options_page', array('status'));
   variable_set('comment_page', COMMENT_NODE_DISABLED);
 
-  // Don't display date and author information for page nodes by default.
-   // Theme related.  
-  install_default_theme('openpublish');
+  // Theme related.  
+  install_default_theme('openpublish_theme');
   variable_set('admin_theme', 'rootcandy');	
   
   $theme_settings = variable_get('theme_settings', array());
   $theme_settings['toggle_node_info_page'] = FALSE;
   variable_set('theme_settings', $theme_settings);    
   
-  _openpublish_log(t('Configured basic settings'));
+  _openpublish_log(st('Configured basic settings'));
 }
 
 /**
  * Import cck definitions from included files
  */
-function _openpublish_set_cck_types() {   
-  $cck_files = file_scan_directory ( dirname(__FILE__) . '/cck' , '.*\.inc$' );
-  foreach ( $cck_files as $file ) {   
-    if ($file->name == 'blog')
-      continue;
-      
-    if ($file->name == 'feed') {
-      _configure_feed_content_type($file->filename);
-    }
-    else {
-      install_content_copy_import_from_file($file->filename);
-    }
+function _openpublish_import_cck($file) {   
+  // blog type is from drupal, so modify it
+  if ($file->name == 'blog') {
+    install_add_existing_field('blog', 'field_teaser', 'text_textarea');
+    install_add_existing_field('blog', 'field_show_author_info', 'optionwidgets_onoff');      
+  }
+  else if ($file->name == 'feed') {
+    $content = array();
+    ob_start();
+    include $file->filename;
+    ob_end_clean();
+    $feed = (object)$content['type'];
+    variable_set('feedapi_settings_feed', $feed->feedapi);
+  }
+  else {
+    install_content_copy_import_from_file($file->filename);
   }
   
-  //"blog" type is from drupal, so modify it
-  install_add_existing_field('blog', 'field_teaser', 'text_textarea');
-  install_add_existing_field('blog', 'field_show_author_info', 'optionwidgets_onoff');
-  
-  _openpublish_log(t('Content Types added'));
+  _openpublish_log(st('Content Type @type setup', array('@type' => $file->filename)));
 }  
 
 /**
- * Set some FeedAPI defaults. The built in defaults are not good (for us)
+ * Batch process is finished, move on to the next step
  */
-function _configure_feed_content_type($file) {
-  $content = array();
-  ob_start();
-  include $file;
-  ob_end_clean();
-  $feed = (object)$content['type'];
-  variable_set('feedapi_settings_feed', $feed->feedapi);
-  _openpublish_log(t('Updated FeedAPI Feed settings'));
+function _openpublish_cck_import_finished($success, $results) {
+  variable_set('install_task', 'op-settings');
 }
 
 /**
  * Create some content of type "page" as placeholders for content
  * and so menu items can be created
+ * 
+ * TODO: Export the content to flat files or something. Slim this file down
  */
 function _openpublish_placeholder_content() {
   global $base_url;  
@@ -622,7 +430,6 @@ function _openpublish_placeholder_content() {
   node_save($start);
 
   menu_rebuild();
-  _openpublish_log(t('Placeholder content created'));
 }
 
 /**
@@ -642,6 +449,7 @@ function _openpublish_initialize_settings(){
   $anon_rid = install_get_rid('anonymous user');
   $auth_rid = install_get_rid('authenticated user');
   
+  // TODO: Clean this up somehow.
   install_add_permissions($anon_rid, array('access calais rdf', 'access comments','view field_audio_file',
   		'view field_author','view field_center_intro','view field_center_main_image',
 		'view field_center_related','view field_center_title','view field_deck',
@@ -879,7 +687,8 @@ function _openpublish_initialize_settings(){
   
   db_query('INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)', 1, $admin_rid);
 
-  //Image cache
+  // Image cache
+  // TODO: Export these to code.
   $imagecachepreset = imagecache_preset_save(array('presetname' => 'featured_image'));
   $imagecacheaction = new stdClass ();
   $imagecacheaction->presetid = $imagecachepreset['presetid'];
@@ -932,6 +741,7 @@ function _openpublish_initialize_settings(){
   variable_set('ld_condition_type', 'pages');
   variable_set('ld_condition_snippet', 'user
 user/login');
+  // TODO: Look at Admin/Slate theme dashboard
   variable_set('ld_url_destination', 'global $user;
     $login_url = "user";
     foreach($user->roles as $id => $role) {
@@ -943,40 +753,39 @@ user/login');
   //profile fields
   $profile_full_name = array(
     'title' => 'Full Name', 
-	'name' => 'profile_full_name',
+	  'name' => 'profile_full_name',
     'category' => 'Author Info',
     'type' => 'textfield',
-	'required'=> 0,
-	'register'=> 0,
-	'visibility' => 2,		
-	'weight' => -10,
-	
+  	'required'=> 0,
+  	'register'=> 0,
+  	'visibility' => 2,		
+  	'weight' => -10,	
   );
   $profile_job_title = array(
     'title' => 'Job Title', 
-	'name' => 'profile_job_title',
+	  'name' => 'profile_job_title',
     'category' => 'Author Info',
     'type' => 'textfield',
-	'required'=> 0,
-	'register'=> 0,
-	'visibility' => 2,		
-	'weight' => -9,
-	
+  	'required'=> 0,
+  	'register'=> 0,
+  	'visibility' => 2,		
+  	'weight' => -9,	
   );
   $profile_bio = array(
     'title' => 'Bio', 
-	'name' => 'profile_bio',
+	  'name' => 'profile_bio',
     'category' => 'Author Info',
     'type' => 'textarea',
-	'required'=> 0,
-	'register'=> 0,
-	'visibility' => 2,		
-	'weight' => -8,
-	
+  	'required'=> 0,
+  	'register'=> 0,
+  	'visibility' => 2,		
+  	'weight' => -8,	
   );
   install_profile_field_add($profile_full_name);
   install_profile_field_add($profile_job_title);
   install_profile_field_add($profile_bio);
+ 
+  // TODO: put these in arrays and process in loop.
  
   //Calais Settings
   $calais_all = calais_api_get_all_entities();
@@ -1101,6 +910,7 @@ function _openpublish_modify_menus() {
   cache_clear_all();
   menu_rebuild();
   
+  // TODO: Rework into new Dashboard
   $op_plid = install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'OpenPublish Control Panel', 'Short cuts to important functionality.', 'navigation', 1, -49);
   install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'API Keys', 'Calais, Apture and Flickr API keys.', 'navigation', $op_plid, 1);
   install_menu_create_menu_item('admin/settings/openpublish/calais-suite', 'Calais Suite', 'Administrative links to Calais, More Like This and Topic Hubs functionality.', 'navigation', $op_plid, 2);
@@ -1112,172 +922,173 @@ function _openpublish_modify_menus() {
   
   $top_menu = array (
     array (
-	  'menu' => 'menu-top-menu',
-	  'title' => 'About Us',
-	  'path' => 'node/1',
-	  'weight' => 1
-	),
-	array (
-	  'menu' => 'menu-top-menu',
-	  'title' => 'Advertise',
-	  'path' => 'node/2',
-	  'weight' => 2
-	),
-	array (
-	  'menu' => 'menu-top-menu',
-	  'title' => 'Subscribe',
-	  'path' => 'node/3',
-	  'weight' => 3
-	),
-	array (
-	  'menu' => 'menu-top-menu',
-	  'title' => 'RSS',
-	  'path' => 'node/4',
-	  'weight' => 4
-	),		
+  	  'menu' => 'menu-top-menu',
+  	  'title' => 'About Us',
+  	  'path' => 'node/1',
+  	  'weight' => 1
+  	),
+  	array (
+  	  'menu' => 'menu-top-menu',
+  	  'title' => 'Advertise',
+  	  'path' => 'node/2',
+  	  'weight' => 2
+  	),
+  	array (
+  	  'menu' => 'menu-top-menu',
+  	  'title' => 'Subscribe',
+  	  'path' => 'node/3',
+  	  'weight' => 3
+  	),
+  	array (
+  	  'menu' => 'menu-top-menu',
+  	  'title' => 'RSS',
+  	  'path' => 'node/4',
+  	  'weight' => 4
+  	),		
   );
   
   $footer_secondary_menu = array (
     array(
       'menu' => 'menu-footer-secondary',
-	  'title' => 'Subscribe',
-	  'path' => 'node/3',
-	  'weight' => 1,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Advertise',
-	  'path' => 'node/2',
-	  'weight' => 2,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Jobs',
-	  'path' => 'node/5',
-	  'weight' => 4,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Store',
-	  'path' => 'node/6',
-	  'weight' => 5,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'About Us',
-	  'path' => 'node/1',
-	  'weight' => 6,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Site Map',
-	  'path' => 'node/7',
-	  'weight' => 7,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Terms of Use',
-	  'path' => 'node/8',
-	  'weight' => 8,
-	),
-	array(
-	  'menu' => 'menu-footer-secondary',
-	  'title' => 'Privacy Policy',
-	  'path' => 'node/9',
-	  'weight' => 9,
-	),
+  	  'title' => 'Subscribe',
+  	  'path' => 'node/3',
+  	  'weight' => 1,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Advertise',
+  	  'path' => 'node/2',
+  	  'weight' => 2,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Jobs',
+  	  'path' => 'node/5',
+  	  'weight' => 4,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Store',
+  	  'path' => 'node/6',
+  	  'weight' => 5,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'About Us',
+  	  'path' => 'node/1',
+  	  'weight' => 6,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Site Map',
+  	  'path' => 'node/7',
+  	  'weight' => 7,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Terms of Use',
+  	  'path' => 'node/8',
+  	  'weight' => 8,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-secondary',
+  	  'title' => 'Privacy Policy',
+  	  'path' => 'node/9',
+  	  'weight' => 9,
+  	),
   );
   
   $footer_primary_menu = array(
     array(
       'menu' => 'menu-footer-primary',
-	  'title' => 'Latest News',
-	  'path' => 'articles/all',
-	  'weight' => 1,
-	),
-	array(
-	  'menu' => 'menu-footer-primary',
-	  'title' => 'Hot Topics',
-	  'path' => 'popular/all',
-	  'weight' => 2,
-	),
-	array(
-	  'menu' => 'menu-footer-primary',
-	  'title' => 'Blogs',
-	  'path' => 'blogs',
-	  'weight' => 3,
-	),
-	array(
-	  'menu' => 'menu-footer-primary',
-	  'title' => 'Resources',
-	  'path' => 'resources',
-	  'weight' => 4,
-	),
-	array(
-	  'menu' => 'menu-footer-primary',
-	  'title' => 'Events',
-	  'path' => 'events',
-	  'weight' => 5,
-	),
+  	  'title' => 'Latest News',
+  	  'path' => 'articles/all',
+  	  'weight' => 1,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-primary',
+  	  'title' => 'Hot Topics',
+  	  'path' => 'popular/all',
+  	  'weight' => 2,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-primary',
+  	  'title' => 'Blogs',
+  	  'path' => 'blogs',
+  	  'weight' => 3,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-primary',
+  	  'title' => 'Resources',
+  	  'path' => 'resources',
+  	  'weight' => 4,
+  	),
+  	array(
+  	  'menu' => 'menu-footer-primary',
+  	  'title' => 'Events',
+  	  'path' => 'events',
+  	  'weight' => 5,
+  	),
   );
   
   $primary_links = array(
     array(
       'menu' => 'primary-links',
-	  'title' => 'Home',
-	  'path' => '<front>',
-	  'weight' => 1,
-	),
-	array(
+  	  'title' => 'Home',
+  	  'path' => '<front>',
+  	  'weight' => 1,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Business',
-	  'path' => 'articles/Business',
-	  'weight' => 2,
-	),
-	array(
+  	  'title' => 'Business',
+  	  'path' => 'articles/Business',
+  	  'weight' => 2,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Health',
-	  'path' => 'articles/Health',
-	  'weight' => 3,
-	),	
-	array(
+  	  'title' => 'Health',
+  	  'path' => 'articles/Health',
+  	  'weight' => 3,
+  	),	
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Politics',
-	  'path' => 'articles/Politics',
-	  'weight' => 4,
-	),
-	array(
+  	  'title' => 'Politics',
+  	  'path' => 'articles/Politics',
+  	  'weight' => 4,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Technology',
-	  'path' => 'articles/Technology',
-	  'weight' => 5,
-	),
-	array(
+  	  'title' => 'Technology',
+  	  'path' => 'articles/Technology',
+  	  'weight' => 5,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Blogs',
-	  'path' => 'blogs',
-	  'weight' => 6,
-	),
-	array(
+  	  'title' => 'Blogs',
+  	  'path' => 'blogs',
+  	  'weight' => 6,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Resources',
-	  'path' => 'resources',
-	  'weight' => 7,
-	),
-	array(
+  	  'title' => 'Resources',
+  	  'path' => 'resources',
+  	  'weight' => 7,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Events',
-	  'path' => 'events',
-	  'weight' => 8,
-	),
-	array(
+  	  'title' => 'Events',
+  	  'path' => 'events',
+  	  'weight' => 8,
+  	),
+  	array(
       'menu' => 'primary-links',
-	  'title' => 'Topic Hubs',
-	  'path' => 'topic-hubs',
-	  'weight' => 9,
-	),
+  	  'title' => 'Topic Hubs',
+  	  'path' => 'topic-hubs',
+  	  'weight' => 9,
+  	),
   );  
  
+  // TODO: Merge all arrays and process in one loop.
   foreach ($primary_links as $item) {	
     install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
   }
@@ -1293,7 +1104,6 @@ function _openpublish_modify_menus() {
   foreach ($footer_secondary_menu as $item) {	
     install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
   }
-  _openpublish_log(t('Menus created and configured'));
 } 
 
 /**
@@ -1306,116 +1116,114 @@ function _openpublish_set_views() {
   $view = views_get_view('popular');
   $view->disabled = FALSE;
   $view->save();
-  
-  _openpublish_log(t('Views configuration updated')); 
 } 
 
 
 /**
- * Create custom blocks and set region and pages
+ * Create custom blocks and set region and pages.
+ * 
+ * TODO: Rework this to use Context.
  */
 function _openpublish_setup_blocks() {
   cache_clear_all();
   
   //needs to set or blocks from modules get wrong region
   global $theme_key; 
-  $theme_key = 'openpublish';
+  $theme_key = 'openpublish_theme';
 
   // install the five manual blocks create through the UI
   install_create_custom_block('Powered by: <a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a>', 'Powered by Phase2', 1);
   install_create_custom_block('<?php 
   //placeholder ad
-  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_banner.gif"); ?><div class="clear"></div>', 'Top Banner Ad', 3);
+  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_banner.gif"); ?><div class="clear"></div>', 'Top Banner Ad', 3);
   install_create_custom_block('<p><?php 
   //placeholder ad
-  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Right Block Square Ad', 3);
+  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Right Block Square Ad', 3);
   install_create_custom_block('<p><?php 
   //placeholder ad
-  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 1', 3);
+  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 1', 3);
   install_create_custom_block('<p><?php 
   //placeholder ad
-  print theme("image", "sites/all/themes/openpublish/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 2', 3);
+  print theme("image", "sites/all/themes/openpublish_theme/images/placeholder_ad_rectangle.gif"); ?></p>', 'Homepage Ad Block 2', 3);
    
   // put the above newly created in the blocks table
   _block_rehash();
  
-  install_set_block('views', 'blogs-block_2', 'openpublish', 'homepage_center', -10);
-  install_set_block('views', 'multimedia-block_1', 'openpublish', 'homepage_center', -9);
-  install_set_block('views', 'resources-block_1', 'openpublish', 'homepage_center', -8);
-  install_set_block('views', 'twitter_items-block_1', 'openpublish', 'homepage_center', -7);
-  install_set_block('views', 'events-block_1', 'openpublish', 'homepage_center', -6);
-  install_set_block('views', 'articles-block_2', 'openpublish', 'homepage_left', -10);
-  install_set_block('views', 'articles-block_1', 'openpublish', 'homepage_left', -9);
-  install_set_block('views', 'feed_items-block_1', 'openpublish', 'homepage_left', -8);
-  install_set_block('views', 'most_viewed_by_taxonomy-block', 'openpublish', 'right', -7);
-  install_set_block('views', 'most_viewed_by_node_type-block', 'openpublish', 'right', -6);
-  install_set_block('views', 'most_viewed_multimedia-block', 'openpublish', 'right', -5);
-  install_set_block('views', 'most_commented_articles-block_1', 'openpublish', 'right', -4);
-  install_set_block('views', 'most_commented_blogs-block_1', 'openpublish', 'right', -3);
+  install_set_block('views', 'blogs-block_2', 'openpublish_theme', 'homepage_center', -10);
+  install_set_block('views', 'multimedia-block_1', 'openpublish_theme', 'homepage_center', -9);
+  install_set_block('views', 'resources-block_1', 'openpublish_theme', 'homepage_center', -8);
+  install_set_block('views', 'twitter_items-block_1', 'openpublish_theme', 'homepage_center', -7);
+  install_set_block('views', 'events-block_1', 'openpublish_theme', 'homepage_center', -6);
+  install_set_block('views', 'articles-block_2', 'openpublish_theme', 'homepage_left', -10);
+  install_set_block('views', 'articles-block_1', 'openpublish_theme', 'homepage_left', -9);
+  install_set_block('views', 'feed_items-block_1', 'openpublish_theme', 'homepage_left', -8);
+  install_set_block('views', 'most_viewed_by_taxonomy-block', 'openpublish_theme', 'right', -7);
+  install_set_block('views', 'most_viewed_by_node_type-block', 'openpublish_theme', 'right', -6);
+  install_set_block('views', 'most_viewed_multimedia-block', 'openpublish_theme', 'right', -5);
+  install_set_block('views', 'most_commented_articles-block_1', 'openpublish_theme', 'right', -4);
+  install_set_block('views', 'most_commented_blogs-block_1', 'openpublish_theme', 'right', -3);
   
-  install_set_block('morelikethis', 'googlevideo', 'openpublish', 'content', -10); 	  
-  install_set_block('block', '1', 'openpublish', 'footer',  - 2);
-  install_set_block('block', '2', 'openpublish', 'header', -10);
-  install_set_block('block', '4', 'openpublish', 'homepage_right', -10);
-  install_set_block('popular_terms', '0', 'openpublish', 'homepage_right', -9);
-  install_set_block('block', '5', 'openpublish', 'homepage_right', -8);  
-  install_set_block('popular_terms', '1', 'openpublish', 'homepage_right', -7);
-  install_set_block('morelikethis', 'taxonomy', 'openpublish', 'right', -10);
-  install_set_block('morelikethis', 'flickr', 'openpublish', 'right', -9);
-  install_set_block('block', '3', 'openpublish', 'right', -8);
+  install_set_block('morelikethis', 'googlevideo', 'openpublish_theme', 'content', -10); 	  
+  install_set_block('block', '1', 'openpublish_theme', 'footer',  - 2);
+  install_set_block('block', '2', 'openpublish_theme', 'header', -10);
+  install_set_block('block', '4', 'openpublish_theme', 'homepage_right', -10);
+  install_set_block('popular_terms', '0', 'openpublish_theme', 'homepage_right', -9);
+  install_set_block('block', '5', 'openpublish_theme', 'homepage_right', -8);  
+  install_set_block('popular_terms', '1', 'openpublish_theme', 'homepage_right', -7);
+  install_set_block('morelikethis', 'taxonomy', 'openpublish_theme', 'right', -10);
+  install_set_block('morelikethis', 'flickr', 'openpublish_theme', 'right', -9);
+  install_set_block('block', '3', 'openpublish_theme', 'right', -8);
   //install_set_block('openpublish_administration', '0', 'openpublish', 'left', 0);
  
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish'); 
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Most Used Terms', 'popular_terms', '0', 'openpublish');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Featured Topic Hubs', 'popular_terms', '1', 'openpublish');
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme'); 
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Most Used Terms', 'popular_terms', '0', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Featured Topic Hubs', 'popular_terms', '1', 'openpublish_theme');
   
   db_query("UPDATE {blocks} SET region = '%s', status = 1, weight = %d WHERE module = '%s' AND delta = '%s' AND theme = '%s'", $region, $weight, $module, $delta, $theme);
  
   db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
 blog/*
 resource/*
-event/*', 'morelikethis', 'googlevideo', 'openpublish');  
+event/*', 'morelikethis', 'googlevideo', 'openpublish_theme');  
  
   db_query("UPDATE {blocks} SET pages = '%s', weight = -20 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'admin*
 topic-hub/*
-package/*', 'block', '3', 'openpublish');
+package/*', 'block', '3', 'openpublish_theme');
  
   db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
 blog/*
 resource/*
-event/*', 'morelikethis', 'flickr', 'openpublish');
+event/*', 'morelikethis', 'flickr', 'openpublish_theme');
  
   db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
 blog/*
 resource/*
-event/*', 'morelikethis', 'taxonomy ', 'openpublish');
+event/*', 'morelikethis', 'taxonomy ', 'openpublish_theme');
 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles/*', 'views', 'most_commented_articles-block_1', 'openpublish');
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'blogs', 'views', 'most_commented_blogs-block_1', 'openpublish');
+  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles/*', 'views', 'most_commented_articles-block_1', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'blogs', 'views', 'most_commented_blogs-block_1', 'openpublish_theme');
  
   db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'resources*
 events*
-blogs*', 'views', 'most_viewed_by_node_type-block', 'openpublish');
+blogs*', 'views', 'most_viewed_by_node_type-block', 'openpublish_theme');
  
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles*', 'views', 'most_viewed_by_taxonomy-block', 'openpublish');
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'multimedia', 'views', 'most_viewed_multimedia-block', 'openpublish'); 
+  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles*', 'views', 'most_viewed_by_taxonomy-block', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'multimedia', 'views', 'most_viewed_multimedia-block', 'openpublish_theme'); 
 
  
   db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'admin
-admin/*', 'openpublish_administration', '0', 'openpublish');
+admin/*', 'openpublish_administration', '0', 'openpublish_theme');
   
   install_add_block_role('openpublish_administration', '0', install_get_rid('administrator'));
   install_add_block_role('openpublish_administration', '0', install_get_rid('editor'));
   install_add_block_role('openpublish_administration', '0', install_get_rid('author'));
   install_add_block_role('openpublish_administration', '0', install_get_rid('web editor'));
  
-  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'user', '0', 'openpublish');
-  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'user', '1', 'openpublish');
-  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'system', '0', 'openpublish');
-  
-  _openpublish_log(t('Blocks initialized and configured'));
+  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'user', '0', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'user', '1', 'openpublish_theme');
+  db_query("UPDATE {blocks} SET status = 0 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'system', '0', 'openpublish_theme');
 }
 
 function _openpublish_log($msg) {
