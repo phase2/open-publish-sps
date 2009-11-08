@@ -101,7 +101,7 @@ function openpublish_profile_task_list() {
   $conf['site_name'] = 'OpenPublish';
   $conf['theme_settings'] = array(
     'default_logo' => 0,
-    'logo_path' => 'sites/all/themes/openpublish_theme/images/logo.png',
+    'logo_path' => 'sites/all/themes/openpublish_theme/images/openpublish-logo.png',
   );
   
   $tasks['op-configure-batch'] = st('Configure OpenPublish');
@@ -982,28 +982,26 @@ function _openpublish_set_views() {
 function _openpublish_setup_blocks() {  
   global $base_url; 
   cache_clear_all();
-  
-  // Ensures that $theme_key gets set
+
+  // Ensures that $theme_key gets set for new block creation
   install_default_theme('openpublish_theme');
 
-  // install the five manual blocks create through the UI  
+  // install the demo ad blocks  
   $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images';
-  $bid = install_create_custom_block('<img src="' . $ad_base . '/placeholder_ad_banner.gif"/><div class="clear"></div>', 'Top Banner Ad', 2);
-  install_set_block('block', $bid, 'openpublish_theme', 'header', -10);
+  $b1 = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
+  $b2 = install_create_custom_block('<img src="' . $ad_base . '/placeholder_ad_banner.gif"/><div class="clear"></div>', 'Top Banner Ad', 2);
+  $b3 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Right Block Square Ad', 2);
+  $b4 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 1', 2);
+  $b5 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 2', FILTER_HTML_ESCAPE);
 
-  $bid = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Right Block Square Ad', 2);
-  install_set_block('block', $bid, 'openpublish_theme', 'right', -8);
-
-  $bid = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 1', 2);
-  install_set_block('block', $bid, 'openpublish_theme', 'homepage_right', -10);
-  
-  $bid = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 2', FILTER_HTML_ESCAPE);
-  install_set_block('block', $bid, 'openpublish_theme', 'homepage_right', -8);  
-  
-  $bid = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
-  install_set_block('block', $bid, 'openpublish_theme', 'footer',  - 2);
-  
+  // Get these new boxes in blocks table
   install_init_blocks();
+
+  install_set_block('block', $b1, 'openpublish_theme', 'footer',  - 2);
+  install_set_block('block', $b2, 'openpublish_theme', 'header', -10);
+  install_set_block('block', $b3, 'openpublish_theme', 'right', -8);
+  install_set_block('block', $b4, 'openpublish_theme', 'homepage_right', -10);
+  install_set_block('block', $b5, 'openpublish_theme', 'homepage_right', -8);  
  
   install_set_block('views', 'blogs-block_2', 'openpublish_theme', 'homepage_center', -10);
   install_set_block('views', 'multimedia-block_1', 'openpublish_theme', 'homepage_center', -9);
