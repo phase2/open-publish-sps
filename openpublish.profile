@@ -164,6 +164,8 @@ function _openpublish_configure_finished($success, $results) {
  * Do some basic setup
  */
 function _openpublish_base_settings() {  
+  global $base_url;  
+  
   $types = array(
     array(
       'type' => 'page',
@@ -189,10 +191,12 @@ function _openpublish_base_settings() {
 
   // Theme related.  
   install_default_theme('openpublish_theme');
-  variable_set('admin_theme', 'rootcandy');	
+  install_admin_theme('rootcandy');	
   
   $theme_settings = variable_get('theme_settings', array());
   $theme_settings['toggle_node_info_page'] = FALSE;
+  $theme_settings['default_logo'] = FALSE;
+  $theme_settings['logo_path'] = 'sites/all/themes/openpublish_theme/images/logo.gif';
   variable_set('theme_settings', $theme_settings);    
   
   // Basic Drupal settings.
