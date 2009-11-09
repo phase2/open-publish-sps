@@ -97,6 +97,8 @@ libraries[fckeditorlib][install_path] = sites/all
 
 libraries[simplepie][download][type] = get
 libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
+libraries[simplepie][destination] = modules/feedapi/parser_simplepie
+libraries[simplepie][directory_name] = ./
 libraries[simplepie][install_path] = sites/all
 
 ; ARC2 Library required by RDF 
