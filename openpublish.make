@@ -97,11 +97,12 @@ libraries[fckeditorlib][install_path] = sites/all
 
 libraries[simplepie][download][type] = get
 libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
+libraries[simplepie][install_path] = sites/all
 
 ; ARC2 Library required by RDF 
-;libraries[arc][download][type] = get
-;libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
-;libraries[arc][destination] = modules/rdf/vendor
-;libraries[arc][directory_name] = arc
-;libraries[arc][install_path] = sites/all
+libraries[arc][download][type] = get
+libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
+libraries[arc][destination] = modules/rdf/vendor
+libraries[arc][directory_name] = arc
+libraries[arc][install_path] = sites/all
 
