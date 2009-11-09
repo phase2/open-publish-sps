@@ -7,7 +7,8 @@ projects[devel][install_path] = sites/all
 projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
-projects[admin_menu][install_path] = sites/all
+projects[admin][install_path] = sites/all
+projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
 ; Misc stand-alone
 projects[swftools][install_path] = sites/all
@@ -94,9 +95,12 @@ libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
 libraries[fckeditorlib][directory_name] = ./
 libraries[fckeditorlib][install_path] = sites/all
 
+libraries[simplepie][download][type] = get
+libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
+
 ; ARC2 Library required by RDF 
 ;libraries[arc][download][type] = get
-;libraries[arc][download][url] = ;http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
+;libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
 ;libraries[arc][destination] = modules/rdf/vendor
 ;libraries[arc][directory_name] = arc
 ;libraries[arc][install_path] = sites/all
