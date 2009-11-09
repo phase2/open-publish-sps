@@ -80,7 +80,7 @@ function openpublish_profile_modules() {
     'topichubs_related_topics',
 	
     // Custom modules developed for OpenPublish
-    'openpublish_administration', 'popular_terms', 'openpublish_views',    
+    'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
   );
 
   return array_merge($core_modules, $contributed_modules);
@@ -129,10 +129,11 @@ function openpublish_profile_tasks(&$task, $url) {
     foreach ( $cck_files as $file ) {   
       $batch['operations'][] = array('_openpublish_import_cck', array($file));      
     }    
+    $batch['operations'][] = array('_openpublish_set_permissions', array());      
     $batch['operations'][] = array('_openpublish_initialize_settings', array());      
     $batch['operations'][] = array('_openpublish_placeholder_content', array());      
     $batch['operations'][] = array('_openpublish_set_views', array());      
-    $batch['operations'][] = array('_openpublish_modify_menus', array());      
+    $batch['operations'][] = array('_openpublish_install_menus', array());      
     $batch['operations'][] = array('_openpublish_setup_blocks', array());      
     $batch['operations'][] = array('_openpublish_cleanup', array());      
     $batch['error_message'] = st('There was an error configuring @drupal.', array('@drupal' => drupal_install_profile_name()));
@@ -207,7 +208,7 @@ function _openpublish_base_settings() {
 /**
  * Import cck definitions from included files
  */
-function _openpublish_import_cck($file) {   
+function _openpublish_import_cck($file, &$context) {   
   // blog type is from drupal, so modify it
   if ($file->name == 'blog') {
     install_add_existing_field('blog', 'field_teaser', 'text_textarea');
@@ -225,14 +226,16 @@ function _openpublish_import_cck($file) {
     install_content_copy_import_from_file($file->filename);
   }
   
-  _openpublish_log(st('Content Type @type setup', array('@type' => $file->name)));
+  $msg = st('Content Type @type setup', array('@type' => $file->name));
+  _openpublish_log($msg);
+  $context['message'] = $msg;
 }  
 
 /**
  * Create some content of type "page" as placeholders for content
  * and so menu items can be created
  */
-function _openpublish_placeholder_content() {
+function _openpublish_placeholder_content(&$context) {
   global $base_url;  
 
   $user = user_load(array('uid' => 1));
@@ -298,295 +301,36 @@ function _openpublish_placeholder_content() {
   node_save($start);
 
   menu_rebuild();
+  
+  $context['message'] = st('Installed Content');
 }
 
 /**
- * Set roles and permissions and other misc settins
+ * Configure user/role/permission data
  */
-function _openpublish_initialize_settings(){
-  // Add roles
-  install_add_role('administrator');
-  install_add_role('editor');
-  install_add_role('author');
-  install_add_role('web editor');
+function _openpublish_set_permissions(&$context){
+  
+  // Load the permissions export
+  include_once dirname(__FILE__) . "/includes/openpublish.perms.inc";
 
-  $admin_rid = install_get_rid('administrator');
-  $editor_rid = install_get_rid('editor');
-  $author_rid = install_get_rid('author');
-  $webed_rid = install_get_rid('web editor');
-  $anon_rid = install_get_rid('anonymous user');
-  $auth_rid = install_get_rid('authenticated user');
-  
-  install_add_permissions($anon_rid, array('access calais rdf', 'access comments','view field_audio_file',
-  		'view field_author','view field_center_intro','view field_center_main_image',
-		'view field_center_related','view field_center_title','view field_deck',
-		'view field_embedded_audio','view field_embedded_video','view field_event_date',
-		'view field_flash_file','view field_left_intro','view field_left_related',
-		'view field_links','view field_main_image','view field_right_intro',
-		'view field_right_related','view field_show_author_info','view field_teaser',
-		'view field_thumbnail_image','view imagefield uploads, access content',
-		'search content','view uploaded files','access user profiles'));		
-		
-  install_add_permissions($auth_rid, array('access calais rdf', 'access comments','post comments','post comments without approval',
-  		'view field_audio_file','view field_author','view field_center_intro',
-		'view field_center_main_image','view field_center_related','view field_center_title',
-		'view field_deck','view field_embedded_audio','view field_embedded_video',
-		'view field_event_date','view field_flash_file','view field_left_intro',
-		'view field_left_related','view field_links','view field_main_image, view field_right_intro',
-		'view field_right_related','view field_show_author_info','view field_teaser',
-		'view field_thumbnail_image','view imagefield uploads','access content, search content',
-		'view uploaded files','access user profiles'));		
-		
-  install_add_permissions($admin_rid, array('access administration menu','display drupal links, administer apture',
-  		'administer blocks','use PHP for block visibility','create blog entries',
-		'delete any blog entry','delete own blog entries','edit any blog entry',
-		'edit own blog entries','access calais', 'access calais rdf','administer calais',
-		'administer calais api','administer calais geo','access comments','administer comments',
-		'post comments','post comments without approval','Use PHP input for field settings (dangerous - grant with care)',
-		'edit field_audio_file','edit field_author','edit field_center_intro',
-		'edit field_center_main_image','edit field_center_related','edit field_center_title',
-		'edit field_deck','edit field_embedded_audio','edit field_embedded_video','edit field_event_date',
-		'edit field_flash_file','edit field_left_intro','edit field_left_related','edit field_links',
-		'edit field_main_image','edit field_right_intro','edit field_right_related',
-		'edit field_show_author_info','edit field_teaser','edit field_thumbnail_image',
-		'view field_audio_file','view field_author','view field_center_intro','view field_center_main_image',
-		'view field_center_related','view field_center_title','view field_deck','view field_embedded_audio',
-		'view field_embedded_video','view field_event_date','view field_flash_file','view field_left_intro',
-		'view field_left_related','view field_links','view field_main_image','view field_right_intro',
-		'view field_right_related','view field_show_author_info','view field_teaser','view field_thumbnail_image',
-		'administer custompage','edit custompage tiles','access devel information','display source code',
-		'execute php code','switch users','access fckeditor','administer fckeditor','allow fckeditor file uploads',
-		'administer feedapi','advanced feedapi options','administer filters','administer flags',
-		'administer imageapi','administer imagecache','flush imagecache','view imagecache featured_image',
-		'view imagecache package_featured','view imagecache spotlight_homepage','view imagecache thumbnail',
-		'view imagefield uploads','administer languages','translate interface','administer login destination',
-		'administer menu','post with no checking','administer morelikethis','access content',
-		'administer content types','administer nodes','create article content','create audio content',
-		'create event content','create feed content','create feeditem content','create op_image content',
-		'create package content','create page content','create resource content','create topichub content',
-		'create twitter_item content','create video content','delete any article content',
-		'delete any audio content','delete any event content','delete any feed content',
-		'delete any feeditem content','delete any op_image content','delete any package content',
-		'delete any page content','delete any resource content','delete any topichub content',
-		'delete any twitter_item content','delete any video content','delete own article content',
-		'delete own audio content','delete own event content','delete own feed content',
-		'delete own feeditem content','delete own op_image content','delete own package content',
-		'delete own page content','delete own resource content','delete own topichub content',
-		'delete own twitter_item content','delete own video content','delete revisions',
-		'edit any article content','edit any audio content','edit any event content',
-		'edit any feed content','edit any feeditem content','edit any op_image content',
-		'edit any package content','edit any page content','edit any resource content',
-		'edit any topichub content','edit any twitter_item content','edit any video content',
-		'edit own article content','edit own audio content','edit own event content',
-		'edit own feed content','edit own feeditem content','edit own op_image content',
-		'edit own package content','edit own page content','edit own resource content',
-		'edit own topichub content','edit own twitter_item content',
-		'edit own video content','revert revisions','view revisions','administer meta tags',
-		'edit meta tags','access openpublish admin pages','set api keys',
-		'administer url aliases','create url aliases','administer pathauto',
-		'notify of path changes','access RDF data','administer RDF data',
-		'administer RDF namespaces','administer RDF repositories','export RDF data',
-		'import RDF data','administer search','search content','use advanced search',
-		'access statistics','view post access counter','administer flash',
-		'access administration pages','access site reports','administer actions',
-		'administer files','administer site configuration','select different theme',
-		'administer taxonomy','administer topichubs','translate content','upload files',
-		'view uploaded files','access user profiles','administer permissions',
-		'administer users','change own username','administer views','use views exporter',
-		'access all views','override node priority','override term priority',
-		'administer advanced pane settings', 'administer pane access', 'administer pane visibility',
-		'use panels caching features', 'view all panes', 'view pane admin links',
-		'administer panel-node', 'create panel-nodes', 'edit own panel-nodes', 'administer panel-nodes'));
-  
-  install_add_permissions($editor_rid, array('access administration menu','display drupal links',
-  		'create blog entries','delete any blog entry','delete own blog entries',
-		'edit any blog entry','edit own blog entries','access calais', 'access calais rdf', 'access comments',
-		'administer comments','post comments','post comments without approval',
-		'edit field_audio_file','edit field_author','edit field_center_intro',
-		'edit field_center_main_image','edit field_center_related',
-		'edit field_center_title','edit field_deck','edit field_embedded_audio',
-		'edit field_embedded_video','edit field_event_date','edit field_flash_file',
-		'edit field_left_intro','edit field_left_related','edit field_links',
-		'edit field_main_image','edit field_right_intro','edit field_right_related',
-		'edit field_show_author_info','edit field_teaser','edit field_thumbnail_image',
-		'view field_audio_file','view field_author','view field_center_intro',
-		'view field_center_main_image','view field_center_related',
-		'view field_center_title','view field_deck','view field_embedded_audio',
-		'view field_embedded_video','view field_event_date','view field_flash_file',
-		'view field_left_intro','view field_left_related','view field_links',
-		'view field_main_image','view field_right_intro','view field_right_related',
-		'view field_show_author_info','view field_teaser','view field_thumbnail_image',
-		'edit custompage tiles','access fckeditor','allow fckeditor file uploads',
-		'view imagecache featured_image','view imagecache package_featured',
-		'view imagecache spotlight_homepage','view imagecache thumbnail',
-		'view imagefield uploads','translate interface','administer menu',
-		'post with no checking','administer morelikethis','access content',
-		'administer nodes','create article content','create audio content',
-		'create event content','create feed content','create feeditem content',
-		'create op_image content','create package content','create page content',
-		'create resource content','create topichub content','create twitter_item content',
-		'create video content','delete any article content','delete any audio content',
-		'delete any event content','delete any feed content','delete any feeditem content',
-		'delete any op_image content','delete any package content',
-		'delete any page content','delete any resource content','delete any topichub content',
-		'delete any twitter_item content','delete any video content',
-		'delete own article content','delete own audio content','delete own event content',
-		'delete own feed content','delete own feeditem content','delete own op_image content',
-		'delete own package content','delete own page content','delete own resource content',
-		'delete own topichub content','delete own twitter_item content','delete own video content',
-		'delete revisions','edit any article content','edit any audio content',
-		'edit any event content','edit any feed content','edit any feeditem content',
-		'edit any op_image content','edit any package content','edit any page content',
-		'edit any resource content','edit any topichub content','edit any twitter_item content',
-		'edit any video content','edit own article content','edit own audio content',
-		'edit own event content','edit own feed content','edit own feeditem content',
-		'edit own op_image content','edit own package content','edit own page content',
-		'edit own resource content','edit own topichub content',
-		'edit own twitter_item content','edit own video content','revert revisions',
-		'view revisions','administer meta tags','edit meta tags',
-		'access openpublish admin pages','create url aliases','administer pathauto',
-		'search content','use advanced search','access statistics',
-		'view post access counter','access administration pages','access site reports',
-		'administer files','administer taxonomy','administer topichubs','translate content',
-		'upload files','view uploaded files','access user profiles','administer users',
-		'change own username','override node priority','override term priority'));  
-
-  install_add_permissions($author_rid, array('access administration menu','display drupal links',
-  		'create blog entries','delete own blog entries','edit own blog entries',
-		'access calais', 'access calais rdf', 'access comments','administer comments','post comments',
-		'post comments without approval','edit field_audio_file','edit field_author',
-		'edit field_center_intro','edit field_center_main_image',
-		'edit field_center_related','edit field_center_title','edit field_deck',
-		'edit field_embedded_audio','edit field_embedded_video','edit field_event_date',
-		'edit field_flash_file','edit field_left_intro','edit field_left_related',
-		'edit field_links','edit field_main_image','edit field_right_intro',
-		'edit field_right_related','edit field_show_author_info','edit field_teaser',
-		'edit field_thumbnail_image','view field_audio_file','view field_author',
-		'view field_center_intro','view field_center_main_image',
-		'view field_center_related','view field_center_title','view field_deck',
-		'view field_embedded_audio','view field_embedded_video','view field_event_date',
-		'view field_flash_file','view field_left_intro','view field_left_related',
-		'view field_links','view field_main_image','view field_right_intro',
-		'view field_right_related','view field_show_author_info','view field_teaser',
-		'view field_thumbnail_image','access fckeditor','allow fckeditor file uploads',
-		'view imagecache featured_image','view imagecache package_featured',
-		'view imagecache spotlight_homepage','view imagecache thumbnail',
-		'view imagefield uploads','translate interface','post with no checking',
-		'access content','create article content','create audio content',
-		'create event content','create feed content','create feeditem content',
-		'create op_image content','create package content','create page content',
-		'create resource content','create topichub content','create twitter_item content',
-		'create video content','delete own article content','delete own audio content',
-		'delete own event content','delete own feed content','delete own feeditem content',
-		'delete own op_image content','delete own package content',
-		'delete own page content','delete own resource content',
-		'delete own topichub content','delete own twitter_item content',
-		'delete own video content','edit own article content','edit own audio content',
-		'edit own event content','edit own feed content','edit own feeditem content',
-		'edit own op_image content','edit own package content','edit own page content',
-		'edit own resource content','edit own topichub content',
-		'edit own twitter_item content','edit own video content','revert revisions',
-		'view revisions','edit meta tags','access openpublish admin pages',
-		'search content','use advanced search','access statistics',
-		'view post access counter','access administration pages','access site reports',
-		'translate content','upload files','view uploaded files','access user profiles'));
-  
-  install_add_permissions($webed_rid, array('access administration menu','display drupal links',
-  		'administer apture','administer blocks','use PHP for block visibility',
-		'create blog entries','delete any blog entry','delete own blog entries',
-		'edit any blog entry','edit own blog entries','access calais', 'access calais rdf', 'administer calais',
-		'access comments','administer comments','post comments',
-		'post comments without approval','edit field_audio_file','edit field_author',
-		'edit field_center_intro','edit field_center_main_image',
-		'edit field_center_related','edit field_center_title','edit field_deck',
-		'edit field_embedded_audio','edit field_embedded_video','edit field_event_date',
-		'edit field_flash_file','edit field_left_intro','edit field_left_related',
-		'edit field_links','edit field_main_image','edit field_right_intro',
-		'edit field_right_related','edit field_show_author_info','edit field_teaser',
-		'edit field_thumbnail_image','view field_audio_file','view field_author',
-		'view field_center_intro','view field_center_main_image',
-		'view field_center_related','view field_center_title','view field_deck',
-		'view field_embedded_audio','view field_embedded_video','view field_event_date',
-		'view field_flash_file','view field_left_intro','view field_left_related',
-		'view field_links','view field_main_image','view field_right_intro',
-		'view field_right_related','view field_show_author_info','view field_teaser',
-		'view field_thumbnail_image','administer custompage','edit custompage tiles',
-		'access fckeditor','allow fckeditor file uploads','administer feedapi',
-		'view imagecache featured_image','view imagecache package_featured',
-		'view imagecache spotlight_homepage','view imagecache thumbnail',
-		'view imagefield uploads','administer languages','translate interface',
-		'administer menu','post with no checking','administer morelikethis',
-		'access content','administer content types','administer nodes',
-		'create article content','create audio content','create event content',
-		'create feed content','create feeditem content','create op_image content',
-		'create package content','create page content','create resource content',
-		'create topichub content','create twitter_item content','create video content',
-		'delete any article content','delete any audio content',
-		'delete any event content','delete any feed content',
-		'delete any feeditem content','delete any op_image content',
-		'delete any package content','delete any page content',
-		'delete any resource content','delete any topichub content',
-		'delete any twitter_item content','delete any video content',
-		'delete own article content','delete own audio content','delete own event content',
-		'delete own feed content','delete own feeditem content',
-		'delete own op_image content','delete own package content',
-		'delete own page content','delete own resource content',
-		'delete own topichub content','delete own twitter_item content',
-		'delete own video content','delete revisions','edit any article content',
-		'edit any audio content','edit any event content','edit any feed content',
-		'edit any feeditem content','edit any op_image content',
-		'edit any package content','edit any page content',
-		'edit any resource content','edit any topichub content',
-		'edit any twitter_item content','edit any video content',
-		'edit own article content','edit own audio content','edit own event content',
-		'edit own feed content','edit own feeditem content','edit own op_image content',
-		'edit own package content','edit own page content','edit own resource content',
-		'edit own topichub content','edit own twitter_item content',
-		'edit own video content','revert revisions','view revisions',
-		'administer meta tags','edit meta tags','access openpublish admin pages',
-		'administer url aliases','create url aliases','administer pathauto',
-		'search content','use advanced search','access statistics',
-		'view post access counter','administer flash','access administration pages',
-		'access site reports','administer taxonomy','administer topichubs',
-		'translate content','upload files','view uploaded files',
-		'access user profiles','change own username','administer views',
-		'access all views','override node priority','override term priority'));  
+  // Reformat data for use with install_add_permissions
+  $role_perms = array();
+  foreach ($openpublish_perms as $perm => $roles) {
+    foreach ($roles as $role) {
+      if(!isset($role_perms[$role])) {
+        $role_perms[$role] = array();
+      }
+      $role_perms[$role][] = $perm;
+    }
+  }
+  // Import the permissions for each role
+  foreach ($role_perms as $role => $perms) {
+    $rid = install_get_rid($role);
+    install_add_permissions($rid, $perms);
+  }
   
   db_query('INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)', 1, $admin_rid);
-
-  // Image cache
-  $imagecachepreset = imagecache_preset_save(array('presetname' => 'featured_image'));
-  $imagecacheaction = new stdClass ();
-  $imagecacheaction->presetid = $imagecachepreset['presetid'];
-  $imagecacheaction->module = 'imagecache';
-  $imagecacheaction->action = 'imagecache_scale';
-  $imagecacheaction->data = array('width' => '200', 'height' => '', 'upscale' => 1);
-  drupal_write_record('imagecache_action', $imagecacheaction);
   
-  $imagecachepreset = imagecache_preset_save(array('presetname' => 'thumbnail'));
-  $imagecacheaction = new stdClass ();
-  $imagecacheaction->presetid = $imagecachepreset['presetid'];
-  $imagecacheaction->module = 'imagecache';
-  $imagecacheaction->action = 'imagecache_scale';
-  $imagecacheaction->data = array('width' => '100', 'height' => '', 'upscale' => 1);
-  drupal_write_record('imagecache_action', $imagecacheaction);
-  
-  $imagecachepreset = imagecache_preset_save(array('presetname' => 'spotlight_homepage'));
-  $imagecacheaction = new stdClass ();
-  $imagecacheaction->presetid = $imagecachepreset['presetid'];
-  $imagecacheaction->module = 'imagecache';
-  $imagecacheaction->action = 'imagecache_scale';
-  $imagecacheaction->data = array('width' => '290', 'height' => '', 'upscale' => 1);
-  drupal_write_record('imagecache_action', $imagecacheaction);
-  
-  $imagecachepreset = imagecache_preset_save(array('presetname' => 'package_featured'));
-  $imagecacheaction = new stdClass ();
-  $imagecacheaction->presetid = $imagecachepreset['presetid'];
-  $imagecacheaction->module = 'imagecache';
-  $imagecacheaction->action = 'imagecache_scale';
-  $imagecacheaction->data = array('width' => '425', 'height' => '', 'upscale' => 0);
-  drupal_write_record('imagecache_action', $imagecacheaction);
-     
   // Profile Fields
   $profile_full_name = array(
     'title' => 'Full Name', 
@@ -621,8 +365,15 @@ function _openpublish_initialize_settings(){
   install_profile_field_add($profile_full_name);
   install_profile_field_add($profile_job_title);
   install_profile_field_add($profile_bio);
- 
- 
+  
+  $context['message'] = st('Configured Permissions');
+}
+
+/**
+ * Set misc settings
+ */
+function _openpublish_initialize_settings(&$context){
+
   // Pathauto
   variable_set('pathauto_node_pattern', '[title-raw]');
   variable_set('pathauto_node_article_pattern', 'article/[title-raw]');
@@ -755,214 +506,13 @@ return "user"');
   variable_set('flowplayer3_mediaplayer_file', 'flowplayer-3.1.1.swf');
   variable_set('flowplayer3_mediaplayer_stream_plugin', 'flowplayer.rtmp-3.0.2.swf');
 
-  _openpublish_log(t('Roles, permissions and configuration settings are in place'));
+  $msg = st('Setup general configuration');
+  _openpublish_log($msg);
+  $context['message'] = $msg;
 }
 
 /**
- * Setup 3 custom menus and primary links.
- */
-function _openpublish_modify_menus() {
-  cache_clear_all();
-  menu_rebuild();
-  
-  // TODO: Rework into new Dashboard
-  $op_plid = install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'OpenPublish Control Panel', 'Short cuts to important functionality.', 'navigation', 1, -49);
-  install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'API Keys', 'Calais, Apture and Flickr API keys.', 'navigation', $op_plid, 1);
-  install_menu_create_menu_item('admin/settings/openpublish/calais-suite', 'Calais Suite', 'Administrative links to Calais, More Like This and Topic Hubs functionality.', 'navigation', $op_plid, 2);
-  install_menu_create_menu_item('admin/settings/openpublish/content', 'Content Links', 'Administrative links to content, comment, feed and taxonomy management.', 'navigation', $op_plid, 3);
-
-  install_menu_create_menu('Footer Primary', 'footer-primary');
-  install_menu_create_menu('Footer Secondary', 'footer-secondary');
-  install_menu_create_menu('Top Menu', 'top-menu'); 
-  
-  $top_menu = array (
-    array (
-  	  'menu' => 'menu-top-menu',
-  	  'title' => 'About Us',
-  	  'path' => 'node/1',
-  	  'weight' => 1
-  	),
-  	array (
-  	  'menu' => 'menu-top-menu',
-  	  'title' => 'Advertise',
-  	  'path' => 'node/2',
-  	  'weight' => 2
-  	),
-  	array (
-  	  'menu' => 'menu-top-menu',
-  	  'title' => 'Subscribe',
-  	  'path' => 'node/3',
-  	  'weight' => 3
-  	),
-  	array (
-  	  'menu' => 'menu-top-menu',
-  	  'title' => 'RSS',
-  	  'path' => 'node/4',
-  	  'weight' => 4
-  	),		
-  );
-  
-  $footer_secondary_menu = array (
-    array(
-      'menu' => 'menu-footer-secondary',
-  	  'title' => 'Subscribe',
-  	  'path' => 'node/3',
-  	  'weight' => 1,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Advertise',
-  	  'path' => 'node/2',
-  	  'weight' => 2,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Jobs',
-  	  'path' => 'node/5',
-  	  'weight' => 4,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Store',
-  	  'path' => 'node/6',
-  	  'weight' => 5,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'About Us',
-  	  'path' => 'node/1',
-  	  'weight' => 6,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Site Map',
-  	  'path' => 'node/7',
-  	  'weight' => 7,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Terms of Use',
-  	  'path' => 'node/8',
-  	  'weight' => 8,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-secondary',
-  	  'title' => 'Privacy Policy',
-  	  'path' => 'node/9',
-  	  'weight' => 9,
-  	),
-  );
-  
-  $footer_primary_menu = array(
-    array(
-      'menu' => 'menu-footer-primary',
-  	  'title' => 'Latest News',
-  	  'path' => 'articles/all',
-  	  'weight' => 1,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-primary',
-  	  'title' => 'Hot Topics',
-  	  'path' => 'popular/all',
-  	  'weight' => 2,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-primary',
-  	  'title' => 'Blogs',
-  	  'path' => 'blogs',
-  	  'weight' => 3,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-primary',
-  	  'title' => 'Resources',
-  	  'path' => 'resources',
-  	  'weight' => 4,
-  	),
-  	array(
-  	  'menu' => 'menu-footer-primary',
-  	  'title' => 'Events',
-  	  'path' => 'events',
-  	  'weight' => 5,
-  	),
-  );
-  
-  $primary_links = array(
-    array(
-      'menu' => 'primary-links',
-  	  'title' => 'Home',
-  	  'path' => '<front>',
-  	  'weight' => 1,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Business',
-  	  'path' => 'articles/Business',
-  	  'weight' => 2,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Health',
-  	  'path' => 'articles/Health',
-  	  'weight' => 3,
-  	),	
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Politics',
-  	  'path' => 'articles/Politics',
-  	  'weight' => 4,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Technology',
-  	  'path' => 'articles/Technology',
-  	  'weight' => 5,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Blogs',
-  	  'path' => 'blogs',
-  	  'weight' => 6,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Resources',
-  	  'path' => 'resources',
-  	  'weight' => 7,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Events',
-  	  'path' => 'events',
-  	  'weight' => 8,
-  	),
-  	array(
-      'menu' => 'primary-links',
-  	  'title' => 'Topic Hubs',
-  	  'path' => 'topic-hubs',
-  	  'weight' => 9,
-  	),
-  );  
- 
-  // TODO: Merge all arrays and process in one loop.
-  foreach ($primary_links as $item) {	
-    install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
-  }
-
-  foreach ($footer_primary_menu as $item) {	
-    install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
-  }
-
-  foreach ($top_menu as $item) {	
-    install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
-  }
-  
-  foreach ($footer_secondary_menu as $item) {	
-    install_menu_create_menu_item($item[path], $item[title], '', $item[menu], 0, $item[weight]);
-  }
-} 
-
-/**
- * Set views as "default views" so they can be reverted
+ * Load views
  */
 function _openpublish_set_views() {
   views_include_default_views();
@@ -973,13 +523,65 @@ function _openpublish_set_views() {
   $view->save();
 } 
 
+/**
+ * Setup custom menus and primary links.
+ */
+function _openpublish_install_menus(&$context) {
+  cache_clear_all();
+  menu_rebuild();
+  
+  // TODO: Rework into new Dashboard
+  $op_plid = install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'OpenPublish Control Panel', 'Short cuts to important functionality.', 'navigation', 1, -49);
+  install_menu_create_menu_item('admin/settings/openpublish/api-keys', 'API Keys', 'Calais, Apture and Flickr API keys.', 'navigation', $op_plid, 1);
+  install_menu_create_menu_item('admin/settings/openpublish/calais-suite', 'Calais Suite', 'Administrative links to Calais, More Like This and Topic Hubs functionality.', 'navigation', $op_plid, 2);
+  install_menu_create_menu_item('admin/settings/openpublish/content', 'Content Links', 'Administrative links to content, comment, feed and taxonomy management.', 'navigation', $op_plid, 3);
+
+  // Primary Navigation
+  install_menu_create_menu_item('<front>',             'Home',       '', 'primary-links', 0, 1);
+  install_menu_create_menu_item('articles/Business',   'Business',   '', 'primary-links', 0, 2);
+  install_menu_create_menu_item('articles/Health',     'Health',     '', 'primary-links', 0, 3);
+  install_menu_create_menu_item('articles/Politics',   'Politics',   '', 'primary-links', 0, 4);
+  install_menu_create_menu_item('articles/Technology', 'Technology', '', 'primary-links', 0, 5);
+  install_menu_create_menu_item('blogs',               'Blogs',      '', 'primary-links', 0, 6);
+  install_menu_create_menu_item('resources',           'Resources',  '', 'primary-links', 0, 7);
+  install_menu_create_menu_item('events',              'Events',     '', 'primary-links', 0, 8);
+  install_menu_create_menu_item('topic-hubs',          'Topic Hubs', '', 'primary-links', 0, 9);
+
+  install_menu_create_menu('Footer Primary', 'footer-primary');
+  install_menu_create_menu_item('articles/all', 'Latest News', '', 'menu-footer-primary', 0, 1);
+  install_menu_create_menu_item('popular/all',  'Hot Topics',  '', 'menu-footer-primary', 0, 2);
+  install_menu_create_menu_item('blogs',        'Blogs',       '', 'menu-footer-primary', 0, 3);
+  install_menu_create_menu_item('resources',    'Resources',   '', 'menu-footer-primary', 0, 4);
+  install_menu_create_menu_item('events',       'Events',      '', 'menu-footer-primary', 0, 5);
+
+  install_menu_create_menu('Footer Secondary', 'footer-secondary');
+  install_menu_create_menu_item('node/3', 'Subscribe',      '', 'menu-footer-secondary', 0, 1);
+  install_menu_create_menu_item('node/2', 'Advertise',      '', 'menu-footer-secondary', 0, 2);
+  install_menu_create_menu_item('node/5', 'Jobs',           '', 'menu-footer-secondary', 0, 3);
+  install_menu_create_menu_item('node/6', 'Store',          '', 'menu-footer-secondary', 0, 4);
+  install_menu_create_menu_item('node/1', 'About Us',       '', 'menu-footer-secondary', 0, 5);
+  install_menu_create_menu_item('node/7', 'Site Map',       '', 'menu-footer-secondary', 0, 6);
+  install_menu_create_menu_item('node/8', 'Terms of Use',   '', 'menu-footer-secondary', 0, 7);
+  install_menu_create_menu_item('node/9', 'Privacy Policy', '', 'menu-footer-secondary', 0, 8);
+  install_menu_create_menu_item('node/1', 'About Us',       '', 'menu-footer-secondary', 0, 9);
+
+  install_menu_create_menu('Top Menu', 'top-menu'); 
+  install_menu_create_menu_item('node/1', 'About Us',  '', 'menu-top-menu', 0, 1);
+  install_menu_create_menu_item('node/2', 'Advertise', '', 'menu-top-menu', 0, 2);
+  install_menu_create_menu_item('node/3', 'Subscribe', '', 'menu-top-menu', 0, 3);
+  install_menu_create_menu_item('node/4', 'RSS',       '', 'menu-top-menu', 0, 4);
+  
+  $msg = st('Installed Menus');
+  _openpublish_log($msg);
+  $context['message'] = $msg;
+} 
 
 /**
  * Create custom blocks and set region and pages.
  * 
  * TODO: Rework this to use Context.
  */
-function _openpublish_setup_blocks() {  
+function _openpublish_setup_blocks(&$context) {  
   global $base_url; 
   cache_clear_all();
 
@@ -999,7 +601,9 @@ function _openpublish_setup_blocks() {
 
   install_set_block('block', $b1, 'openpublish_theme', 'footer',  - 2);
   install_set_block('block', $b2, 'openpublish_theme', 'header', -10);
-  install_set_block('block', $b3, 'openpublish_theme', 'right', -8);
+  install_set_block('block', $b3, 'openpublish_theme', 'right', -8, NULL, 'admin*
+topic-hub/*
+package/*');
   install_set_block('block', $b4, 'openpublish_theme', 'homepage_right', -10);
   install_set_block('block', $b5, 'openpublish_theme', 'homepage_right', -8);  
  
@@ -1018,52 +622,39 @@ function _openpublish_setup_blocks() {
   install_set_block('views', 'most_commented_blogs-block_1', 'openpublish_theme', 'right', -3);
   
   install_set_block('morelikethis', 'googlevideo', 'openpublish_theme', 'content', -10); 	  
-  install_set_block('popular_terms', '0', 'openpublish_theme', 'homepage_right', -9);
-  install_set_block('popular_terms', '1', 'openpublish_theme', 'homepage_right', -7);
+  install_set_block('openpublish_popular_terms', '0', 'openpublish_theme', 'homepage_right', -9);
+  install_set_block('openpublish_popular_terms', '1', 'openpublish_theme', 'homepage_right', -7);
   install_set_block('morelikethis', 'taxonomy', 'openpublish_theme', 'right', -10);
   install_set_block('morelikethis', 'flickr', 'openpublish_theme', 'right', -9);
 
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish_theme');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme'); 
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Most Used Terms', 'popular_terms', '0', 'openpublish_theme');
-  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", 'Featured Topic Hubs', 'popular_terms', '1', 'openpublish_theme');
-  
-  db_query("UPDATE {blocks} SET region = '%s', status = 1, weight = %d WHERE module = '%s' AND delta = '%s' AND theme = '%s'", $region, $weight, $module, $delta, $theme);
- 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
-blog/*
-resource/*
-event/*', 'morelikethis', 'googlevideo', 'openpublish_theme');  
- 
-  db_query("UPDATE {blocks} SET pages = '%s', weight = -20 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'admin*
-topic-hub/*
-package/*', 'block', '3', 'openpublish_theme');
- 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
-blog/*
-resource/*
-event/*', 'morelikethis', 'flickr', 'openpublish_theme');
- 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'article/*
-blog/*
-resource/*
-event/*', 'morelikethis', 'taxonomy ', 'openpublish_theme');
+  _openpublish_set_block_title('Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish_theme');
+  _openpublish_set_block_title('Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
+  _openpublish_set_block_title('Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme');
+  _openpublish_set_block_title('Most Used Terms', 'openpublish_popular_terms', '0', 'openpublish_theme');
+  _openpublish_set_block_title('Featured Topic Hubs', 'openpublish_popular_terms', '1', 'openpublish_theme');
 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles/*', 'views', 'most_commented_articles-block_1', 'openpublish_theme');
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'blogs', 'views', 'most_commented_blogs-block_1', 'openpublish_theme');
- 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'resources*
+  _openpublish_set_block_visibility('article/*
+blog/*
+resource/*
+event/*', 1, 'morelikethis', 'googlevideo', 'openpublish_theme');
+  _openpublish_set_block_visibility('article/*
+blog/*
+resource/*
+event/*', 1, 'morelikethis', 'flickr', 'openpublish_theme');
+  _openpublish_set_block_visibility('article/*
+blog/*
+resource/*
+event/*', 1, 'morelikethis', 'taxonomy ', 'openpublish_theme');
+  _openpublish_set_block_visibility('resources*
 events*
-blogs*', 'views', 'most_viewed_by_node_type-block', 'openpublish_theme');
+blogs*', 1, 'views', 'most_viewed_by_node_type-block', 'openpublish_theme');
+  _openpublish_set_block_visibility('admin
+admin/*', 1, 'openpublish_administration', '0', 'openpublish_theme');
+  _openpublish_set_block_visibility('articles/*', 1, 'views', 'most_commented_articles-block_1', 'openpublish_theme');
+  _openpublish_set_block_visibility('blogs', 1, 'views', 'most_commented_blogs-block_1', 'openpublish_theme');
+  _openpublish_set_block_visibility('articles*', 1, 'views', 'most_viewed_by_taxonomy-block', 'openpublish_theme');
+  _openpublish_set_block_visibility('multimedia', 1, 'views', 'most_viewed_multimedia-block', 'openpublish_theme');
  
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'articles*', 'views', 'most_viewed_by_taxonomy-block', 'openpublish_theme');
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'multimedia', 'views', 'most_viewed_multimedia-block', 'openpublish_theme'); 
-
- 
-  db_query("UPDATE {blocks} SET pages = '%s', visibility = 1 WHERE module = '%s' AND delta = '%s' AND theme = '%s'", 'admin
-admin/*', 'openpublish_administration', '0', 'openpublish_theme');
-  
   install_disable_block('user', '0', 'openpublish_theme');
   install_disable_block('user', '1', 'openpublish_theme');
   install_disable_block('system', '0', 'openpublish_theme');
@@ -1073,6 +664,24 @@ admin/*', 'openpublish_administration', '0', 'openpublish_theme');
   //install_add_block_role('openpublish_administration', '0', install_get_rid('editor'));
   //install_add_block_role('openpublish_administration', '0', install_get_rid('author'));
   //install_add_block_role('openpublish_administration', '0', install_get_rid('web editor'));  
+  
+  $msg = st('Configured Blocks');
+  _openpublish_log($msg);
+  $context['message'] = $msg;
+}
+
+/**
+ * Helper for setting a block's title only.
+ */
+function _openpublish_set_block_title($title, $module, $delta, $theme) {
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", $title, $module, $delta, $theme);
+}
+
+/**
+ * Helper for setting a block's visibility.
+ */
+function _openpublish_set_block_visibility($pages, $vis, $module, $delta, $theme) {
+    db_query("UPDATE {blocks} SET pages = '%s', visibility = %d WHERE module = '%s' AND delta = '%s' AND theme = '%s'", $pages, $vis, $module, $delta, $theme);
 }
 
 /**
@@ -1085,7 +694,7 @@ function _openpublish_cleanup($success, $results) {
 }
 
 /**
- * Set OpenPublish as the default
+ * Set OpenPublish as the default install profile
  */
 function system_form_install_select_profile_form_alter(&$form, $form_state) {
   foreach($form['profile'] as $key => $element) {
@@ -1093,6 +702,9 @@ function system_form_install_select_profile_form_alter(&$form, $form_state) {
   }
 }
 
+/**
+ * Consolidate logging.
+ */
 function _openpublish_log($msg) {
   error_log($msg);
   drupal_set_message($msg);
