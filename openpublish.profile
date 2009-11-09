@@ -3,14 +3,7 @@
  * @file openpublish.profile
  *
  * TODO:
- *  - Remove ping module
- *  - Remove PHP module and any content that requires it
- *  - Export the placeholder content to flat files or something. Slim this file down
- *  - Cleanup Permissions
- *  - Export imagecache presets as code
  *  - More general variable handling
- *  - Process Menus more generally
- *  - Remove PHP from block bodies
  *  - Integrate Content for better block handling
  */
 
@@ -33,17 +26,15 @@ function openpublish_profile_modules() {
     'block', 'filter', 'node', 'system', 'user',
 
     // Optional core modules.
-    'dblog','blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path', 'ping', 
-	  'profile', 'search', 'statistics', 'taxonomy', 'translation', 'upload', 'install_profile_api',
-	  'php'
+    'dblog', 'blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path',
+	  'profile', 'search', 'statistics', 'taxonomy', 'translation', 'upload', 
   );
-
 
   $contributed_modules = array(
     //misc stand-alone, required by others
-    'admin_menu', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
-    'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'paging',
-    'pathauto', 'tabs', 'login_destination', 
+    'admin', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
+    'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
+    'pathauto', 'tabs', 'login_destination', 'install_profile_api',
 
     //date
     'date_api', 'date', 'date_timezone',
@@ -71,10 +62,11 @@ function openpublish_profile_modules() {
 	
     //views
     'views', 'views_export', 'views_ui',
-	
+
+    // ctools, panels
+	  'ctools', 'views_content', 'page_manager', 'panels', 'panels_node', 
+  
     //topic hubs
-    'ctools', 
-    'views_content', 'page_manager', 'panels', 'panels_node', 
     'topichubs', 'topichubs_calais_geo', 'topichubs_contributors', 'topichubs_most_comments',
     'topichubs_most_recent', 'topichubs_most_viewed', 'topichubs_panels', 'topichubs_recent_comments',
     'topichubs_related_topics',
@@ -96,9 +88,9 @@ function openpublish_profile_modules() {
  *   task list.
  */
 function openpublish_profile_task_list() {
-  
   global $conf;
   $conf['site_name'] = 'OpenPublish';
+  $conf['site_footer'] = 'OpenPublish by '. l('Phase2 Technology', 'http://www.phase2technology.com', array('absolute' => TRUE));
   $conf['theme_settings'] = array(
     'default_logo' => 0,
     'logo_path' => 'sites/all/themes/openpublish_theme/images/openpublish-logo.png',
@@ -191,7 +183,8 @@ function _openpublish_base_settings() {
 
   // Theme related.  
   install_default_theme('openpublish_theme');
-  install_admin_theme('rootcandy');	
+  install_admin_theme('slate');	
+  variable_set('node_admin_theme', TRUE);    
   
   $theme_settings = variable_get('theme_settings', array());
   $theme_settings['toggle_node_info_page'] = FALSE;
@@ -378,6 +371,11 @@ function _openpublish_set_permissions(&$context){
  */
 function _openpublish_initialize_settings(&$context){
 
+  // Disable default Flag
+  $flag = flag_get_flag('bookmarks');
+  $flag->types = array();
+  $flag->save();
+  
   // Pathauto
   variable_set('pathauto_node_pattern', '[title-raw]');
   variable_set('pathauto_node_article_pattern', 'article/[title-raw]');
@@ -586,11 +584,11 @@ function _openpublish_install_menus(&$context) {
  * TODO: Rework this to use Context.
  */
 function _openpublish_setup_blocks(&$context) {  
-  global $base_url; 
+  global $theme_key, $base_url; 
   cache_clear_all();
 
   // Ensures that $theme_key gets set for new block creation
-  install_default_theme('openpublish_theme');
+  $theme_key = 'openpublish_theme';
 
   // install the demo ad blocks  
   $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images';
@@ -692,7 +690,10 @@ function _openpublish_set_block_visibility($pages, $vis, $module, $delta, $theme
  * Cleanup after the install
  */
 function _openpublish_cleanup($success, $results) {
-  drupal_flush_all_caches();    
+  // DO NOT call drupal_flush_all_caches(), it disables all themes
+  drupal_rebuild_theme_registry();
+  menu_rebuild();
+  node_types_rebuild();
   install_init_blocks();
   views_invalidate_cache();
 }
@@ -705,6 +706,7 @@ function system_form_install_select_profile_form_alter(&$form, $form_state) {
     $form['profile'][$key]['#value'] = 'openpublish';
   }
 }
+
 
 /**
  * Consolidate logging.
