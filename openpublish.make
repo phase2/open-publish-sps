@@ -19,6 +19,7 @@ projects[pathauto][install_path] = sites/all
 projects[tabs][install_path] = sites/all
 projects[panels][install_path] = sites/all
 projects[custompage][install_path] = sites/all
+projects[cmf][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
 projects[login_destination][install_path] = sites/all
@@ -54,7 +55,6 @@ projects[link][install_path] = sites/all
 
 ; Calais Collection
 projects[rdf][install_path] = sites/all
-
 projects[flickrapi][install_path] = sites/all
 projects[gmap][install_path] = sites/all
 projects[opencalais][install_path] = sites/all
