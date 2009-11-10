@@ -1,5 +1,5 @@
 <?php
-// This file was generated using admin/settings/openpublish/export-perms on Mon, 09 Nov 2009 16:48:22 -0500
+// This file was generated using admin/settings/openpublish/export-perms on Tue, 10 Nov 2009 10:19:42 -0500
 
 install_add_role('anonymous user');
 install_add_role('authenticated user');
@@ -113,6 +113,8 @@ $openpublish_perms = array(
   ),
   'administer advanced pane settings' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'administer blocks' => array(
     '0' => 'administrator',
@@ -182,6 +184,9 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'administer mollom' => array(
+    '0' => 'administrator',
+  ),
   'administer morelikethis' => array(
     '0' => 'administrator',
     '1' => 'editor',
@@ -194,12 +199,18 @@ $openpublish_perms = array(
   ),
   'administer pane access' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'administer pane visibility' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'administer panel-nodes' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'administer pathauto' => array(
     '0' => 'administrator',
@@ -251,13 +262,49 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'create article content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'create audio content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'create blog entries' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
     '3' => 'web editor',
   ),
+  'create event content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'create feed content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'create feeditem content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'create op_image content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'create package content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -271,8 +318,21 @@ $openpublish_perms = array(
   ),
   'create panel-nodes' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'create resource content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
   ),
   'create topichub content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'create twitter_item content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -283,7 +343,28 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'create video content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete any article content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any audio content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
   'delete any blog entry' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any event content' => array(
     '0' => 'administrator',
     '1' => 'editor',
     '2' => 'web editor',
@@ -293,7 +374,27 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'delete any feeditem content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any op_image content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any package content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
   'delete any page content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any resource content' => array(
     '0' => 'administrator',
     '1' => 'editor',
     '2' => 'web editor',
@@ -303,7 +404,35 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'delete any twitter_item content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete any video content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'delete own article content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own audio content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'delete own blog entries' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own event content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -315,13 +444,49 @@ $openpublish_perms = array(
     '2' => 'editor',
     '3' => 'web editor',
   ),
+  'delete own feeditem content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own op_image content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own package content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'delete own page content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
     '3' => 'web editor',
   ),
+  'delete own resource content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'delete own topichub content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own twitter_item content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'delete own video content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -335,7 +500,22 @@ $openpublish_perms = array(
   'display source code' => array(
     '0' => 'administrator',
   ),
+  'edit any article content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any audio content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
   'edit any blog entry' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any event content' => array(
     '0' => 'administrator',
     '1' => 'editor',
     '2' => 'web editor',
@@ -345,7 +525,27 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'edit any feeditem content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any op_image content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any package content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
   'edit any page content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any resource content' => array(
     '0' => 'administrator',
     '1' => 'editor',
     '2' => 'web editor',
@@ -355,13 +555,80 @@ $openpublish_perms = array(
     '1' => 'editor',
     '2' => 'web editor',
   ),
+  'edit any twitter_item content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit any video content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit canonical URL meta tag' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag ABSTRACT' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag COPYRIGHT' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag DESCRIPTION' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag KEYWORDS' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag REVISIT-AFTER' => array(
+    '0' => 'administrator',
+  ),
+  'edit meta tag ROBOTS' => array(
+    '0' => 'administrator',
+  ),
+  'edit own article content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own audio content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'edit own blog entries' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
     '3' => 'web editor',
   ),
+  'edit own event content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
   'edit own feed content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own feeditem content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own op_image content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own package content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -375,8 +642,28 @@ $openpublish_perms = array(
   ),
   'edit own panel-nodes' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'edit own resource content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
   ),
   'edit own topichub content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own twitter_item content' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
+  ),
+  'edit own video content' => array(
     '0' => 'administrator',
     '1' => 'author',
     '2' => 'editor',
@@ -388,8 +675,15 @@ $openpublish_perms = array(
   'export RDF data' => array(
     '0' => 'administrator',
   ),
+  'filter and manage site content' => array(
+    '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
   'flush imagecache' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'import RDF data' => array(
     '0' => 'administrator',
@@ -458,10 +752,6 @@ $openpublish_perms = array(
     '2' => 'editor',
     '3' => 'web editor',
   ),
-  'use PHP for block visibility' => array(
-    '0' => 'administrator',
-    '1' => 'web editor',
-  ),
   'use advanced search' => array(
     '0' => 'administrator',
     '1' => 'author',
@@ -470,39 +760,25 @@ $openpublish_perms = array(
   ),
   'use panels caching features' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
+  ),
+  'use panels dashboard' => array(
+    '0' => 'editor',
+    '1' => 'web editor',
   ),
   'use views exporter' => array(
     '0' => 'administrator',
   ),
   'view all panes' => array(
     '0' => 'administrator',
-  ),
-  'view imagecache featured_image' => array(
-    '0' => 'administrator',
-    '1' => 'author',
-    '2' => 'editor',
-    '3' => 'web editor',
-  ),
-  'view imagecache package_featured' => array(
-    '0' => 'administrator',
-    '1' => 'author',
-    '2' => 'editor',
-    '3' => 'web editor',
-  ),
-  'view imagecache spotlight_homepage' => array(
-    '0' => 'administrator',
-    '1' => 'author',
-    '2' => 'editor',
-    '3' => 'web editor',
-  ),
-  'view imagecache thumbnail' => array(
-    '0' => 'administrator',
-    '1' => 'author',
-    '2' => 'editor',
-    '3' => 'web editor',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'view pane admin links' => array(
     '0' => 'administrator',
+    '1' => 'editor',
+    '2' => 'web editor',
   ),
   'view post access counter' => array(
     '0' => 'administrator',
@@ -523,5 +799,11 @@ $openpublish_perms = array(
     '3' => 'author',
     '4' => 'editor',
     '5' => 'web editor',
+  ),
+  'view user content list' => array(
+    '0' => 'administrator',
+    '1' => 'author',
+    '2' => 'editor',
+    '3' => 'web editor',
   ),
 );

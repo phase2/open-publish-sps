@@ -43,7 +43,7 @@ function openpublish_profile_modules() {
     'imageapi', 'imageapi_gd', 'imagecache', 'imagecache_ui',
   
     //cck
-    'content', 'content_copy', 'content_permissions', 'emfield', 'emaudio', 'emimage', 
+    'content', 'content_copy', 'emfield', 'emaudio', 'emimage', 
     'emvideo', 'fieldgroup', 'filefield', 'imagefield', 'link', 'number',
     'optionwidgets', 'text', 'nodereference', 'userreference',
 	
