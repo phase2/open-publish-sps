@@ -403,12 +403,16 @@ user/login');
   variable_set('ld_destination', 0);
   variable_set('ld_url_destination', '
 global $user;
-foreach($user->roles as $id => $role) {
-  if ($role == "administrator" || $role == "author" || $role == "editor" || $role == "web editor") {
-    return "admin/settings/openpublish/content";
-  }
+if ($user->uid == 1 || in_array("administrator", $user->roles)) {
+  return "admin";
 }
-return "user"');
+else if (in_array("editor", $user->roles) || in_array("web editor", $user->roles))  {
+  return "admin/content/node/filter";
+}
+else if (in_array("author", $user->roles)) {
+  return "node/add";
+}
+return "user";');
   
   // Calais
   $calais_all = calais_api_get_all_entities();
