@@ -34,7 +34,7 @@ function openpublish_profile_modules() {
     //misc stand-alone, required by others
     'admin', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
     'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
-    'pathauto', 'tabs', 'login_destination', 'install_profile_api',
+    'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api',
 
     //date
     'date_api', 'date', 'date_timezone',
