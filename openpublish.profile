@@ -199,6 +199,11 @@ function _openpublish_base_settings() {
   variable_set('statistics_count_content_views', 1);
   variable_set('filter_default_format', '2');
   
+  // Set the default timezone name from the offset
+  $offset = variable_get('date_default_timezone', '');
+  $tzname = timezone_name_from_abbr("", $offset, 0);
+  variable_set('date_default_timezone_name', $tzname);
+  
   _openpublish_log(st('Configured basic settings'));
 }
 
