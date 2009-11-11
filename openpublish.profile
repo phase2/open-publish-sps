@@ -36,6 +36,9 @@ function openpublish_profile_modules() {
     'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api',
 
+    //context
+    'context','context_ui',
+
     //date
     'date_api', 'date', 'date_timezone',
   
