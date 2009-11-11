@@ -79,9 +79,6 @@ projects[openpublish_core][type] = module
 projects[openpublish_core][download][type] = git
 projects[openpublish_core][download][url] = git@github.com:phase2/openpublish_core.git
 
-; Themes
-projects[rootcandy][install_path] = sites/all
-
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
 projects[openpublish_theme][type] = theme
@@ -94,7 +91,7 @@ libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/projec
 libraries[fckeditorlib][destination] = modules/fckeditor
 libraries[fckeditorlib][directory_name] = fckeditor
 libraries[fckeditorlib][install_path] = sites/all
-libraries[fckeditorlib][copy_file][] = *
+libraries[fckeditorlib][copy][] = *
 
 ; SimplePie RSS parser
 libraries[simplepie][download][type] = get
@@ -102,7 +99,7 @@ libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1
 libraries[simplepie][destination] = modules/feedapi
 libraries[simplepie][directory_name] = parser_simplepie
 libraries[simplepie][install_path] = sites/all
-libraries[simplepie][copy_file][] = simplepie.inc
+libraries[simplepie][copy][] = simplepie.inc
 
 ; ARC2 Library required by RDF 
 libraries[arc][download][type] = get
