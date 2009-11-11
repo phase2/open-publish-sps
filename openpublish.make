@@ -85,6 +85,12 @@ projects[openpublish_theme][type] = theme
 projects[openpublish_theme][download][type] = git
 projects[openpublish_theme][download][url] = git@github.com:phase2/openpublish_theme.git
 
+; Distro module
+projects[distro][type] = module
+projects[distro][download][type] = cvs
+projects[distro][download][module] = contributions/profiles/distro/
+
+
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
 libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
