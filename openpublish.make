@@ -94,16 +94,14 @@ projects[distro][download][module] = contributions/profiles/distro/
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
 libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
-libraries[fckeditorlib][destination] = modules/fckeditor
-libraries[fckeditorlib][directory_name] = fckeditor
+libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
 libraries[fckeditorlib][install_path] = sites/all
 libraries[fckeditorlib][copy][] = *
 
 ; SimplePie RSS parser
 libraries[simplepie][download][type] = get
 libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
-libraries[simplepie][destination] = modules/feedapi
-libraries[simplepie][directory_name] = parser_simplepie
+libraries[simplepie][destination] = modules/feedapi/parser_simplepie
 libraries[simplepie][install_path] = sites/all
 libraries[simplepie][copy][] = simplepie.inc
 
