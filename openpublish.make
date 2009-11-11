@@ -76,7 +76,7 @@ projects[quantcast][install_path] = sites/all
 projects[openpublish_core][install_path] = sites/all
 projects[openpublish_core][type] = module
 projects[openpublish_core][download][type] = git
-projects[openpublish_core][download][url] = git://github.com/phase2/openpublish_core.git
+projects[openpublish_core][download][url] = git@github.com:phase2/openpublish_core.git
 
 ; Themes
 projects[rootcandy][install_path] = sites/all
@@ -85,7 +85,7 @@ projects[rootcandy][install_path] = sites/all
 projects[openpublish_theme][install_path] = sites/all
 projects[openpublish_theme][type] = theme
 projects[openpublish_theme][download][type] = git
-projects[openpublish_theme][download][url] = git://github.com/phase2/openpublish_theme.git
+projects[openpublish_theme][download][url] = git@github.com:phase2/openpublish_theme.git
 
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
