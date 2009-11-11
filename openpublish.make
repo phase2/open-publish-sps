@@ -86,6 +86,7 @@ projects[openpublish_theme][download][type] = git
 projects[openpublish_theme][download][url] = git@github.com:phase2/openpublish_theme.git
 
 ; Distro module
+projects[distro][install_path] = sites/all
 projects[distro][type] = module
 projects[distro][download][type] = cvs
 projects[distro][download][module] = contributions/profiles/distro/
