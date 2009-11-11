@@ -234,80 +234,6 @@ function _openpublish_import_cck($file, &$context) {
 }  
 
 /**
- * Create some content of type "page" as placeholders for content
- * and so menu items can be created
- */
-function _openpublish_placeholder_content(&$context) {
-  global $base_url;  
-
-  $user = user_load(array('uid' => 1));
- 
-  $page = array (
-    'type' => 'page',
-    'language' => 'en',
-    'uid' => 1,
-    'status' => 1,
-    'comment' => 0,
-    'promote' => 0,
-    'moderate' => 0,
-    'sticky' => 0,
-    'tnid' => 0,
-    'translate' => 0,    
-    'revision_uid' => 1,
-    'title' => st('Default'),
-    'body' => 'Placeholder',    
-    'format' => 2,
-    'name' => $user->name,
-  );
-  
-  $about_us = (object) $page;
-  $about_us->title = st('About Us');
-  node_save($about_us);	
-  
-  $adverstise = (object) $page;
-  $adverstise->title = st('Advertise');
-  node_save($adverstise);	
-  
-  $subscribe = (object) $page;
-  $subscribe->title = st('Subscribe');
-  node_save($subscribe);	
-  
-  $rss = (object) $page;
-  $rss->title = st('RSS Feeds List');
-  $rss->body = '<p><strong>Articles</strong><ul><li><a href="'. $base_url . '/rss/articles/all">All Categories</a></li><li><a href="'. $base_url . '/rss/articles/Business">Business</a></li><li><a href="'. $base_url . '/rss/articles/Health">Health</a></li><li><a href="'. $base_url . '/rss/articles/Politics">Politics</a></li><li><a href="'. $base_url . '/rss/articles/Technology">Technology</a></li><li><a href="'. $base_url . '/rss/blogs">Blogs</a></li><li><a href="/rss/events">Events</a></li><li><a href="'. $base_url . '/rss/resources">Resources</a></li><li><a href="'. $base_url . '/rss/multimedia">Multimedia</a></li></p>';
-  node_save($rss);
-  
-  $jobs = (object) $page;
-  $jobs->title = st('Jobs');
-  node_save($jobs);
-  
-  $store = (object) $page;
-  $store->title = st('Store');
-  node_save($store);
-  
-  $sitemap = (object) $page;
-  $sitemap->title = st('Site Map');
-  node_save($sitemap);
-  
-  $termsofuse = (object) $page;
-  $termsofuse->title = st('Terms of Use');
-  node_save($termsofuse);
-  
-  $privacypolicy = (object) $page;
-  $privacypolicy->title = st('Privacy Policy');
-  node_save($privacypolicy); 
-  
-  $start = (object) $page;
-  $start->title = st('Getting Started');
-  $start->body = '<h1>Welcome to your new OpenPublish Site.</h1>Initially your site does not have any content, and that is where the fun begins. Use the thin black administration menu across the top of the page to accomplish many of the tasks needed to get your site up and running in no time.<br/><br/><h3>To create content</h3>Select <em>Content Management</em> -> <em>Create Content</em> from the administration menu (remember that little black bar at the top of the page?) to get started.  You can create a variety of content, but to start out you may want to create a few simple <a href="'. $base_url . '/node/add/article">Articles</a> or import items from an <a href="'. $base_url . '/node/add/feed">RSS Feed</a><h3>To change configuration options</h3>Select <em>Site Configuration</em> from the administration menu to change various configuration options and settings on your site.<h3>To add other users</h3>Select <em>User Management</em> -> <em>Users</em> from the administration menu to add new users or change user roles and permissions.<h3>Need more help?</h3>Select <em>Help</em> from the administration menu to learn more about what you can do with your site.<br/><br/>Don\'t forget to look for more resources and documentation at the <a href="http://www.openpublishapp.com">OpenPublish</a> website.<br/><br/>ENJOY!!!!';  
-  node_save($start);
-
-  menu_rebuild();
-  
-  $context['message'] = st('Installed Content');
-}
-
-/**
  * Configure user/role/permission data
  */
 function _openpublish_set_permissions(&$context){
@@ -394,6 +320,30 @@ function _openpublish_initialize_settings(&$context){
   variable_set('pathauto_blog_pattern', 'blogs/[user-raw]');
   variable_set('pathauto_node_feeditem_pattern', 'feed-item/[title-raw]');
   variable_set('pathauto_node_twitter_item_pattern', 'twitter-item/[title-raw]');
+ 
+  // Setup some reasonable FCKEditor defaults
+  $fckprofiles = fckeditor_profile_load();
+
+  // Configure global visibilities
+  $globalkey = 'FCKeditor Global Profile';
+  $fckglobal = $fckprofiles[$globalkey];
+  $fckglobal->settings['old_name'] = $globalkey;
+  $fckglobal->settings['name'] = $globalkey;
+  $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/build/block/*\n";
+  fckeditor_global_profile_save($fckglobal->settings);
+
+  // Add role permissions to the built in profiles
+  foreach (array('Default', 'Advanced') as $name) {
+    $fck = $fckprofiles[$name];
+    $fck->settings['old_name'] = $name;
+    $fck->settings['name'] = $name;
+    $fck->settings['rids'] = array();
+    foreach (array('administrator', 'editor', 'web editor', 'author') as $role) {
+      $rid = install_get_rid($role);
+      $fck->settings['rids'][$rid] = $rid;
+    }
+    fckeditor_profile_save($fck->settings);
+  }
  
   // Login Destination
   variable_set('ld_condition_type', 'pages');
@@ -520,6 +470,80 @@ return "user";');
   $msg = st('Setup general configuration');
   _openpublish_log($msg);
   $context['message'] = $msg;
+}
+
+/**
+ * Create some content of type "page" as placeholders for content
+ * and so menu items can be created
+ */
+function _openpublish_placeholder_content(&$context) {
+  global $base_url;  
+
+  $user = user_load(array('uid' => 1));
+ 
+  $page = array (
+    'type' => 'page',
+    'language' => 'en',
+    'uid' => 1,
+    'status' => 1,
+    'comment' => 0,
+    'promote' => 0,
+    'moderate' => 0,
+    'sticky' => 0,
+    'tnid' => 0,
+    'translate' => 0,    
+    'revision_uid' => 1,
+    'title' => st('Default'),
+    'body' => 'Placeholder',    
+    'format' => 2,
+    'name' => $user->name,
+  );
+  
+  $about_us = (object) $page;
+  $about_us->title = st('About Us');
+  node_save($about_us);	
+  
+  $adverstise = (object) $page;
+  $adverstise->title = st('Advertise');
+  node_save($adverstise);	
+  
+  $subscribe = (object) $page;
+  $subscribe->title = st('Subscribe');
+  node_save($subscribe);	
+  
+  $rss = (object) $page;
+  $rss->title = st('RSS Feeds List');
+  $rss->body = '<p><strong>Articles</strong><ul><li><a href="'. $base_url . '/rss/articles/all">All Categories</a></li><li><a href="'. $base_url . '/rss/articles/Business">Business</a></li><li><a href="'. $base_url . '/rss/articles/Health">Health</a></li><li><a href="'. $base_url . '/rss/articles/Politics">Politics</a></li><li><a href="'. $base_url . '/rss/articles/Technology">Technology</a></li><li><a href="'. $base_url . '/rss/blogs">Blogs</a></li><li><a href="/rss/events">Events</a></li><li><a href="'. $base_url . '/rss/resources">Resources</a></li><li><a href="'. $base_url . '/rss/multimedia">Multimedia</a></li></p>';
+  node_save($rss);
+  
+  $jobs = (object) $page;
+  $jobs->title = st('Jobs');
+  node_save($jobs);
+  
+  $store = (object) $page;
+  $store->title = st('Store');
+  node_save($store);
+  
+  $sitemap = (object) $page;
+  $sitemap->title = st('Site Map');
+  node_save($sitemap);
+  
+  $termsofuse = (object) $page;
+  $termsofuse->title = st('Terms of Use');
+  node_save($termsofuse);
+  
+  $privacypolicy = (object) $page;
+  $privacypolicy->title = st('Privacy Policy');
+  node_save($privacypolicy); 
+  
+  $start = (object) $page;
+  $start->title = st('Getting Started');
+  $start->body = '<h1>Welcome to your new OpenPublish Site.</h1>Initially your site does not have any content, and that is where the fun begins. Use the thin black administration menu across the top of the page to accomplish many of the tasks needed to get your site up and running in no time.<br/><br/><h3>To create content</h3>Select <em>Content Management</em> -> <em>Create Content</em> from the administration menu (remember that little black bar at the top of the page?) to get started.  You can create a variety of content, but to start out you may want to create a few simple <a href="'. $base_url . '/node/add/article">Articles</a> or import items from an <a href="'. $base_url . '/node/add/feed">RSS Feed</a><h3>To change configuration options</h3>Select <em>Site Configuration</em> from the administration menu to change various configuration options and settings on your site.<h3>To add other users</h3>Select <em>User Management</em> -> <em>Users</em> from the administration menu to add new users or change user roles and permissions.<h3>Need more help?</h3>Select <em>Help</em> from the administration menu to learn more about what you can do with your site.<br/><br/>Don\'t forget to look for more resources and documentation at the <a href="http://www.openpublishapp.com">OpenPublish</a> website.<br/><br/>ENJOY!!!!';  
+  node_save($start);
+
+  menu_rebuild();
+  
+  $context['message'] = st('Installed Content');
 }
 
 /**
