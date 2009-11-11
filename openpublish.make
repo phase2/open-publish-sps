@@ -89,8 +89,8 @@ projects[openpublish_theme][download][url] = git@github.com:phase2/openpublish_t
 projects[distro][install_path] = sites/all
 projects[distro][type] = module
 projects[distro][download][type] = cvs
-projects[distro][download][module] = contributions/profiles/distro/
-
+projects[distro][download][module] = contributions/modules/distro/
+projects[distro][download][revision] = DRUPAL-6--1
 
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
