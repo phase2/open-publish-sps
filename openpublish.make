@@ -64,6 +64,7 @@ projects[topichubs][install_path] = sites/all
 ; Feed API
 projects[feedapi][install_path] = sites/all
 projects[feedapi_mapper][install_path] = sites/all
+projects[feedapi_mapper][version] = 1.3
 
 ; Views
 projects[views][install_path] = sites/all
