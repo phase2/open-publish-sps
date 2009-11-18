@@ -63,8 +63,13 @@ projects[topichubs][install_path] = sites/all
 
 ; Feed API
 projects[feedapi][install_path] = sites/all
+
+projects[feedapi_mapper][type] = module
 projects[feedapi_mapper][install_path] = sites/all
-projects[feedapi_mapper][version] = 1.3
+projects[feedapi_mapper][download][type] = get
+projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/feedapi_mapper-6.x-1.3.tar.gz
+;projects[feedapi_mapper][install_path] = sites/all
+;projects[feedapi_mapper][version] = 1.3
 
 ; Views
 projects[views][install_path] = sites/all
