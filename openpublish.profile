@@ -73,6 +73,9 @@ function openpublish_profile_modules() {
     'topichubs', 'topichubs_calais_geo', 'topichubs_contributors', 'topichubs_most_comments',
     'topichubs_most_recent', 'topichubs_most_viewed', 'topichubs_panels', 'topichubs_recent_comments',
     'topichubs_related_topics',
+    
+    // distribution management
+    'distro_client',
 	
     // Custom modules developed for OpenPublish
     'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
@@ -93,7 +96,7 @@ function openpublish_profile_modules() {
 function openpublish_profile_task_list() {
   global $conf;
   $conf['site_name'] = 'OpenPublish';
-  $conf['site_footer'] = 'OpenPublish by '. l('Phase2 Technology', 'http://www.phase2technology.com', array('absolute' => TRUE));
+  $conf['site_footer'] = 'OpenPublish by <a href="http://phase2technology.com">Phase2 Technology</a>';
   $conf['theme_settings'] = array(
     'default_logo' => 0,
     'logo_path' => 'sites/all/themes/openpublish_theme/images/openpublish-logo.png',
@@ -160,6 +163,9 @@ function _openpublish_configure_finished($success, $results) {
  */
 function _openpublish_base_settings() {  
   global $base_url;  
+  
+  // Set distro tracker server URL for this distribution
+  distro_set_tracker_server('http://tracker.openpublishapp.com/distro/components');
   
   $types = array(
     array(
