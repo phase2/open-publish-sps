@@ -643,6 +643,8 @@ function _openpublish_setup_blocks(&$context) {
   // Get these new boxes in blocks table
   install_init_blocks();
 
+/** Moving to Context instead, pending thorough testing
+
   install_set_block('block', $b1, 'openpublish_theme', 'footer',  - 2);
   install_set_block('block', $b2, 'openpublish_theme', 'header', -10);
   install_set_block('block', $b3, 'openpublish_theme', 'right', -8, NULL, 'admin*
@@ -670,13 +672,15 @@ package/*');
   install_set_block('openpublish_popular_terms', '1', 'openpublish_theme', 'homepage_right', -7);
   install_set_block('morelikethis', 'taxonomy', 'openpublish_theme', 'right', -10);
   install_set_block('morelikethis', 'flickr', 'openpublish_theme', 'right', -9);
-
+*/
   _openpublish_set_block_title('Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish_theme');
   _openpublish_set_block_title('Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
   _openpublish_set_block_title('Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme');
   _openpublish_set_block_title('Most Used Terms', 'openpublish_popular_terms', '0', 'openpublish_theme');
   _openpublish_set_block_title('Featured Topic Hubs', 'openpublish_popular_terms', '1', 'openpublish_theme');
 
+
+/** Moving to Context instead, pending thorough testing
   _openpublish_set_block_visibility('article/*
 blog/*
 resource/*
@@ -698,6 +702,7 @@ admin/*', 1, 'openpublish_administration', '0', 'openpublish_theme');
   _openpublish_set_block_visibility('blogs', 1, 'views', 'most_commented_blogs-block_1', 'openpublish_theme');
   _openpublish_set_block_visibility('articles*', 1, 'views', 'most_viewed_by_taxonomy-block', 'openpublish_theme');
   _openpublish_set_block_visibility('multimedia', 1, 'views', 'most_viewed_multimedia-block', 'openpublish_theme');
+**/
  
   install_disable_block('user', '0', 'openpublish_theme');
   install_disable_block('user', '1', 'openpublish_theme');
