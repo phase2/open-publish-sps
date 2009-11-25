@@ -37,7 +37,7 @@ function openpublish_profile_modules() {
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api',
 
     //context
-    'context','context_ui',
+    'context','context_ui','context_contrib',
 
     //date
     'date_api', 'date', 'date_timezone',

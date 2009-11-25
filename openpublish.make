@@ -11,6 +11,7 @@ projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 projects[context][install_path] = sites/all
 
+
 ; Misc stand-alone
 projects[swftools][install_path] = sites/all
 projects[flag][install_path] = sites/all
