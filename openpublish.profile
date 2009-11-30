@@ -622,8 +622,6 @@ function _openpublish_install_menus(&$context) {
 
 /**
  * Create custom blocks and set region and pages.
- * 
- * TODO: Rework this to use Context.
  */
 function _openpublish_setup_blocks(&$context) {  
   global $theme_key, $base_url; 
@@ -634,7 +632,7 @@ function _openpublish_setup_blocks(&$context) {
 
   // install the demo ad blocks  
   $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images';
-  $b1 = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
+  $b1 = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Powered by Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
   $b2 = install_create_custom_block('<img src="' . $ad_base . '/placeholder_ad_banner.gif"/><div class="clear"></div>', 'Top Banner Ad', 2);
   $b3 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Right Block Square Ad', 2);
   $b4 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Homepage Ad Block 1', 2);
@@ -643,76 +641,13 @@ function _openpublish_setup_blocks(&$context) {
   // Get these new boxes in blocks table
   install_init_blocks();
 
-/** Moving to Context instead, pending thorough testing
-
-  install_set_block('block', $b1, 'openpublish_theme', 'footer',  - 2);
-  install_set_block('block', $b2, 'openpublish_theme', 'header', -10);
-  install_set_block('block', $b3, 'openpublish_theme', 'right', -8, NULL, 'admin*
-topic-hub/*
-package/*');
-  install_set_block('block', $b4, 'openpublish_theme', 'homepage_right', -10);
-  install_set_block('block', $b5, 'openpublish_theme', 'homepage_right', -8);  
- 
-  install_set_block('views', 'blogs-block_2', 'openpublish_theme', 'homepage_center', -10);
-  install_set_block('views', 'multimedia-block_1', 'openpublish_theme', 'homepage_center', -9);
-  install_set_block('views', 'resources-block_1', 'openpublish_theme', 'homepage_center', -8);
-  install_set_block('views', 'twitter_items-block_1', 'openpublish_theme', 'homepage_center', -7);
-  install_set_block('views', 'events-block_1', 'openpublish_theme', 'homepage_center', -6);
-  install_set_block('views', 'articles-block_2', 'openpublish_theme', 'homepage_left', -10);
-  install_set_block('views', 'articles-block_1', 'openpublish_theme', 'homepage_left', -9);
-  install_set_block('views', 'feed_items-block_1', 'openpublish_theme', 'homepage_left', -8);
-  install_set_block('views', 'most_viewed_by_taxonomy-block', 'openpublish_theme', 'right', -7);
-  install_set_block('views', 'most_viewed_by_node_type-block', 'openpublish_theme', 'right', -6);
-  install_set_block('views', 'most_viewed_multimedia-block', 'openpublish_theme', 'right', -5);
-  install_set_block('views', 'most_commented_articles-block_1', 'openpublish_theme', 'right', -4);
-  install_set_block('views', 'most_commented_blogs-block_1', 'openpublish_theme', 'right', -3);
-  
-  install_set_block('morelikethis', 'googlevideo', 'openpublish_theme', 'content', -10); 	  
-  install_set_block('openpublish_popular_terms', '0', 'openpublish_theme', 'homepage_right', -9);
-  install_set_block('openpublish_popular_terms', '1', 'openpublish_theme', 'homepage_right', -7);
-  install_set_block('morelikethis', 'taxonomy', 'openpublish_theme', 'right', -10);
-  install_set_block('morelikethis', 'flickr', 'openpublish_theme', 'right', -9);
-*/
-  _openpublish_set_block_title('Google Videos Like This', 'morelikethis', 'taxonomy', 'openpublish_theme');
+  _openpublish_set_block_title('Google Videos Like This', 'morelikethis', 'googlevideo', 'openpublish_theme');
   _openpublish_set_block_title('Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
   _openpublish_set_block_title('Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme');
-  _openpublish_set_block_title('Most Used Terms', 'openpublish_popular_terms', '0', 'openpublish_theme');
-  _openpublish_set_block_title('Featured Topic Hubs', 'openpublish_popular_terms', '1', 'openpublish_theme');
 
-
-/** Moving to Context instead, pending thorough testing
-  _openpublish_set_block_visibility('article/*
-blog/*
-resource/*
-event/*', 1, 'morelikethis', 'googlevideo', 'openpublish_theme');
-  _openpublish_set_block_visibility('article/*
-blog/*
-resource/*
-event/*', 1, 'morelikethis', 'flickr', 'openpublish_theme');
-  _openpublish_set_block_visibility('article/*
-blog/*
-resource/*
-event/*', 1, 'morelikethis', 'taxonomy ', 'openpublish_theme');
-  _openpublish_set_block_visibility('resources*
-events*
-blogs*', 1, 'views', 'most_viewed_by_node_type-block', 'openpublish_theme');
-  _openpublish_set_block_visibility('admin
-admin/*', 1, 'openpublish_administration', '0', 'openpublish_theme');
-  _openpublish_set_block_visibility('articles/*', 1, 'views', 'most_commented_articles-block_1', 'openpublish_theme');
-  _openpublish_set_block_visibility('blogs', 1, 'views', 'most_commented_blogs-block_1', 'openpublish_theme');
-  _openpublish_set_block_visibility('articles*', 1, 'views', 'most_viewed_by_taxonomy-block', 'openpublish_theme');
-  _openpublish_set_block_visibility('multimedia', 1, 'views', 'most_viewed_multimedia-block', 'openpublish_theme');
-**/
- 
   install_disable_block('user', '0', 'openpublish_theme');
   install_disable_block('user', '1', 'openpublish_theme');
   install_disable_block('system', '0', 'openpublish_theme');
-  
-  //install_set_block('openpublish_administration', '0', 'openpublish', 'left', 0);
-  //install_add_block_role('openpublish_administration', '0', install_get_rid('administrator'));
-  //install_add_block_role('openpublish_administration', '0', install_get_rid('editor'));
-  //install_add_block_role('openpublish_administration', '0', install_get_rid('author'));
-  //install_add_block_role('openpublish_administration', '0', install_get_rid('web editor'));  
   
   $msg = st('Configured Blocks');
   _openpublish_log($msg);
@@ -724,13 +659,6 @@ admin/*', 1, 'openpublish_administration', '0', 'openpublish_theme');
  */
 function _openpublish_set_block_title($title, $module, $delta, $theme) {
   db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", $title, $module, $delta, $theme);
-}
-
-/**
- * Helper for setting a block's visibility.
- */
-function _openpublish_set_block_visibility($pages, $vis, $module, $delta, $theme) {
-    db_query("UPDATE {blocks} SET pages = '%s', visibility = %d WHERE module = '%s' AND delta = '%s' AND theme = '%s'", $pages, $vis, $module, $delta, $theme);
 }
 
 /**
