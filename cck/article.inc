@@ -16,13 +16,14 @@ $content['type']  = array (
   ),
   'language_content_type' => '0',
   'upload' => '1',
-  'nodewords' => 1,
   'old_type' => 'article',
   'orig_type' => '',
   'module' => 'node',
   'custom' => '1',
   'modified' => '1',
   'locked' => '0',
+  'nodewords_edit_metatags' => true,
+  'nodewords_basic_use_teaser' => false,
   'rdf_schema_class' => '',
   'comment' => '2',
   'comment_default_mode' => '4',
@@ -33,39 +34,41 @@ $content['type']  = array (
   'comment_subject_field' => '1',
   'comment_preview' => '0',
   'comment_form_location' => '0',
-  'xmlsitemap_node_type_priority' => '0.5',
-  'xmlsitemap_old_priority' => '0.5',
   'feedapi' => 
   array (
-    'enabled' => 0,
+    'enabled' => false,
+    'upload_method' => 'url',
     'refresh_on_create' => 0,
     'update_existing' => 1,
-    'skip' => 0,
-    'items_delete' => '0',
+    'refresh_time' => 1800,
+    'items_delete' => 0,
     'parsers' => 
     array (
       'parser_simplepie' => 
       array (
-        'enabled' => 0,
-        'weight' => '0',
+        'enabled' => false,
+        'weight' => 0,
+        'cache_lifetime' => '3600',
       ),
     ),
     'processors' => 
     array (
       'feedapi_node' => 
       array (
-        'enabled' => 0,
-        'weight' => '0',
-        'content_type' => 'blog',
+        'enabled' => false,
+        'weight' => 0,
+        'content_type' => '',
+        'input_format' => 0,
         'node_date' => 'feed',
-        'promote' => '3',
-        'x_dedupe' => '0',
+        'x_dedupe' => 0,
       ),
       'feedapi_inherit' => 
       array (
-        'enabled' => 0,
-        'weight' => '0',
-        'inherit_taxonomy' => 1,
+        'enabled' => false,
+        'weight' => 0,
+        'inherit_language' => true,
+        'inherit_taxonomy' => true,
+        'inherit_author' => true,
       ),
     ),
   ),
@@ -455,10 +458,10 @@ Show Author Info?',
     'min_resolution' => 0,
     'custom_alt' => 0,
     'alt' => '',
-    'custom_title' => 0,
+    'custom_title' => 1,
     'title_type' => 'textfield',
     'title' => '',
-    'use_default_image' => '',
+    'use_default_image' => 0,
     'default_image_upload' => '',
     'default_image' => NULL,
     'description' => 'Appears at the top of detail pages and as a thumbnail on list pages.',
@@ -534,11 +537,109 @@ Show Author Info?',
       ),
     ),
   ),
+  5 => 
+  array (
+    'label' => 'Main Image Credit',
+    'field_name' => 'field_main_image_credit',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '3',
+    'rows' => 5,
+    'size' => '60',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_main_image_credit][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_main_image_credit' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_main_image_credit][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'rdf_property' => '',
+    'display_settings' => 
+    array (
+      'weight' => '3',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'above',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
 );
 $content['extra']  = array (
   'title' => '-5',
   'body_field' => '0',
-  'menu' => '3',
+  'revision_information' => '7',
+  'comment_settings' => '9',
+  'menu' => '4',
   'taxonomy' => '-2',
-  'attachments' => '4',
+  'path' => '8',
+  'attachments' => '5',
+  'nodewords' => '6',
 );
+
