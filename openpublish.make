@@ -83,9 +83,9 @@ projects[quantcast][install_path] = sites/all
 ; OpenPublish custom modules
 projects[openpublish_core][install_path] = sites/all
 projects[openpublish_core][type] = module
-projects[openpublish_core][download][type] = cvs
-projects[openpublish_core][download][module] = contributions/modules/openpublish_core
-projects[openpublish_core][download][revision] = DRUPAL-6--1
+;projects[openpublish_core][download][type] = cvs
+;projects[openpublish_core][download][module] = contributions/modules/openpublish_core
+;projects[openpublish_core][download][revision] = DRUPAL-6--1
 
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
