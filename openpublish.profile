@@ -163,7 +163,11 @@ function _openpublish_configure_finished($success, $results) {
  */
 function _openpublish_base_settings() {  
   global $base_url;  
-  
+
+  // create pictures dir
+  $pictures_path = file_create_path('pictures');
+  file_check_directory($pictures_path,TRUE);
+
   // Set distro tracker server URL for this distribution
   distro_set_tracker_server('http://tracker.openpublishapp.com/distro/components');
   
