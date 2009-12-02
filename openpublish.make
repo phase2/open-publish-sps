@@ -89,7 +89,7 @@ projects[openpublish_core][download][revision] = DRUPAL-6--1
 
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
-projects[openpublish_theme][type] = module
+projects[openpublish_theme][type] = theme
 projects[openpublish_theme][download][type] = cvs
 projects[openpublish_theme][download][module] = contributions/themes/openpublish_theme
 projects[openpublish_theme][download][revision] = DRUPAL-6--1
