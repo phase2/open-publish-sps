@@ -83,14 +83,16 @@ projects[quantcast][install_path] = sites/all
 ; OpenPublish custom modules
 projects[openpublish_core][install_path] = sites/all
 projects[openpublish_core][type] = module
-projects[openpublish_core][download][type] = git
-projects[openpublish_core][download][url] = git@github.com:phase2/openpublish_core.git
+projects[openpublish_core][download][type] = cvs
+projects[openpublish_core][download][module] = contributions/modules/openpublish_core
+projects[openpublish_core][download][revision] = DRUPAL-6--1
 
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
-projects[openpublish_theme][type] = theme
-projects[openpublish_theme][download][type] = git
-projects[openpublish_theme][download][url] = git@github.com:phase2/openpublish_theme.git
+projects[openpublish_theme][type] = module
+projects[openpublish_theme][download][type] = cvs
+projects[openpublish_theme][download][module] = contributions/themes/openpublish_theme
+projects[openpublish_theme][download][revision] = DRUPAL-6--1
 
 ; Distro module
 projects[distro][install_path] = sites/all
