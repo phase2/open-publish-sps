@@ -675,6 +675,7 @@ function _openpublish_cleanup($success, $results) {
   node_types_rebuild();
   install_init_blocks();
   views_invalidate_cache();
+  drupal_flush_all_caches();
 }
 
 /**
