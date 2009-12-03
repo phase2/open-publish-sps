@@ -82,24 +82,12 @@ projects[quantcast][install_path] = sites/all
 
 ; OpenPublish custom modules
 projects[openpublish_core][install_path] = sites/all
-projects[openpublish_core][type] = module
-;projects[openpublish_core][download][type] = cvs
-;projects[openpublish_core][download][module] = contributions/modules/openpublish_core
-;projects[openpublish_core][download][revision] = DRUPAL-6--1
 
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
-projects[openpublish_theme][type] = theme
-projects[openpublish_theme][download][type] = cvs
-projects[openpublish_theme][download][module] = contributions/themes/openpublish_theme
-projects[openpublish_theme][download][revision] = DRUPAL-6--1
 
 ; Distro module
 projects[distro][install_path] = sites/all
-projects[distro][type] = module
-projects[distro][download][type] = cvs
-projects[distro][download][module] = contributions/modules/distro/
-projects[distro][download][revision] = DRUPAL-6--1
 
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
