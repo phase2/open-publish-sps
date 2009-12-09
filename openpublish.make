@@ -22,6 +22,8 @@ projects[tabs][install_path] = sites/all
 projects[panels][install_path] = sites/all
 projects[custompage][install_path] = sites/all
 projects[cmf][install_path] = sites/all
+projects[advuser][install_path] = sites/all
+projects[scheduler][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
 projects[login_destination][install_path] = sites/all
