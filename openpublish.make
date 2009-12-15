@@ -55,6 +55,11 @@ projects[emfield][install_path] = sites/all
 projects[filefield][install_path] = sites/all
 projects[imagefield][install_path] = sites/all
 projects[link][install_path] = sites/all
+projects[noderelationships][install_path] = sites/all
+projects[modalframe][install_path] = sites/all
+projects[jquery_ui][install_path] = sites/all
+
+
 
 ; Calais Collection
 projects[rdf][install_path] = sites/all
@@ -111,3 +116,4 @@ libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
 libraries[arc][destination] = modules/rdf/vendor
 libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
+
