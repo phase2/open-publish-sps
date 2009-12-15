@@ -49,6 +49,10 @@ projects[date][install_path] = sites/all
 projects[imageapi][install_path] = sites/all
 projects[imagecache][install_path] = sites/all
 
+;imagecrop
+projects[imagecrop][install_path] = sites/all
+
+
 ;cck
 projects[cck][install_path] = sites/all
 projects[emfield][install_path] = sites/all
