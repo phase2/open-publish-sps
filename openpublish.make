@@ -132,7 +132,7 @@ libraries[arc][install_path] = sites/all
 
 ; Features
 projects[features][install_path] = sites/all
-projects[features][patch][] = http://drupal.org/files/issues/ctools_use_provided_key.patch
+projects[features][patch][] = http://drupal.org/files/issues/660798-1.patch
 projects[features_extra][install_path] = sites/all
 projects[strongarm][install_path] = sites/all
 
