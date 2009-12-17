@@ -132,8 +132,8 @@ libraries[arc][install_path] = sites/all
 
 ; Features
 projects[features][install_path] = sites/all
+projects[features][patch][] = http://drupal.org/files/issues/ctools_use_provided_key.patch
 projects[features_extra][install_path] = sites/all
-projects[admin][patch][] = http://drupal.org/files/issues/ctools_use_provided_key.patch
 projects[strongarm][install_path] = sites/all
 
 ; OpenPublish custom  features modules
