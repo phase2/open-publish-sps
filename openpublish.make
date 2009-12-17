@@ -7,7 +7,7 @@ projects[devel][install_path] = sites/all
 projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
-projects[ctools][patch][] = http://drupal.org/files/issues/export_key_as_array.patch
+projects[ctools][patch][] = http://drupal.org/files/issues/660798.patch
 
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
