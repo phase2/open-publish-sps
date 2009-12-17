@@ -7,6 +7,8 @@ projects[devel][install_path] = sites/all
 projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
+projects[ctools][patch][] = http://drupal.org/files/issues/export_key_as_array.patch
+
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 projects[context][install_path] = sites/all
@@ -131,6 +133,7 @@ libraries[arc][install_path] = sites/all
 ; Features
 projects[features][install_path] = sites/all
 projects[features_extra][install_path] = sites/all
+projects[admin][patch][] = http://drupal.org/files/issues/ctools_use_provided_key.patch
 projects[strongarm][install_path] = sites/all
 
 ; OpenPublish custom  features modules
