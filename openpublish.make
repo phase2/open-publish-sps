@@ -121,3 +121,9 @@ libraries[arc][destination] = modules/rdf/vendor
 libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
 
+
+; OpenPublish custom  features modules
+projects[openpublish_features][install_path] = sites/all
+projects[openpublish_features][type] = module
+projects[openpublish_features][download][type] = git
+projects[openpublish_features][download][url] = git@github.com:phase2/openpublish_features.git
