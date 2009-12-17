@@ -63,6 +63,13 @@ projects[noderelationships][install_path] = sites/all
 projects[modalframe][install_path] = sites/all
 projects[jquery_ui][install_path] = sites/all
 
+; get jquery_ui lib
+libraries[jquery_ui_lib][download][type] = get
+libraries[jquery_ui_lib][download][url] = http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
+libraries[jquery_ui_lib][destination] = modules/jquery_ui
+libraries[jquery_ui_lib][directory_name] = jquery.ui
+libraries[jquery_ui_lib][install_path] = sites/all
+
 
 
 ; Calais Collection
