@@ -77,8 +77,15 @@ function openpublish_profile_modules() {
     // distribution management
     'distro_client',
 	
+	  // Features module and OpenPublish features:
+	  'features',
+	  'op_advuser_configç', 'op_article', 'op_author', 'op_blog', 'op_image',
+	  'op_imagecrop_config', 'op_imce_config', 'op_resource',
+	  'op_scheduler_config', 'op_slideshow', 'op_video',	  
+	
     // Custom modules developed for OpenPublish
     'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
+    
   );
 
   return array_merge($core_modules, $contributed_modules);
