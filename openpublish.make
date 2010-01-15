@@ -97,7 +97,6 @@ projects[views][install_path] = sites/all
 
 ; Publishers Extras
 projects[apture][install_path] = sites/all
-projects[contenture][install_path] = sites/all
 projects[quantcast][install_path] = sites/all
 
 ; OpenPublish custom modules
@@ -136,8 +135,6 @@ projects[features][patch][] = http://drupal.org/files/issues/660798-1.patch
 projects[features_extra][install_path] = sites/all
 projects[strongarm][install_path] = sites/all
 
-; OpenPublish custom  features modules
+; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
 projects[openpublish_features][type] = module
-projects[openpublish_features][download][type] = git
-projects[openpublish_features][download][url] = git@github.com:phase2/openpublish_features.git
