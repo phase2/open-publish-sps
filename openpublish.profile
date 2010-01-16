@@ -79,7 +79,7 @@ function openpublish_profile_modules() {
 	
 	  // Features module and OpenPublish features:
 	  'features',
-	  'op_advuser_config', 'op_article', 'op_author', 'op_blog', 'op_image',
+	  'op_advuser_config', 'op_article', 'op_author', 'op_author_panels', 'op_blog', 'op_image',
 	  'op_imagecrop_config', 'op_imce_config', 'op_resource',
 	  'op_scheduler_config', 'op_slideshow', 'op_video',	  
 	
