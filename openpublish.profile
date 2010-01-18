@@ -35,6 +35,7 @@ function openpublish_profile_modules() {
     'admin', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
     'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
+    'modalframe', 'jquery_ui', 'strongarm', 
 
     //context
     'context','context_ui','context_contrib',
@@ -43,12 +44,12 @@ function openpublish_profile_modules() {
     'date_api', 'date', 'date_timezone',
   
     //imagecache
-    'imageapi', 'imageapi_gd', 'imagecache', 'imagecache_ui',
+    'imageapi', 'imageapi_gd', 'imagecache', 'imagecache_ui', 'imagecrop', 
   
     //cck
     'content', 'content_copy', 'emfield', 'emaudio', 'emimage', 
     'emvideo', 'fieldgroup', 'filefield', 'imagefield', 'link', 'number',
-    'optionwidgets', 'text', 'nodereference', 'userreference',
+    'optionwidgets', 'text', 'nodereference', 'noderelationships', 'userreference',
 	
     // Calais
     'calais_api', 'calais', 'calais_geo', 'calais_tagmods',
@@ -94,6 +95,7 @@ function openpublish_feature_modules() {
 	  'op_advuser_config', 
 	  'op_article', 
 	  'op_author', 
+	  'op_author_panels', 
 	  'op_blog', 
 	  'op_image',
 	  'op_imagecrop_config', 
