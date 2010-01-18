@@ -35,7 +35,7 @@ function openpublish_profile_modules() {
     'admin', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
     'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
-    'modalframe', 'jquery_ui', 'strongarm', 
+    'modalframe', 'jquery_ui', 
 
     //context
     'context','context_ui','context_contrib',
@@ -70,6 +70,9 @@ function openpublish_profile_modules() {
     // ctools, panels
 	  'ctools', 'views_content', 'page_manager', 'panels', 'panels_node', 
   
+    // requries ctools
+    'strongarm', 
+
     //topic hubs
     'topichubs', 'topichubs_calais_geo', 'topichubs_contributors', 'topichubs_most_comments',
     'topichubs_most_recent', 'topichubs_most_viewed', 'topichubs_panels', 'topichubs_recent_comments',
