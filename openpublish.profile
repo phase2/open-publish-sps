@@ -75,13 +75,8 @@ function openpublish_profile_modules() {
     'topichubs_related_topics',
     
     // distribution management
-    'distro_client',
-	
-	  // Features module and OpenPublish features:
-	  'features',
-	  'op_advuser_config', 'op_article', 'op_author', 'op_author_panels', 'op_blog', 'op_image',
-	  'op_imagecrop_config', 'op_imce_config', 'op_resource',
-	  'op_scheduler_config', 'op_slideshow', 'op_video',	  
+    'distro_client', 'features',
+
 	
     // Custom modules developed for OpenPublish
     'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
@@ -90,6 +85,26 @@ function openpublish_profile_modules() {
 
   return array_merge($core_modules, $contributed_modules);
 } 
+
+/**
+ * Features module and OpenPublish features
+ */
+function openpublish_feature_modules() {
+  $features = array(
+	  'op_advuser_config', 
+	  'op_article', 
+	  'op_author', 
+	  'op_blog', 
+	  'op_image',
+	  'op_imagecrop_config', 
+	  'op_imce_config', 
+	  'op_resource',
+	  'op_scheduler_config', 
+	  'op_slideshow', 
+	  'op_video',	  
+  );
+  return $features;
+}
 
 /**
  * Return a list of tasks that this profile supports.
@@ -130,9 +145,13 @@ function openpublish_profile_tasks(&$task, $url) {
     
   if($task == 'op-configure') {
     $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
+    $files = module_rebuild_cache();
     $cck_files = file_scan_directory ( dirname(__FILE__) . '/cck' , '.*\.inc$' );
     foreach ( $cck_files as $file ) {   
       $batch['operations'][] = array('_openpublish_import_cck', array($file));      
+    }    
+    foreach ( openpublish_feature_modules() as $feature ) {   
+      $batch['operations'][] = array('_install_module_batch', array($feature, $files[$feature]->info['name']));      
     }    
     $batch['operations'][] = array('_openpublish_set_permissions', array());      
     $batch['operations'][] = array('_openpublish_initialize_settings', array());      
