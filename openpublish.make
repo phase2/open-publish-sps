@@ -134,7 +134,7 @@ projects[features][install_path] = sites/all
 projects[features][patch][] = http://drupal.org/files/issues/660798-1.patch
 projects[features_extra][install_path] = sites/all
 projects[strongarm][install_path] = sites/all
-projects[strongarm][revision] = 6.x-2.0-beta3
+projects[strongarm][version] = 6.x-2.0-beta3
 
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
