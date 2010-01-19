@@ -7,7 +7,6 @@ projects[devel][install_path] = sites/all
 projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
-projects[ctools][patch][] = http://drupal.org/files/issues/660798.patch
 
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
@@ -62,6 +61,7 @@ projects[filefield][install_path] = sites/all
 projects[imagefield][install_path] = sites/all
 projects[link][install_path] = sites/all
 projects[noderelationships][install_path] = sites/all
+projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_0.patch
 projects[modalframe][install_path] = sites/all
 projects[jquery_ui][install_path] = sites/all
 
@@ -134,7 +134,7 @@ projects[features][install_path] = sites/all
 projects[features][patch][] = http://drupal.org/files/issues/660798-1.patch
 projects[features_extra][install_path] = sites/all
 projects[strongarm][install_path] = sites/all
-projects[strongarm][version] = 6.x-2.0-beta3
+projects[strongarm][version] = 2.0-beta3
 
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
