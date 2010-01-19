@@ -61,7 +61,7 @@ projects[filefield][install_path] = sites/all
 projects[imagefield][install_path] = sites/all
 projects[link][install_path] = sites/all
 projects[noderelationships][install_path] = sites/all
-projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_0.patch
+projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_1.patch
 projects[modalframe][install_path] = sites/all
 projects[jquery_ui][install_path] = sites/all
 
