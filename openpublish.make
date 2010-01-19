@@ -130,7 +130,7 @@ libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
 
 ; Features
-projects[features][version] = 6.x-1.0-beta4
+projects[features][version] = 1.0-beta4
 projects[features][install_path] = sites/all
 projects[features][patch][] = http://drupal.org/files/issues/660798-1.patch
 projects[features_extra][install_path] = sites/all
