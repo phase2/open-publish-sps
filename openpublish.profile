@@ -714,6 +714,7 @@ function _openpublish_cleanup($success, $results) {
     'node_types_rebuild',
     'install_init_blocks',
     'views_invalidate_cache',
+    'cache_clear_all',    
     //'drupal_flush_all_caches',
   );
   
