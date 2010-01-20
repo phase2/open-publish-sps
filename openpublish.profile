@@ -97,12 +97,16 @@ function openpublish_feature_modules() {
   $features = array(
 	  'op_advuser_config', 
 	  'op_article', 
+	  'op_audio',
 	  'op_author', 
 	  'op_author_panels', 
 	  'op_blog', 
+	  'op_event',
 	  'op_image',
 	  'op_imagecrop_config', 
 	  'op_imce_config', 
+	  'op_misc',
+	  'op_package',
 	  'op_resource',
 	  'op_scheduler_config', 
 	  'op_slideshow', 
@@ -263,7 +267,7 @@ function _openpublish_import_cck($file, &$context) {
   else if ($file->name == 'feed') {
     $content = array();
     ob_start();
-    include $file->filename;
+    include $file->filename; 
     ob_end_clean();
     $feed = (object)$content['type'];
     variable_set('feedapi_settings_feed', $feed->feedapi);
