@@ -14,6 +14,7 @@ projects[context][install_path] = sites/all
 
 
 ; Misc stand-alone
+projects[openidadmin][install_path] = sites/all
 projects[swftools][install_path] = sites/all
 projects[flag][install_path] = sites/all
 projects[nodewords][install_path] = sites/all
