@@ -714,15 +714,22 @@ function _openpublish_cleanup($success, $results) {
     'install_init_blocks',
     'views_invalidate_cache',    
     'node_types_rebuild',    
-    //'drupal_flush_all_caches',
   );
   
   foreach ($functions as $func) {
     $start = time();
-    $elapsed = time() - $start;
     $func();
+    $elapsed = time() - $start;
     error_log("####  $func took $elapsed seconds ###");
   }
+  
+  //-- Clear out cache like imagecache and context cache so that Features do not show overriden state
+  $start = time();  
+  db_query('TRUNCATE TABLE {cache}');
+  $elapsed = time() - $start;
+  error_log("####  truncate took $elapsed seconds ###");
+    
+  
 }
 
 /**
