@@ -66,7 +66,7 @@ projects[link][install_path] = sites/all
 
 projects[noderelationships][version] = 1.5
 projects[noderelationships][install_path] = sites/all
-projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_1.patch
+projects[noderelationships][patch][] = http://bmu.li/660958.patch
 projects[modalframe][install_path] = sites/all
 projects[jquery_ui][install_path] = sites/all
 

@@ -717,18 +717,13 @@ function _openpublish_cleanup($success, $results) {
   );
   
   foreach ($functions as $func) {
-    $start = time();
+    //$start = time();
     $func();
-    $elapsed = time() - $start;
-    error_log("####  $func took $elapsed seconds ###");
+    //$elapsed = time() - $start;
+    //error_log("####  $func took $elapsed seconds ###");
   }
   
-  //-- Clear out cache like imagecache and context cache so that Features do not show overriden state
-  $start = time();  
-  db_query('TRUNCATE TABLE {cache}');
-  $elapsed = time() - $start;
-  error_log("####  truncate took $elapsed seconds ###");
-    
+  db_query('TRUNCATE TABLE {cache}');    
   
 }
 
