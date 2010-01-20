@@ -80,7 +80,9 @@ function openpublish_profile_modules() {
     
     // distribution management
     'distro_client', 'features',
-
+    
+    // misc modules easing development
+    'custompage',
 	
     // Custom modules developed for OpenPublish
     'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
