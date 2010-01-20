@@ -708,12 +708,21 @@ function _openpublish_set_block_title($title, $module, $delta, $theme) {
  */
 function _openpublish_cleanup($success, $results) {
   // DO NOT call drupal_flush_all_caches(), it disables all themes
-  drupal_rebuild_theme_registry();
-  menu_rebuild();
-  node_types_rebuild();
-  install_init_blocks();
-  views_invalidate_cache();
-  drupal_flush_all_caches();
+  $functions = array(
+    'drupal_rebuild_theme_registry',
+    'menu_rebuild',
+    'node_types_rebuild',
+    'install_init_blocks',
+    'views_invalidate_cache',
+    //'drupal_flush_all_caches',
+  );
+  
+  foreach ($functions as $func) {
+    $start = time();
+    $elapsed = time() - $start;
+    $func();
+    error_log("####  $func took $elapsed seconds ###");
+  }
 }
 
 /**
