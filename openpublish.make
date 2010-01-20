@@ -8,6 +8,7 @@ projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
 
+projects[admin][version] = 1.0-beta3
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 projects[context][install_path] = sites/all
@@ -28,6 +29,7 @@ projects[advuser][install_path] = sites/all
 projects[scheduler][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
+projects[login_destination][version] = 2.5
 projects[login_destination][install_path] = sites/all
 projects[login_destination][patch][] = http://drupal.org/files/issues/ld-install-profile-626788-1.patch
 
@@ -61,6 +63,8 @@ projects[emfield][install_path] = sites/all
 projects[filefield][install_path] = sites/all
 projects[imagefield][install_path] = sites/all
 projects[link][install_path] = sites/all
+
+projects[noderelationships][version] = 1.5
 projects[noderelationships][install_path] = sites/all
 projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_1.patch
 projects[modalframe][install_path] = sites/all
