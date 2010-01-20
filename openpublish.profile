@@ -711,10 +711,9 @@ function _openpublish_cleanup($success, $results) {
   $functions = array(
     'drupal_rebuild_theme_registry',
     'menu_rebuild',
-    'node_types_rebuild',
     'install_init_blocks',
-    'views_invalidate_cache',
-    'cache_clear_all',    
+    'views_invalidate_cache',    
+    'node_types_rebuild',    
     //'drupal_flush_all_caches',
   );
   
