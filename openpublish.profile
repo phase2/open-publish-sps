@@ -722,8 +722,8 @@ function _openpublish_cleanup($success, $results) {
     //$elapsed = time() - $start;
     //error_log("####  $func took $elapsed seconds ###");
   }
-  
-  db_query('TRUNCATE TABLE {cache}');    
+   
+  cache_clear_all('*', 'cache', TRUE);  
   
 }
 
