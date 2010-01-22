@@ -651,7 +651,6 @@ function _openpublish_install_menus(&$context) {
   install_menu_create_menu_item('node/7', 'Site Map',       '', 'menu-footer-secondary', 0, 6);
   install_menu_create_menu_item('node/8', 'Terms of Use',   '', 'menu-footer-secondary', 0, 7);
   install_menu_create_menu_item('node/9', 'Privacy Policy', '', 'menu-footer-secondary', 0, 8);
-  install_menu_create_menu_item('node/1', 'About Us',       '', 'menu-footer-secondary', 0, 9);
 
   install_menu_create_menu('Top Menu', 'top-menu'); 
   install_menu_create_menu_item('node/1', 'About Us',  '', 'menu-top-menu', 0, 1);
