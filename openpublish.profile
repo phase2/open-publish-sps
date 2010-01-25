@@ -385,7 +385,7 @@ function _openpublish_initialize_settings(&$context){
   //$fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/build/block/*\n";
   //$fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/content/types/*\n";
   $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/*\n";  
-  $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "user/*/openid\n";      
+  $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "user/*/openid*\n";      
   fckeditor_global_profile_save($fckglobal->settings);
 
   // Add role permissions to the built in profiles
