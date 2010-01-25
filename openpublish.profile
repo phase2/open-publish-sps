@@ -66,6 +66,8 @@ function openpublish_profile_modules() {
 	
     //views
     'views', 'views_export', 'views_ui',
+    
+    'premium', 'premium_views_field',
 
     // ctools, panels
 	  'ctools', 'views_content', 'page_manager', 'panels', 'panels_node', 
@@ -101,7 +103,8 @@ function openpublish_feature_modules() {
 	  'op_article', 
 	  'op_audio',
 	  'op_author', 
-	  'op_author_panels', 
+	  'op_author_panels',
+	  'op_author_layout', 
 	  'op_blog', 
 	  'op_event',
 	  'op_image',

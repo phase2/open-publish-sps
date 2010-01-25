@@ -27,6 +27,8 @@ projects[custompage][install_path] = sites/all
 projects[cmf][install_path] = sites/all
 projects[advuser][install_path] = sites/all
 projects[scheduler][install_path] = sites/all
+projects[premium][install_path] = sites/all
+projects[premium_views_field][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
 projects[login_destination][version] = 2.5
@@ -80,7 +82,10 @@ libraries[jquery_ui_lib][install_path] = sites/all
 
 
 ; Calais Collection
+projects[rdf][version] = 1.0-alpha7
 projects[rdf][install_path] = sites/all
+projects[rdf][patch][] = http://drupal.org/files/issues/rdf-693018.install.patch
+
 projects[flickrapi][install_path] = sites/all
 projects[gmap][install_path] = sites/all
 projects[opencalais][install_path] = sites/all
