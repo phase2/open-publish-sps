@@ -172,7 +172,8 @@ function openpublish_profile_tasks(&$task, $url) {
     $batch['operations'][] = array('_openpublish_placeholder_content', array());      
     $batch['operations'][] = array('_openpublish_set_views', array());      
     $batch['operations'][] = array('_openpublish_install_menus', array());      
-    $batch['operations'][] = array('_openpublish_setup_blocks', array());      
+    $batch['operations'][] = array('_openpublish_setup_blocks', array()); 
+    $batch['operations'][] = array('_openpublish_init_features', array());           
     $batch['operations'][] = array('_openpublish_cleanup', array());      
     $batch['error_message'] = st('There was an error configuring @drupal.', array('@drupal' => drupal_install_profile_name()));
     $batch['finished'] = '_openpublish_configure_finished';
@@ -708,6 +709,14 @@ function _openpublish_set_block_title($title, $module, $delta, $theme) {
 }
 
 /**
+* Let Features initialize content types etc.
+*/
+function _openpublish_init_features() {
+  features_flush_caches();
+  _openpublish_log('OP Features Initialized');
+}
+
+/**
  * Cleanup after the install
  */
 function _openpublish_cleanup($success, $results) {
@@ -726,11 +735,10 @@ function _openpublish_cleanup($success, $results) {
     //$elapsed = time() - $start;
     //error_log("####  $func took $elapsed seconds ###");
   }
-   
+  
+  ctools_flush_caches(); 
   cache_clear_all('*', 'cache', TRUE);  
   cache_clear_all('*', 'cache_content', TRUE);
-
-  _openpublish_log('Cleanup completed');
 }
 
 /**
