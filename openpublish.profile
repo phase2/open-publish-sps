@@ -713,7 +713,7 @@ function _openpublish_set_block_title($title, $module, $delta, $theme) {
 * Let Features initialize content types etc.
 */
 function _openpublish_init_features() {
-  features_flush_caches();
+  //features_flush_caches();
   //_openpublish_log('OP Features Initialized');
 }
 
