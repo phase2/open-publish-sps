@@ -11,8 +11,10 @@ projects[ctools][install_path] = sites/all
 projects[admin][version] = 1.0-beta3
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
-projects[context][install_path] = sites/all
 
+projects[context][version] = 2.0-beta7
+projects[context][install_path] = sites/all
+projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64256.patch
 
 ; Misc stand-alone
 projects[openidadmin][install_path] = sites/all
