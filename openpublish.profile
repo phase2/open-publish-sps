@@ -32,7 +32,7 @@ function openpublish_profile_modules() {
 
   $contributed_modules = array(
     //misc stand-alone, required by others
-    'admin', 'rdf', 'token', 'gmap', 'devel', 'flickrapi', 'autoload', 'apture', 
+    'admin', 'rdf', 'token', 'gmap', 'devel', 'bulk_export', 'flickrapi', 'autoload', 'apture', 
     'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'modalframe', 'jquery_ui', 
@@ -84,7 +84,7 @@ function openpublish_profile_modules() {
     'distro_client', 'features',
     
     // misc modules easing development/maintenance
-    'custompage', 'openidadmin',
+    'custompage', 'custompage_ui', 'openidadmin',
 	
     // Custom modules developed for OpenPublish
     'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
@@ -103,8 +103,8 @@ function openpublish_feature_modules() {
 	  'op_article', 
 	  'op_audio',
 	  'op_author', 
-	  'op_author_panels',
-	  'op_author_layout', 
+	  'op_author_layout',	  
+	  'op_author_panels', 
 	  'op_blog', 
 	  'op_event',
 	  'op_image',
