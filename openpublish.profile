@@ -99,12 +99,12 @@ function openpublish_profile_modules() {
  */
 function openpublish_feature_modules() {
   $features = array(
-	  'op_advuser_config', 
-	  'op_article', 
-	  'op_audio',
 	  'op_author', 
 	  'op_author_layout',	  
 	  'op_author_panels', 
+    'op_advuser_config', 
+    'op_article', 
+    'op_audio',	  
 	  'op_blog', 
 	  'op_event',
 	  'op_image',
