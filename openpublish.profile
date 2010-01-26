@@ -166,6 +166,7 @@ function openpublish_profile_tasks(&$task, $url) {
     }    
     foreach ( openpublish_feature_modules() as $feature ) {   
       $batch['operations'][] = array('_install_module_batch', array($feature, $files[$feature]->info['name']));      
+      //-- Initialize each feature individually rather then all together in the end, to avoid execution timeout.
       $batch['operations'][] = array('features_flush_caches', array()); 
     }    
     $batch['operations'][] = array('_openpublish_set_permissions', array());      
@@ -174,7 +175,6 @@ function openpublish_profile_tasks(&$task, $url) {
     $batch['operations'][] = array('_openpublish_set_views', array());      
     $batch['operations'][] = array('_openpublish_install_menus', array());      
     $batch['operations'][] = array('_openpublish_setup_blocks', array()); 
-    $batch['operations'][] = array('_openpublish_init_features', array());           
     $batch['operations'][] = array('_openpublish_cleanup', array());      
     $batch['error_message'] = st('There was an error configuring @drupal.', array('@drupal' => drupal_install_profile_name()));
     $batch['finished'] = '_openpublish_configure_finished';
@@ -707,14 +707,6 @@ function _openpublish_setup_blocks(&$context) {
  */
 function _openpublish_set_block_title($title, $module, $delta, $theme) {
   db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND delta = '%s' AND theme= '%s'", $title, $module, $delta, $theme);
-}
-
-/**
-* Let Features initialize content types etc.
-*/
-function _openpublish_init_features() {
-  //features_flush_caches();
-  //_openpublish_log('OP Features Initialized');
 }
 
 /**
