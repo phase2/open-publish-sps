@@ -728,7 +728,9 @@ function _openpublish_cleanup($success, $results) {
   }
    
   cache_clear_all('*', 'cache', TRUE);  
-  
+  cache_clear_all('*', 'cache_content', TRUE);
+
+  _openpublish_log('Cleanup completed');
 }
 
 /**
