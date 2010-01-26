@@ -166,6 +166,7 @@ function openpublish_profile_tasks(&$task, $url) {
     }    
     foreach ( openpublish_feature_modules() as $feature ) {   
       $batch['operations'][] = array('_install_module_batch', array($feature, $files[$feature]->info['name']));      
+      $batch['operations'][] = array('features_flush_caches', array()); 
     }    
     $batch['operations'][] = array('_openpublish_set_permissions', array());      
     $batch['operations'][] = array('_openpublish_initialize_settings', array());      
@@ -713,7 +714,7 @@ function _openpublish_set_block_title($title, $module, $delta, $theme) {
 */
 function _openpublish_init_features() {
   features_flush_caches();
-  _openpublish_log('OP Features Initialized');
+  //_openpublish_log('OP Features Initialized');
 }
 
 /**
