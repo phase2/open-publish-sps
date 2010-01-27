@@ -11,6 +11,7 @@ projects[ctools][install_path] = sites/all
 projects[admin][version] = 1.0-beta3
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
+projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
 
 projects[context][version] = 2.0-beta7
 projects[context][install_path] = sites/all
