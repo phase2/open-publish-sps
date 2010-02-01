@@ -48,6 +48,7 @@ projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-ac
 projects[apachesolr][install_path] = sites/all
 
 ; wysiwyg
+projects[fckeditor][version] = 1.4
 projects[fckeditor][install_path] = sites/all
 projects[imce][install_path] = sites/all
 
