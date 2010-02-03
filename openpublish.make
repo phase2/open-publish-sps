@@ -32,6 +32,7 @@ projects[advuser][install_path] = sites/all
 projects[scheduler][install_path] = sites/all
 projects[premium][install_path] = sites/all
 projects[premium_views_field][install_path] = sites/all
+projects[nodequeue][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
 projects[login_destination][version] = 2.5
