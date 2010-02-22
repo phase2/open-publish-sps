@@ -34,24 +34,10 @@ libraries[swfobject2][install_path] = sites/all
 
 ; FlowPlayer Library required by SWFTools to play audio/video files
 libraries[flowplayer][download][type] = get
-libraries[flowplayer][download][url] = http://releases.flowplayer.org/flowplayer/flowplayer-3.1.5.zip
+libraries[flowplayer][download][url] = http://www.opensourceopenminds.com/sites/default/files/releases/flowplayer-package.zip
 libraries[flowplayer][destination] = modules/swftools/shared
 libraries[flowplayer][directory_name] = flowplayer3
 libraries[flowplayer][install_path] = sites/all
-
-; FlowPlayer RTMP Plugin Library required by SWFTools to stream files
-libraries[fp_rtmp][download][type] = get
-libraries[fp_rtmp][download][url] = http://releases.flowplayer.org/flowplayer.rtmp/flowplayer.rtmp-3.1.3.zip
-libraries[fp_rtmp][destination] = modules/swftools/shared
-libraries[fp_rtmp][directory_name] = flowplayer3
-libraries[fp_rtmp][install_path] = sites/all
-
-; FlowPlayer Audio Plugin Library required by SWFTools to play audio files
-libraries[fp_audio][download][type] = get
-libraries[fp_audio][download][url] = http://releases.flowplayer.org/flowplayer.audio/flowplayer.audio-3.1.2.zip
-libraries[fp_audio][destination] = modules/swftools/shared
-libraries[fp_audio][directory_name] = flowplayer3
-libraries[fp_audio][install_path] = sites/all
 
 ; 1PixelOut Library could be required by SWFTools to play audio files
 libraries[onepixelout][download][type] = get
