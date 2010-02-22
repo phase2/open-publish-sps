@@ -513,18 +513,6 @@ return "user";');
     'event' => 'event', 'op_image' => 'op_image', 'video' => 'video'));
   variable_set('topichubs_contrib_ignore', array(1=>1));
   
-  // SWF Tools
-  variable_set('swftools_embed_method', 'swfobject2_replace');
-  variable_set('swftools_flv_display', 'flowplayer3_mediaplayer');
-  variable_set('swftools_flv_display_list', 'flowplayer3_mediaplayer'); 
-  variable_set('swftools_media_display_list', 'flowplayer3_mediaplayer');
-  variable_set('swftools_mp3_display', 'flowplayer3_mediaplayer');
-  variable_set('swftools_mp3_display', 'flowplayer3_mediaplayer');
-  variable_set('swftools_mp3_display_list', 'flowplayer3_mediaplayer');
-  variable_set('emfield_emvideo_allow_youtube', 1);
-  variable_set('flowplayer3_mediaplayer_file', 'flowplayer-3.1.1.swf');
-  variable_set('flowplayer3_mediaplayer_stream_plugin', 'flowplayer.rtmp-3.0.2.swf');
-
   $msg = st('Setup general configuration');
   _openpublish_log($msg);
   $context['message'] = $msg;
