@@ -19,7 +19,16 @@ projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64
 
 ; Misc stand-alone
 projects[openidadmin][install_path] = sites/all
+
 projects[swftools][install_path] = sites/all
+; SWFObject2 Library required by SWFTools 
+; Ought to be installed at: modules/swftools/shared/swfobject2/swfobject.js
+libraries[arc][download][type] = get
+libraries[arc][download][url] = http://swfobject.googlecode.com/files/swfobject_2_2.zip
+libraries[arc][destination] = modules/swftools/shared
+libraries[arc][directory_name] = swfobject2
+libraries[arc][install_path] = sites/all
+
 projects[flag][install_path] = sites/all
 projects[nodewords][install_path] = sites/all
 projects[paging][install_path] = sites/all
