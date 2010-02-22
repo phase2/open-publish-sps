@@ -63,9 +63,9 @@ projects[premium_views_field][install_path] = sites/all
 projects[nodequeue][install_path] = sites/all
 
 ; Login Destination and patch to not run during install profile
-projects[login_destination][version] = 2.5
 projects[login_destination][install_path] = sites/all
-projects[login_destination][patch][] = http://drupal.org/files/issues/ld-install-profile-626788-1.patch
+;projects[login_destination][version] = 2.5
+;projects[login_destination][patch][] = http://drupal.org/files/issues/ld-install-profile-626788-1.patch
 
 ; Acquia Modules
 projects[acquia_connector][install_path] = sites/all
