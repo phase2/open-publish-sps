@@ -26,7 +26,6 @@ projects[openidadmin][install_path] = sites/all
 projects[swftools][install_path] = sites/all
 
 ; SWFObject2 Library required by SWFTools 
-; Ought to be installed at: modules/swftools/shared/swfobject2/swfobject.js
 libraries[swfobject2][download][type] = get
 libraries[swfobject2][download][url] = http://swfobject.googlecode.com/files/swfobject_2_2.zip
 libraries[swfobject2][destination] = modules/swftools/shared
@@ -34,15 +33,27 @@ libraries[swfobject2][directory_name] = swfobject2
 libraries[swfobject2][install_path] = sites/all
 
 ; FlowPlayer Library required by SWFTools to play audio/video files
-; Ought to be installed at: modules/swftools/shared/flowplayer3/flowplayer-x.x.x.swf
 libraries[flowplayer][download][type] = get
 libraries[flowplayer][download][url] = http://releases.flowplayer.org/flowplayer/flowplayer-3.1.5.zip
 libraries[flowplayer][destination] = modules/swftools/shared
 libraries[flowplayer][directory_name] = flowplayer3
 libraries[flowplayer][install_path] = sites/all
 
+; FlowPlayer RTMP Plugin Library required by SWFTools to stream files
+libraries[fp_rtmp][download][type] = get
+libraries[fp_rtmp][download][url] = http://releases.flowplayer.org/flowplayer.rtmp/flowplayer.rtmp-3.1.3.zip
+libraries[fp_rtmp][destination] = modules/swftools/shared
+libraries[fp_rtmp][directory_name] = flowplayer3
+libraries[fp_rtmp][install_path] = sites/all
+
+; FlowPlayer Audio Plugin Library required by SWFTools to play audio files
+libraries[fp_audio][download][type] = get
+libraries[fp_audio][download][url] = http://releases.flowplayer.org/flowplayer.audio/flowplayer.audio-3.1.2.zip
+libraries[fp_audio][destination] = modules/swftools/shared
+libraries[fp_audio][directory_name] = flowplayer3
+libraries[fp_audio][install_path] = sites/all
+
 ; 1PixelOut Library could be required by SWFTools to play audio files
-; Ought to be installed at: modules/swftools/shared/1pixelout/player.swf
 libraries[onepixelout][download][type] = get
 libraries[onepixelout][download][url] = http://wpaudioplayer.com/wp-content/downloads/audio-player-standalone.zip
 libraries[onepixelout][destination] = modules/swftools/shared
