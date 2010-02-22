@@ -62,7 +62,7 @@ function openpublish_profile_modules() {
     'morelikethis_yboss',
 	
     //swftools
-    'swftools', 'swfobject2', 'flowplayer3',
+    'swftools', 'swfobject2', 'flowplayer3', 'onepixelout',
 	
     //views
     'views', 'views_export', 'views_ui',
