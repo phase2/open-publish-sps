@@ -20,14 +20,26 @@ projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64
 ; Misc stand-alone
 projects[openidadmin][install_path] = sites/all
 
+
 projects[swftools][install_path] = sites/all
+
 ; SWFObject2 Library required by SWFTools 
 ; Ought to be installed at: modules/swftools/shared/swfobject2/swfobject.js
-libraries[arc][download][type] = get
-libraries[arc][download][url] = http://swfobject.googlecode.com/files/swfobject_2_2.zip
-libraries[arc][destination] = modules/swftools/shared
-libraries[arc][directory_name] = swfobject2
-libraries[arc][install_path] = sites/all
+libraries[swfobject2][download][type] = get
+libraries[swfobject2][download][url] = http://swfobject.googlecode.com/files/swfobject_2_2.zip
+libraries[swfobject2][destination] = modules/swftools/shared
+libraries[swfobject2][directory_name] = swfobject2
+libraries[swfobject2][install_path] = sites/all
+
+; 1PixelOut Library required by SWFTools to play audio files
+; Ought to be installed at: modules/swftools/shared/1pixelout/player.swf
+libraries[onepixelout][download][type] = get
+libraries[onepixelout][download][url] = http://wpaudioplayer.com/wp-content/downloads/audio-player-standalone.zip
+libraries[onepixelout][destination] = modules/swftools/shared
+libraries[onepixelout][directory_name] = 1pixelout
+libraries[onepixelout][install_path] = sites/all
+
+
 
 projects[flag][install_path] = sites/all
 projects[nodewords][install_path] = sites/all
