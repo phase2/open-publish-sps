@@ -21,6 +21,8 @@ projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64
 projects[openidadmin][install_path] = sites/all
 
 
+
+
 projects[swftools][install_path] = sites/all
 
 ; SWFObject2 Library required by SWFTools 
@@ -31,7 +33,15 @@ libraries[swfobject2][destination] = modules/swftools/shared
 libraries[swfobject2][directory_name] = swfobject2
 libraries[swfobject2][install_path] = sites/all
 
-; 1PixelOut Library required by SWFTools to play audio files
+; FlowPlayer Library required by SWFTools to play audio/video files
+; Ought to be installed at: modules/swftools/shared/flowplayer3/flowplayer-x.x.x.swf
+libraries[flowplayer][download][type] = get
+libraries[flowplayer][download][url] = http://releases.flowplayer.org/flowplayer/flowplayer-3.1.5.zip
+libraries[flowplayer][destination] = modules/swftools/shared
+libraries[flowplayer][directory_name] = flowplayer3
+libraries[flowplayer][install_path] = sites/all
+
+; 1PixelOut Library could be required by SWFTools to play audio files
 ; Ought to be installed at: modules/swftools/shared/1pixelout/player.swf
 libraries[onepixelout][download][type] = get
 libraries[onepixelout][download][url] = http://wpaudioplayer.com/wp-content/downloads/audio-player-standalone.zip
