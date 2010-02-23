@@ -677,6 +677,10 @@ function _openpublish_setup_blocks(&$context) {
   // Get these new boxes in blocks table
   install_init_blocks();
 
+  //-- Disable titles for all views-driven blocks, by default, to avoid double-titling:
+  db_query("UPDATE {blocks} SET title = '%s' WHERE module = '%s' AND theme= '%s'", 
+            '<none>', 'views', 'openpublish_theme');
+
   _openpublish_set_block_title('Google Videos Like This', 'morelikethis', 'googlevideo', 'openpublish_theme');
   _openpublish_set_block_title('Flickr Images Like This', 'morelikethis', 'flickr', 'openpublish_theme');
   _openpublish_set_block_title('Recommended Reading', 'morelikethis', 'taxonomy', 'openpublish_theme');
