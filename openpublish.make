@@ -181,6 +181,8 @@ projects[features][patch][] = http://drupal.org/files/issues/features.ctools.inc
 projects[strongarm][install_path] = sites/all
 projects[strongarm][version] = 2.0-beta3
 
+projects[features_extra][install_path] = sites/all
+
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
 projects[openpublish_features][type] = module
