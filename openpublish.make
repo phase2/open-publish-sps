@@ -17,11 +17,11 @@ projects[tao][location] = "http://code.developmentseed.org/fserver"
 projects[tao][install_path] = sites/all
 projects[tao][version] = "1.9"
 
-projects[rubik][location] = "http://code.developmentseed.org/fserver"
-projects[rubik][install_path] = sites/all
-projects[rubik][version] = "1.0-beta6"
-
-
+libraries[rubik][download][type] = get
+libraries[rubik][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/rubik-6.x-1.0-beta7.tgz
+libraries[rubik][destination] = themes
+libraries[rubik][directory_name] = rubik
+libraries[rubik][install_path] = sites/all
 
 projects[context][version] = 2.0-beta7
 projects[context][install_path] = sites/all
