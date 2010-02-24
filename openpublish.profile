@@ -238,7 +238,7 @@ function _openpublish_base_settings() {
 
   // Theme related.  
   install_default_theme('openpublish_theme');
-  install_admin_theme('slate');	
+  install_admin_theme('rubik');	
   variable_set('node_admin_theme', TRUE);    
   
   $theme_settings = variable_get('theme_settings', array());
