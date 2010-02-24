@@ -13,9 +13,11 @@ projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 ;projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
 
-projects[tao][location] = "http://code.developmentseed.org/fserver"
-projects[tao][install_path] = sites/all
-projects[tao][version] = "1.9"
+libraries[tao][download][type] = get
+libraries[tao][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/tao-6.x-1.9.tgz
+libraries[tao][destination] = themes
+libraries[tao][directory_name] = tao
+libraries[tao][install_path] = sites/all
 
 libraries[rubik][download][type] = get
 libraries[rubik][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/rubik-6.x-1.0-beta7.tgz
