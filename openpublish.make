@@ -14,9 +14,11 @@ projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 ;projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
 
 projects[tao][location] = "http://code.developmentseed.org/fserver"
+projects[tao][install_path] = sites/all
 projects[tao][version] = "1.9"
 
 projects[rubik][location] = "http://code.developmentseed.org/fserver"
+projects[rubik][install_path] = sites/all
 projects[rubik][version] = "1.0-beta6"
 
 
