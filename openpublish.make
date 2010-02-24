@@ -8,10 +8,18 @@ projects[autoload][install_path] = sites/all
 projects[mollom][install_path] = sites/all
 projects[ctools][install_path] = sites/all
 
-projects[admin][version] = 1.0-beta3
+projects[admin][version] = "2.0-beta1"
 projects[admin][install_path] = sites/all
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
-projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
+;projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
+
+projects[tao][location] = "http://code.developmentseed.org/fserver"
+projects[tao][version] = "1.9"
+
+projects[rubik][location] = "http://code.developmentseed.org/fserver"
+projects[rubik][version] = "1.0-beta6"
+
+
 
 projects[context][version] = 2.0-beta7
 projects[context][install_path] = sites/all
@@ -180,8 +188,6 @@ projects[features][patch][] = http://drupal.org/files/issues/features.ctools.inc
 
 projects[strongarm][install_path] = sites/all
 projects[strongarm][version] = 2.0-beta3
-
-projects[features_extra][install_path] = sites/all
 
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
