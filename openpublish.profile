@@ -115,7 +115,7 @@ function openpublish_feature_modules() {
 	  'op_resource',
 	  'op_scheduler_config', 
 	  'op_slideshow', 
-	  'op_video',	  
+	  'op_videos',	  
   );
   return $features;
 }
