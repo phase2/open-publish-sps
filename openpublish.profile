@@ -81,7 +81,7 @@ function openpublish_profile_modules() {
     'topichubs_related_topics',
     
     // distribution management
-    'distro_client', 'features', 'fe_block',
+    'distro_client', 'features', 
     
     // misc modules easing development/maintenance
     'custompage', 'custompage_ui', 'openidadmin',
