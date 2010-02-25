@@ -212,7 +212,8 @@ function _openpublish_base_settings() {
 
   // Set distro tracker server URL for this distribution
   distro_set_tracker_server('http://tracker.openpublishapp.com/distro/components');
-  
+  variable_set('openpublish_version', '1.7'); 
+ 
   $types = array(
     array(
       'type' => 'page',
