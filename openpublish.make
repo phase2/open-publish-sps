@@ -166,9 +166,10 @@ projects[distro][install_path] = sites/all
 ; FCKEditor Library
 libraries[ckeditorlib][download][type] = get
 libraries[ckeditorlib][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
-libraries[ckeditorlib][destination] = libraries/ckeditor
+libraries[ckeditorlib][destination] = libraries
 libraries[ckeditorlib][install_path] = sites/all
-libraries[ckeditorlib][copy][] = *  
+libraries[ckeditorlib][directory_name] = ckeditor
+;libraries[ckeditorlib][copy][] = *  
 
 ; SimplePie RSS parser
 libraries[simplepie][download][type] = get
