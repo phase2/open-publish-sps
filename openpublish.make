@@ -89,8 +89,8 @@ projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-ac
 projects[apachesolr][install_path] = sites/all
 
 ; wysiwyg
-projects[fckeditor][version] = 1.4
-projects[fckeditor][install_path] = sites/all
+projects[ckeditor][version] = 1.0
+projects[ckeditor][install_path] = sites/all
 projects[imce][install_path] = sites/all
 
 ;date
@@ -165,8 +165,8 @@ projects[distro][install_path] = sites/all
 
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
-libraries[fckeditorlib][download][url] = http://downloads.sourceforge.net/project/fckeditor/FCKeditor/2.6.5/FCKeditor_2.6.5.tar.gz
-libraries[fckeditorlib][destination] = modules/fckeditor/fckeditor
+libraries[fckeditorlib][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.2/ckeditor_3.2.tar.gz
+libraries[fckeditorlib][destination] = libraries/ckeditor
 libraries[fckeditorlib][install_path] = sites/all
 libraries[fckeditorlib][copy][] = *
 
