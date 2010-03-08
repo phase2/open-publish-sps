@@ -165,7 +165,8 @@ projects[distro][install_path] = sites/all
 
 ; CKEditor Library
 libraries[ckeditorlib][download][type] = get
-libraries[ckeditorlib][download][url] = http://www.opensourceopenminds.com/sites/default/files/releases/ckeditor_3.2.tar.gz
+;libraries[ckeditorlib][download][url] = http://www.opensourceopenminds.com/sites/default/files/releases/ckeditor_3.2.tar.gz
+libraries[ckeditorlib][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
 libraries[ckeditorlib][destination] = libraries
 libraries[ckeditorlib][install_path] = sites/all
 libraries[ckeditorlib][directory_name] = ckeditor
