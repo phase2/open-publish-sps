@@ -33,7 +33,7 @@ function openpublish_profile_modules() {
   $contributed_modules = array(
     //misc stand-alone, required by others
     'admin', 'rdf', 'token', 'gmap', 'devel', 'bulk_export', 'flickrapi', 'autoload', 'apture', 
-    'fckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
+    'ckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'modalframe', 'jquery_ui', 'nodequeue',
 
@@ -376,32 +376,28 @@ function _openpublish_initialize_settings(&$context){
   variable_set('pathauto_blog_pattern', 'blogs/[user-raw]');
   variable_set('pathauto_node_feeditem_pattern', 'feed-item/[title-raw]');
   variable_set('pathauto_node_twitter_item_pattern', 'twitter-item/[title-raw]');
- 
-  // Setup some reasonable FCKEditor defaults
-  $fckprofiles = fckeditor_profile_load();
+
+  // Setup some reasonable CKEditor defaults
+  $ckprofiles = ckeditor_profile_load();
 
   // Configure global visibilities
-  $globalkey = 'FCKeditor Global Profile';
-  $fckglobal = $fckprofiles[$globalkey];
-  $fckglobal->settings['old_name'] = $globalkey;
-  $fckglobal->settings['name'] = $globalkey;
-  //$fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/build/block/*\n";
-  //$fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/content/types/*\n";
-  $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "admin/*\n";  
-  $fckglobal->settings['excl_paths'] = $fckglobal->settings['excl_paths'] . "user/*/openid*\n";      
-  fckeditor_global_profile_save($fckglobal->settings);
+  $globalkey = 'CKEditor Global Profile';
+  $ckglobal = $ckprofiles[$globalkey];
+  $ckglobal->settings['old_name'] = $globalkey;
+  $ckglobal->settings['name'] = $globalkey;
+  $ckglobal->settings['excl_paths'] = $ckglobal->settings['excl_paths'] . "admin/*\n";  
+  $ckglobal->settings['excl_paths'] = $ckglobal->settings['excl_paths'] . "user/*/openid*\n";      
+  db_query("UPDATE {ckeditor_settings} SET settings = '%s' WHERE name='%s'", serialize($ckglobal->settings) , $globalkey);
 
   // Add role permissions to the built in profiles
-  foreach (array('Default', 'Advanced') as $name) {
-    $fck = $fckprofiles[$name];
-    $fck->settings['old_name'] = $name;
-    $fck->settings['name'] = $name;
-    $fck->settings['rids'] = array();
+  foreach (array('Default', 'Advanced') as $profile_name) {
     foreach (array('administrator', 'editor', 'web editor', 'author') as $role) {
       $rid = install_get_rid($role);
-      $fck->settings['rids'][$rid] = $rid;
+      $rid = db_result(db_query("SELECT rid FROM {ckeditor_role} WHERE name='%s' AND rid='%s'", $profile_name, $rid));
+      if(empty($rid)) {
+        db_query("INSERT INTO {ckeditor_role} (name, rid) VALUES ('%s', %d)", $edit['name'], $rid);      
+      }
     }
-    fckeditor_profile_save($fck->settings);
   }
  
   // Login Destination

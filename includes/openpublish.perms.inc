@@ -39,6 +39,16 @@ $openpublish_perms = array(
     '4' => 'editor',
     '5' => 'web editor',
   ),
+  'access ckeditor' => array(
+    '0' => 'administrator',
+    '2' => 'authenticated user',
+    '3' => 'author',
+    '4' => 'editor',
+    '5' => 'web editor',
+  ),
+  'administer ckeditor' => array(
+    '0' => 'administrator',
+  ),
   'access comments' => array(
     '0' => 'administrator',
     '1' => 'anonymous user',
