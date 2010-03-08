@@ -164,11 +164,11 @@ projects[openpublish_theme][install_path] = sites/all
 projects[distro][install_path] = sites/all
 
 ; FCKEditor Library
-libraries[fckeditorlib][download][type] = get
-libraries[fckeditorlib][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
-libraries[fckeditorlib][destination] = modules/ckeditor
-libraries[fckeditorlib][install_path] = sites/all
-libraries[fckeditorlib][copy][] = *  
+libraries[ckeditorlib][download][type] = get
+libraries[ckeditorlib][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
+libraries[ckeditorlib][destination] = libraries/ckeditor
+libraries[ckeditorlib][install_path] = sites/all
+libraries[ckeditorlib][copy][] = *  
 
 ; SimplePie RSS parser
 libraries[simplepie][download][type] = get
