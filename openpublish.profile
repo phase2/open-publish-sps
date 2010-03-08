@@ -395,7 +395,7 @@ function _openpublish_initialize_settings(&$context){
       $rid = install_get_rid($role);
       $rid = db_result(db_query("SELECT rid FROM {ckeditor_role} WHERE name='%s' AND rid='%s'", $profile_name, $rid));
       if(empty($rid)) {
-        db_query("INSERT INTO {ckeditor_role} (name, rid) VALUES ('%s', %d)", $edit['name'], $rid);      
+        db_query("INSERT INTO {ckeditor_role} (name, rid) VALUES ('%s', %d)", $profile_name, $rid);      
       }
     }
   }
