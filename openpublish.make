@@ -166,9 +166,9 @@ projects[distro][install_path] = sites/all
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
 libraries[fckeditorlib][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.2/ckeditor_3.2.tar.gz
-libraries[fckeditorlib][destination] = libraries/ckeditor
+libraries[fckeditorlib][destination] = modules/ckeditor
 libraries[fckeditorlib][install_path] = sites/all
-;libraries[fckeditorlib][copy][] = *  
+libraries[fckeditorlib][copy][] = *  
 
 ; SimplePie RSS parser
 libraries[simplepie][download][type] = get
