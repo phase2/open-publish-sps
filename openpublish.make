@@ -165,7 +165,7 @@ projects[distro][install_path] = sites/all
 
 ; FCKEditor Library
 libraries[fckeditorlib][download][type] = get
-libraries[fckeditorlib][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor 3.2/ckeditor_3.2.tar.gz"
+libraries[fckeditorlib][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
 libraries[fckeditorlib][destination] = modules/ckeditor
 libraries[fckeditorlib][install_path] = sites/all
 libraries[fckeditorlib][copy][] = *  
