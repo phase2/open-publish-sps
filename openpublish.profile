@@ -85,9 +85,6 @@ function openpublish_profile_modules() {
     
     // misc modules easing development/maintenance
     'custompage', 'custompage_ui', 'openidadmin',
-	
-    // Custom modules developed for OpenPublish
-    'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
     
   );
 
@@ -116,6 +113,9 @@ function openpublish_feature_modules() {
 	  'op_scheduler_config', 
 	  'op_slideshow', 
 	  'op_videos',	  
+	  
+	  // Custom modules developed for OpenPublish. Openpublish_core needs op_advuser_config to run first.
+	  'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
   );
   return $features;
 }
@@ -294,27 +294,6 @@ function _openpublish_import_cck($file, &$context) {
  */
 function _openpublish_set_permissions(&$context){
   
-  // Load the permissions export
-  include_once dirname(__FILE__) . "/includes/openpublish.perms.inc";
-
-  // Reformat data for use with install_add_permissions
-  $role_perms = array();
-  foreach ($openpublish_perms as $perm => $roles) {
-    foreach ($roles as $role) {
-      if(!isset($role_perms[$role])) {
-        $role_perms[$role] = array();
-      }
-      $role_perms[$role][] = $perm;
-    }
-  }
-  // Import the permissions for each role
-  foreach ($role_perms as $role => $perms) {
-    $rid = install_get_rid($role);
-    install_add_permissions($rid, $perms);
-  }
-  
-  db_query('INSERT INTO {users_roles} (uid, rid) VALUES (%d, %d)', 1, $admin_rid);
-  
   // Profile Fields
   $profile_full_name = array(
     'title' => 'Full Name', 
@@ -377,28 +356,7 @@ function _openpublish_initialize_settings(&$context){
   variable_set('pathauto_node_feeditem_pattern', 'feed-item/[title-raw]');
   variable_set('pathauto_node_twitter_item_pattern', 'twitter-item/[title-raw]');
 
-  // Setup some reasonable CKEditor defaults
-  $ckprofiles = ckeditor_profile_load();
 
-  // Configure global visibilities
-  $globalkey = 'CKEditor Global Profile';
-  $ckglobal = $ckprofiles[$globalkey];
-  $ckglobal->settings['old_name'] = $globalkey;
-  $ckglobal->settings['name'] = $globalkey;
-  $ckglobal->settings['excl_paths'] = $ckglobal->settings['excl_paths'] . "admin/*\n";  
-  $ckglobal->settings['excl_paths'] = $ckglobal->settings['excl_paths'] . "user/*/openid*\n";      
-  db_query("UPDATE {ckeditor_settings} SET settings = '%s' WHERE name='%s'", serialize($ckglobal->settings) , $globalkey);
-
-  // Add role permissions to the built in profiles
-  foreach (array('Default', 'Advanced') as $profile_name) {
-    foreach (array('administrator', 'editor', 'web editor', 'author') as $role) {
-      $rid = install_get_rid($role);
-      $rid = db_result(db_query("SELECT rid FROM {ckeditor_role} WHERE name='%s' AND rid='%s'", $profile_name, $rid));
-      if(empty($rid)) {
-        db_query("INSERT INTO {ckeditor_role} (name, rid) VALUES ('%s', %d)", $profile_name, $rid);      
-      }
-    }
-  }
  
   // Login Destination
   variable_set('ld_condition_type', 'pages');
