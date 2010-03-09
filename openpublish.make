@@ -91,6 +91,7 @@ projects[apachesolr][install_path] = sites/all
 ; wysiwyg
 projects[ckeditor][version] = 1.0
 projects[ckeditor][install_path] = sites/all
+projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.install-736786_0.patch
 projects[imce][install_path] = sites/all
 
 ;date
