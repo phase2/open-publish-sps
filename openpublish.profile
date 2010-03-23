@@ -343,6 +343,8 @@ function _openpublish_initialize_settings(&$context){
   $flag->save();
   
   // Pathauto
+  // Moved to OP Misc
+  /*
   variable_set('pathauto_node_pattern', '[title-raw]');
   variable_set('pathauto_node_article_pattern', 'article/[title-raw]');
   variable_set('pathauto_node_blog_pattern', 'blog/[title-raw]');
@@ -355,7 +357,7 @@ function _openpublish_initialize_settings(&$context){
   variable_set('pathauto_blog_pattern', 'blogs/[user-raw]');
   variable_set('pathauto_node_feeditem_pattern', 'feed-item/[title-raw]');
   variable_set('pathauto_node_twitter_item_pattern', 'twitter-item/[title-raw]');
-
+  */
 
  
   // Login Destination
