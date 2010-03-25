@@ -113,6 +113,7 @@ function openpublish_feature_modules() {
 	  'op_scheduler_config', 
 	  'op_slideshow', 
 	  'op_videos',	  
+	  'op_defaults',
 	  
 	  // Custom modules developed for OpenPublish. Openpublish_core needs op_advuser_config to run first.
 	  'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
