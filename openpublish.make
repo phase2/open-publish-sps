@@ -114,7 +114,7 @@ projects[link][install_path] = sites/all
 
 projects[noderelationships][version] = 1.5
 projects[noderelationships][install_path] = sites/all
-projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_5.patch
+projects[noderelationships][patch][] = http://dl.dropbox.com/u/2126602/660958_7.patch
 projects[modalframe][install_path] = sites/all
 projects[jquery_ui][install_path] = sites/all
 
