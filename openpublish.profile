@@ -662,7 +662,7 @@ function _openpublish_set_block_title($title, $module, $delta, $theme) {
 /**
  * Cleanup after the install
  */
-function _openpublish_cleanup($success, $results) {
+function _openpublish_cleanup() {
   // DO NOT call drupal_flush_all_caches(), it disables all themes
   $functions = array(
     'drupal_rebuild_theme_registry',
