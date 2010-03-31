@@ -625,7 +625,7 @@ function _openpublish_setup_blocks(&$context) {
   $theme_key = 'openpublish_theme';
 
   // install the demo ad blocks  
-  $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images';
+  $ad_base = $base_url . '/sites/all/themes/openpublish_theme/images/banner';
   $b1 = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Powered by Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
   $b2 = install_create_custom_block('<img src="' . $ad_base . '/placeholder_ad_banner.gif"/><div class="clear"></div>', 'Top Banner Ad', 2);
   $b3 = install_create_custom_block('<p><img src="' . $ad_base . '/placeholder_ad_rectangle.gif"/></p>', 'Right Block Square Ad', 2);
