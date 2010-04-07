@@ -67,7 +67,14 @@ projects[pathauto][install_path] = sites/all
 projects[tabs][install_path] = sites/all
 projects[panels][install_path] = sites/all
 projects[custompage][install_path] = sites/all
-projects[cmf][install_path] = sites/all
+
+;-- We need to install dev version of CMF, since the latest stable has security issue: http://drupal.org/node/704114
+libraries[cmf][download][type] = get
+libraries[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
+libraries[cmf][destination] = modules
+libraries[cmf][directory_name] = cmf
+libraries[cmf][install_path] = sites/all
+
 projects[advuser][install_path] = sites/all
 projects[scheduler][install_path] = sites/all
 projects[premium][install_path] = sites/all
