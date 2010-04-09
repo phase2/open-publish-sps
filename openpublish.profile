@@ -588,7 +588,7 @@ function _openpublish_install_menus(&$context) {
 
   install_menu_create_menu('Footer Primary', 'footer-primary');
   install_menu_create_menu_item('articles/all', 'Latest News', '', 'menu-footer-primary', 0, 1);
-  install_menu_create_menu_item('popular/all',  'Hot Topics',  '', 'menu-footer-primary', 0, 2);
+  // install_menu_create_menu_item('popular/all',  'Hot Topics',  '', 'menu-footer-primary', 0, 2);
   install_menu_create_menu_item('blogs',        'Blogs',       '', 'menu-footer-primary', 0, 3);
   install_menu_create_menu_item('resources',    'Resources',   '', 'menu-footer-primary', 0, 4);
   install_menu_create_menu_item('events',       'Events',      '', 'menu-footer-primary', 0, 5);
