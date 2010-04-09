@@ -69,17 +69,18 @@ projects[panels][install_path] = sites/all
 projects[custompage][install_path] = sites/all
 
 ;-- We need to install dev version of CMF, since the latest stable has security issue: http://drupal.org/node/704114
-libraries[cmf][download][type] = get
-libraries[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
-libraries[cmf][destination] = modules
-libraries[cmf][directory_name] = cmf
-libraries[cmf][install_path] = sites/all
+projects[cmf][download][type] = get
+projects[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
+projects[cmf][destination] = modules
+projects[cmf][directory_name] = cmf
+projects[cmf][install_path] = sites/all
 
 projects[advuser][install_path] = sites/all
 projects[scheduler][install_path] = sites/all
 projects[premium][install_path] = sites/all
 projects[premium_views_field][install_path] = sites/all
 projects[nodequeue][install_path] = sites/all
+projects[nodequeue][twitter_pull] = sites/all
 
 ; Login Destination and patch to not run during install profile
 projects[login_destination][install_path] = sites/all
@@ -122,8 +123,16 @@ projects[link][install_path] = sites/all
 projects[noderelationships][version] = 1.5
 projects[noderelationships][install_path] = sites/all
 projects[noderelationships][patch][] = http://dl.dropbox.com/u/2126602/660958_7.patch
-projects[modalframe][install_path] = sites/all
+
 projects[jquery_ui][install_path] = sites/all
+
+
+;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
+projects[modalframe][download][type] = get
+projects[modalframe][download][url] = http://ftp.drupal.org/files/projects/modalframe-6.x-1.x-dev.tar.gz
+projects[modalframe][destination] = modules
+projects[modalframe][directory_name] = cmf
+projects[modalframe][install_path] = sites/all
 
 ; get jquery_ui lib
 libraries[jquery_ui_lib][download][type] = get
