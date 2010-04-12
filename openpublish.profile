@@ -629,8 +629,8 @@ function _openpublish_setup_blocks(&$context) {
   $b1 = install_create_custom_block('<p id="credits"><a href="http://www.phase2technology.com/" target="_blank">Powered by Phase2 Technology</a></p>', 'Credits', FILTER_HTML_ESCAPE);
   $b2 = install_create_custom_block('<a href="http://openpublishapp.com"><img src="' . $ad_base . '/banner_openpublish.jpg"/></a><div class="clear"></div>', 'Top Banner Ad', 2);
   $b3 = install_create_custom_block('<p><a href="http://phase2technology.com"><img src="' . $ad_base . '/banner_phase2.jpg"/></a></p>', 'Right Block Square Ad', 2);
-  $b4 = install_create_custom_block('<p><a href="http://phase2technology.com"><img src="' . $ad_base . '/banner_phase2.jpg"/></a></p>', 'Homepage Ad Block 1', 2);
-  $b5 = install_create_custom_block('<p><a href="http://tattlerapp.com"><img src="' . $ad_base . '/banner_tattler.jpg"/></a></p>', 'Homepage Ad Block 2', FILTER_HTML_ESCAPE);
+  $b4 = install_create_custom_block('<p><a href="http://phase2technology.com"><img src="' . $ad_base . '/banner_tattler.jpg"/></a></p>', 'Homepage Ad Block 1', 2);
+  $b5 = install_create_custom_block('<p><a href="http://tattlerapp.com"><img src="' . $ad_base . '/banner_phase2.jpg"/></a></p>', 'Homepage Ad Block 2', FILTER_HTML_ESCAPE);
 
   // Get these new boxes in blocks table
   install_init_blocks();
