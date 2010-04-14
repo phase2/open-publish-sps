@@ -382,7 +382,8 @@ return "user";');
   
   // Calais
   $calais_all = calais_api_get_all_entities();
-  $calais_ignored = array('Anniversary', 'Currency', 'EmailAddress', 'FaxNumber', 'PhoneNumber', 'URL');
+  
+  $calais_ignored = array('CalaisDocumentCategory', 'Anniversary', 'Currency', 'EmailAddress', 'FaxNumber', 'PhoneNumber', 'URL');
   $calais_used = array_diff($calais_all, $calais_ignored);
   
   $calais_entities = calais_get_entity_vocabularies();
