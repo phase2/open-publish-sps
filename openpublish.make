@@ -101,6 +101,7 @@ projects[apachesolr][install_path] = sites/all
 projects[ckeditor][version] = 1.0
 projects[ckeditor][install_path] = sites/all
 projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.install-736786_0.patch
+projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.module-772134.patch
 projects[imce][install_path] = sites/all
 
 ;date
