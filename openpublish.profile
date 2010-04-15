@@ -65,7 +65,10 @@ function openpublish_profile_modules() {
     'swftools', 'swfobject2', 'flowplayer3', 'onepixelout',
 	
     //views
-    'views', 'views_export', 'views_ui',
+    'views', 'views_export', 'views_ui', 
+    
+    //gallery stuff
+    'jcarousel', 'viewscarousel',
     
     'premium', 'premium_views_field', 'premium_default_off',
 

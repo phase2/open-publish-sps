@@ -83,6 +83,16 @@ projects[nodequeue][install_path] = sites/all
 projects[twitter_pull][install_path] = sites/all
 projects[advanced_help][install_path] = sites/all
 
+projects[jcarousel][installtest_path] = sites/all
+projects[jcarousel][version] = 1.1
+
+projects[viewscarousel][download][type] = get
+projects[viewscarousel][download][url] = http://ftp.drupal.org/files/projects/viewscarousel-6.x-2.x-dev.tar.gz
+projects[viewscarousel][destination] = modules
+projects[viewscarousel][directory_name] = viewscarousel
+projects[viewscarousel][install_path] = sites/all
+
+
 ; Login Destination and patch to not run during install profile
 projects[login_destination][install_path] = sites/all
 ;projects[login_destination][version] = 2.5
@@ -124,7 +134,7 @@ projects[link][install_path] = sites/all
 
 projects[noderelationships][version] = 1.5
 projects[noderelationships][install_path] = sites/all
-projects[noderelationships][patch][] = http://dl.dropbox.com/u/2126602/660958_7.patch
+projects[noderelationships][patch][] = http://drupal.org/files/issues/noderelationships.660958.patch
 projects[noderelationships][patch][] = http://drupal.org/files/issues/687746_0.patch
 
 projects[jquery_ui][install_path] = sites/all
