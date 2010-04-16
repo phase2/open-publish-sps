@@ -61,7 +61,10 @@ libraries[onepixelout][install_path] = sites/all
 
 
 projects[flag][install_path] = sites/all
+
 projects[nodewords][install_path] = sites/all
+projects[nodewords][version] = 1.12-beta3
+
 projects[paging][install_path] = sites/all
 projects[pathauto][install_path] = sites/all
 projects[tabs][install_path] = sites/all
