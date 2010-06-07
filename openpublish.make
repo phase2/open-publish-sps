@@ -1,41 +1,70 @@
 core = 6.x
 
-; Utilities
+;--------- Utilities
+
 projects[install_profile_api][install_path] = sites/all
+projects[install_profile_api][version] = 2.1
+
 projects[token][install_path] = sites/all
+project[token][version] = 1.12
+
 projects[devel][install_path] = sites/all
+projects[devel][version] = 1.20
+
 projects[autoload][install_path] = sites/all
+projects[autoload][version] = 1.3
+ 
 projects[mollom][install_path] = sites/all
+projects[mollom][version] = 1.13
+
+projects[views][install_path] = sites/all
+project[views][version] = 2.10
+
+projects[cck][install_path] = sites/all
+projects[cck][version] = 2.6
+
+projects[emfield][install_path] = sites/all
+projects[emfield][version] = 1.20
+
+projects[filefield][install_path] = sites/all
+projects[filefield][version] = 3.3
+
+projects[imagefield][install_path] = sites/all
+projects[imagefield][version] = 3.3
+
+projects[link][install_path] = sites/all
+projects[link][version] = 2.8
+
+projects[noderelationships][install_path] = sites/all
+projects[noderelationships][version] = 1.5
+projects[noderelationships][patch][] = http://drupal.org/files/issues/noderelationships.660958.patch
+projects[noderelationships][patch][] = http://drupal.org/files/issues/687746_0.patch
+
+
 projects[ctools][install_path] = sites/all
+projects[ctools][version] = 1.6
 
-projects[admin][version] = "2.0-beta1"
+projects[panels][install_path] = sites/all
+projects[panels][verson] = 3.5
+
+projects[custompage][install_path] = sites/all
+projects[custompage][version] = 1.15
+
+
 projects[admin][install_path] = sites/all
+projects[admin][version] = "2.0-beta3"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
-;projects[admin][patch][] = http://drupal.org/files/issues/admin.module-696304.patch
 
-libraries[tao][download][type] = get
-libraries[tao][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/tao-6.x-1.9.tgz
-libraries[tao][destination] = themes
-libraries[tao][directory_name] = tao
-libraries[tao][install_path] = sites/all
-
-libraries[rubik][download][type] = get
-libraries[rubik][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/rubik-6.x-1.0-beta7.tgz
-libraries[rubik][destination] = themes
-libraries[rubik][directory_name] = rubik
-libraries[rubik][install_path] = sites/all
-
-projects[context][version] = 2.0-beta7
+projects[context][version] = "3.0-beta5"
 projects[context][install_path] = sites/all
-projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64256.patch
-
-; Misc stand-alone
-projects[openidadmin][install_path] = sites/all
+    ; Patching the conflict with Context 2.x and Panels: http://drupal.org/node/664256
+    ; projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64256.patch
 
 
-
+;--------- Multimedia
 
 projects[swftools][install_path] = sites/all
+projects[swftools][version] = 2.5
 
 ; SWFObject2 Library required by SWFTools 
 libraries[swfobject2][download][type] = get
@@ -59,19 +88,41 @@ libraries[onepixelout][directory_name] = 1pixelout
 libraries[onepixelout][install_path] = sites/all
 
 
+;--------- Phase2 Modules (version specificity not required because we can verify/ensure compatibility.)
+
+projects[premium_views_field][install_path] = sites/all
+projects[twitter_pull][install_path] = sites/all
+projects[opencalais][install_path] = sites/all
+projects[morelikethis][install_path] = sites/all
+projects[topichubs][install_path] = sites/all
+projects[openpublish_core][install_path] = sites/all
+projects[distro][install_path] = sites/all
+projects[apture][install_path] = sites/all
+projects[quantcast][install_path] = sites/all
+
+
+
+;--------- Misc stand-alone
+
+projects[openidadmin][install_path] = sites/all
+projects[openidadmin][version] = 1.2
 
 projects[flag][install_path] = sites/all
+projects[flag][version] = 1.2
 
 projects[nodewords][install_path] = sites/all
 projects[nodewords][version] = 1.12-beta3
 
 projects[paging][install_path] = sites/all
-projects[pathauto][install_path] = sites/all
-projects[tabs][install_path] = sites/all
-projects[panels][install_path] = sites/all
-projects[custompage][install_path] = sites/all
+projects[paging][version] = "1.0-beta3"
 
-;-- We need to install dev version of CMF, since the latest stable has security issue: http://drupal.org/node/704114
+projects[pathauto][install_path] = sites/all
+projects[pathauto][version] = 1.3
+
+projects[tabs][install_path] = sites/all
+projects[tabs][version] = 1.3
+
+;-- We need to install dev version of CMF, since the latest stable has a security issue: http://drupal.org/node/704114
 projects[cmf][download][type] = get
 projects[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
 projects[cmf][destination] = modules
@@ -79,69 +130,51 @@ projects[cmf][directory_name] = cmf
 projects[cmf][install_path] = sites/all
 
 projects[advuser][install_path] = sites/all
+projects[advuser][version] = 2.3
+
 projects[scheduler][install_path] = sites/all
+projects[scheduler][version] = 1.7
+
+; Monetization
 projects[premium][install_path] = sites/all
-projects[premium_views_field][install_path] = sites/all
+projects[premium][version] = "1.0-alpha1"
+
+
 projects[nodequeue][install_path] = sites/all
-projects[twitter_pull][install_path] = sites/all
+projects[nodequeue][version] = 2.9
+
 projects[advanced_help][install_path] = sites/all
+projects[advanced_help][version] = 1.2
 
 projects[jcarousel][installtest_path] = sites/all
 projects[jcarousel][version] = 1.1
 
-projects[viewscarousel][download][type] = get
-projects[viewscarousel][download][url] = http://ftp.drupal.org/files/projects/viewscarousel-6.x-2.x-dev.tar.gz
-projects[viewscarousel][destination] = modules
-projects[viewscarousel][directory_name] = viewscarousel
-projects[viewscarousel][install_path] = sites/all
-
-
-; Login Destination and patch to not run during install profile
 projects[login_destination][install_path] = sites/all
-;projects[login_destination][version] = 2.5
-;projects[login_destination][patch][] = http://drupal.org/files/issues/ld-install-profile-626788-1.patch
+projects[login_destination][version] = 2.10
 
-; Acquia Modules
-projects[acquia_connector][install_path] = sites/all
-projects[acquia_search][install_path] = sites/all
-projects[acquia_search][type] = module
-projects[acquia_search][download][type] = get
-projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
-projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-acquia-search-624792-2.patch
-projects[apachesolr][install_path] = sites/all
-
-; wysiwyg
-projects[ckeditor][version] = 1.0
 projects[ckeditor][install_path] = sites/all
+projects[ckeditor][version] = 1.1
 projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.install-736786_0.patch
 projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.module-772134.patch
+
 projects[imce][install_path] = sites/all
+projects[imce][version] = 1.4
 
-;date
 projects[date][install_path] = sites/all
+projects[date][version] = 2.4
 
-;imagecache
 projects[imageapi][install_path] = sites/all
+projects[imageapi][version] = 1.8
+
 projects[imagecache][install_path] = sites/all
+projects[imagecache][version] = 2.0-beta10
 
-;imagecrop
 projects[imagecrop][install_path] = sites/all
+projects[imagecrop][version] = 1.3
 
-
-;cck
-projects[cck][install_path] = sites/all
-projects[emfield][install_path] = sites/all
-projects[filefield][install_path] = sites/all
-projects[imagefield][install_path] = sites/all
-projects[link][install_path] = sites/all
-
-projects[noderelationships][version] = 1.5
-projects[noderelationships][install_path] = sites/all
-projects[noderelationships][patch][] = http://drupal.org/files/issues/noderelationships.660958.patch
-projects[noderelationships][patch][] = http://drupal.org/files/issues/687746_0.patch
 
 projects[jquery_ui][install_path] = sites/all
-
+projects[jquery_ui][version] = 1.3
 
 ;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
 projects[modalframe][download][type] = get
@@ -150,28 +183,29 @@ projects[modalframe][destination] = modules
 projects[modalframe][directory_name] = cmf
 projects[modalframe][install_path] = sites/all
 
-; get jquery_ui lib
-libraries[jquery_ui_lib][download][type] = get
-libraries[jquery_ui_lib][download][url] = http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
-libraries[jquery_ui_lib][destination] = modules/jquery_ui
-libraries[jquery_ui_lib][directory_name] = jquery.ui
-libraries[jquery_ui_lib][install_path] = sites/all
 
+;--------- Acquia Modules
+
+projects[acquia_connector][install_path] = sites/all
+projects[acquia_search][install_path] = sites/all
+projects[acquia_search][type] = module
+projects[acquia_search][download][type] = get
+projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
+projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-acquia-search-624792-2.patch
+projects[apachesolr][install_path] = sites/all
 
 
 ; Calais Collection
-projects[rdf][version] = 1.0-alpha7
 projects[rdf][install_path] = sites/all
+projects[rdf][version] = 1.0-alpha7
 projects[rdf][patch][] = http://drupal.org/files/issues/rdf-693018.install.patch
 
-projects[flickrapi][install_path] = sites/all
 projects[gmap][install_path] = sites/all
-projects[opencalais][install_path] = sites/all
-projects[morelikethis][install_path] = sites/all
-projects[topichubs][install_path] = sites/all
+projects[gmap][version] = 1.0
 
 ; Feed API
 projects[feedapi][install_path] = sites/all
+projects[feedapi][version] = 1.8
 
 projects[feedapi_mapper][type] = module
 projects[feedapi_mapper][install_path] = sites/all
@@ -180,21 +214,60 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 ;projects[feedapi_mapper][install_path] = sites/all
 ;projects[feedapi_mapper][version] = 1.3
 
-; Views
-projects[views][install_path] = sites/all
 
-; Publishers Extras
-projects[apture][install_path] = sites/all
-projects[quantcast][install_path] = sites/all
+;--------- Features-related
 
-; OpenPublish custom modules
-projects[openpublish_core][install_path] = sites/all
+projects[features][version] = 1.0-beta5
+projects[features][install_path] = sites/all
+projects[features][patch][] = http://drupal.org/files/issues/features.admin_.inc-670788.patch
+projects[features][patch][] = http://drupal.org/files/issues/features.ctools.inc-696396.patch
+
+projects[strongarm][install_path] = sites/all
+projects[strongarm][version] = 2.0-beta3
+
+; OpenPublish Features modules
+projects[openpublish_features][install_path] = sites/all
+projects[openpublish_features][type] = module
+
+
+;--------- Themes
+
+libraries[tao][download][type] = get
+libraries[tao][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/tao-6.x-1.9.tgz
+libraries[tao][destination] = themes
+libraries[tao][directory_name] = tao
+libraries[tao][install_path] = sites/all
+
+libraries[rubik][download][type] = get
+libraries[rubik][download][url] = http://code.developmentseed.org/sites/code.developmentseed.org/files/fserver/rubik-6.x-1.0-beta7.tgz
+libraries[rubik][destination] = themes
+libraries[rubik][directory_name] = rubik
+libraries[rubik][install_path] = sites/all
 
 ; Custom theme developed for OpenPublish
 projects[openpublish_theme][install_path] = sites/all
 
-; Distro module
-projects[distro][install_path] = sites/all
+
+;--------- Modules without stable release (dev release only)
+
+projects[flickrapi][install_path] = sites/all
+
+projects[viewscarousel][download][type] = get
+projects[viewscarousel][download][url] = http://ftp.drupal.org/files/projects/viewscarousel-6.x-2.x-dev.tar.gz
+projects[viewscarousel][destination] = modules
+projects[viewscarousel][directory_name] = viewscarousel
+projects[viewscarousel][install_path] = sites/all
+
+
+
+;--------- Libraries
+
+; get jquery_ui lib
+libraries[jquery_ui_lib][download][type] = get
+libraries[jquery_ui_lib][download][url] = http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
+libraries[jquery_ui_lib][destination] = modules/jquery_ui
+libraries[jquery_ui_lib][directory_name] = jquery.ui
+libraries[jquery_ui_lib][install_path] = sites/all
 
 ; CKEditor Library
 libraries[ckeditorlib][download][type] = get
@@ -217,16 +290,3 @@ libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
 libraries[arc][destination] = modules/rdf/vendor
 libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
-
-; Features
-projects[features][version] = 1.0-beta5
-projects[features][install_path] = sites/all
-projects[features][patch][] = http://drupal.org/files/issues/features.admin_.inc-670788.patch
-projects[features][patch][] = http://drupal.org/files/issues/features.ctools.inc-696396.patch
-
-projects[strongarm][install_path] = sites/all
-projects[strongarm][version] = 2.0-beta3
-
-; OpenPublish Features modules
-projects[openpublish_features][install_path] = sites/all
-projects[openpublish_features][type] = module
