@@ -177,11 +177,13 @@ projects[jquery_ui][install_path] = sites/all
 projects[jquery_ui][version] = 1.3
 
 ;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
-projects[modalframe][download][type] = get
-projects[modalframe][download][url] = http://ftp.drupal.org/files/projects/modalframe-6.x-1.x-dev.tar.gz
-projects[modalframe][destination] = modules
-projects[modalframe][directory_name] = cmf
+;projects[modalframe][download][type] = get
+;projects[modalframe][download][url] = http://ftp.drupal.org/files/projects/modalframe-6.x-1.x-dev.tar.gz
+;projects[modalframe][destination] = modules
+;projects[modalframe][directory_name] = modalframe
+;projects[modalframe][install_path] = sites/all
 projects[modalframe][install_path] = sites/all
+projects[modalframe][version] = 1.7
 
 
 ;--------- Acquia Modules
