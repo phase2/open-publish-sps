@@ -146,7 +146,7 @@ projects[nodequeue][version] = 2.9
 projects[advanced_help][install_path] = sites/all
 projects[advanced_help][version] = 1.2
 
-projects[jcarousel][installtest_path] = sites/all
+projects[jcarousel][install_path] = sites/all
 projects[jcarousel][version] = 1.1
 
 projects[login_destination][install_path] = sites/all
@@ -172,6 +172,9 @@ projects[imagecache][version] = 2.0-beta10
 projects[imagecrop][install_path] = sites/all
 projects[imagecrop][version] = 1.3
 
+
+projects[jquery_update][install_path] = sites/all
+projects[jquery_update][version] = "2.0-alpha1"
 
 projects[jquery_ui][install_path] = sites/all
 projects[jquery_ui][version] = 1.3
@@ -266,7 +269,7 @@ projects[viewscarousel][install_path] = sites/all
 
 ; get jquery_ui lib
 libraries[jquery_ui_lib][download][type] = get
-libraries[jquery_ui_lib][download][url] = http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
+libraries[jquery_ui_lib][download][url] = http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip
 libraries[jquery_ui_lib][destination] = modules/jquery_ui
 libraries[jquery_ui_lib][directory_name] = jquery.ui
 libraries[jquery_ui_lib][install_path] = sites/all

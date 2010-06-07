@@ -35,7 +35,7 @@ function openpublish_profile_modules() {
     'admin', 'rdf', 'token', 'gmap', 'devel', 'bulk_export', 'flickrapi', 'autoload', 'apture', 
     'ckeditor', 'flag', 'imce', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
-    'modalframe', 'jquery_ui', 'nodequeue', 'twitter_pull', 'advanced_help',
+    'jquery_ui', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help',
 
     //context
     'context','context_ui','context_contrib',
