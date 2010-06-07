@@ -169,10 +169,6 @@ projects[imageapi][version] = 1.8
 projects[imagecache][install_path] = sites/all
 projects[imagecache][version] = 2.0-beta10
 
-projects[imagecrop][install_path] = sites/all
-projects[imagecrop][version] = 1.3
-
-
 projects[jquery_update][install_path] = sites/all
 projects[jquery_update][version] = "2.0-alpha1"
 
@@ -255,6 +251,7 @@ projects[openpublish_theme][install_path] = sites/all
 
 ;--------- Modules without stable release (dev release only)
 
+projects[imagecrop][install_path] = sites/all
 projects[flickrapi][install_path] = sites/all
 
 projects[viewscarousel][download][type] = get

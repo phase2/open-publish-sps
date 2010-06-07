@@ -38,7 +38,7 @@ function openpublish_profile_modules() {
     'jquery_ui', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help',
 
     //context
-    'context','context_ui','context_contrib',
+    'context','context_ui',
 
     //date
     'date_api', 'date', 'date_timezone',
