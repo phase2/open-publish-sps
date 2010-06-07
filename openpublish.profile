@@ -37,9 +37,6 @@ function openpublish_profile_modules() {
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'jquery_ui', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help',
 
-    //context
-    'context','context_ui',
-
     //date
     'date_api', 'date', 'date_timezone',
   
@@ -74,6 +71,9 @@ function openpublish_profile_modules() {
 
     // ctools, panels
 	  'ctools', 'views_content', 'page_manager', 'panels', 'panels_node', 
+	  
+	  //context
+	  'context','context_ui',
   
     // requries ctools
     'strongarm', 
