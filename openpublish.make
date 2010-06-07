@@ -29,6 +29,9 @@ projects[emfield][version] = 1.20
 projects[filefield][install_path] = sites/all
 projects[filefield][version] = 3.3
 
+projects[filefield_sources][install_path] = sites/all
+projects[filefield_sources][version] = 1.0
+
 projects[imagefield][install_path] = sites/all
 projects[imagefield][version] = 3.3
 

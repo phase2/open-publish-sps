@@ -45,7 +45,7 @@ function openpublish_profile_modules() {
   
     //cck
     'content', 'content_copy', 'emfield', 'emaudio', 'emimage', 
-    'emvideo', 'fieldgroup', 'filefield', 'imagefield', 'link', 'number',
+    'emvideo', 'fieldgroup', 'filefield', 'imagefield', 'filefield_sources', 'link', 'number',
     'optionwidgets', 'text', 'nodereference', 'noderelationships', 'userreference',
 	
     // Calais
