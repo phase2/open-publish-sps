@@ -221,10 +221,8 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 
 ;--------- Features-related
 
-projects[features][version] = 1.0-beta5
+projects[features][version] = 1.0-beta7
 projects[features][install_path] = sites/all
-projects[features][patch][] = http://drupal.org/files/issues/features.admin_.inc-670788.patch
-projects[features][patch][] = http://drupal.org/files/issues/features.ctools.inc-696396.patch
 
 projects[strongarm][install_path] = sites/all
 projects[strongarm][version] = 2.0-beta3
