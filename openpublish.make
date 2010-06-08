@@ -225,7 +225,7 @@ projects[features][version] = 1.0-beta7
 projects[features][install_path] = sites/all
 
 projects[strongarm][install_path] = sites/all
-projects[strongarm][version] = 2.0-beta3
+projects[strongarm][version] = 2.0-rc1
 
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
