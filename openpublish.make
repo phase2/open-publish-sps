@@ -58,7 +58,7 @@ projects[admin][install_path] = sites/all
 projects[admin][version] = "2.0-beta3"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
-projects[context][version] = "3.0-beta5"
+projects[context][version] = "3.0-beta3"
 projects[context][install_path] = sites/all
     ; Patching the conflict with Context 2.x and Panels: http://drupal.org/node/664256
     ; projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64256.patch
@@ -221,7 +221,7 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 
 ;--------- Features-related
 
-projects[features][version] = 1.0-beta7
+projects[features][version] = "1.0-beta6" 
 projects[features][install_path] = sites/all
 
 projects[strongarm][install_path] = sites/all
