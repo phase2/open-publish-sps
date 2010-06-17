@@ -18,16 +18,16 @@ projects[mollom][install_path] = sites/all
 projects[mollom][version] = 1.13
 
 projects[views][install_path] = sites/all
-project[views][version] = 2.10
+project[views][version] = 2.11
 
 projects[cck][install_path] = sites/all
-projects[cck][version] = 2.6
+projects[cck][version] = 2.7
 
 projects[emfield][install_path] = sites/all
 projects[emfield][version] = 1.20
 
 projects[filefield][install_path] = sites/all
-projects[filefield][version] = 3.3
+projects[filefield][version] = 3.5
 
 projects[filefield_sources][install_path] = sites/all
 projects[filefield_sources][version] = 1.0
@@ -36,7 +36,7 @@ projects[imagefield][install_path] = sites/all
 projects[imagefield][version] = 3.3
 
 projects[link][install_path] = sites/all
-projects[link][version] = 2.8
+projects[link][version] = 2.9
 
 projects[noderelationships][install_path] = sites/all
 projects[noderelationships][version] = 1.5
@@ -114,7 +114,7 @@ projects[flag][install_path] = sites/all
 projects[flag][version] = 1.2
 
 projects[nodewords][install_path] = sites/all
-projects[nodewords][version] = 1.12-beta3
+projects[nodewords][version] = 1.12-beta9
 
 projects[paging][install_path] = sites/all
 projects[paging][version] = "1.0-beta3"
