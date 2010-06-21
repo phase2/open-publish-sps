@@ -60,7 +60,7 @@ projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
 projects[context][version] = "3.0-beta3"
 projects[context][install_path] = sites/all
-projects[context][patch][] = http://drupal.org/files/issues/context-833214.patch
+projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 
 
 ;--------- Multimedia
