@@ -60,7 +60,8 @@ projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
 projects[context][version] = "3.0-beta3"
 projects[context][install_path] = sites/all
-; projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
+; Temporary patch uploaded to DropBox. Can't upload to d.o. because it is a patch for a specific old version incompatible with the latest stable release.
+; projects[context][patch][] = http://dl.dropbox.com/u/2126602/openpublish/context_ui-833214.patch
 
 
 ;--------- Multimedia
