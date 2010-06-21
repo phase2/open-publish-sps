@@ -60,8 +60,7 @@ projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
 projects[context][version] = "3.0-beta3"
 projects[context][install_path] = sites/all
-    ; Patching the conflict with Context 2.x and Panels: http://drupal.org/node/664256
-    ; projects[context][patch][] = http://drupal.org/files/issues/context.core_.inc-64256.patch
+projects[context][patch][] = http://drupal.org/files/issues/context-833214.patch
 
 
 ;--------- Multimedia

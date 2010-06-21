@@ -346,24 +346,6 @@ function _openpublish_initialize_settings(&$context){
   $flag = flag_get_flag('bookmarks');
   $flag->types = array();
   $flag->save();
-  
-  // Pathauto
-  // Moved to OP Misc
-  /*
-  variable_set('pathauto_node_pattern', '[title-raw]');
-  variable_set('pathauto_node_article_pattern', 'article/[title-raw]');
-  variable_set('pathauto_node_blog_pattern', 'blog/[title-raw]');
-  variable_set('pathauto_node_audio_pattern', 'audio/[title-raw]');
-  variable_set('pathauto_node_event_pattern', 'event/[title-raw]');
-  variable_set('pathauto_node_op_image_pattern', 'image/[title-raw]');
-  variable_set('pathauto_node_package_pattern', 'package/[title-raw]');
-  variable_set('pathauto_node_topichub_pattern', 'topic-hub/[title-raw]');
-  variable_set('pathauto_node_video_pattern', 'video/[title-raw]');
-  variable_set('pathauto_blog_pattern', 'blogs/[user-raw]');
-  variable_set('pathauto_node_feeditem_pattern', 'feed-item/[title-raw]');
-  variable_set('pathauto_node_twitter_item_pattern', 'twitter-item/[title-raw]');
-  */
-
  
   // Login Destination
   variable_set('ld_condition_type', 'pages');
