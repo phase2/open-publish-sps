@@ -58,9 +58,11 @@ projects[admin][install_path] = sites/all
 projects[admin][version] = "2.0-beta3"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
-projects[context][version] = "3.0-beta3"
+;projects[context][version] = "3.0-beta3"
+projects[context][version] = "3.0-beta5"
+projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 projects[context][install_path] = sites/all
-; Temporary patch uploaded to DropBox. Can't upload to d.o. because it is a patch for a specific old version incompatible with the latest stable release.
+; Temporary patch uploaded to DropBox. 
 ; projects[context][patch][] = http://dl.dropbox.com/u/2126602/openpublish/context_ui-833214.patch
 
 
@@ -221,8 +223,10 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 
 ;--------- Features-related
 
-projects[features][version] = "1.0-beta6" 
+;projects[features][version] = "1.0-beta6" 
+projects[features][version] = "1.0-beta8" 
 projects[features][install_path] = sites/all
+
 
 projects[strongarm][install_path] = sites/all
 projects[strongarm][version] = 2.0-rc1
