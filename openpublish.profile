@@ -120,7 +120,7 @@ function openpublish_feature_modules() {
 	  'op_contexts',
 	  
 	  // Custom modules developed for OpenPublish. Openpublish_core needs op_advuser_config to run first.
-	  'openpublish_core', 'openpublish_administration', 'openpublish_popular_terms',
+	  'openpublish_core', 'openpublish_administration', 'openpublish_menu', 'openpublish_popular_terms',
   );
   return $features;
 }
