@@ -559,10 +559,34 @@ function _openpublish_install_menus(&$context) {
 
   // Primary Navigation
   install_menu_create_menu_item('<front>',             'Home',       '', 'primary-links', 0, 1);
-  install_menu_create_menu_item('articles/Business',   'Business',   '', 'primary-links', 0, 2);
-  install_menu_create_menu_item('articles/Health',     'Health',     '', 'primary-links', 0, 3);
-  install_menu_create_menu_item('articles/Politics',   'Politics',   '', 'primary-links', 0, 4);
-  install_menu_create_menu_item('articles/Technology', 'Technology', '', 'primary-links', 0, 5);
+  
+  // Business -- Finance, Markets, Personal Finance, Management 
+  $business_plid = install_menu_create_menu_item('articles/Business',   'Business',       '', 'primary-links', 0, 2);
+  install_menu_create_menu_item('articles/Finance',             'Finance',                '', 'primary-links', $business_plid, 1);
+  install_menu_create_menu_item('articles/Markets',             'Markets',                '', 'primary-links', $business_plid, 2);
+  install_menu_create_menu_item('articles/Personal Finance',    'Personal Finance',       '', 'primary-links', $business_plid, 3);
+  install_menu_create_menu_item('articles/Management',          'Management',             '', 'primary-links', $business_plid, 4);
+  
+  // Healthcare -- Medicine, Fitness, Nutrition
+  $health_plid = install_menu_create_menu_item('articles/Health',     'Health',     '', 'primary-links', 0, 3);
+  install_menu_create_menu_item('articles/Medicine',     'Medicine',   '', 'primary-links', $health_plid, 1);
+  install_menu_create_menu_item('articles/Fitness',     'Fitness',     '', 'primary-links', $health_plid, 2);
+  install_menu_create_menu_item('articles/Nutrition',     'Nutrition', '', 'primary-links', $health_plid, 3);
+  
+  // Politics -- Local, National, International
+  $politics_plid = install_menu_create_menu_item('articles/Politics',   'Politics',   '', 'primary-links', 0, 4);
+  install_menu_create_menu_item('articles/Local',      'Local',   '', 'primary-links', $politics_plid, 1);
+  install_menu_create_menu_item('articles/National',   'National',   '', 'primary-links', $politics_plid, 2);
+  install_menu_create_menu_item('articles/International',   'International',   '', 'primary-links', $politics_plid, 3);
+  
+  // Technology --  Internet, Gadgets, Biotech, Social Media, Gaming
+  $tech_plid = install_menu_create_menu_item('articles/Technology', 'Technology', '', 'primary-links', 0, 5);
+  install_menu_create_menu_item('articles/Internet',   'Internet',   '', 'primary-links', $tech_plid, 1);
+  install_menu_create_menu_item('articles/Gadgets',   'Gadgets',   '', 'primary-links', $tech_plid, 2);
+  install_menu_create_menu_item('articles/Biotech',   'Biotech',   '', 'primary-links', $tech_plid, 3);
+  install_menu_create_menu_item('articles/Social Media',   'Social Media',   '', 'primary-links', $tech_plid, 4);
+  install_menu_create_menu_item('articles/Gaming',   'Gaming',   '', 'primary-links', $tech_plid, 5);
+  
   install_menu_create_menu_item('blogs',               'Blogs',      '', 'primary-links', 0, 6);
   install_menu_create_menu_item('resources',           'Resources',  '', 'primary-links', 0, 7);
   install_menu_create_menu_item('events',              'Events',     '', 'primary-links', 0, 8);
