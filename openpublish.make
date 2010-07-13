@@ -58,12 +58,9 @@ projects[admin][install_path] = sites/all
 projects[admin][version] = "2.0-beta3"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
-;projects[context][version] = "3.0-beta3"
 projects[context][version] = "3.0-beta5"
 projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 projects[context][install_path] = sites/all
-; Temporary patch uploaded to DropBox. 
-; projects[context][patch][] = http://dl.dropbox.com/u/2126602/openpublish/context_ui-833214.patch
 
 
 ;--------- Multimedia
