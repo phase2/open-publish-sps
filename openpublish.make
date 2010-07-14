@@ -174,6 +174,9 @@ projects[imagecache][version] = 2.0-beta10
 projects[jquery_update][install_path] = sites/all
 projects[jquery_update][version] = "2.0-alpha1"
 
+projects[ie_css_optimizer][install_path] = sites/all
+projects[ie_css_optimizer][version] = 1.0
+
 projects[jquery_ui][install_path] = sites/all
 projects[jquery_ui][version] = 1.3
 
