@@ -12,7 +12,7 @@ projects[devel][install_path] = sites/all
 projects[devel][version] = 1.20
 
 projects[autoload][install_path] = sites/all
-projects[autoload][version] = 1.3
+projects[autoload][version] = 1.4
  
 projects[mollom][install_path] = sites/all
 projects[mollom][version] = 1.13
@@ -27,13 +27,13 @@ projects[emfield][install_path] = sites/all
 projects[emfield][version] = 1.20
 
 projects[filefield][install_path] = sites/all
-projects[filefield][version] = 3.5
+projects[filefield][version] = 3.7
 
 projects[filefield_sources][install_path] = sites/all
-projects[filefield_sources][version] = 1.0
+projects[filefield_sources][version] = 1.1
 
 projects[imagefield][install_path] = sites/all
-projects[imagefield][version] = 3.3
+projects[imagefield][version] = 3.7
 
 projects[link][install_path] = sites/all
 projects[link][version] = 2.9
@@ -51,11 +51,11 @@ projects[panels][install_path] = sites/all
 projects[panels][verson] = 3.5
 
 projects[custompage][install_path] = sites/all
-projects[custompage][version] = 1.15
+projects[custompage][version] = 1.17
 
 
 projects[admin][install_path] = sites/all
-projects[admin][version] = "2.0-beta3"
+projects[admin][version] = "2.0-beta4"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
 projects[context][version] = "3.0-beta5"
@@ -110,7 +110,7 @@ projects[openidadmin][install_path] = sites/all
 projects[openidadmin][version] = 1.2
 
 projects[flag][install_path] = sites/all
-projects[flag][version] = 1.2
+projects[flag][version] = 1.3
 
 projects[nodewords][install_path] = sites/all
 projects[nodewords][version] = 1.12-beta9
@@ -207,7 +207,7 @@ projects[rdf][version] = 1.0-alpha7
 projects[rdf][patch][] = http://drupal.org/files/issues/rdf-693018.install.patch
 
 projects[gmap][install_path] = sites/all
-projects[gmap][version] = 1.0
+projects[gmap][version] = 1.1
 
 ; Feed API
 projects[feedapi][install_path] = sites/all
