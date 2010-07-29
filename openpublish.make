@@ -48,7 +48,7 @@ projects[ctools][install_path] = sites/all
 projects[ctools][version] = 1.6
 
 projects[panels][install_path] = sites/all
-projects[panels][verson] = 3.5
+projects[panels][version] = 3.5
 
 projects[custompage][install_path] = sites/all
 projects[custompage][version] = 1.17
