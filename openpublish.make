@@ -300,5 +300,8 @@ libraries[arc][install_path] = sites/all
 
 ;--------- Translation
 
+projects[l10n_update][download][type] = get
+projects[l10n_update][download][url] = http://ftp.drupal.org/files/projects/l10n_update-6.x-1.x-dev.tar.gz
+projects[l10n_update][destination] = modules
+projects[l10n_update][directory_name] = l10n_update
 projects[l10n_update][install_path] = sites/all
-projects[l10n_update][version] = 1.x-dev
