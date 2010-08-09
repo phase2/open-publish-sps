@@ -89,6 +89,8 @@ function openpublish_profile_modules() {
     // misc modules easing development/maintenance
     'custompage', 'custompage_ui', 'openidadmin',
     
+    // l10n
+    'l10n_update',
   );
 
   return array_merge($core_modules, $contributed_modules);
@@ -144,6 +146,11 @@ function openpublish_profile_task_list() {
   );
   
   $tasks['op-configure-batch'] = st('Configure OpenPublish');
+  
+  if (_openpublish_language_selected()) {
+    $tasks['op-translation-import-batch'] = st('Importing translations');
+  }
+  
   return $tasks;
 }
 
@@ -151,6 +158,7 @@ function openpublish_profile_task_list() {
  * Implementation of hook_profile_tasks().
  */
 function openpublish_profile_tasks(&$task, $url) {
+  global $install_locale;
   $output = "";
   
   install_include(openpublish_profile_modules());
@@ -187,9 +195,34 @@ function openpublish_profile_tasks(&$task, $url) {
     batch_set($batch);
     batch_process($url, $url);
   }
-     
+
+  if ($task == 'op-translation-import') {
+    if (_openpublish_language_selected() && module_exists('l10n_update')) {
+      module_load_install('l10n_update');
+      module_load_include('batch.inc', 'l10n_update');
+
+      $history = l10n_update_get_history();
+      $available = l10n_update_available_releases();
+      $updates = l10n_update_build_updates($history, $available);
+
+      // Filter out updates in other languages. If no languages, all of them will be updated
+      $updates = _l10n_update_prepare_updates($updates, NULL, array($install_locale));
+
+      // Edited strings are kept, only default ones (previously imported)
+      // are overwritten and new strings are added
+      $mode = 1;
+
+      if ($batch = l10n_update_batch_multiple($updates, $mode)) {
+        $batch['finished'] = '_openpublish_import_translations_finished';
+        variable_set('install_task', 'op-translation-import-batch');
+        batch_set($batch);
+        batch_process($url, $url);
+      }
+    }
+  }
+  
   // Land here until the batches are done
-  if ($task == 'op-configure-batch') {
+  if (in_array($task, array('op-translation-import-batch', 'op-configure-batch'))) {
     include_once 'includes/batch.inc';
     $output = _batch_page();
   }
@@ -198,11 +231,26 @@ function openpublish_profile_tasks(&$task, $url) {
 } 
 
 /**
+ * Translation import process is finished, move on to the next step
+ */
+function _openpublish_import_translations_finished($success, $results) {
+  _openpublish_log(t('Translations have been imported.'));
+  variable_set('install_task', 'profile-finished');
+}
+
+/**
  * Import process is finished, move on to the next step
  */
 function _openpublish_configure_finished($success, $results) {
   _openpublish_log(t('OpenPublish has been installed.'));
-  variable_set('install_task', 'profile-finished');
+  if (_openpublish_language_selected()) {
+    // Other language, different part of the process
+    variable_set('install_task', 'op-translation-import');
+  }
+  else {
+    // English installation
+    variable_set('install_task', 'profile-finished');
+  }
 }
 
 /**
@@ -706,4 +754,12 @@ function system_form_install_select_profile_form_alter(&$form, $form_state) {
 function _openpublish_log($msg) {
   error_log($msg);
   drupal_set_message($msg);
+}
+
+/**
+ * Checks if installation is being done in a language other than English
+ */
+function _openpublish_language_selected() {
+  global $install_locale;
+  return !empty($install_locale) && ($install_locale != 'en');
 }
