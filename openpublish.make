@@ -297,3 +297,8 @@ libraries[arc][download][url] = http://code.semsol.org/source/arc.tar.gz
 libraries[arc][destination] = modules/rdf/vendor
 libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
+
+;--------- Translation
+
+projects[l10n_update][install_path] = sites/all
+projects[l10n_update][version] = 1.x-dev
