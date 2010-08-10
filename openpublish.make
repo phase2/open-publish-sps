@@ -9,7 +9,7 @@ projects[token][install_path] = sites/all
 project[token][version] = 1.12
 
 projects[devel][install_path] = sites/all
-projects[devel][version] = 1.20
+projects[devel][version] = 1.21
 
 projects[autoload][install_path] = sites/all
 projects[autoload][version] = 1.4
