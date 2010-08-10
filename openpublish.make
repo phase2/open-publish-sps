@@ -45,10 +45,10 @@ projects[noderelationships][patch][] = http://drupal.org/files/issues/687746_0.p
 
 
 projects[ctools][install_path] = sites/all
-projects[ctools][version] = 1.6
+projects[ctools][version] = 1.7
 
 projects[panels][install_path] = sites/all
-projects[panels][version] = 3.5
+projects[panels][version] = 3.7
 
 projects[custompage][install_path] = sites/all
 projects[custompage][version] = 1.17
