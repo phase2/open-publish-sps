@@ -30,7 +30,10 @@ projects[filefield][install_path] = sites/all
 projects[filefield][version] = 3.7
 
 projects[filefield_sources][install_path] = sites/all
-projects[filefield_sources][version] = 1.1
+projects[filefield_sources][version] = 1.2
+
+projects[node_embed][install_path] = sites/all
+projects[node_embed][version] = 1.2
 
 projects[imagefield][install_path] = sites/all
 projects[imagefield][version] = 3.7
