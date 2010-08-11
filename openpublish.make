@@ -122,7 +122,7 @@ projects[paging][install_path] = sites/all
 projects[paging][version] = "1.0-beta3"
 
 projects[pathauto][install_path] = sites/all
-projects[pathauto][version] = 1.3
+projects[pathauto][version] = 1.4
 
 projects[tabs][install_path] = sites/all
 projects[tabs][version] = 1.3
