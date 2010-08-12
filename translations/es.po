@@ -5191,7 +5191,7 @@ msgid "Installing @drupal"
 msgstr "Instalando @drupal"
 msgid "Configuring OpenPublish"
 msgstr "Configurando openpublish"
-msgid "Configure OpenPublish
+msgid "Configure OpenPublish"
 msgstr "Configurar OpenPublish"
 msgid "Importing translations"
 msgstr "Importando traducciones"
