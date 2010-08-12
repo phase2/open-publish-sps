@@ -1,10 +1,10 @@
-# French translation of Drupal core (6.17)
+# French translation of Drupal core (6.19)
 # Copyright (c) 2010 by the French translation team
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Drupal core (6.17)\n"
-"POT-Creation-Date: 2010-08-03 21:50+0000\n"
+"Project-Id-Version: Drupal core (6.19)\n"
+"POT-Creation-Date: 2010-08-12 17:56+0000\n"
 "PO-Revision-Date: 2010-07-26 02:50+0000\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
