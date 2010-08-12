@@ -21,7 +21,7 @@ projects[views][install_path] = sites/all
 project[views][version] = 2.11
 
 projects[cck][install_path] = sites/all
-projects[cck][version] = 2.7
+projects[cck][version] = 2.8
 
 projects[emfield][install_path] = sites/all
 projects[emfield][version] = 1.20
