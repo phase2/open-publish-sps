@@ -235,6 +235,11 @@ function openpublish_profile_tasks(&$task, $url) {
  */
 function _openpublish_import_translations_finished($success, $results) {
   _openpublish_log(t('Translations have been imported.'));
+  /**
+   * Necessary as the openpublish_theme's status gets reset to 0
+   * by a part of the automated batch translation in l10n_update
+   */
+  install_default_theme('openpublish_theme');
   variable_set('install_task', 'profile-finished');
 }
 
