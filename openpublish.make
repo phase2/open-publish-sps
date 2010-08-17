@@ -301,6 +301,13 @@ libraries[arc][destination] = modules/rdf/vendor
 libraries[arc][directory_name] = arc
 libraries[arc][install_path] = sites/all
 
+; CKeditor plugin for Node Embed
+libraries[node_embed_ckeditor][download][type] = get
+libraries[node_embed_ckeditor][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/NodeEmbed.zip
+libraries[node_embed_ckeditor][destination] = modules/ckeditor/plugins
+libraries[node_embed_ckeditor][directory_name] = nodeembed
+libraries[node_embed_ckeditor][install_path] = sites/all
+
 ;--------- Translation
 
 projects[l10n_update][download][type] = get
