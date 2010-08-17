@@ -161,6 +161,7 @@ projects[ckeditor][install_path] = sites/all
 projects[ckeditor][version] = 1.1
 projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.install-736786_0.patch
 projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.module-772134.patch
+projects[ckeditor][patch][] = http://openpublishapp.com/sites/default/files/releases/patches/ckeditor.config.js-nodeembed.patch
 
 projects[imce][install_path] = sites/all
 projects[imce][version] = 1.4
