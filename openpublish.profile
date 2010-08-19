@@ -428,17 +428,23 @@ return "user";');
   
   $calais_entities = calais_get_entity_vocabularies();
   
-  variable_set('calais_api_allow_searching', false);
-  variable_set('calais_api_allow_distribution', false);
   variable_set('calais_applied_entities_global', drupal_map_assoc($calais_used));
   
+  variable_set('calais_node_blog_request', 2);
   variable_set('calais_node_blog_process', 'AUTO');
+  variable_set('calais_node_article_request', 2);
   variable_set('calais_node_article_process', 'AUTO');
+  variable_set('calais_node_audio_request', 2);
   variable_set('calais_node_audio_process', 'AUTO');
+  variable_set('calais_node_video_request', 2);
   variable_set('calais_node_video_process', 'AUTO');
+  variable_set('calais_node_op_image_request', 2);
   variable_set('calais_node_op_image_process', 'AUTO');
+  variable_set('calais_node_resource_request', 2);
   variable_set('calais_node_resource_process', 'AUTO');
+  variable_set('calais_node_event_request', 2);
   variable_set('calais_node_event_process', 'AUTO');
+  variable_set('calais_node_feeditem_request', 2);
   variable_set('calais_node_feeditem_process', 'AUTO');
   
   // Config feed items to use SemanticProxy by default
