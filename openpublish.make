@@ -9,7 +9,7 @@ projects[token][install_path] = sites/all
 project[token][version] = 1.12
 
 projects[devel][install_path] = sites/all
-projects[devel][version] = 1.21
+projects[devel][version] = 1.22
 
 projects[autoload][install_path] = sites/all
 projects[autoload][version] = 1.4
@@ -24,7 +24,7 @@ projects[cck][install_path] = sites/all
 projects[cck][version] = 2.8
 
 projects[emfield][install_path] = sites/all
-projects[emfield][version] = 1.20
+projects[emfield][version] = 1.24
 
 projects[filefield][install_path] = sites/all
 projects[filefield][version] = 3.7
@@ -167,7 +167,7 @@ projects[imce][install_path] = sites/all
 projects[imce][version] = 1.4
 
 projects[date][install_path] = sites/all
-projects[date][version] = 2.4
+projects[date][version] = 2.6
 
 projects[imageapi][install_path] = sites/all
 projects[imageapi][version] = 1.8
@@ -228,12 +228,12 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 ;--------- Features-related
 
 ;projects[features][version] = "1.0-beta6" 
-projects[features][version] = "1.0-beta8" 
+projects[features][version] = "1.0-rc3" 
 projects[features][install_path] = sites/all
 
 
 projects[strongarm][install_path] = sites/all
-projects[strongarm][version] = 2.0-rc1
+projects[strongarm][version] = 2.0
 
 ; OpenPublish Features modules
 projects[openpublish_features][install_path] = sites/all
