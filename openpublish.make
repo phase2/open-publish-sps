@@ -58,11 +58,13 @@ projects[custompage][version] = 1.17
 
 
 projects[admin][install_path] = sites/all
-projects[admin][version] = "2.0-beta6"
+#projects[admin][version] = "2.0-beta6"
+projects[admin][version] = "2.0"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
-projects[context][version] = "3.0-beta5"
-projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
+#projects[context][version] = "3.0-beta5"
+projects[context][version] = "3.0-rc2"
+#projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 projects[context][install_path] = sites/all
 
 
