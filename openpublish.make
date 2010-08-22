@@ -230,7 +230,7 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 ;--------- Features-related
 
 ;projects[features][version] = "1.0-beta6" 
-projects[features][version] = "1.0-rc3" 
+projects[features][version] = "1.0-beta8" 
 projects[features][install_path] = sites/all
 
 
