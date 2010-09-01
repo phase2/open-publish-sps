@@ -71,7 +71,7 @@ function openpublish_profile_modules() {
     'premium', 'premium_views_field', 'premium_default_off',
 
     // ctools, panels
-	  'ctools', 'views_content', 'page_manager', 'panels', 'panels_node', 
+	  'ctools', 'ctools_custom_content', 'views_content', 'page_manager', 'panels', 'panels_node', 
 	  
 	  //context
 	  'context','context_ui',
