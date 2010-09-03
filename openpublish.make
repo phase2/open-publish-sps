@@ -42,9 +42,8 @@ projects[link][install_path] = sites/all
 projects[link][version] = 2.9
 
 projects[noderelationships][install_path] = sites/all
-projects[noderelationships][version] = 1.5
-projects[noderelationships][patch][] = http://drupal.org/files/issues/noderelationships.660958.patch
-projects[noderelationships][patch][] = http://drupal.org/files/issues/687746_0.patch
+projects[noderelationships][version] = 1.6
+projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_6.patch
 
 
 projects[ctools][install_path] = sites/all
@@ -231,7 +230,7 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 ;--------- Features-related
 
 ;projects[features][version] = "1.0-beta6" 
-projects[features][version] = "1.0-beta8" 
+projects[features][version] = "1.0" 
 projects[features][install_path] = sites/all
 
 
