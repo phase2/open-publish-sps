@@ -311,6 +311,22 @@ libraries[node_embed_ckeditor][destination] = modules/ckeditor/plugins
 libraries[node_embed_ckeditor][directory_name] = nodeembed
 libraries[node_embed_ckeditor][install_path] = sites/all
 
+
+
+;-- We need to install dev version of fb as there is not a stable version yet
+projects[fb][download][type] = get
+projects[fb][download][url] = http://ftp.drupal.org/files/projects/fb-6.x-3.x-dev.tar.gz
+projects[fb][destination] = modules
+projects[fb][directory_name] = fb
+projects[fb][install_path] = sites/all
+; facebook_php_sdk
+libraries[fbsdk][download][type] = get
+libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.1-0-g08909f3.zip
+libraries[fbsdk][destination] = libraries
+libraries[fbsdk][install_path] = sites/all
+libraries[fbsdk][directory_name] = facebook-php-sdk
+
+
 ;--------- Translation
 
 projects[l10n_update][download][type] = get
