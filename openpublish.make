@@ -319,6 +319,8 @@ projects[fb][download][url] = http://ftp.drupal.org/files/projects/fb-6.x-3.x-de
 projects[fb][destination] = modules
 projects[fb][directory_name] = fb
 projects[fb][install_path] = sites/all
+;-- patch to fix issue with fb_devel_requirements
+projects[fb][patch][] = http://drupal.org/files/issues/906666.patch
 ; facebook_php_sdk
 libraries[fbsdk][download][type] = get
 libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.1-0-g08909f3.zip
