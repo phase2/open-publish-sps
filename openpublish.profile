@@ -39,7 +39,7 @@ function openpublish_profile_modules() {
     'node_embed',
 
     //date
-    'date_api', 'date', 'date_timezone',
+    'date_api', 'date', 'date_timezone', 'date_popup',
   
     //imagecache
     'imageapi', 'imageapi_gd', 'imagecache', 'imagecache_ui', 'imagecrop', 
