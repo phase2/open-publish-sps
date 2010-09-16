@@ -162,8 +162,6 @@ projects[login_destination][version] = 2.10
 
 projects[ckeditor][install_path] = sites/all
 projects[ckeditor][version] = 1.1
-projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.install-736786_0.patch
-projects[ckeditor][patch][] = http://drupal.org/files/issues/ckeditor.module-772134.patch
 projects[ckeditor][patch][] = http://openpublishapp.com/sites/default/files/releases/patches/ckeditor.config.js-nodeembed.patch
 
 projects[imce][install_path] = sites/all
@@ -204,7 +202,6 @@ projects[acquia_search][install_path] = sites/all
 projects[acquia_search][type] = module
 projects[acquia_search][download][type] = get
 projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
-projects[acquia_search][patch][] = http://drupal.org/files/issues/openpublish-acquia-search-624792-2.patch
 projects[apachesolr][install_path] = sites/all
 
 
@@ -320,8 +317,7 @@ projects[fb][download][url] = http://ftp.drupal.org/files/projects/fb-6.x-3.x-de
 projects[fb][destination] = modules
 projects[fb][directory_name] = fb
 projects[fb][install_path] = sites/all
-;-- patch to fix issue with fb_devel_requirements
-projects[fb][patch][] = http://drupal.org/files/issues/906666.patch
+
 ; facebook_php_sdk
 libraries[fbsdk][download][type] = get
 libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.1-0-g08909f3.zip
