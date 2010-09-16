@@ -320,7 +320,8 @@ projects[fb][install_path] = sites/all
 
 ; facebook_php_sdk
 libraries[fbsdk][download][type] = get
-libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.2-0-gb14edfa.tar.gz
+; Unfortunately, Facebook download links can not be used as permalinks so we need to upload it to opapp.com
+libraries[fbsdk][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/facebook-php-sdk-v2.1.2-0-gb14edfa.tar.gz
 libraries[fbsdk][destination] = libraries
 libraries[fbsdk][install_path] = sites/all
 libraries[fbsdk][directory_name] = facebook-php-sdk
