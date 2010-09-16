@@ -320,7 +320,7 @@ projects[fb][install_path] = sites/all
 
 ; facebook_php_sdk
 libraries[fbsdk][download][type] = get
-libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.1-0-g08909f3.zip
+libraries[fbsdk][download][url] = http://download.github.com/facebook-php-sdk-v2.1.2-0-gb14edfa.tar.gz
 libraries[fbsdk][destination] = libraries
 libraries[fbsdk][install_path] = sites/all
 libraries[fbsdk][directory_name] = facebook-php-sdk
