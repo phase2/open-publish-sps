@@ -16,7 +16,7 @@ projects[autoload][install_path] = sites/all
 projects[autoload][version] = 1.4
  
 projects[mollom][install_path] = sites/all
-projects[mollom][version] = 1.13
+projects[mollom][version] = 1.14
 
 projects[views][install_path] = sites/all
 project[views][version] = 2.11
@@ -25,7 +25,7 @@ projects[cck][install_path] = sites/all
 projects[cck][version] = 2.8
 
 projects[emfield][install_path] = sites/all
-projects[emfield][version] = 1.24
+projects[emfield][version] = 1.25
 
 projects[filefield][install_path] = sites/all
 projects[filefield][version] = 3.7
