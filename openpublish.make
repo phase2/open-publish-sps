@@ -167,6 +167,9 @@ projects[ckeditor][patch][] = http://openpublishapp.com/sites/default/files/rele
 projects[imce][install_path] = sites/all
 projects[imce][version] = 1.4
 
+projects[imce_mkdir][install_path] = sites/all
+projects[imce_mkdir][version] = 1.0
+
 projects[date][install_path] = sites/all
 projects[date][version] = 2.6
 
