@@ -107,7 +107,7 @@ projects[openpublish_core][install_path] = sites/all
 projects[distro][install_path] = sites/all
 projects[apture][install_path] = sites/all
 projects[quantcast][install_path] = sites/all
-
+projects[adly][install_path] = sites/all
 
 
 ;--------- Misc stand-alone
