@@ -208,7 +208,12 @@ projects[acquia_search][install_path] = sites/all
 projects[acquia_search][type] = module
 projects[acquia_search][download][type] = get
 projects[acquia_search][download][url] = http://acquia.com/files/downloads/acquia-search-current.tar.gz
+projects[apachesolr][version] = 2.0-beta3
 projects[apachesolr][install_path] = sites/all
+libraries[SolrPhpClient][download][type] = get
+libraries[SolrPhpClient][download][url] = http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.tgz 
+libraries[SolrPhpClient][destination] = modules/apachesolr
+
 
 
 ; Calais Collection
