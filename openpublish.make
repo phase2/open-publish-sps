@@ -296,7 +296,8 @@ libraries[simplepie][download][type] = get
 libraries[simplepie][download][url] = http://simplepie.org/downloads/simplepie_1.2.zip
 libraries[simplepie][destination] = modules/feedapi/parser_simplepie
 libraries[simplepie][install_path] = sites/all
-libraries[simplepie][copy][] = simplepie.inc
+;-- copy command was deprecated. custom packaging shell script that runs after drush-make handles this now.
+;libraries[simplepie][copy][] = simplepie.inc
 
 ; ARC2 Library required by RDF 
 libraries[arc][download][type] = get
