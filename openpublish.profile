@@ -122,6 +122,7 @@ function openpublish_feature_modules() {
 	  'op_defaults',
 	  'op_contexts',
 	  'op_facebook',
+    'op_editors_choice',
 	  
 	  // Custom modules developed for OpenPublish. Openpublish_core needs op_advuser_config to run first.
 	  'openpublish_core', 'openpublish_administration', 'openpublish_menu', 'openpublish_popular_terms',
