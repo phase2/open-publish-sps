@@ -36,6 +36,9 @@ projects[filefield_sources][version] = 1.2
 projects[node_embed][install_path] = sites/all
 projects[node_embed][version] = 1.2
 
+projects[nodeblock][install_path] = sites/all
+projects[nodeblock][version] = 1.4
+
 projects[imagefield][install_path] = sites/all
 projects[imagefield][version] = 3.7
 
