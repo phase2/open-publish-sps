@@ -344,8 +344,8 @@ libraries[fbsdk][directory_name] = facebook-php-sdk
 ; documentViewer for Document Cloud
 libraries[documentviewer][download][type] = get
 libraries[documentviewer][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/document-viewer.tar.gz
-libraries[documentviewer][destination] = libraries
-libraries[documentviewer][directory_name] = documentViewer
+libraries[documentviewer][destination] = libraries/documentViewer
+libraries[documentviewer][directory_name] = document-viewer
 libraries[documentviewer][install_path] = sites/all
 
 ;--------- Translation
