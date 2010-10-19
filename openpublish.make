@@ -114,7 +114,6 @@ projects[apture][install_path] = sites/all
 projects[quantcast][install_path] = sites/all
 projects[adly][install_path] = sites/all
 projects[document_cloud][install_path] = sites/all
-projects[document_cloud][version] = 1.1
 
 ;--------- Misc stand-alone
 
