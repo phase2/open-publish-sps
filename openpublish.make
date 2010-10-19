@@ -71,6 +71,8 @@ projects[context][version] = "3.0-beta5"
 #projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 projects[context][install_path] = sites/all
 
+projects[libraries][install_path] = sites/all
+projects[libraries][version] = "1.0-alpha1"
 
 ;--------- Multimedia
 
@@ -111,7 +113,7 @@ projects[distro][install_path] = sites/all
 projects[apture][install_path] = sites/all
 projects[quantcast][install_path] = sites/all
 projects[adly][install_path] = sites/all
-
+projects[document_cloud][install_path] = sites/all
 
 ;--------- Misc stand-alone
 
@@ -338,6 +340,12 @@ libraries[fbsdk][destination] = libraries
 libraries[fbsdk][install_path] = sites/all
 libraries[fbsdk][directory_name] = facebook-php-sdk
 
+; documentViewer for Document Cloud
+libraries[documentviewer][download][type] = git
+libraries[documentviewer][download][url] = git://github.com/documentcloud/document-viewer.git
+libraries[documentviewer][destination] = libraries/documentViewer
+libraries[documentviewer][directory_name] = document-viewer
+libraries[documentviewer][install_path] = sites/all
 
 ;--------- Translation
 
