@@ -34,7 +34,7 @@ projects[filefield_sources][install_path] = sites/all
 projects[filefield_sources][version] = 1.2
 
 projects[node_embed][install_path] = sites/all
-projects[node_embed][version] = 1.2
+projects[node_embed][version] = 1.3
 
 projects[nodeblock][install_path] = sites/all
 projects[nodeblock][version] = 1.4
@@ -65,8 +65,7 @@ projects[admin][install_path] = sites/all
 projects[admin][version] = "2.0"
 projects[admin][patch][] = http://drupal.org/files/issues/admin-611254-1.patch
 
-projects[context][version] = "3.0-beta5"
-#projects[context][version] = "3.0-rc2"
+projects[context][version] = "3.0"
 # patch not required for the latest, but can't update to the latest w/o Features update
 #projects[context][patch][] = http://drupal.org/files/issues/context_ui-833214.patch
 projects[context][install_path] = sites/all
@@ -130,7 +129,7 @@ projects[paging][install_path] = sites/all
 projects[paging][version] = "1.0-beta3"
 
 projects[pathauto][install_path] = sites/all
-projects[pathauto][version] = 1.4
+projects[pathauto][version] = 1.5
 
 projects[tabs][install_path] = sites/all
 projects[tabs][version] = 1.3
@@ -166,20 +165,20 @@ projects[login_destination][install_path] = sites/all
 projects[login_destination][version] = 2.10
 
 projects[ckeditor][install_path] = sites/all
-projects[ckeditor][version] = 1.1
+projects[ckeditor][version] = 1.2
 projects[ckeditor][patch][] = http://openpublishapp.com/sites/default/files/releases/patches/ckeditor.config.js-nodeembed.patch
 
 projects[imce][install_path] = sites/all
-projects[imce][version] = 1.4
+projects[imce][version] = "2.0-rc2"
 
 projects[imce_mkdir][install_path] = sites/all
-projects[imce_mkdir][version] = 1.0
+projects[imce_mkdir][version] = 1.1
 
 projects[date][install_path] = sites/all
 projects[date][version] = 2.6
 
 projects[imageapi][install_path] = sites/all
-projects[imageapi][version] = 1.8
+projects[imageapi][version] = 1.9
 
 projects[imagecache][install_path] = sites/all
 projects[imagecache][version] = 2.0-beta10
@@ -188,10 +187,10 @@ projects[jquery_update][install_path] = sites/all
 projects[jquery_update][version] = "2.0-alpha1"
 
 projects[ie_css_optimizer][install_path] = sites/all
-projects[ie_css_optimizer][version] = 1.0
+projects[ie_css_optimizer][version] = 1.1
 
 projects[jquery_ui][install_path] = sites/all
-projects[jquery_ui][version] = 1.3
+projects[jquery_ui][version] = 1.4
 
 ;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
 ;projects[modalframe][download][type] = get
@@ -220,7 +219,7 @@ libraries[SolrPhpClient][destination] = modules/apachesolr
 
 ; Calais Collection
 projects[rdf][install_path] = sites/all
-projects[rdf][version] = 1.0-alpha7
+projects[rdf][version] = 1.0-alpha8
 projects[rdf][patch][] = http://drupal.org/files/issues/rdf-693018.install.patch
 
 projects[gmap][install_path] = sites/all
@@ -239,8 +238,7 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
 
 
 ;--------- Features-related
-
-;projects[features][version] = "1.0-beta6" 
+ 
 projects[features][version] = "1.0" 
 projects[features][install_path] = sites/all
 
