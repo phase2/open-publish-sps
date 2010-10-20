@@ -252,6 +252,8 @@ projects[strongarm][version] = 2.0
 projects[openpublish_features][install_path] = sites/all
 projects[openpublish_features][type] = module
 
+projects[diff][version] = 1.2 
+projects[diff][install_path] = sites/all
 
 ;--------- Themes
 
