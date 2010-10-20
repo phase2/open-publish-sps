@@ -219,7 +219,7 @@ libraries[SolrPhpClient][destination] = modules/apachesolr
 
 ; Calais Collection
 projects[rdf][install_path] = sites/all
-projects[rdf][version] = 1.0-alpha8
+projects[rdf][version] = 1.0-alpha7
 projects[rdf][patch][] = http://drupal.org/files/issues/rdf-693018.install.patch
 
 projects[gmap][install_path] = sites/all
