@@ -241,7 +241,8 @@ projects[feedapi_mapper][download][url] = http://ftp.drupal.org/files/projects/f
  
 projects[features][version] = "1.0" 
 projects[features][install_path] = sites/all
-
+; http://drupal.org/node/954062 - Incorrect Component Labels in the Components Dropdown
+projects[features][patch][] = http://drupal.org/files/issues/features-954062-1.patch
 
 projects[strongarm][install_path] = sites/all
 projects[strongarm][version] = 2.0
