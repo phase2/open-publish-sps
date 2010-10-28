@@ -105,6 +105,7 @@ function openpublish_profile_modules() {
  */
 function openpublish_feature_modules() {
   $features = array(
+    'op_imce_config',
 	  'op_author', 
 	  'op_author_layout',	  
 	  'op_author_panels', 
@@ -115,7 +116,6 @@ function openpublish_feature_modules() {
 	  'op_event',
 	  'op_image',
 	  'op_imagecrop_config', 
-	  'op_imce_config', 
 	  'op_misc',
 	  'op_package',
 	  'op_resource',
