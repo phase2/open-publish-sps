@@ -124,7 +124,7 @@ function openpublish_feature_modules() {
 	  'op_videos',	  
 	  'op_defaults',
 	  'op_contexts',
-	  'op_facebook',
+	  //'op_facebook',
     'op_editors_choice',
     'op_default_workflow',
     'op_default_workflow_nodetypes',
