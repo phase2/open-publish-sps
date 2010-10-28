@@ -192,6 +192,9 @@ projects[ie_css_optimizer][version] = 1.1
 projects[jquery_ui][install_path] = sites/all
 projects[jquery_ui][version] = 1.4
 
+projects[rules][install_path] = sites/all
+projects[rules][version] = 1.3
+
 ;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
 ;projects[modalframe][download][type] = get
 ;projects[modalframe][download][url] = http://ftp.drupal.org/files/projects/modalframe-6.x-1.x-dev.tar.gz
@@ -324,6 +327,12 @@ libraries[node_embed_ckeditor][destination] = modules/ckeditor/plugins
 libraries[node_embed_ckeditor][directory_name] = nodeembed
 libraries[node_embed_ckeditor][install_path] = sites/all
 
+; new version of the workflow module
+libraries[workflow][download][type] = get
+libraries[workflow][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/workflow.op2.3.1.tgz
+libraries[workflow][destination] = modules
+libraries[workflow][directory_name] = workflow
+libraries[workflow][install_path] = sites/all
 
 
 ;-- We need to install dev version of fb as there is not a stable version yet
