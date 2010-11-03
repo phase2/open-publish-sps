@@ -87,7 +87,7 @@ libraries[swfobject2][install_path] = sites/all
 
 ; FlowPlayer Library required by SWFTools to play audio/video files
 libraries[flowplayer][download][type] = get
-libraries[flowplayer][download][url] = http://www.opensourceopenminds.com/sites/default/files/releases/flowplayer-package.zip
+libraries[flowplayer][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/flowplayer-package.zip
 libraries[flowplayer][destination] = modules/swftools/shared
 libraries[flowplayer][directory_name] = flowplayer3
 libraries[flowplayer][install_path] = sites/all
@@ -135,11 +135,14 @@ projects[tabs][install_path] = sites/all
 projects[tabs][version] = 1.3
 
 ;-- We need to install dev version of CMF, since the latest stable has a security issue: http://drupal.org/node/704114
-projects[cmf][download][type] = get
-projects[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
-projects[cmf][destination] = modules
-projects[cmf][directory_name] = cmf
+;projects[cmf][download][type] = get
+;projects[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
+;projects[cmf][destination] = modules
+;projects[cmf][directory_name] = cmf
+;projects[cmf][install_path] = sites/all
+; ----
 projects[cmf][install_path] = sites/all
+projects[cmf][version] = 2.0
 
 projects[advuser][install_path] = sites/all
 projects[advuser][version] = 2.3
@@ -195,12 +198,6 @@ projects[jquery_ui][version] = 1.4
 projects[rules][install_path] = sites/all
 projects[rules][version] = 1.3
 
-;-- We need to install dev version of Modalframe, since the latest stable is not, yet, compatible with Admin 2.x. @See: http://drupal.org/node/732820
-;projects[modalframe][download][type] = get
-;projects[modalframe][download][url] = http://ftp.drupal.org/files/projects/modalframe-6.x-1.x-dev.tar.gz
-;projects[modalframe][destination] = modules
-;projects[modalframe][directory_name] = modalframe
-;projects[modalframe][install_path] = sites/all
 projects[modalframe][install_path] = sites/all
 projects[modalframe][version] = 1.7
 
@@ -257,6 +254,17 @@ projects[openpublish_features][type] = module
 projects[diff][version] = 2.1 
 projects[diff][install_path] = sites/all
 
+projects[imagecrop][version] = 1.0
+projects[imagecrop][install_path] = sites/all
+
+projects[flickrapi][version] = 1.0
+projects[flickrapi][install_path] = sites/all
+
+projects[workflow][download][type] = "git"
+projects[workflow][download][url] = "git@github.com:inadarei/drupal-workflow.git"
+projects[workflow][download][tag] = "op2.3.02"
+projects[workflow][directory_name] = workflow
+
 ;--------- Themes
 
 libraries[tao][download][type] = get
@@ -277,16 +285,11 @@ projects[openpublish_theme][install_path] = sites/all
 
 ;--------- Modules without stable release (dev release only)
 
-projects[imagecrop][install_path] = sites/all
-projects[flickrapi][install_path] = sites/all
-
 projects[viewscarousel][download][type] = get
 projects[viewscarousel][download][url] = http://ftp.drupal.org/files/projects/viewscarousel-6.x-2.x-dev.tar.gz
 projects[viewscarousel][destination] = modules
 projects[viewscarousel][directory_name] = viewscarousel
 projects[viewscarousel][install_path] = sites/all
-
-
 
 ;--------- Libraries
 
@@ -299,8 +302,8 @@ libraries[jquery_ui_lib][install_path] = sites/all
 
 ; CKEditor Library
 libraries[ckeditorlib][download][type] = get
-;libraries[ckeditorlib][download][url] = http://www.opensourceopenminds.com/sites/default/files/releases/ckeditor_3.2.tar.gz
-libraries[ckeditorlib][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.2/ckeditor_3.2.zip
+;libraries[ckeditorlib][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.2/ckeditor_3.2.zip
+libraries[ckeditorlib][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.4.1/ckeditor_3.4.1.tar.gz
 libraries[ckeditorlib][destination] = libraries
 libraries[ckeditorlib][install_path] = sites/all
 libraries[ckeditorlib][directory_name] = ckeditor
@@ -326,14 +329,6 @@ libraries[node_embed_ckeditor][download][url] = http://openpublishapp.com/sites/
 libraries[node_embed_ckeditor][destination] = modules/ckeditor/plugins
 libraries[node_embed_ckeditor][directory_name] = nodeembed
 libraries[node_embed_ckeditor][install_path] = sites/all
-
-; new version of the workflow module
-libraries[workflow][download][type] = get
-libraries[workflow][download][url] = http://openpublishapp.com/sites/default/files/releases/packages/workflow.op2.3.1.tgz
-libraries[workflow][destination] = modules
-libraries[workflow][directory_name] = workflow
-libraries[workflow][install_path] = sites/all
-
 
 ;-- We need to install dev version of fb as there is not a stable version yet
 projects[fb][download][type] = get
