@@ -201,6 +201,10 @@ projects[rules][version] = 1.3
 projects[modalframe][install_path] = sites/all
 projects[modalframe][version] = 1.7
 
+projects[mimemail][version] = "1.0-alpha6"
+; Patch mimemail to add Rules support, this is already committed to HEAD so hopefully will be available in the next version.
+projects[mimemail][patch][] = http://drupal.org/files/issues/mimemail.501722_03.patch
+
 
 ;--------- Acquia Modules
 
