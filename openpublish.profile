@@ -37,7 +37,7 @@ function openpublish_profile_modules() {
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'jquery_ui', 'jquery_update', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help', 'ie_css_optimizer',
     'node_embed', 'adly', 'nodeblock', 'libraries', 
-    'mimemail', 'op_workflow_bonus', 'rules', 'rules_admin', 'workflow',
+    'mimemail', 'op_workflow_bonus', 'workflow',
 
     //date
     'date_api', 'date', 'date_timezone', 'date_popup',
@@ -129,6 +129,8 @@ function openpublish_feature_modules() {
     'op_editors_choice',
     'op_default_workflow',
     'op_default_workflow_nodetypes',
+    'rules', 
+    'rules_admin',
 	  
 	  // Custom modules developed for OpenPublish. Openpublish_core needs op_advuser_config to run first.
 	  'openpublish_core', 'openpublish_administration', 'openpublish_menu', 'openpublish_popular_terms',
