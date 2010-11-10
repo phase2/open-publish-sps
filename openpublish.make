@@ -143,7 +143,7 @@ projects[tabs][version] = 1.3
 ; ----
 projects[cmf][install_path] = sites/all
 projects[cmf][version] = 2.0
-projects[cmf][patch] = http://drupal.org/files/issues/cmf-967312-1.patch
+projects[cmf][patch][] = http://drupal.org/files/issues/cmf-967312-1.patch
 
 projects[advuser][install_path] = sites/all
 projects[advuser][version] = 2.3
