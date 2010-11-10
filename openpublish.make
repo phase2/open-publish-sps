@@ -134,7 +134,7 @@ projects[pathauto][version] = 1.5
 projects[tabs][install_path] = sites/all
 projects[tabs][version] = 1.3
 
-;-- We need to install dev version of CMF, since the latest stable has a security issue: http://drupal.org/node/704114
+;-- If we need to install dev version of CMF, uncomment following lines, accordingly
 ;projects[cmf][download][type] = get
 ;projects[cmf][download][url] = http://ftp.drupal.org/files/projects/cmf-6.x-2.x-dev.tar.gz
 ;projects[cmf][destination] = modules
@@ -143,6 +143,7 @@ projects[tabs][version] = 1.3
 ; ----
 projects[cmf][install_path] = sites/all
 projects[cmf][version] = 2.0
+projects[cmf][patch] = http://drupal.org/files/issues/cmf-967312-1.patch
 
 projects[advuser][install_path] = sites/all
 projects[advuser][version] = 2.3
