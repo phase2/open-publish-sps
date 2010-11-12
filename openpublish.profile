@@ -26,13 +26,13 @@ function openpublish_profile_modules() {
     'block', 'filter', 'node', 'system', 'user',
 
     // Optional core modules.
-    'dblog', 'blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path',
-	  'profile', 'search', 'statistics', 'taxonomy', 'translation', 'upload', 
+    'blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path',
+	  'statistics', 'search', 'taxonomy', 'translation', 'upload', 
   );
 
   $contributed_modules = array(
     //misc stand-alone, required by others
-    'admin', 'rdf', 'token', 'gmap', 'devel', 'bulk_export', 'flickrapi', 'autoload', 'apture', 
+    'admin', 'rdf', 'token', 'gmap', 'devel', 'bulk_export', 'flickrapi', 'autoload', 
     'ckeditor', 'flag', 'imce', 'imce_mkdir', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'jquery_ui', 'jquery_update', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help', 'ie_css_optimizer',
@@ -72,7 +72,8 @@ function openpublish_profile_modules() {
     'premium', 'premium_views_field', 'premium_default_off',
 
     // ctools, panels
-	  'ctools', 'ctools_custom_content', 'views_content', 'page_manager', 'panels', 'panels_node', 
+	  'ctools', 'page_manager', 'panels', 'panels_node', 
+      //'ctools_custom_content', 'views_content',
 	  
 	  //context
 	  'context','context_ui',
@@ -129,6 +130,8 @@ function openpublish_feature_modules() {
     'op_editors_choice',
     'op_default_workflow',
     'op_default_workflow_nodetypes',
+    
+    // Rules needs to be enabled after op_default_workflow which contains default rules for the default workflow
     'rules', 
     'rules_admin',
 	  
