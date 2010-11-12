@@ -23,7 +23,7 @@ function openpublish_profile_details() {
 function openpublish_profile_modules() {
   $core_modules = array(
     // Required core modules
-    'block', 'filter', 'node', 'system', 'user',
+    'block', 'filter', 'node', 'system', 'user', 'profile',
 
     // Optional core modules.
     'blog', 'comment', 'help', 'locale', 'menu', 'openid', 'path',
