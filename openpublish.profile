@@ -54,7 +54,10 @@ function openpublish_profile_modules() {
     'calais_api', 'calais', 'calais_geo', 'calais_tagmods',
     
     // Feed API
-    'feedapi', 'feedapi_node', 'feedapi_inherit', 'feedapi_mapper', 'parser_simplepie', 
+    //'feedapi', 'feedapi_node', 'feedapi_inherit', 'feedapi_mapper', 'parser_simplepie', 
+    
+    // Feeds
+    'job_scheduler', 'feeds', 'feeds_ui',
 
     // More Like this
     'morelikethis', 'morelikethis_flickr', 'morelikethis_googlevideo', 'morelikethis_taxonomy',
