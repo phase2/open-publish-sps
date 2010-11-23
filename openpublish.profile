@@ -37,7 +37,7 @@ function openpublish_profile_modules() {
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'jquery_ui', 'jquery_update', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help', 'ie_css_optimizer',
     'node_embed', 'nodeblock', 'libraries', 
-    'mimemail', 'op_workflow_bonus', 'workflow',
+    'mimemail', 'op_workflow_bonus', 'workflow', 'translation_helpers',
 
     //date
     'date_api', 'date', 'date_timezone', 'date_popup',

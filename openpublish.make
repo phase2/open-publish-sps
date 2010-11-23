@@ -158,6 +158,9 @@ projects[premium][version] = "1.0-alpha1"
 projects[nodequeue][install_path] = sites/all
 projects[nodequeue][version] = 2.9
 
+projects[translation_helpers][install_path] = sites/all
+projects[translation_helpers][version] = 1.0
+
 projects[advanced_help][install_path] = sites/all
 projects[advanced_help][version] = 1.2
 
