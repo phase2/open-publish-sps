@@ -36,7 +36,7 @@ function openpublish_profile_modules() {
     'ckeditor', 'flag', 'imce', 'imce_mkdir', 'mollom', 'nodewords', 'nodewords_basic', 'paging',
     'pathauto', 'tabs', 'login_destination', 'cmf', 'install_profile_api','scheduler','advuser',
     'jquery_ui', 'jquery_update', 'modalframe', 'nodequeue', 'twitter_pull', 'advanced_help', 'ie_css_optimizer',
-    'node_embed', 'adly', 'nodeblock', 'libraries', 
+    'node_embed', 'nodeblock', 'libraries', 
     'mimemail', 'op_workflow_bonus', 'workflow',
 
     //date
