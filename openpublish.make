@@ -274,10 +274,9 @@ projects[flickrapi][version] = 1.0
 projects[flickrapi][install_path] = sites/all
 
 projects[workflow][download][type] = "git"
-; projects[workflow][download][url] = "git@github.com:inadarei/drupal-workflow.git"
-;projects[workflow][download][tag] = "op2.3.02"
-projects[workflow][download][url] = "git://github.com/q0rban/drupal-workflow.git"
-
+projects[workflow][download][url] = "git@github.com:inadarei/drupal-workflow.git"
+projects[workflow][download][tag] = "op2.3.02"
+;projects[workflow][download][url] = "git://github.com/q0rban/drupal-workflow.git"
 projects[workflow][directory_name] = workflow
 
 ;--------- Themes
