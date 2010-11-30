@@ -16,7 +16,7 @@ projects[autoload][install_path] = sites/all
 projects[autoload][version] = 1.4
  
 projects[mollom][install_path] = sites/all
-projects[mollom][version] = 1.14
+projects[mollom][version] = 1.15
 
 projects[views][install_path] = sites/all
 project[views][version] = 2.11
@@ -51,10 +51,10 @@ projects[noderelationships][patch][] = http://drupal.org/files/issues/660958_6.p
 
 
 projects[ctools][install_path] = sites/all
-projects[ctools][version] = 1.7
+projects[ctools][version] = 1.8
 
 projects[panels][install_path] = sites/all
-projects[panels][version] = 3.7
+projects[panels][version] = 3.8
 
 projects[custompage][install_path] = sites/all
 projects[custompage][version] = 1.17
@@ -168,7 +168,7 @@ projects[jcarousel][install_path] = sites/all
 projects[jcarousel][version] = 1.1
 
 projects[login_destination][install_path] = sites/all
-projects[login_destination][version] = 2.10
+projects[login_destination][version] = 2.12
 
 projects[ckeditor][install_path] = sites/all
 projects[ckeditor][version] = 1.2
@@ -270,7 +270,7 @@ projects[diff][install_path] = sites/all
 projects[imagecrop][version] = 1.0
 projects[imagecrop][install_path] = sites/all
 
-projects[flickrapi][version] = 1.0
+projects[flickrapi][version] = 1.1
 projects[flickrapi][install_path] = sites/all
 
 projects[workflow][download][type] = "git"
