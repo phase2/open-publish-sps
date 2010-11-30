@@ -168,7 +168,7 @@ projects[jcarousel][install_path] = sites/all
 projects[jcarousel][version] = 1.1
 
 projects[login_destination][install_path] = sites/all
-projects[login_destination][version] = 2.12
+projects[login_destination][version] = 2.10
 
 projects[ckeditor][install_path] = sites/all
 projects[ckeditor][version] = 1.2
