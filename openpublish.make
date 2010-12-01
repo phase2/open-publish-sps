@@ -19,7 +19,7 @@ projects[mollom][install_path] = sites/all
 projects[mollom][version] = 1.15
 
 projects[views][install_path] = sites/all
-project[views][version] = 2.11
+projects[views][version] = 2.11
 
 projects[cck][install_path] = sites/all
 projects[cck][version] = 2.8
@@ -248,6 +248,9 @@ projects[gmap][version] = 1.1
 
 projects[job_scheduler][version] = 1.0-beta3
 projects[feeds][version] = 1.0-beta10
+
+; Data
+projects[data][version] = 1.0-alpha14
 
 
 ;--------- Features-related
