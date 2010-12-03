@@ -270,7 +270,7 @@ projects[openpublish_features][type] = module
 projects[diff][version] = 2.1 
 projects[diff][install_path] = sites/all
 
-projects[imagecrop][version] = 1.0
+projects[imagecrop][version] = 1.1
 projects[imagecrop][install_path] = sites/all
 
 projects[flickrapi][version] = 1.1
