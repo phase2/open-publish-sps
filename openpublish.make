@@ -10,7 +10,7 @@ projects[token][install_path] = sites/all
 project[token][version] = 1.12
 
 projects[devel][install_path] = sites/all
-projects[devel][version] = 1.22
+projects[devel][version] = 1.23
 
 projects[autoload][install_path] = sites/all
 projects[autoload][version] = 1.4
@@ -19,16 +19,16 @@ projects[mollom][install_path] = sites/all
 projects[mollom][version] = 1.15
 
 projects[views][install_path] = sites/all
-projects[views][version] = 2.11
+projects[views][version] = 2.12
 
 projects[cck][install_path] = sites/all
-projects[cck][version] = 2.8
+projects[cck][version] = 2.9
 
 projects[emfield][install_path] = sites/all
-projects[emfield][version] = 1.25
+projects[emfield][version] = 1.26
 
 projects[filefield][install_path] = sites/all
-projects[filefield][version] = 3.7
+projects[filefield][version] = 3.9
 
 projects[filefield_sources][install_path] = sites/all
 projects[filefield_sources][version] = 1.2
@@ -40,7 +40,7 @@ projects[nodeblock][install_path] = sites/all
 projects[nodeblock][version] = 1.4
 
 projects[imagefield][install_path] = sites/all
-projects[imagefield][version] = 3.7
+projects[imagefield][version] = 3.9
 
 projects[link][install_path] = sites/all
 projects[link][version] = 2.9
@@ -54,7 +54,7 @@ projects[ctools][install_path] = sites/all
 projects[ctools][version] = 1.8
 
 projects[panels][install_path] = sites/all
-projects[panels][version] = 3.8
+projects[panels][version] = 3.9
 
 projects[custompage][install_path] = sites/all
 projects[custompage][version] = 1.17
@@ -71,7 +71,7 @@ projects[context][version] = "3.0"
 projects[context][install_path] = sites/all
 
 projects[libraries][install_path] = sites/all
-projects[libraries][version] = "1.0-alpha1"
+projects[libraries][version] = "1.0"
 
 ;--------- Multimedia
 
@@ -148,7 +148,7 @@ projects[advuser][install_path] = sites/all
 projects[advuser][version] = 2.3
 
 projects[scheduler][install_path] = sites/all
-projects[scheduler][version] = 1.7
+projects[scheduler][version] = 1.8
 
 ; Monetization
 projects[premium][install_path] = sites/all
@@ -175,13 +175,13 @@ projects[ckeditor][version] = 1.2
 projects[ckeditor][patch][] = http://openpublishapp.com/sites/default/files/releases/patches/ckeditor.config.js-nodeembed.patch
 
 projects[imce][install_path] = sites/all
-projects[imce][version] = "2.0-rc2"
+projects[imce][version] = "2.1"
 
 projects[imce_mkdir][install_path] = sites/all
 projects[imce_mkdir][version] = 1.1
 
 projects[date][install_path] = sites/all
-projects[date][version] = 2.6
+projects[date][version] = 2.7
 
 projects[imageapi][install_path] = sites/all
 projects[imageapi][version] = 1.9
@@ -199,7 +199,7 @@ projects[jquery_ui][install_path] = sites/all
 projects[jquery_ui][version] = 1.4
 
 projects[rules][install_path] = sites/all
-projects[rules][version] = 1.3
+projects[rules][version] = 1.4
 
 projects[modalframe][install_path] = sites/all
 projects[modalframe][version] = 1.7
@@ -270,7 +270,7 @@ projects[openpublish_features][type] = module
 projects[diff][version] = 2.1 
 projects[diff][install_path] = sites/all
 
-projects[imagecrop][version] = 1.1
+projects[imagecrop][version] = 1.2
 projects[imagecrop][install_path] = sites/all
 
 projects[flickrapi][version] = 1.1
