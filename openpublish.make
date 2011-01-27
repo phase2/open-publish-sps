@@ -278,7 +278,7 @@ projects[flickrapi][install_path] = sites/all
 
 projects[workflow][download][type] = "git"
 projects[workflow][download][url] = "git@github.com:inadarei/drupal-workflow.git"
-projects[workflow][download][tag] = "op2.3.03"
+projects[workflow][download][tag] = "op2.3.05"
 ;projects[workflow][download][url] = "git://github.com/q0rban/drupal-workflow.git"
 projects[workflow][directory_name] = workflow
 
