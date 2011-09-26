@@ -49,7 +49,7 @@ projects[views][version] = 3.0-rc1
 
 projects[nodequeue][subdir] = contrib
 projects[nodequeue][type] = module
-projects[nodequeue][version] = 2.0-alpha2
+projects[nodequeue][version] = 2.0-beta1
 ; projects[nodequeue][patch][] = http://drupal.org/files/issues/1023606-qid-to-name-6.patch
 
 projects[entitycache][subdir] = contrib
