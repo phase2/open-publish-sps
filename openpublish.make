@@ -131,6 +131,10 @@ projects[context][subdir] = contrib
 projects[context][type] = module
 projects[context][version] = 3.0-beta2
 
+projects[delta][subdir] = contrib
+projects[delta][type] = module
+projects[delta][version] = 3.0-beta8
+
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
 projects[boxes][version] = 1.0-beta6
