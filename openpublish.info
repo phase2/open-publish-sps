@@ -57,6 +57,7 @@ dependencies[] = wysiwyg
 dependencies[] = xmlsitemap
 dependencies[] = filefield_sources
 dependencies[] = video_embed_field
+dependencies[] = vntf
 
 ; OpenPublish
 dependencies[] = openpublish_article

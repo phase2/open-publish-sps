@@ -47,6 +47,9 @@ projects[token][version] = 1.0-beta5
 projects[views][subdir] = contrib
 projects[views][version] = 3.0-rc1
 
+projects[vntf][subdir] = contrib
+projects[vntf][version] = 1.0-beta5
+
 projects[nodequeue][subdir] = contrib
 projects[nodequeue][type] = module
 projects[nodequeue][version] = 2.0-beta1
@@ -64,7 +67,7 @@ projects[nodeconnect][subdir] = contrib
 projects[nodeconnect][version] = 1.0-alpha1
 
 projects[apps][type] = module
-projects[apps][subdir] = custom
+projects[apps][subdir] = contrib
 projects[apps][version] = 1.0-beta3
 
 projects[imce][subdir] = contrib
