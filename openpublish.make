@@ -154,6 +154,11 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
 projects[views_arguments_extras][version] = 1.0-beta1
 
+projects[ga_stats][subdir] = contrib
+projects[ga_stats][type] = module
+projects[ga_stats][version] = 1.0-alpha3
+
+
 ; OpenPublish specific
 projects[openpublish_features][subdir] = contrib
 projects[openpublish_features][type] = module
