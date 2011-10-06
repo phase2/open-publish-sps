@@ -5,17 +5,31 @@
   * additional responsive layouts.
   */
   
+body {
+  font-family: "Helvetica Nueue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+}
 
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Nueue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+  letter-spacing: normal;
+}
+/* Responsive Images */
 img {
   max-width: 100%;
-}  
+}
+
+
+
+
+
+
 .user-picture {
   float: left;
   width: 36px;
   height: 36px;
   margin-right: 10px;
 }
+
 .submitted {
   line-height: 36px;
   margin-bottom: 10px;
