@@ -1,1 +1,22 @@
-/* This file will hold the main styles for your website. */
+/**
+  * @file global.css
+  * global.css contains all the default CSS styling for your theme.
+  * This includes the mobile-first stlying that will/can be overwritten by 
+  * additional responsive layouts.
+  */
+  
+
+
+img {
+  max-width: 100%;
+}  
+.user-picture {
+  float: left;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+.submitted {
+  line-height: 36px;
+  margin-bottom: 10px;
+}
