@@ -135,6 +135,10 @@ projects[delta][subdir] = contrib
 projects[delta][type] = module
 projects[delta][version] = 3.0-beta8
 
+projects[omega_tools][subdir] = contrib
+projects[omega_tools][type] = module
+projects[omega_tools][version] = 3.0-rc3
+
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
 projects[boxes][version] = 1.0-beta6
