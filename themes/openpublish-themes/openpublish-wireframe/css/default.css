@@ -1,8 +1,8 @@
 /**
-  * @file global.css
-  * global.css contains all the default CSS styling for your theme.
+  * @file default.css
+  * default.css contains all the default CSS styling for theme(s) based on OpenPublish Wireframe.
   * This includes the mobile-first stlying that will/can be overwritten by 
-  * additional responsive layouts.
+  * additional responsive layout css files and global.css in your subtheme.
   */
   
 body {
@@ -21,9 +21,11 @@ a:hover {
   color: #00578a;
   border-bottom: 0;
 }
+
 .contextual-links-wrapper a {
   border-bottom: 0;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 0.5em 0;
   font-family: Georgia, serif;
@@ -97,6 +99,13 @@ p, ul, ol {
 ul {
   list-style-type: square;
 }
+
+ul.inline,
+ul.links.inline {
+  display: block;
+  margin-bottom: 5px;
+}
+
 ul ul, ol ol {
   font-size: 1em;
   margin-bottom: 0;
@@ -127,7 +136,7 @@ ul.main-menu,
 ul.secondary-menu {
   font-size: 1em;
   margin-left: 0;
-  text-transform: uppercase;
+  font-variant: small-caps;
 }
 ul.main-menu {
   font-size: 1.4em;
