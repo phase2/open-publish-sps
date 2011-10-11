@@ -1,0 +1,8 @@
+core = "7.x"
+dependencies[] = "views"
+description = "A basic set of views to list recent / curated content."
+features[ctools][] = "views:views_default:3.0"
+features[views_view][] = "op_recent_content"
+name = "OpenPublish Listings"
+package = "Features"
+php = "5.2.4"

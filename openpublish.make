@@ -151,10 +151,5 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
 projects[views_arguments_extras][version] = 1.0-beta1
 
-; OpenPublish specific
-projects[openpublish_features][subdir] = contrib
-projects[openpublish_features][type] = module
-projects[openpublish_features][version] = 1.0-alpha1
-
 // allow simpletest to look into profiles for modules
 projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch

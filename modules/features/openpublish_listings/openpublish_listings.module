@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenPublish Listings feature.
+ */
+
+include_once('openpublish_listings.features.inc');
