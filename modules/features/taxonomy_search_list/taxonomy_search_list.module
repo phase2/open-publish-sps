@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Taxonomy_search_list feature.
+ */
+
+include_once('taxonomy_search_list.features.inc');
