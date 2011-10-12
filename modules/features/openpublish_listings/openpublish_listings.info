@@ -1,5 +1,8 @@
 core = "7.x"
+dependencies[] = "openpublish_article"
+dependencies[] = "openpublish_section"
 dependencies[] = "views"
+dependencies[] = "views_node_taxonomy_filter"
 description = "A basic set of views to list recent / curated content."
 features[ctools][] = "views:views_default:3.0"
 features[views_view][] = "op_recent_content"
