@@ -154,6 +154,12 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'views_node_taxonomy_filter';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['value'] = array(
+    0 => array(
+      'sections' => 'sections',
+    ),
+    1 => 1,
+  );
 
   /* Display: Recent Articles */
   $handler = $view->new_display('block', 'Recent Articles', 'block_recent_articles');

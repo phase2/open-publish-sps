@@ -1,5 +1,4 @@
 core = "7.x"
-dependencies[] = "openpublish_article"
 dependencies[] = "openpublish_section"
 dependencies[] = "views"
 dependencies[] = "views_node_taxonomy_filter"
