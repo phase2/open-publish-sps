@@ -48,7 +48,7 @@ function openpublish_author_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'default',
           'weight' => '16',
         ),
         'teaser' => array(
