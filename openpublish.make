@@ -120,6 +120,11 @@ projects[vntf][subdir] = contrib
 projects[vntf][type] = module
 projects[vntf][version] = 1.0-beta5
 
+projects[ga_stats][subdir] = contrib
+projects[ga_stats][type] = module
+projects[ga_stats][version] = 1.0-alpha3
+
+
 ; Themes
 projects[tao][type] = theme
 projects[tao][version] = 3.0-beta3
