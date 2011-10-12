@@ -58,7 +58,7 @@ dependencies[] = xmlsitemap
 dependencies[] = filefield_sources
 dependencies[] = video_embed_field
 dependencies[] = views_node_taxonomy_filter
-dependencies[] = ga_stats
+; dependencies[] = ga_stats
 
 
 ; OpenPublish
