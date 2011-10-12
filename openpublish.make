@@ -116,6 +116,10 @@ projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
 projects[video_embed_field][version] = 1.0-alpha4
 
+projects[vntf][subdir] = contrib
+projects[vntf][type] = module
+projects[vntf][version] = 1.0-beta5
+
 ; Themes
 projects[tao][type] = theme
 projects[tao][version] = 3.0-beta3
