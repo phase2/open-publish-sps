@@ -42,7 +42,7 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta3
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0-beta5
+projects[token][version] = 1.0-beta6
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.0-rc1
@@ -110,7 +110,7 @@ projects[recaptcha][version] = 1.7
 
 projects[link][subdir] = contrib
 projects[link][type] = module
-projects[link][version] = 1.0-alpha3
+projects[link][version] = 1.0-beta1
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
@@ -122,7 +122,7 @@ projects[vntf][version] = 1.0-beta5
 
 projects[ga_stats][subdir] = contrib
 projects[ga_stats][type] = module
-projects[ga_stats][version] = 1.0-alpha3
+projects[ga_stats][version] = 1.0-beta1
 
 
 ; Themes
@@ -146,7 +146,7 @@ projects[boxes][version] = 1.0-beta6
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
-projects[context_field][version] = 1.0-beta1
+projects[context_field][version] = 1.0-beta2
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][type] = module
