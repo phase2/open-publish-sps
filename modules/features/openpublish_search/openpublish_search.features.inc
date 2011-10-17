@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * oepnpublish_search.features.inc
+ * openpublish_search.features.inc
  */
 
 /**
  * Implements hook_default_search_api_facet().
  */
-function oepnpublish_search_default_search_api_facet() {
+function openpublish_search_default_search_api_facet() {
   $items = array();
   $items['openpublish_node_ind_field_op__1'] = entity_import('search_api_facet', '{
     "delta" : "openpublish_node_ind_field_op__1",
@@ -132,7 +132,7 @@ function oepnpublish_search_default_search_api_facet() {
 /**
  * Implements hook_default_search_api_index().
  */
-function oepnpublish_search_default_search_api_index() {
+function openpublish_search_default_search_api_index() {
   $items = array();
   $items['openpublish_node_index'] = entity_import('search_api_index', '{
     "name" : "openpublish_node_index",
@@ -517,7 +517,7 @@ function oepnpublish_search_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function oepnpublish_search_default_search_api_server() {
+function openpublish_search_default_search_api_server() {
   $items = array();
   $items['openpublish_db_server'] = entity_import('search_api_server', '{
     "name" : "openpublish_db_server",
