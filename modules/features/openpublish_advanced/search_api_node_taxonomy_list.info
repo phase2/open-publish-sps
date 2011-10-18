@@ -1,4 +1,0 @@
-core = 7.x
-name = Serach API Node Taxonomy List
-files[] = SearchApiNodeTaxonomyListSearchApiAlterCallback.inc
-file[] = SearchApiNodeTaxonomyListSearchApiAlterCallback.inc
