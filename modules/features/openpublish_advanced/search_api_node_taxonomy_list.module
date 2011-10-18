@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_search_api_alter_callback_info()
+ */
+function search_api_node_taxonomy_list_search_api_alter_callback_info() {
+  return array(
+    'search_api_node_taxonomy_list_search_api_alter_callback' => array(
+      'name' => t('Node Taxonomy List'),
+      'description' => t('Include a field that agrregates all taxonomy terms'),
+      'class' => 'SearchApiNodeTaxonomyListSearchApiAlterCallback',
+    ),  
+  );  
+}
