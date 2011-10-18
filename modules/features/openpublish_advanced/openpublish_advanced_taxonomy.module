@@ -6,3 +6,8 @@
 
 include_once('openpublish_advanced_taxonomy.features.inc');
 
+function openpublish_advanced_taxonomy_alter(&$export) {
+  $export['openpublish_advanced_taxonomy_default_facets']->conditions['taxonomy_term']['values'] = array(
+    'blog' => 'blog',
+  );
+}

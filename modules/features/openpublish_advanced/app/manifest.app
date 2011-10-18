@@ -1,0 +1,10 @@
+name = OpenPublish Advanced Taxonomy
+description = Allows for Faceted Taxonomy List Pages
+machine_name = openpublish_advanced_taxonomy
+version = 1.0
+downloadable = openpublic_translation_content 1.0
+author = Phase2 Technology
+author_url = http://www.phase2technology.com/
+logo = logo.png
+screenshots[] = screenshot.jpg
+downloadables[openpublic_translation_content 1.0] = https://github.com/phase2/openpublic_translation_content/tarball/master
