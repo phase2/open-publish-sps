@@ -59,6 +59,28 @@ function openpublish_search_default_search_api_facet() {
     "name" : "openpublish_node_index: Blog",
     "enabled" : "1",
     "options" : {
+      "limit" : "10",
+      "display_more_link" : 0,
+      "more_limit" : "10",
+      "min_count" : "1",
+      "sort" : "count",
+      "missing" : 0,
+      "show_active" : 1,
+      "default_true" : "1",
+      "ids_list" : [],
+      "type" : "",
+      "field_name" : "Blog",
+      "entity_type" : "taxonomy_term"
+    },
+    "rdf_mapping" : []
+  }');
+  $items['openpublish_node_ind_search_ap_1'] = entity_import('search_api_facet', '{
+    "delta" : "openpublish_node_ind_search_ap_1",
+    "index_id" : "openpublish_node_index",
+    "field" : "search_api_node_taxonomy_list_term",
+    "name" : "openpublish_node_index: Taxonomy List Term",
+    "enabled" : "1",
+    "options" : {
       "limit" : 10,
       "display_more_link" : false,
       "more_limit" : 10,
@@ -68,9 +90,8 @@ function openpublish_search_default_search_api_facet() {
       "show_active" : true,
       "default_true" : true,
       "ids_list" : [],
-      "type" : "",
-      "field_name" : "Blog",
-      "entity_type" : "taxonomy_term"
+      "type" : "string",
+      "field_name" : "Taxonomy List Term"
     },
     "rdf_mapping" : []
   }');
@@ -150,6 +171,18 @@ function openpublish_search_default_search_api_index() {
           "type" : "string",
           "boost" : "1.0"
         },
+        "search_api_node_taxonomy_list_tid" : {
+          "name" : "Taxonomy List Tid",
+          "indexed" : 1,
+          "type" : "list\\u003cinteger\\u003e",
+          "boost" : "1.0"
+        },
+        "search_api_node_taxonomy_list_term" : {
+          "name" : "Taxonomy List Term",
+          "indexed" : 1,
+          "type" : "list\\u003cstring\\u003e",
+          "boost" : "1.0"
+        },
         "nid" : { "name" : "Node ID", "indexed" : 1, "type" : "integer", "boost" : "1.0" },
         "vid" : {
           "name" : "Revision ID",
@@ -224,13 +257,6 @@ function openpublish_search_default_search_api_index() {
           "type" : "boolean",
           "boost" : "1.0"
         },
-        "uuid" : { "name" : "UUID", "indexed" : 0, "type" : "text", "boost" : "1.0" },
-        "vuuid" : {
-          "name" : "Revision UUID",
-          "indexed" : 0,
-          "type" : "text",
-          "boost" : "1.0"
-        },
         "field_op_author" : {
           "name" : "Author(s)",
           "indexed" : 1,
@@ -238,16 +264,15 @@ function openpublish_search_default_search_api_index() {
           "entity_type" : "node",
           "boost" : "1.0"
         },
-        "field_op_teaser" : { "name" : "Teaser", "indexed" : 0, "type" : "text", "boost" : "1.0" },
-        "field_op_blogpost_blog" : {
-          "name" : "Blog",
-          "indexed" : 1,
+        "field_op_section_term" : {
+          "name" : "Sections",
+          "indexed" : 0,
           "type" : "integer",
           "entity_type" : "taxonomy_term",
           "boost" : "1.0"
         },
-        "field_topic" : {
-          "name" : "Topic",
+        "field_op_blogpost_blog" : {
+          "name" : "Blog",
           "indexed" : 1,
           "type" : "integer",
           "entity_type" : "taxonomy_term",
@@ -260,6 +285,12 @@ function openpublish_search_default_search_api_index() {
           "boost" : "1.0"
         },
         "field_profile_job_title" : { "name" : "Job Title", "indexed" : 0, "type" : "text", "boost" : "1.0" },
+        "field_twitter" : {
+          "name" : "Twitter Username",
+          "indexed" : 0,
+          "type" : "text",
+          "boost" : "1.0"
+        },
         "field_profile_address" : { "name" : "Address", "indexed" : 0, "type" : "text", "boost" : "1.0" },
         "field_profile_email" : {
           "name" : "Email Address",
@@ -392,18 +423,6 @@ function openpublish_search_default_search_api_index() {
           "type" : "list\\u003cboolean\\u003e",
           "boost" : "1.0"
         },
-        "field_op_author:uuid" : {
-          "name" : "Author(s) \\u00bb UUID",
-          "indexed" : 0,
-          "type" : "list\\u003ctext\\u003e",
-          "boost" : "1.0"
-        },
-        "field_op_author:vuuid" : {
-          "name" : "Author(s) \\u00bb Revision UUID",
-          "indexed" : 0,
-          "type" : "list\\u003ctext\\u003e",
-          "boost" : "1.0"
-        },
         "field_op_blogpost_blog:tid" : {
           "name" : "Blog \\u00bb Term ID",
           "indexed" : 0,
@@ -453,15 +472,10 @@ function openpublish_search_default_search_api_index() {
           "type" : "list\\u003cinteger\\u003e",
           "entity_type" : "taxonomy_term",
           "boost" : "1.0"
-        },
-        "field_op_blogpost_blog:uuid" : {
-          "name" : "Blog \\u00bb UUID",
-          "indexed" : 0,
-          "type" : "text",
-          "boost" : "1.0"
         }
       },
       "data_alter_callbacks" : {
+        "search_api_node_taxonomy_list_search_api_alter_callback" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_bundle_filter" : {
           "status" : 0,
           "weight" : "0",
@@ -477,7 +491,14 @@ function openpublish_search_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "search_api_language" : "search_api_language",
-              "field_op_author:title" : "field_op_author:title"
+              "field_op_author:title" : "field_op_author:title",
+              "nid" : 0,
+              "type" : 0,
+              "title" : 0,
+              "status" : 0,
+              "field_op_author" : 0,
+              "field_op_blogpost_blog" : 0,
+              "field_topic" : 0
             }
           }
         },
@@ -485,7 +506,17 @@ function openpublish_search_default_search_api_index() {
           "status" : 1,
           "weight" : "10",
           "settings" : {
-            "fields" : { "search_api_language" : 0, "field_op_author:title" : 0 },
+            "fields" : {
+              "search_api_language" : 0,
+              "nid" : 0,
+              "type" : 0,
+              "title" : 0,
+              "status" : 0,
+              "field_op_author" : 0,
+              "field_op_blogpost_blog" : 0,
+              "field_topic" : 0,
+              "field_op_author:title" : 0
+            },
             "title" : 0,
             "alt" : 1,
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
@@ -495,7 +526,17 @@ function openpublish_search_default_search_api_index() {
           "status" : 0,
           "weight" : "20",
           "settings" : {
-            "fields" : { "search_api_language" : 0, "field_op_author:title" : 0 },
+            "fields" : {
+              "search_api_language" : 0,
+              "nid" : 0,
+              "type" : 0,
+              "title" : 0,
+              "status" : 0,
+              "field_op_author" : 0,
+              "field_op_blogpost_blog" : 0,
+              "field_topic" : 0,
+              "field_op_author:title" : 0
+            },
             "spaces" : "[^\\\\p{L}\\\\p{N}^\']",
             "ignorable" : "[-]"
           }
@@ -527,15 +568,11 @@ function openpublish_search_default_search_api_server() {
     "options" : {
       "database" : "default:default",
       "min_chars" : "1",
-      "indexes" : { "openpublish_node_index" : {
+      "indexes" : {
+        "openpublish_node_index" : {
           "search_api_language" : {
             "table" : "search_api_db_openpublish_node_index_search_api_language",
             "type" : "string",
-            "boost" : "1.0"
-          },
-          "field_op_author:title" : {
-            "table" : "search_api_db_openpublish_node_index_field_op_author_title",
-            "type" : "list\\u003cstring\\u003e",
             "boost" : "1.0"
           },
           "nid" : {
@@ -553,6 +590,11 @@ function openpublish_search_default_search_api_server() {
             "type" : "text",
             "boost" : "1.0"
           },
+          "status" : {
+            "table" : "search_api_db_openpublish_node_index_status",
+            "type" : "boolean",
+            "boost" : "1.0"
+          },
           "field_op_author" : {
             "table" : "search_api_db_openpublish_node_index_field_op_author",
             "type" : "list\\u003cinteger\\u003e",
@@ -563,13 +605,36 @@ function openpublish_search_default_search_api_server() {
             "type" : "integer",
             "boost" : "1.0"
           },
+          "field_op_author:title" : {
+            "table" : "search_api_db_openpublish_node_index_field_op_author_title",
+            "type" : "list\\u003cstring\\u003e",
+            "boost" : "1.0"
+          },
+          "search_api_node_taxonomy_list_tid" : {
+            "table" : "search_api_db_openpublish_node_index_search_api_node_taxonomy_l",
+            "type" : "list\\u003cinteger\\u003e",
+            "boost" : "1.0"
+          },
+          "search_api_node_taxonomy_list_term" : {
+            "table" : "search_api_db_openpublish_node_index_search_api_node_taxonomy_1",
+            "type" : "list\\u003cstring\\u003e",
+            "boost" : "1.0"
+          }
+        },
+        "test" : {
+          "search_api_language" : {
+            "table" : "search_api_db_test_search_api_language",
+            "type" : "string",
+            "boost" : "1.0"
+          },
+          "title" : { "table" : "search_api_db_test_title", "type" : "text", "boost" : "1.0" },
           "status" : {
-            "table" : "search_api_db_openpublish_node_index_status",
+            "table" : "search_api_db_test_status",
             "type" : "boolean",
             "boost" : "1.0"
           },
-          "field_topic" : {
-            "table" : "search_api_db_openpublish_node_index_field_topic",
+          "field_op_blogpost_blog" : {
+            "table" : "search_api_db_test_field_op_blogpost_blog",
             "type" : "integer",
             "boost" : "1.0"
           }
