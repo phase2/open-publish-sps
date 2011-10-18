@@ -1,11 +1,5 @@
 <?php
 /*
-    variable_set("taxonomy_view_$vocab_name", 'full');
-  $key = "openpublish_advanced_taxonomy_field_$vocab_name";
-  variable_set($key, $form_state['values'][$key]);
-*/
-
-/*
  * implements hook_apps_app_info
  */
 function openpublish_advanced_taxonomy_apps_app_info() {
@@ -21,7 +15,7 @@ function openpublish_advanced_taxonomy_configure($form, $form_state) {
   $vocabs = taxonomy_vocabulary_get_names();
   foreach($vocabs as $key => $vocab) {
     $options[$key] = $vocab->name;
-    if(variable_get("taxonomy_view_$key", FALSE) &&
+    if(variable_get("taxonomy_view_mode_$key", FALSE) &&
        context_load("openpublish_advanced_taxonomy_{$key}_facets") ){
       $defaults[$key] = $vocab->name;    
     }
@@ -32,7 +26,7 @@ function openpublish_advanced_taxonomy_configure($form, $form_state) {
   $form['enable'] = array(
     '#type' => 'checkbox',
     '#title' => "Enable Advance Search pages for all Vocaularies",
-    '#default_value' => (bool) !$context->disabled && variable_get("taxonomy_view_any", FALSE),
+    '#default_value' => (bool) !$context->disabled && variable_get("taxonomy_view_mode_any", FALSE),
   );
   $form['help'] = array(
     '#type' => 'fieldset',
@@ -50,13 +44,13 @@ function openpublish_advanced_taxonomy_configure($form, $form_state) {
 }
 function openpublish_advanced_taxonomy_configure_submit($form, $form_state) {
   if($form_state['values']['enable']) {
-    variable_set('taxonomy_view_any', 'full');
+    variable_set('taxonomy_view_mode_any', 'full');
     ctools_include("export");
     ctools_export_set_status('context', 'openpublish_advanced_taxonomy_default_facets', FALSE);
     context_invalidate_cache();
   }
   else {
-    variable_del('taxonomy_view_any');
+    variable_del('taxonomy_view_mode_any');
     ctools_include("export");
     ctools_export_set_status('context', 'openpublish_advanced_taxonomy_default_facets', TRUE);
     context_invalidate_cache();
