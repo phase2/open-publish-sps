@@ -162,14 +162,16 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'openpublish_article' => 'openpublish_article',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'views_node_taxonomy_filter';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
 
   /* Display: Recent Articles */
   $handler = $view->new_display('block', 'Recent Articles', 'block_recent_articles');
   $handler->display->display_options['display_description'] = 'A block display of the most recent articles.';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -338,11 +340,11 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Article nodes [node] {bundles:openpublish_article} */
+  /* Contextual filter: All Content Nodes */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['ui_name'] = 'Article nodes [node] {bundles:openpublish_article}';
+  $handler->display->display_options['arguments']['nid']['ui_name'] = 'All Content Nodes';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -350,6 +352,29 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = 1;
   $handler->display->display_options['arguments']['nid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'all' => 'all',
+    'openpublish_article' => 'openpublish_article',
+    'openpublish_blog_post' => 'openpublish_blog_post',
+    'openpublish_photo' => 'openpublish_photo',
+    'openpublish_photo_gallery' => 'openpublish_photo_gallery',
+    'profile' => 'profile',
+    'section_front' => 'section_front',
+    'openpublish_site_page' => 'openpublish_site_page',
+    'openpublish_video' => 'openpublish_video',
+  );
 
   /* Display: Latest Galleries (by section) */
   $handler = $view->new_display('block', 'Latest Galleries (by section)', 'block_recent_galleries_section');
@@ -435,7 +460,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'openpublish_photo_gallery' => 'openpublish_photo_gallery',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Taxonomy Filter: Node Taxonomy Filter */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'views_node_taxonomy_filter';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';

@@ -134,8 +134,7 @@ libraries[views_infinite_scroll][directory_name] = autopager
 
 projects[libraries][subdir] = contrib
 projects[libraries][type] = module
-projects[libraries][version] = 2.0-alpha1
-
+projects[libraries][version] = 1.0
 
 ; Themes
 projects[tao][type] = theme
