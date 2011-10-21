@@ -11,7 +11,7 @@ function openpublish_related_content_views_default_views() {
   $export = array();
 
   $view = new view;
-  $view->name = 'openpusblish_related_content';
+  $view->name = 'openpublish_related_content';
   $view->description = 'Base view for displaying related content set for node reference in content.';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -82,7 +82,7 @@ function openpublish_related_content_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $export['openpusblish_related_content'] = $view;
+  $export['openpublish_related_content'] = $view;
 
   return $export;
 }
