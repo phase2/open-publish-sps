@@ -27,10 +27,11 @@ function openpublish_most_popular_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ga_stats_enabled_timeframes';
   $strongarm->value = array(
-    'today' => 'today',
-    'week' => 'week',
+    '2days' => '2days',
     'month' => 'month',
     'hour' => 0,
+    'today' => 0,
+    'week' => 0,
     'forever' => 0,
   );
   $export['ga_stats_enabled_timeframes'] = $strongarm;
@@ -39,7 +40,7 @@ function openpublish_most_popular_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ga_stats_max_results';
-  $strongarm->value = '300';
+  $strongarm->value = '100';
   $export['ga_stats_max_results'] = $strongarm;
 
   return $export;
