@@ -134,12 +134,6 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Arguments: Multi-item Argument Order */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'views_sort_by_arg_order';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['weight']['argument_number'] = '0';
   /* Contextual filter: Content: Author(s) (field_op_author) */
   $handler->display->display_options['arguments']['field_op_author_nid']['id'] = 'field_op_author_nid';
   $handler->display->display_options['arguments']['field_op_author_nid']['table'] = 'field_data_field_op_author';
@@ -1225,7 +1219,12 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
-  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'field';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['field'] = 'content_taxonomy::field_op_section_term';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['settings'] = array(
+    'content_taxonomy_format' => 'name',
+  );
   $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['format'] = 'default_summary';
