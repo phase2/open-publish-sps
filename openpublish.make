@@ -136,6 +136,10 @@ projects[libraries][subdir] = contrib
 projects[libraries][type] = module
 projects[libraries][version] = 1.0
 
+projects[jcarousel][subdir] = contrib
+projects[jcarousel][type] = module
+projects[jcarousel][version] = 2.4-alpha3
+
 ; Themes
 projects[tao][type] = theme
 projects[tao][version] = 3.0-beta3
