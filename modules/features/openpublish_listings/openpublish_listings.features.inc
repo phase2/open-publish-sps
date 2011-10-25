@@ -12,4 +12,7 @@ function openpublish_listings_views_api() {
   if ($module == "views" && $api == "views_default") {
     return array("version" => "3.0");
   }
+  if ($module == "boxes" && $api == "box") {
+    return array("version" => "1");
+  }
 }
