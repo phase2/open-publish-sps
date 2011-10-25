@@ -1,5 +1,6 @@
 core = "7.x"
 dependencies[] = "views"
+dependencies[] = "jcarousel"
 description = "A basic set of views to list recent / curated content."
 features[ctools][] = "views:views_default:3.0"
 features[views_view][] = "op_recent_content"
