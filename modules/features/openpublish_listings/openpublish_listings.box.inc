@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * recent_videos_box.box.inc
+ * openpublish_listings.box.inc
  */
 
 /**
  * Implements hook_default_box().
  */
-function recent_videos_box_default_box() {
+function openpublish_listings_default_box() {
   $export = array();
 
   $box = new stdClass;

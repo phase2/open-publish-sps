@@ -14,10 +14,11 @@ include_once('openpublish_listings.features.inc');
  */ 
 function openpublish_listings_views_query_alter(&$view, &$query) {
 	
-	if ($view->name == "op_recent_content" && $view->current_display == "block_5") {
+	if ($view->name == "op_recent_content" && 
+		($view->current_display == "block_5" || $view->current_display == "block_6")) {
 		$item = menu_get_item();
 		
-		if (isset($item['page_arguments'][0]->nid) && !empty($item['page_arguments'][0]->nid)) {
+		if (!empty($item['page_arguments'][0]->nid)) {
 			$nid = $item['page_arguments'][0]->nid;
 			$query->where[0]['conditions'][] = array(
 				'field' => 'node.nid',
