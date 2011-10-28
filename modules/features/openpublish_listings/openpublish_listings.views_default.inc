@@ -1271,6 +1271,10 @@ function openpublish_listings_views_default_views() {
   $handler = $view->new_display('block', 'Recent Articles Carousel (by section)', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recent Articles Carousel (by Section)';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = 'both';
@@ -1401,8 +1405,18 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
-  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'field';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['field'] = 'content_taxonomy::field_op_section_term';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['settings'] = array(
+    'content_taxonomy_format' => 'tid',
+  );
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['not'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1417,6 +1431,16 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'openpublish_article' => 'openpublish_article',
+  );
+  /* Filter criterion: Taxonomy Filter: Node Taxonomy Filter */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'views_node_taxonomy_filter';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['value'] = array(
+    0 => array(
+      'sections' => 'sections',
+    ),
+    1 => 0,
   );
 
   /* Display: Recent Blogs Carousel (by section) */
@@ -1553,8 +1577,18 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
-  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_type'] = 'field';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['field'] = 'content_taxonomy::field_op_blogpost_blog';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_options']['settings'] = array(
+    'content_taxonomy_format' => 'tid',
+  );
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_op_section_term_tid']['not'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1569,6 +1603,16 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'openpublish_blog_post' => 'openpublish_blog_post',
+  );
+  /* Filter criterion: Taxonomy Filter: Node Taxonomy Filter */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'views_node_taxonomy_filter';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['value'] = array(
+    0 => array(
+      'blog' => 'blog',
+    ),
+    1 => 0,
   );
   $export['op_recent_content'] = $view;
 
