@@ -42,7 +42,7 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta3
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0-beta5
+projects[token][version] = 1.0-beta6
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.0-rc1
@@ -110,11 +110,35 @@ projects[recaptcha][version] = 1.7
 
 projects[link][subdir] = contrib
 projects[link][type] = module
-projects[link][version] = 1.0-alpha3
+projects[link][version] = 1.0-beta1
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
 projects[video_embed_field][version] = 1.0-alpha4
+
+projects[vntf][subdir] = contrib
+projects[vntf][type] = module
+projects[vntf][version] = 1.0-beta5
+
+projects[ga_stats][subdir] = contrib
+projects[ga_stats][type] = module
+projects[ga_stats][version] = 1.0-beta1
+
+projects[views_infinite_scroll][subdir] = contrib
+projects[views_infinite_scroll][type] = module
+projects[views_infinite_scroll][version] = 1.0
+
+libraries[views_infinite_scroll][download][type] = get
+libraries[views_infinite_scroll][download][url] = http://lagoscript.org/files/jquery/autopager/jquery.autopager-1.0.0.js
+libraries[views_infinite_scroll][directory_name] = autopager
+
+projects[libraries][subdir] = contrib
+projects[libraries][type] = module
+projects[libraries][version] = 1.0
+
+projects[jcarousel][subdir] = contrib
+projects[jcarousel][type] = module
+projects[jcarousel][version] = 2.4-alpha3
 
 ; Themes
 projects[tao][type] = theme
@@ -145,7 +169,7 @@ projects[boxes][version] = 1.0-beta6
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
-projects[context_field][version] = 1.0-beta1
+projects[context_field][version] = 1.0-beta2
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][type] = module
@@ -159,10 +183,40 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
 projects[views_arguments_extras][version] = 1.0-beta1
 
-; OpenPublish specific
-projects[openpublish_features][subdir] = contrib
-projects[openpublish_features][type] = module
-projects[openpublish_features][version] = 1.0-alpha1
-
 // allow simpletest to look into profiles for modules
 projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
+projects[drupal][type] = core
+projects[drupal][patch][] = http://drupal.org/files/issues/object_conversion_menu_router_build-972536-1.patch
+projects[drupal][patch][] = http://drupal.org/files/issues/992540-3-reset_flood_limit_on_password_reset-drush.patch
+
+
+// OpenPublish Advanced Taxonomy APP
+
+projects[search_api][version] = 1.0-beta10
+projects[search_api][subdir] = apps
+
+projects[openpublish_search][type] = module
+projects[openpublish_search][subdir] = apps
+projects[openpublish_search][download][type] = git
+projects[openpublish_search][download][url] = git@github.com:phase2/openpublish_search.git
+projects[openpublish_search][download][branch] = master
+
+projects[openpublish_advanced_taxonomy][type] = module
+projects[openpublish_advanced_taxonomy][subdir] = apps
+projects[openpublish_advanced_taxonomy][download][type] = git
+projects[openpublish_advanced_taxonomy][download][url] = git@github.com:phase2/openpublish_advanced_taxonomy.git
+projects[openpublish_advanced_taxonomy][download][branch] = master
+
+projects[taxonomy_view_mode][type] = module
+projects[taxonomy_view_mode][subdir] = apps
+projects[taxonomy_view_mode][download][type] = git
+projects[taxonomy_view_mode][download][url] = http://git.drupal.org/project/taxonomy_view_mode.git
+projects[taxonomy_view_mode][download][branch] = 7.x-1.x
+
+projects[search_api_node_taxonomy_list][type] = module
+projects[search_api_node_taxonomy_list][subdir] = apps
+projects[search_api_node_taxonomy_list][download][type] = git
+projects[search_api_node_taxonomy_list][download][url] = http://git.drupal.org/project/search_api_node_taxonomy_list.git
+projects[search_api_node_taxonomy_list][download][branch] = 7.x-1.x
+
+
