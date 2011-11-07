@@ -199,3 +199,94 @@ h2.node-title {
   line-height: 24px;
   margin-bottom: 10px;
 }
+
+ul.primary {
+  border-bottom: 0;
+  line-height: normal;
+  list-style: none outside none;
+  margin: 5px;
+  padding: 0;
+  white-space: nowrap;
+  display: block;
+}
+ul.primary li {
+  display: block;
+  float: left;
+}
+ul.primary li a {
+  background-color: #DDDDDD;
+  border-color: #BBBBBB;
+  border-style: solid;
+  border-width: 1px;
+  height: auto;
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  display: block;
+}
+ul.primary li a,
+ul.primary li.active a,
+ul.primary li a:hover {
+  border: 1px solid #BBBBBB;
+}
+ul.primary li a:hover {
+  background: #EEEEEE;
+}
+/* Forms */
+input.form-text,
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: 3em;
+  line-height: 3em;
+  padding: 0;
+  text-indent: 0.5em;
+  font-size: 1.5em;
+  margin: 0;
+  border: 1px solid #DDDDDD;
+}
+input.form-submit,
+input[type="submit"] {
+  padding: 0.25em 0.5em;
+  font-size: 1.5em;
+  background-color: #DDDDDD;
+  border-color: #BBBBBB;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  color: #787878;
+}
+
+input.form-submit:hover,
+input[type="submit"]:hover {
+  background: #EEEEEE;
+  
+}
+/* Login & Registration Defaults */
+.block-login .item-list ul {
+  text-align: center;
+  display: block;
+  
+}
+.block-login .item-list li {
+  margin-left: 0;
+  display: inline;
+  padding: 0 0.5em;
+  border-right: 1px dotted #CCC;
+}
+.block-login .item-list ul.openid-links {
+  margin-bottom: 0;
+}
+.block-login .item-list ul.openid-links li {
+  border-right: 0;
+}
+.block-login .item-list a {
+  font-size: 10px;
+}
+.block-login .item-list li.last,
+.block-login .item-list li:last-child {
+  border-right: 0;
+}
