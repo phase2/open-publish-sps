@@ -188,6 +188,11 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
 projects[views_arguments_extras][version] = 1.0-beta1
 
+//add feeds, but don't turn it on
+projects[feeds][subdir] = contrib
+projects[feeds][type] = module
+projects[feeds][version] = 2.0-alpha4
+
 // allow simpletest to look into profiles for modules
 projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
 projects[drupal][type] = core
