@@ -140,6 +140,10 @@ projects[jcarousel][subdir] = contrib
 projects[jcarousel][type] = module
 projects[jcarousel][version] = 2.4-alpha3
 
+projects[field_collection][subdir] = contrib
+projects[field_collection][type] = module
+projects[field_collection][version] = 1.0-beta2
+
 ; Themes
 projects[tao][type] = theme
 projects[tao][version] = 3.0-beta3
@@ -154,6 +158,14 @@ projects[omega][version] = 3.0
 projects[context][subdir] = contrib
 projects[context][type] = module
 projects[context][version] = 3.0-beta2
+
+projects[delta][subdir] = contrib
+projects[delta][type] = module
+projects[delta][version] = 3.0-beta8
+
+projects[omega_tools][subdir] = contrib
+projects[omega_tools][type] = module
+projects[omega_tools][version] = 3.0-rc3
 
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
@@ -190,13 +202,13 @@ projects[search_api][subdir] = apps
 projects[openpublish_search][type] = module
 projects[openpublish_search][subdir] = apps
 projects[openpublish_search][download][type] = git
-projects[openpublish_search][download][url] = git@github.com:phase2/openpublish_search.git
+projects[openpublish_search][download][url] = git://github.com/phase2/openpublish_search.git
 projects[openpublish_search][download][branch] = master
 
 projects[openpublish_advanced_taxonomy][type] = module
 projects[openpublish_advanced_taxonomy][subdir] = apps
 projects[openpublish_advanced_taxonomy][download][type] = git
-projects[openpublish_advanced_taxonomy][download][url] = git@github.com:phase2/openpublish_advanced_taxonomy.git
+projects[openpublish_advanced_taxonomy][download][url] = git://github.com/phase2/openpublish_advanced_taxonomy.git
 projects[openpublish_advanced_taxonomy][download][branch] = master
 
 projects[taxonomy_view_mode][type] = module

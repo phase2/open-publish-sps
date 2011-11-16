@@ -1,0 +1,201 @@
+/**
+  * @file default.css
+  * default.css contains all the default CSS styling for theme(s) based on OpenPublish Wireframe.
+  * This includes the mobile-first stlying that will/can be overwritten by 
+  * additional responsive layout css files and global.css in your subtheme.
+  */
+  
+body {
+  color: #787878;
+  font: 62.5%/1.8 "Helvetica Nueue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+}
+
+a, a:link, a:visited, a:active {
+  color: #787878;
+  border-bottom: 1px dotted #787878;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #00578a;
+  border-bottom: 0;
+}
+
+.contextual-links-wrapper a {
+  border-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0 0.5em 0;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+h1 a, h1 a:link, h1 a:visited,
+h2 a, h2 a:link, h2 a:visited,
+h3 a, h3 a:link, h3 a:visited,
+h4 a, h4 a:link, h4 a:visited,
+h5 a, h5 a:link, h5 a:visited,
+h6 a, h6 a:link, h6 a:visited {
+  color: #00578a;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #787878;
+}
+
+h1 {
+  font-size: 3.6em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+/* Make site titles the same size if it's an H1 (home) or H2 (internal) */
+h1.site-name,
+h2.site-name {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+/* Make it a bit smaller for block headers */
+h2.block-title {
+  font-size: 2.4em;
+  margin: 0;	
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+h5 {
+  font-size: 1.6em;
+}
+
+h6 {
+  font-size: 1.4em;
+}
+h6.site-slogan {
+  margin-top: 0;
+}
+p, ul, ol {
+  font-size: 1.4em;
+}
+ul {
+  list-style-type: square;
+}
+
+ul.inline,
+ul.links.inline {
+  display: block;
+  margin-bottom: 5px;
+}
+
+ul ul, ol ol {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+}
+label {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+ul, ul.menu, ol {
+  margin-left: 1em;
+}
+
+p, dl, hr, ol, ul, pre, table, address, fieldset {
+  margin-bottom: 1em;
+}
+
+/* Main Nav */
+.navigation {
+  margin-top: 1em;
+}
+ul.main-menu,
+ul.secondary-menu {
+  font-size: 1em;
+  margin-left: 0;
+  font-variant: small-caps;
+}
+ul.main-menu {
+  font-size: 1.4em;
+}
+
+ul.main-menu li,
+ul.secondary-menu li {
+  margin: 0;
+  padding: 0.25em 0.5em;
+  border-right: 1px dotted #CCC;
+}
+ul.main-menu li.first,
+ul.secondary-menu li.first {
+  padding-left: 0;
+}
+ul.main-menu li.last,
+ul.secondary-menu li.last {
+  border-right: 0;
+}
+/* Node Specifics */
+
+h2.node-title {
+  margin: 0;
+}
+
+.node-teaser {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #CCC;
+}
+
+.node-links ul {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.node-links ul li {
+  margin: 00;
+  padding: 0.25em 0.75em;
+  border-right: 1px dotted #CCC;
+}
+.node-links ul li.first {
+  padding-left: 0;
+}
+.node-links ul li.last {
+  border-right: 0;
+}
+.node-links a {
+  border-bottom: 0;
+}
+.user-picture {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.submitted {
+  line-height: 24px;
+  margin-bottom: 10px;
+}
