@@ -24,7 +24,7 @@ projects[diff][version] = 2.0
 
 projects[entity][subdir] = contrib
 projects[entity][type] = module
-projects[entity][version] = 1.0-beta10
+projects[entity][version] = 1.0-rc1
 
 projects[features][subdir] = contrib
 projects[features][type] = module
@@ -39,13 +39,13 @@ projects[pathauto][type] = module
 projects[pathauto][version] = 1.0-rc2
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta3
+projects[strongarm][version] = 2.0-beta4
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0-beta6
+projects[token][version] = 1.0-beta7
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.0-rc1
+projects[views][version] = 3.0-rc3
 
 projects[nodequeue][subdir] = contrib
 projects[nodequeue][type] = module
@@ -65,13 +65,13 @@ projects[nodeconnect][version] = 1.0-alpha1
 
 projects[apps][type] = module
 projects[apps][subdir] = custom
-projects[apps][version] = 1.0-beta3
+projects[apps][version] = 1.0-beta4
 
 projects[imce][subdir] = contrib
-projects[imce][version] = 1.4
+projects[imce][version] = 1.5
 
 projects[imce_wysiwyg][subdir] = contrib
-projects[imce_wysiwyg][version] = 1.x-dev
+projects[imce_wysiwyg][version] = 1.0
 
 projects[filefield_sources][subdir] = contrib
 projects[filefield_sources][version] = 1.4
@@ -99,7 +99,7 @@ projects[addthis][version] = 2.1-beta1
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.2
 
-projects[captcha][version] = 1.0-alpha2
+projects[captcha][version] = 1.0-alpha3
 projects[captcha][subdir] = contrib
 projects[captcha][type] = module
 projects[captcha][patch][] = http://drupal.org/files/issues/825088-19-captcha_ctools_export.patch
@@ -110,15 +110,16 @@ projects[recaptcha][version] = 1.7
 
 projects[link][subdir] = contrib
 projects[link][type] = module
-projects[link][version] = 1.0-beta1
+projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 1.0-alpha4
+projects[video_embed_field][version] = 2.x-dev
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
 projects[vntf][version] = 1.0-beta5
+projects[vntf][patch][] = http://drupal.org/files/1169366-patch-add-require-terms-on-node-option-3.patch
 
 projects[ga_stats][subdir] = contrib
 projects[ga_stats][type] = module
