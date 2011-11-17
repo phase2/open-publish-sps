@@ -27,11 +27,11 @@ function openpublish_most_popular_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ga_stats_enabled_timeframes';
   $strongarm->value = array(
+    'today' => 'today',
     '2days' => '2days',
-    'month' => 'month',
+    'week' => 'week',
     'hour' => 0,
-    'today' => 0,
-    'week' => 0,
+    'month' => 0,
     'forever' => 0,
   );
   $export['ga_stats_enabled_timeframes'] = $strongarm;

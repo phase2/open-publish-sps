@@ -58,6 +58,10 @@ function openpublish_most_popular_views_default_views() {
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_2days';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
+  /* Sort criterion: Statistics: Page Views in the past 24 hours */
+  $handler->display->display_options['sorts']['count_1']['id'] = 'count_1';
+  $handler->display->display_options['sorts']['count_1']['table'] = 'ga_stats_count_pageviews_today';
+  $handler->display->display_options['sorts']['count_1']['field'] = 'count';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -79,6 +83,17 @@ function openpublish_most_popular_views_default_views() {
   /* Display: Popular in... (24 hours) */
   $handler = $view->new_display('block', 'Popular in... (24 hours)', 'block_popular_section_24h');
   $handler->display->display_options['display_description'] = 'Lists the most popular content in this section for a 24h period.';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Statistics: Page Views in the past 24 hours */
+  $handler->display->display_options['sorts']['count_1']['id'] = 'count_1';
+  $handler->display->display_options['sorts']['count_1']['table'] = 'ga_stats_count_pageviews_today';
+  $handler->display->display_options['sorts']['count_1']['field'] = 'count';
+  $handler->display->display_options['sorts']['count_1']['order'] = 'DESC';
 
   /* Display: Popular in... (7 days) */
   $handler = $view->new_display('block', 'Popular in... (7 days)', 'block_popular_section_7d');
@@ -86,7 +101,7 @@ function openpublish_most_popular_views_default_views() {
   $handler->display->display_options['title'] = 'OpenPublish - Most popular this week';
   $handler->display->display_options['display_description'] = 'Lists the most popular content in this section for a 7d period.';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Statistics: Page Views in the past 7 days */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_week';
   $handler->display->display_options['sorts']['count']['field'] = 'count';

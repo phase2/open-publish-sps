@@ -7,4 +7,4 @@ projects[drupal][patch][] = http://drupal.org/files/issues/992540-3-reset_flood_
 projects[openpublish][type] = profile
 projects[openpublish][download][type] = git
 projects[openpublish][download][url] = http://git.drupal.org/project/openpublish.git
-projects[openpublish][download][branch] = 7.x-1.0.1
+projects[openpublish][download][branch] = 7.x-1.0.2
