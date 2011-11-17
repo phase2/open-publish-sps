@@ -79,6 +79,16 @@ function openpublish_most_popular_views_default_views() {
     ),
     1 => 1,
   );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'openpublish_article' => 'openpublish_article',
+    'openpublish_blog_post' => 'openpublish_blog_post',
+    'openpublish_photo_gallery' => 'openpublish_photo_gallery',
+    'openpublish_video' => 'openpublish_video',
+  );
 
   /* Display: Popular in... (24 hours) */
   $handler = $view->new_display('block', 'Popular in... (24 hours)', 'block_popular_section_24h');
