@@ -202,13 +202,13 @@ projects[search_api][subdir] = apps
 projects[openpublish_search][type] = module
 projects[openpublish_search][subdir] = apps
 projects[openpublish_search][download][type] = git
-projects[openpublish_search][download][url] = git@github.com:phase2/openpublish_search.git
+projects[openpublish_search][download][url] = git://github.com/phase2/openpublish_search.git
 projects[openpublish_search][download][branch] = master
 
 projects[openpublish_advanced_taxonomy][type] = module
 projects[openpublish_advanced_taxonomy][subdir] = apps
 projects[openpublish_advanced_taxonomy][download][type] = git
-projects[openpublish_advanced_taxonomy][download][url] = git@github.com:phase2/openpublish_advanced_taxonomy.git
+projects[openpublish_advanced_taxonomy][download][url] = git://github.com/phase2/openpublish_advanced_taxonomy.git
 projects[openpublish_advanced_taxonomy][download][branch] = master
 
 projects[taxonomy_view_mode][type] = module
