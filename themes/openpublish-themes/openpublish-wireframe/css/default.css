@@ -96,8 +96,28 @@ h6.site-slogan {
 p, ul, ol {
   font-size: 1.4em;
 }
+ul ul, ol ol, ul ol, ol ul {
+  font-size: 1em;
+  margin-bottom: 0;
+}
 ul {
   list-style-type: square;
+}
+ol {
+  list-style-type: decimal;
+}
+blockquote {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-left: 5em;
+  margin-bottom: 1.5em;
+  padding: 20px;
+  background: #EEEEEE;
+  border: 1px solid #DDDDDD;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 ul.inline,
@@ -106,14 +126,10 @@ ul.links.inline {
   margin-bottom: 5px;
 }
 
-ul ul, ol ol {
-  font-size: 1em;
-  margin-bottom: 0;
-}
-
 /* Responsive Images */
 img {
   max-width: 100%;
+  height: auto;
 }
 label {
   font-weight: bold;
