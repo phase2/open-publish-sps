@@ -440,3 +440,34 @@ input[type="submit"]:hover {
 .node-openpublish-photo-gallery  ul.action-links {
   font-size: 1em;
 }
+
+/* Video Page */
+.node-openpublish-video {
+
+}
+
+.node-openpublish-video .field-type-image .field-label,
+.node-openpublish-video .field-type-video-embed-field .field-label {
+  display: none;
+}
+
+
+.node-openpublish-video .field-name-field-op-video-embed .field-items {
+  max-width: 100%;
+  width: 100%;
+}
+.node-openpublish-video .field-name-field-op-video-embed .field-items .field-item {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 10px;
+  position: relative;
+}
+
+.node-openpublish-video .field-name-field-op-video-embed .field-items .field-item iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
