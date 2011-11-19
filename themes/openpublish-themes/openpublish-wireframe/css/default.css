@@ -334,3 +334,109 @@ input[type="submit"]:hover {
 .search-snippet {
   font-size: 1em;
 }
+
+/* Node Styles */
+.node .field-label {
+  margin: 1em 0 0.5em 0;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+  font-size: 2em;
+}
+.node .field .field-items {
+  margin-bottom: 1em;
+}
+.node .field-type-node-reference .field-items,
+.node .field-type-taxonomy-term-reference .field-items,
+.node .field-type-node-reference .field-items {
+  font-size: 1.5em;
+}
+
+#edit-actions input {
+  margin-right: 0.5em;
+}
+/* Comments */
+#comments article {
+  padding: 20px;
+  background: #fdfdfd;
+  border: 1px dashed #DDDDDD;
+  margin-bottom: 20px;
+}
+#comments article header h3 {
+  margin-top: 0;
+}
+#comments article.comment-unpublished {
+  background: #fdebeb;
+  border: 1px dashed #FF0000;
+}
+#comments article.comment-unpublished header h3 {
+  margin-top: 20px;
+}
+#comments header {
+  position: relative;
+}
+#comments header .new {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5em;
+  color: #FF0000;
+}
+#comments header .unpublished {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+  font-size: 1.5em;
+  font-weight: normal;
+  color: #FF0000;
+}
+#comments .comment nav {
+  text-align: right;
+}
+#comments .comment nav ul {
+  margin: 0;
+}
+
+/* Gallery page */
+
+.node-openpublish-photo-gallery {
+ 
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.node-openpublish-photo-gallery .field-type-image .field-label,
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image .field-label {
+  display: none;
+}
+.node-openpublish-photo-gallery .field-collection-view {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item:nth-child(3n+3) {
+  margin-right: 0;
+}
+
+.node-openpublish-photo-gallery .field-item p:last-child {
+  margin-bottom: 0;
+}
+
+.node-openpublish-photo-gallery  ul.field-collection-view-links, 
+.node-openpublish-photo-gallery  ul.action-links {
+  font-size: 1em;
+}
