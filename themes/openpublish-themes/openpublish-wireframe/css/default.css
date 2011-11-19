@@ -305,3 +305,32 @@ input[type="submit"]:hover {
 .block-login .item-list li:last-child {
   border-right: 0;
 }
+
+/* search form(s) and results */
+.block-search input.form-text,
+.search-form #edit-keys {
+  background: url('../i/search.png') no-repeat center right;
+}
+.block-search div.form-actions,
+.search-form #edit-submit {
+  display: none;
+}
+.search-results {
+  margin-left: 0;
+}
+.search-results .title {
+  font-size: 1.5em;
+}
+.search-snippet-info {
+  padding: 20px;
+  font-size: 0.9em;
+  margin-left: 1em;
+  background: #EEEEEE;
+  border: 1px solid #DDDDDD;
+}
+.search-snippet-info p.search-info {
+  margin-bottom: 0;
+}
+.search-snippet {
+  font-size: 1em;
+}
