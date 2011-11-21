@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function openpublish_section_fronts_field_default_fields() {
   $fields = array();
@@ -154,6 +154,9 @@ function openpublish_section_fronts_field_default_fields() {
         'active' => 0,
         'module' => 'context_field',
         'settings' => array(
+          'form_element' => array(
+            'user_toggle' => 0,
+          ),
           'widget_setting' => 'bob',
         ),
         'type' => 'context_field',

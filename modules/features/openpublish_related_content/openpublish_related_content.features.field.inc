@@ -63,7 +63,7 @@ function openpublish_related_content_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 4,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -88,7 +88,7 @@ function openpublish_related_content_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'node_reference_autocomplete',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -227,15 +227,17 @@ function openpublish_related_content_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'node_reference',
-          'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => 5,
+          'settings' => array(
+            'node_reference_view_mode' => 'teaser',
+          ),
+          'type' => 'node_reference_node',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'node',
@@ -312,7 +314,7 @@ function openpublish_related_content_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',

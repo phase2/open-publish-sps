@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_ctools_plugin_api().
+ * Implements hook_ctools_plugin_api().
  */
 function phase2_profile_ctools_plugin_api() {
   list($module, $api) = func_get_args();
@@ -19,7 +19,7 @@ function phase2_profile_ctools_plugin_api() {
 }
 
 /**
- * Implementation of hook_image_default_styles().
+ * Implements hook_image_default_styles().
  */
 function phase2_profile_image_default_styles() {
   $styles = array();
@@ -32,6 +32,7 @@ function phase2_profile_image_default_styles() {
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
         'form callback' => 'image_resize_form',
         'summary theme' => 'image_resize_summary',
         'module' => 'image',
@@ -53,6 +54,7 @@ function phase2_profile_image_default_styles() {
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
         'form callback' => 'image_resize_form',
         'summary theme' => 'image_resize_summary',
         'module' => 'image',
@@ -70,7 +72,7 @@ function phase2_profile_image_default_styles() {
 }
 
 /**
- * Implementation of hook_node_info().
+ * Implements hook_node_info().
  */
 function phase2_profile_node_info() {
   $items = array(

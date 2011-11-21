@@ -43,11 +43,11 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'field_collection_item',
@@ -55,7 +55,7 @@ function openpublish_media_field_default_fields() {
       'label' => 'Caption',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '1',
+        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -105,14 +105,14 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'image_link' => 'file',
+            'image_style' => 'full-page-list',
           ),
           'type' => 'image',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'field_collection_item',
@@ -197,16 +197,16 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
-            'trim_length' => 600,
+            'trim_length' => '150',
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'node',
@@ -280,17 +280,17 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 1,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -338,22 +338,23 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'field_collection',
           'settings' => array(
             'add' => 'Add',
             'delete' => 'Delete',
             'description' => TRUE,
             'edit' => 'Edit',
+            'view_mode' => 'full',
           ),
           'type' => 'field_collection_view',
-          'weight' => 6,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -408,20 +409,24 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'image_link' => 'file',
+            'image_style' => 'full-page-main',
           ),
           'type' => 'image',
-          'weight' => 2,
+          'weight' => '2',
         ),
         'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'list-page-thumbnail',
+          ),
+          'type' => 'image',
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
@@ -506,7 +511,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -592,7 +597,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -664,7 +669,7 @@ function openpublish_media_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 4,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -716,63 +721,6 @@ function openpublish_media_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openpublish_video-field_op_video_embed'
-  $fields['node-openpublish_video-field_op_video_embed'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_op_video_embed',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'module' => 'video_embed_field',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'video_embed_field',
-    ),
-    'field_instance' => array(
-      'bundle' => 'openpublish_video',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'Paste the Youtube or Vimeo URL of the video to embed.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'video_embed_field',
-          'settings' => array(),
-          'type' => 'video_embed_field_formatter',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_op_video_embed',
-      'label' => 'Embedded Video',
-      'required' => 0,
-      'settings' => array(
-        'allowed_types' => array(
-          0 => 'youtube',
-          1 => 'vimeo',
-        ),
-        'description_field' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'video_embed_field',
-        'settings' => array(),
-        'type' => 'video_embed_field_widget',
-        'weight' => '3',
-      ),
-    ),
-  );
-
   // Exported field: 'node-openpublish_video-field_op_video_embed_code'
   $fields['node-openpublish_video-field_op_video_embed_code'] = array(
     'field_config' => array(
@@ -810,7 +758,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -845,12 +793,10 @@ function openpublish_media_field_default_fields() {
   t('Author(s)');
   t('Body');
   t('Caption');
-  t('Embedded Video');
   t('Embedded Video Code');
   t('Image');
   t('Images');
   t('Main Image');
-  t('Paste the Youtube or Vimeo URL of the video to embed.');
 
   return $fields;
 }

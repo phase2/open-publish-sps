@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function phase2_profile_field_default_fields() {
   $fields = array();
@@ -581,7 +581,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',
-            'image_style' => 'right-sidebar-thumbnails',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '0',
