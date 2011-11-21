@@ -511,7 +511,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -539,7 +539,7 @@ function openpublish_media_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
       ),
       'widget_type' => 'text_textarea_with_summary',
     ),
@@ -593,11 +593,11 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -662,7 +662,7 @@ function openpublish_media_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
@@ -716,49 +716,41 @@ function openpublish_media_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
 
-  // Exported field: 'node-openpublish_video-field_op_video_embed_code'
-  $fields['node-openpublish_video-field_op_video_embed_code'] = array(
+  // Exported field: 'node-openpublish_video-field_op_video_embed'
+  $fields['node-openpublish_video-field_op_video_embed'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_op_video_embed_code',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'module' => 'text',
+      'field_name' => 'field_op_video_embed',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'video_embed_field',
       'settings' => array(),
       'translatable' => '0',
-      'type' => 'text_long',
+      'type' => 'video_embed_field',
     ),
     'field_instance' => array(
       'bundle' => 'openpublish_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Alternative way to embed videos. Will override the Embedded Video Field.',
+      'description' => 'Paste the Youtube or Vimeo URL of the video to embed.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
+          'label' => 'hidden',
+          'module' => 'video_embed_field',
+          'settings' => array(
+            'description' => 1,
+            'video_style' => 'normal',
+          ),
+          'type' => 'video_embed_field',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -768,35 +760,33 @@ function openpublish_media_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_op_video_embed_code',
-      'label' => 'Embedded Video Code',
+      'field_name' => 'field_op_video_embed',
+      'label' => 'Embedded Video',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '1',
+        'description_field' => 1,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '4',
+        'active' => 0,
+        'module' => 'video_embed_field',
+        'settings' => array(),
+        'type' => 'video_embed_field_video',
+        'weight' => '2',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Alternative way to embed videos. Will override the Embedded Video Field.');
   t('Author(s)');
   t('Body');
   t('Caption');
-  t('Embedded Video Code');
+  t('Embedded Video');
   t('Image');
   t('Images');
   t('Main Image');
+  t('Paste the Youtube or Vimeo URL of the video to embed.');
 
   return $fields;
 }
