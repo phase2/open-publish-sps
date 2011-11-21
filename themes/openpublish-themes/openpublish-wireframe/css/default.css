@@ -96,8 +96,28 @@ h6.site-slogan {
 p, ul, ol {
   font-size: 1.4em;
 }
+ul ul, ol ol, ul ol, ol ul {
+  font-size: 1em;
+  margin-bottom: 0;
+}
 ul {
   list-style-type: square;
+}
+ol {
+  list-style-type: decimal;
+}
+blockquote {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-left: 5em;
+  margin-bottom: 1.5em;
+  padding: 20px;
+  background: #EEEEEE;
+  border: 1px solid #DDDDDD;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 ul.inline,
@@ -106,14 +126,10 @@ ul.links.inline {
   margin-bottom: 5px;
 }
 
-ul ul, ol ol {
-  font-size: 1em;
-  margin-bottom: 0;
-}
-
 /* Responsive Images */
 img {
   max-width: 100%;
+  height: auto;
 }
 label {
   font-weight: bold;
@@ -198,4 +214,264 @@ h2.node-title {
 .submitted {
   line-height: 24px;
   margin-bottom: 10px;
+}
+
+ul.primary {
+  border-bottom: 0;
+  line-height: normal;
+  list-style: none outside none;
+  margin: 5px;
+  padding: 0;
+  white-space: nowrap;
+  display: block;
+}
+ul.primary li {
+  display: block;
+  float: left;
+}
+ul.primary li a {
+  background-color: #DDDDDD;
+  border-color: #BBBBBB;
+  border-style: solid;
+  border-width: 1px;
+  height: auto;
+  margin-right: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  display: block;
+}
+ul.primary li a,
+ul.primary li.active a,
+ul.primary li a:hover {
+  border: 1px solid #BBBBBB;
+}
+ul.primary li a:hover {
+  background: #EEEEEE;
+}
+/* Forms */
+input.form-text,
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: 3em;
+  line-height: 3em;
+  padding: 0;
+  text-indent: 0.5em;
+  font-size: 1.5em;
+  margin: 0;
+  border: 1px solid #DDDDDD;
+}
+input.form-submit,
+input[type="submit"] {
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  background-color: #DDDDDD;
+  border-color: #BBBBBB;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  color: #787878;
+}
+
+input.form-submit:hover,
+input[type="submit"]:hover {
+  background: #EEEEEE;
+}
+/* Login & Registration Defaults */
+.block-login .item-list ul {
+  text-align: center;
+  display: block;
+  
+}
+.block-login .item-list li {
+  margin-left: 0;
+  display: inline;
+  padding: 0 0.5em;
+  border-right: 1px dotted #CCC;
+}
+.block-login .item-list ul.openid-links {
+  margin-bottom: 0;
+}
+.block-login .item-list ul.openid-links li {
+  border-right: 0;
+}
+.block-login .item-list a {
+  font-size: 10px;
+}
+.block-login .item-list li.last,
+.block-login .item-list li:last-child {
+  border-right: 0;
+}
+
+/* search form(s) and results */
+.block-search input.form-text,
+.search-form #edit-keys {
+  background: url('../i/search.png') no-repeat center right;
+}
+.block-search div.form-actions,
+.search-form #edit-submit {
+  display: none;
+}
+.search-results {
+  margin-left: 0;
+}
+.search-results .title {
+  font-size: 1.5em;
+}
+.search-snippet-info {
+  padding: 20px;
+  font-size: 0.9em;
+  margin-left: 1em;
+  background: #EEEEEE;
+  border: 1px solid #DDDDDD;
+}
+.search-snippet-info p.search-info {
+  margin-bottom: 0;
+}
+.search-snippet {
+  font-size: 1em;
+}
+
+/* Node Styles */
+.node .field-label {
+  margin: 1em 0 0.5em 0;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+  font-size: 2em;
+}
+.node .field .field-items {
+  margin-bottom: 1em;
+}
+.node .field-type-node-reference .field-items,
+.node .field-type-taxonomy-term-reference .field-items,
+.node .field-type-node-reference .field-items {
+  font-size: 1.5em;
+}
+
+#edit-actions input {
+  margin-right: 0.5em;
+}
+/* Comments */
+#comments article {
+  padding: 20px;
+  background: #fdfdfd;
+  border: 1px dashed #DDDDDD;
+  margin-bottom: 20px;
+}
+#comments article header h3 {
+  margin-top: 0;
+}
+#comments article.comment-unpublished {
+  background: #fdebeb;
+  border: 1px dashed #FF0000;
+}
+#comments article.comment-unpublished header h3 {
+  margin-top: 20px;
+}
+#comments header {
+  position: relative;
+}
+#comments header .new {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5em;
+  color: #FF0000;
+}
+#comments header .unpublished {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+  font-size: 1.5em;
+  font-weight: normal;
+  color: #FF0000;
+}
+#comments .comment nav {
+  text-align: right;
+}
+#comments .comment nav ul {
+  margin: 0;
+}
+
+/* Gallery page */
+
+.node-openpublish-photo-gallery {
+ 
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.node-openpublish-photo-gallery .field-type-image .field-label,
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image .field-label {
+  display: none;
+}
+.node-openpublish-photo-gallery .field-collection-view {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item:nth-child(3n+3) {
+  margin-right: 0;
+}
+
+.node-openpublish-photo-gallery .field-item p:last-child {
+  margin-bottom: 0;
+}
+
+.node-openpublish-photo-gallery  ul.field-collection-view-links, 
+.node-openpublish-photo-gallery  ul.action-links {
+  font-size: 1em;
+}
+
+/* Video Page */
+.node-openpublish-video {
+
+}
+
+.node-openpublish-video .field-type-image .field-label,
+.node-openpublish-video .field-type-video-embed-field .field-label,
+.node-openpublish-video .field-name-field-op-video-embed-code .field-label {
+  display: none;
+}
+
+
+.node-openpublish-video .field-name-field-op-video-embed .field-items, 
+.node-openpublish-video .field-name-field-op-video-embed-code .field-items {
+  max-width: 100%;
+  width: 100%;
+}
+.node-openpublish-video .field-name-field-op-video-embed .field-items .field-item,
+.node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 10px;
+  position: relative;
+}
+
+.node-openpublish-video .field-name-field-op-video-embed .field-items .field-item iframe,
+.node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
