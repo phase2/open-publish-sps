@@ -114,7 +114,7 @@ projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 2.x-dev
+projects[video_embed_field][version] = 2.0-alpha1
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
@@ -198,35 +198,4 @@ projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
 projects[drupal][type] = core
 projects[drupal][patch][] = http://drupal.org/files/issues/object_conversion_menu_router_build-972536-1.patch
 projects[drupal][patch][] = http://drupal.org/files/issues/992540-3-reset_flood_limit_on_password_reset-drush.patch
-
-
-// OpenPublish Advanced Taxonomy APP
-
-projects[search_api][version] = 1.0-beta10
-projects[search_api][subdir] = apps
-
-projects[openpublish_search][type] = module
-projects[openpublish_search][subdir] = apps
-projects[openpublish_search][download][type] = git
-projects[openpublish_search][download][url] = git://github.com/phase2/openpublish_search.git
-projects[openpublish_search][download][branch] = master
-
-projects[openpublish_advanced_taxonomy][type] = module
-projects[openpublish_advanced_taxonomy][subdir] = apps
-projects[openpublish_advanced_taxonomy][download][type] = git
-projects[openpublish_advanced_taxonomy][download][url] = git://github.com/phase2/openpublish_advanced_taxonomy.git
-projects[openpublish_advanced_taxonomy][download][branch] = master
-
-projects[taxonomy_view_mode][type] = module
-projects[taxonomy_view_mode][subdir] = apps
-projects[taxonomy_view_mode][download][type] = git
-projects[taxonomy_view_mode][download][url] = http://git.drupal.org/project/taxonomy_view_mode.git
-projects[taxonomy_view_mode][download][branch] = 7.x-1.x
-
-projects[search_api_node_taxonomy_list][type] = module
-projects[search_api_node_taxonomy_list][subdir] = apps
-projects[search_api_node_taxonomy_list][download][type] = git
-projects[search_api_node_taxonomy_list][download][url] = http://git.drupal.org/project/search_api_node_taxonomy_list.git
-projects[search_api_node_taxonomy_list][download][branch] = 7.x-1.x
-
 
