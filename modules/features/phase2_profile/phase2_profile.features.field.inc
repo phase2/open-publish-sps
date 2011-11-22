@@ -49,7 +49,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'editors_choice' => array(
           'label' => 'above',
@@ -127,7 +127,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 12,
+          'weight' => '2',
         ),
         'editors_choice' => array(
           'label' => 'above',
@@ -201,7 +201,7 @@ function phase2_profile_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '11',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
@@ -275,7 +275,7 @@ function phase2_profile_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '8',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
@@ -348,7 +348,7 @@ function phase2_profile_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
@@ -423,7 +423,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 11,
+          'weight' => '1',
         ),
         'editors_choice' => array(
           'label' => 'above',
@@ -496,7 +496,7 @@ function phase2_profile_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '7',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
@@ -571,10 +571,10 @@ function phase2_profile_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'medium',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
@@ -686,7 +686,7 @@ function phase2_profile_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '10',
         ),
         'editors_choice' => array(
           'label' => 'above',

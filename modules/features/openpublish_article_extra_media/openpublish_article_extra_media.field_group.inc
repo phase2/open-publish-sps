@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_group_info().
+ * Implements hook_field_group_info().
  */
 function openpublish_article_extra_media_field_group_info() {
   $export = array();

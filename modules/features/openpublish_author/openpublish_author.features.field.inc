@@ -50,7 +50,7 @@ function openpublish_author_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '16',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -131,7 +131,7 @@ function openpublish_author_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -199,7 +199,7 @@ function openpublish_author_field_default_fields() {
           'module' => 'openpublish_author',
           'settings' => array(),
           'type' => 'twitter_user',
-          'weight' => '15',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
