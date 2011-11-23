@@ -28,7 +28,7 @@ dependencies[] = rdf
 
 ; Contrib
 ;dependencies[] = addthis
-;dependencies[] = apps
+dependencies[] = apps
 dependencies[] = conditional_styles
 dependencies[] = context
 dependencies[] = ctools
