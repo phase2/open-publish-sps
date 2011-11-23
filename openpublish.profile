@@ -20,10 +20,10 @@ function openpublish_apps_servers_info() {
  $info =  drupal_parse_info_file(dirname(__file__) . '/openpublish.info');
  return array(
    'openpublish' => array(
-     'title' => 'openpublish',
+     'title' => 'Openpublish',
      'description' => "Apps for the OpenPublish distribution",
-     'manifest' => 'http://appserver.openpublishapp.com/app/query',
-     'profile' => 'openpublish',
+     'manifest' => 'http://appserver.openpublishapp.com/app/query/openpublish',
+     'profile' => 'Openpublish',
      'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.0-beta1',
      'server_name' => $_SERVER['SERVER_NAME'],
      'server_ip' => $_SERVER['SERVER_ADDR'],
