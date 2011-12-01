@@ -136,9 +136,9 @@ function openpublish_media_field_default_fields() {
           'filefield_sources' => array(
             'filefield_sources' => array(
               'attach' => 0,
-              'imce' => 0,
+              'imce' => 'imce',
               'reference' => 0,
-              'remote' => 0,
+              'remote' => 'remote',
             ),
             'source_attach' => array(
               'absolute' => '0',
@@ -414,7 +414,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => 'file',
-            'image_style' => 'full-page-main',
+            'image_style' => 'full_width',
           ),
           'type' => 'image',
           'weight' => '2',
@@ -627,100 +627,6 @@ function openpublish_media_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-openpublish_video-field_op_main_image'
-  $fields['node-openpublish_video-field_op_main_image'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_op_main_image',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'module' => 'image',
-      'settings' => array(
-        'default_image' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '0',
-      'type' => 'image',
-    ),
-    'field_instance' => array(
-      'bundle' => 'openpublish_video',
-      'deleted' => '0',
-      'description' => 'Select a Main Image for your Video, which will represent the Video in lists.',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => '3',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '4',
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_op_main_image',
-      'label' => 'Image',
-      'required' => 0,
-      'settings' => array(
-        'alt_field' => 0,
-        'file_directory' => 'main/videos',
-        'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'image',
-        'settings' => array(
-          'filefield_sources' => array(
-            'filefield_sources' => array(
-              'attach' => 0,
-              'imce' => 'imce',
-              'reference' => 'reference',
-              'remote' => 0,
-            ),
-            'source_attach' => array(
-              'absolute' => '0',
-              'attach_mode' => 'copy',
-              'path' => 'main/articles',
-            ),
-            'source_reference' => array(
-              'autocomplete' => '0',
-            ),
-          ),
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'image_image',
-        'weight' => '4',
-      ),
-    ),
-  );
-
   // Exported field: 'node-openpublish_video-field_op_video_embed'
   $fields['node-openpublish_video-field_op_video_embed'] = array(
     'field_config' => array(
@@ -801,7 +707,6 @@ function openpublish_media_field_default_fields() {
   t('Main Image');
   t('Provide the URL of the Video you\'d like to embed from a supported provider (i.e. Vimeo or YouTube).');
   t('Select a Main Image for your Photo Gallery, which will appear on the Gallery\'s node page and will also represent the Gallery in lists.');
-  t('Select a Main Image for your Video, which will represent the Video in lists.');
   t('Upload and/or select the images that will make up your Gallery.');
 
   return $fields;

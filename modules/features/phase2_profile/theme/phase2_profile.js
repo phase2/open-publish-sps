@@ -26,9 +26,9 @@ Drupal.behaviors.phase2_profile_name = {
       });
     }
     
-    $("#edit-field-profile-staff-und").click(function (){
-      if (($("#edit-field-profile-staff-und:checked").length) && $(".staff-information.collapsed").length) {
-        $(".staff-information .fieldset-legend a").click();
+    $("#edit-field-profile-staff-und", context).click(function (){
+      if (($("#edit-field-profile-staff-und:checked", context).length) && $(".staff-information.collapsed", context).length) {
+        $(".staff-information .fieldset-legend a", context).click();
       }
     });
   },
