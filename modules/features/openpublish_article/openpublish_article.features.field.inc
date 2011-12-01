@@ -42,7 +42,7 @@ function openpublish_article_field_default_fields() {
       'bundle' => 'openpublish_article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => '<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Article that appears in certain lists/views.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -64,16 +64,17 @@ function openpublish_article_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -114,6 +115,7 @@ function openpublish_article_field_default_fields() {
           'openpublish_site_page' => 0,
           'openpublish_video' => 0,
           'profile' => 'profile',
+          'section_front' => 0,
         ),
         'view' => array(
           'args' => array(),
@@ -128,7 +130,7 @@ function openpublish_article_field_default_fields() {
       'bundle' => 'openpublish_article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Article.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -198,7 +200,7 @@ function openpublish_article_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'openpublish_article',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select a Main Image for your Article, which will appear on the Article\'s node page and will also represent the Article in lists.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -262,9 +264,12 @@ function openpublish_article_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Article that appears in certain lists/views.');
   t('Author(s)');
   t('Body');
+  t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Article.');
   t('Main Image');
+  t('Select a Main Image for your Article, which will appear on the Article\'s node page and will also represent the Article in lists.');
 
   return $fields;
 }

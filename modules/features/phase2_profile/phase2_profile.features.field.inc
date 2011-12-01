@@ -42,7 +42,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Enter some background / biographical information if applicable.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -120,7 +120,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Enter the full address of this profile.',
+      'description' => 'Enter the full address for this person or organization.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -195,7 +195,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Enter an Email Address for this Profile.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -269,7 +269,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If this is a Person\'s Profile, enter their First Name.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -342,7 +342,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'If this is a Person\'s Profile, enter their Last Name.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -490,7 +490,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Enter a Phone Number for this Profile.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -564,7 +564,7 @@ function phase2_profile_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'profile',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Upload and/or select a Photo for this Profile.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -680,7 +680,7 @@ function phase2_profile_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The user account that this profile is attached to.',
+      'description' => 'Associate this Profile with a Drupal user account.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -725,17 +725,23 @@ function phase2_profile_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Associate this Profile with a Drupal user account.');
   t('Associated User');
   t('Biography');
   t('Email Address');
-  t('Enter the full address of this profile.');
+  t('Enter a Phone Number for this Profile.');
+  t('Enter an Email Address for this Profile.');
+  t('Enter some background / biographical information if applicable.');
+  t('Enter the full address for this person or organization.');
   t('First Name');
+  t('If this is a Person\'s Profile, enter their First Name.');
+  t('If this is a Person\'s Profile, enter their Last Name.');
   t('If this profile is an organization or company, enter the name of that organization here. This can take the place of First and Last names to serve as the full name of this profile.');
   t('Last Name');
   t('Organization');
   t('Phone Number');
   t('Photo');
-  t('The user account that this profile is attached to.');
+  t('Upload and/or select a Photo for this Profile.');
 
   return $fields;
 }

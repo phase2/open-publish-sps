@@ -26,11 +26,17 @@ function openpublish_general_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-dec424de5c549cdde5524a32ab930497' => array(
+          'module' => 'views',
+          'delta' => 'dec424de5c549cdde5524a32ab930497',
+          'region' => 'preface_second',
+          'weight' => 0,
+        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => 0,
         ),
       ),
     ),

@@ -109,7 +109,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => 'file',
-            'image_style' => 'full-page-list',
+            'image_style' => 'large',
           ),
           'type' => 'image',
           'weight' => '0',
@@ -190,7 +190,7 @@ function openpublish_media_field_default_fields() {
       'bundle' => 'openpublish_photo_gallery',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => '<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Photo Gallery that appears in certain lists/views.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -263,6 +263,7 @@ function openpublish_media_field_default_fields() {
           'openpublish_site_page' => 0,
           'openpublish_video' => 0,
           'profile' => 'profile',
+          'section_front' => 0,
         ),
         'view' => array(
           'args' => array(),
@@ -277,7 +278,7 @@ function openpublish_media_field_default_fields() {
       'bundle' => 'openpublish_photo_gallery',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Photo Gallery.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -335,7 +336,7 @@ function openpublish_media_field_default_fields() {
       'bundle' => 'openpublish_photo_gallery',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Upload and/or select the images that will make up your Gallery.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -359,7 +360,7 @@ function openpublish_media_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_gallery_image',
-      'label' => 'Images',
+      'label' => 'Gallery Images',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -406,7 +407,7 @@ function openpublish_media_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'openpublish_photo_gallery',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select a Main Image for your Photo Gallery, which will appear on the Gallery\'s node page and will also represent the Gallery in lists.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -504,7 +505,7 @@ function openpublish_media_field_default_fields() {
       'bundle' => 'openpublish_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => '<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Video as it appears in certain lists/views.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -523,16 +524,17 @@ function openpublish_media_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -573,6 +575,7 @@ function openpublish_media_field_default_fields() {
           'openpublish_site_page' => 0,
           'openpublish_video' => 0,
           'profile' => 'profile',
+          'section_front' => 0,
         ),
         'view' => array(
           'args' => array(),
@@ -587,7 +590,7 @@ function openpublish_media_field_default_fields() {
       'bundle' => 'openpublish_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Video.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -656,7 +659,7 @@ function openpublish_media_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'openpublish_video',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select a Main Image for your Video, which will represent the Video in lists.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -735,9 +738,14 @@ function openpublish_media_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'openpublish_video',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'video_url' => 'http://www.youtube.com/watch?v=dQw4w9WgXcQ',
+          'description' => '',
+        ),
+      ),
       'deleted' => '0',
-      'description' => 'Paste the Youtube or Vimeo URL of the video to embed.',
+      'description' => 'Provide the URL of the Video you\'d like to embed from a supported provider (i.e. Vimeo or YouTube).',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -780,14 +788,21 @@ function openpublish_media_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Photo Gallery that appears in certain lists/views.');
+  t('<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Video as it appears in certain lists/views.');
   t('Author(s)');
   t('Body');
   t('Caption');
+  t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Photo Gallery.');
+  t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Video.');
   t('Embedded Video');
+  t('Gallery Images');
   t('Image');
-  t('Images');
   t('Main Image');
-  t('Paste the Youtube or Vimeo URL of the video to embed.');
+  t('Provide the URL of the Video you\'d like to embed from a supported provider (i.e. Vimeo or YouTube).');
+  t('Select a Main Image for your Photo Gallery, which will appear on the Gallery\'s node page and will also represent the Gallery in lists.');
+  t('Select a Main Image for your Video, which will represent the Video in lists.');
+  t('Upload and/or select the images that will make up your Gallery.');
 
   return $fields;
 }

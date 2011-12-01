@@ -47,7 +47,7 @@ function openpublish_section_field_default_fields() {
       'bundle' => 'openpublish_article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the section that this content is affiliated with.',
+      'description' => 'Assign this Article to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -66,7 +66,7 @@ function openpublish_section_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_section_term',
-      'label' => 'Sections',
+      'label' => 'Section',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -118,7 +118,7 @@ function openpublish_section_field_default_fields() {
       'bundle' => 'openpublish_blog_post',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the section that this content is affliated with.',
+      'description' => 'Assign your Blog Post to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -136,7 +136,7 @@ function openpublish_section_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_section_term',
-      'label' => 'Sections',
+      'label' => 'Section',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -188,7 +188,7 @@ function openpublish_section_field_default_fields() {
       'bundle' => 'openpublish_photo_gallery',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the section that this content is affiliated with',
+      'description' => 'Assign this Photo Gallery to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -206,7 +206,7 @@ function openpublish_section_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_section_term',
-      'label' => 'Sections',
+      'label' => 'Section',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -258,7 +258,7 @@ function openpublish_section_field_default_fields() {
       'bundle' => 'openpublish_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the section that this content is affiliated with',
+      'description' => 'Assign your Video to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -276,7 +276,7 @@ function openpublish_section_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_section_term',
-      'label' => 'Sections',
+      'label' => 'Section',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -328,7 +328,7 @@ function openpublish_section_field_default_fields() {
       'bundle' => 'section_front',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the section that this content is affiliated with.',
+      'description' => 'Associate this Section Front with a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -346,7 +346,7 @@ function openpublish_section_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_section_term',
-      'label' => 'Sections',
+      'label' => 'Section',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -363,10 +363,12 @@ function openpublish_section_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Sections');
-  t('Select the section that this content is affiliated with');
-  t('Select the section that this content is affiliated with.');
-  t('Select the section that this content is affliated with.');
+  t('Assign this Article to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.');
+  t('Assign this Photo Gallery to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.');
+  t('Assign your Blog Post to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.');
+  t('Assign your Video to a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.');
+  t('Associate this Section Front with a <a href="/admin/structure/taxonomy/sections" target=_blank>Section</a>.');
+  t('Section');
 
   return $fields;
 }

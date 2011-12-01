@@ -143,7 +143,8 @@ projects[jcarousel][version] = 2.4-alpha3
 
 projects[field_collection][subdir] = contrib
 projects[field_collection][type] = module
-projects[field_collection][version] = 1.0-beta2
+projects[field_collection][version] = 1.x-dev
+projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 ; Themes
 projects[tao][type] = theme

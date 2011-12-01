@@ -42,7 +42,7 @@ function openpublish_blog_post_field_default_fields() {
       'bundle' => 'openpublish_blog_post',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => '<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Blog Post as it appears in certain lists/views.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -64,16 +64,17 @@ function openpublish_blog_post_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -114,6 +115,7 @@ function openpublish_blog_post_field_default_fields() {
           'openpublish_site_page' => 0,
           'openpublish_video' => 0,
           'profile' => 'profile',
+          'section_front' => 0,
         ),
         'view' => array(
           'args' => array(),
@@ -128,7 +130,7 @@ function openpublish_blog_post_field_default_fields() {
       'bundle' => 'openpublish_blog_post',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Blog Post.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -147,7 +149,7 @@ function openpublish_blog_post_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_op_author',
-      'label' => 'Author',
+      'label' => 'Author(s)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -191,8 +193,8 @@ function openpublish_blog_post_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'parent' => '0',
             'vocabulary' => 'blog',
+            'parent' => '0',
           ),
         ),
       ),
@@ -203,7 +205,7 @@ function openpublish_blog_post_field_default_fields() {
       'bundle' => 'openpublish_blog_post',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Assign your Blog Post to a <a href="/admin/structure/taxonomy/blog" target=_blank>Blog</a>.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -269,7 +271,7 @@ function openpublish_blog_post_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'openpublish_blog_post',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Select a Main Image for your Blog Post, which will appear on the Blog Post\'s node page and will also represent the Blog Post in lists.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -333,10 +335,14 @@ function openpublish_blog_post_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Author');
+  t('<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Blog Post as it appears in certain lists/views.');
+  t('Assign your Blog Post to a <a href="/admin/structure/taxonomy/blog" target=_blank>Blog</a>.');
+  t('Author(s)');
   t('Blog');
   t('Body');
+  t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Blog Post.');
   t('Main Image');
+  t('Select a Main Image for your Blog Post, which will appear on the Blog Post\'s node page and will also represent the Blog Post in lists.');
 
   return $fields;
 }

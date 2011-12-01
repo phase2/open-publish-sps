@@ -56,7 +56,7 @@ function openpublish_related_content_field_default_fields() {
       'bundle' => 'openpublish_article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add related content to your content by entering the title(s) of the content you wish to relate.',
+      'description' => 'Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Article.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -139,7 +139,7 @@ function openpublish_related_content_field_default_fields() {
       'bundle' => 'openpublish_blog_post',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add related content to your content by entering the title(s) of the content you wish to relate.',
+      'description' => 'Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Blog Post.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -222,7 +222,7 @@ function openpublish_related_content_field_default_fields() {
       'bundle' => 'openpublish_photo_gallery',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add related content to your content by entering the title(s) of the content you wish to relate.',
+      'description' => 'Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Photo Gallery.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -307,7 +307,7 @@ function openpublish_related_content_field_default_fields() {
       'bundle' => 'openpublish_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add related content to your content by entering the title(s) of the content you wish to relate.',
+      'description' => 'Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Video.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -346,7 +346,10 @@ function openpublish_related_content_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add related content to your content by entering the title(s) of the content you wish to relate.');
+  t('Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Article.');
+  t('Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Blog Post.');
+  t('Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Photo Gallery.');
+  t('Enter the title(s) of other Articles, Blog Posts, Galleries, or Videos that you wish to explicitly relate to this Video.');
   t('Related Content');
 
   return $fields;

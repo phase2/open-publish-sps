@@ -43,7 +43,7 @@ function openpublish_author_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Provide the full URL for a Facebook page associated with this Profile.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -76,7 +76,7 @@ function openpublish_author_field_default_fields() {
         ),
         'enable_tokens' => 1,
         'title' => 'optional',
-        'title_maxlength' => 128,
+        'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
@@ -124,7 +124,7 @@ function openpublish_author_field_default_fields() {
       'bundle' => 'profile',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Enter the person\'s Job Title if applicable.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -190,9 +190,13 @@ function openpublish_author_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'profile',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '@openpublish',
+        ),
+      ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Provide a Twitter username for this profile.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -230,8 +234,11 @@ function openpublish_author_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Enter the person\'s Job Title if applicable.');
   t('Facebook URL');
   t('Job Title');
+  t('Provide a Twitter username for this profile.');
+  t('Provide the full URL for a Facebook page associated with this Profile.');
   t('Twitter Username');
 
   return $fields;
