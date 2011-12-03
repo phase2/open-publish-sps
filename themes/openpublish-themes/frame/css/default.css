@@ -459,7 +459,6 @@ input[type="submit"]:hover {
 .node-openpublish-video .field-name-field-op-video-embed .field-items, 
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items {
   max-width: 100%;
-  width: 100%;
 }
 .node-openpublish-video .field-name-field-op-video-embed .field-items .field-item,
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item {
@@ -472,9 +471,9 @@ input[type="submit"]:hover {
 
 .node-openpublish-video .field-name-field-op-video-embed .field-items .field-item iframe,
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item iframe {
-  height: 100%;
+  max-height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  max-width: 100%;
 }
