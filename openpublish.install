@@ -8,10 +8,10 @@
  */
 function openpublish_install() {
   // Set the default and admin themes
-  variable_set("theme_default", "openpublish_wireframe");
+  variable_set("theme_default", "frame");
   variable_set("admin_theme", "rubik");
   variable_set("node_admin_theme", '1');
-  theme_enable(array("openpublish_wireframe"));
+  theme_enable(array("frame"));
   
   openpublish_add_default_text_formats_and_perms();
 

@@ -1,5 +1,5 @@
-name = 'OpenPublish Wireframe'
-description = 'OpenPublish Wireframe is a responsive, HTML5 subtheme of <a href="http://drupal.org/project/omega">Omega</a>. This theme is intended to be a very simplified, wireframe-esque theme to be built off of. '
+name = 'Frame'
+description = 'Frame is a responsive, HTML5 subtheme of <a href="http://drupal.org/project/omega">Omega</a>. This theme is intended to be a very simplified, wireframe-esque theme to be built off of. '
 core = '7.x'
 engine = 'phptemplate'
 screenshot = 'screenshot.png'

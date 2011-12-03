@@ -1,6 +1,6 @@
 <?php
 
-function openpublish_wireframe_alpha_preprocess_node(&$vars) {
+function frame_alpha_preprocess_node(&$vars) {
   $date_format = format_date($vars['created'], $type = 'custom', $format = 'm/d/y');
   if(module_exists('comment')) {
     // if we have comments enabled, append the comment count to the submitted data
