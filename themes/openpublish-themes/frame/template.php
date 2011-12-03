@@ -10,3 +10,11 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+ 
+/**
+ * Implements HOOK_form_FORM_ID_alter
+ * This hook into the search block form adds HTML5 placeholder text for search
+ */
+function frame_form_search_block_form_alter(&$form, &$form_state) {
+  $form['search_block_form']['#attributes']['placeholder'] = t('Search this site…');
+}

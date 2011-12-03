@@ -307,6 +307,9 @@ input[type="submit"]:hover {
 }
 
 /* search form(s) and results */
+.zone-branding .block-search-form {
+  margin-top: 20px;
+}
 .block-search input.form-text,
 .search-form #edit-keys {
   background: url('../i/search.png') no-repeat center right;
