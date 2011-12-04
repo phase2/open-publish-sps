@@ -487,16 +487,16 @@ input[type="submit"]:hover {
   display: none;
 }
 
-
+/* Commented out a few items to remove a gap between the body and the iframe */
 .node-openpublish-video .field-name-field-op-video-embed .field-items, 
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items {
   max-width: 100%;
 }
 .node-openpublish-video .field-name-field-op-video-embed .field-items .field-item,
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item {
-  height: 0;
+/*  height: 0; */
   overflow: hidden;
-  padding-bottom: 56.25%;
+/*  padding-bottom: 56.25%; */
   padding-top: 10px;
   position: relative;
 }
@@ -505,7 +505,7 @@ input[type="submit"]:hover {
 .node-openpublish-video .field-name-field-op-video-embed-code .field-items .field-item iframe {
   max-height: 100%;
   left: 0;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   max-width: 100%;
 }

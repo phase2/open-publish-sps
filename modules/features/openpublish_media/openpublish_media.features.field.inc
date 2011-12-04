@@ -679,7 +679,7 @@ function openpublish_media_field_default_fields() {
       'label' => 'Embedded Video',
       'required' => 0,
       'settings' => array(
-        'description_field' => 1,
+        'description_field' => 0,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
