@@ -44,6 +44,21 @@ h6 a, h6 a:link, h6 a:visited {
   border-bottom: none;
   text-decoration: none;
 }
+.views-field-title a {
+  font-size: 15px;
+}
+.region-content .views-field-title a,
+.region-content .views-field-title a:link,
+.region-content .views-field-title a:visited {
+  color: #00578a;
+  border-bottom: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  letter-spacing: normal;
+}
 
 h1 a:hover,
 h2 a:hover,
@@ -51,6 +66,10 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover {
+  color: #787878;
+}
+
+.region-content .views-field-title a:hover {
   color: #787878;
 }
 
@@ -362,14 +381,6 @@ input[type="submit"]:hover {
   font-size: 15px;
 }
 
-.node .node .field-type-node-reference .field-items,
-.node .node .field-type-taxonomy-term-reference .field-items,
-.node .node .field-type-node-reference .field-items {
-
-}
-.node .node .field-label {
-  
-}
 .node .field-name-field-op-main-image {
   display: block;
   float: left;
