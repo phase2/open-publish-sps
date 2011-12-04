@@ -227,10 +227,8 @@ function openpublish_related_content_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'node_reference',
-          'settings' => array(
-            'node_reference_view_mode' => 'teaser',
-          ),
-          'type' => 'node_reference_node',
+          'settings' => array(),
+          'type' => 'node_reference_default',
           'weight' => '5',
         ),
         'teaser' => array(
