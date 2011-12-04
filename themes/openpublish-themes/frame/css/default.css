@@ -55,46 +55,46 @@ h6 a:hover {
 }
 
 h1 {
-  font-size: 3.6em;
+  font-size: 36px;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 30px;
 }
 
 /* Make site titles the same size if it's an H1 (home) or H2 (internal) */
 h1.site-name,
 h2.site-name {
-  font-size: 4em;
+  font-size: 40px;
   margin-bottom: 0;
 }
 
 /* Make it a bit smaller for block headers */
 h2.block-title {
-  font-size: 2.4em;
+  font-size: 24px;
   margin: 0;	
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 20px;
 }
 
 h4 {
-  font-size: 1.8em;
+  font-size: 18px;
 }
 
 h5 {
-  font-size: 1.6em;
+  font-size: 16px;
 }
 
 h6 {
-  font-size: 1.4em;
+  font-size: 14px;
 }
 h6.site-slogan {
   margin-top: 0;
 }
 p, ul, ol {
-  font-size: 1.4em;
+  font-size: 14px;
 }
 ul ul, ol ol, ul ol, ol ul {
   font-size: 1em;
@@ -133,7 +133,7 @@ img {
 }
 label {
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 14px;
 }
 
 ul, ul.menu, ol {
@@ -187,7 +187,7 @@ h2.node-title {
 .node-links ul {
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 12px;
   text-transform: uppercase;
 }
 .node-links ul li {
@@ -214,6 +214,7 @@ h2.node-title {
 .submitted {
   line-height: 24px;
   margin-bottom: 10px;
+  font-size: 11px;
 }
 
 ul.primary {
@@ -339,21 +340,41 @@ input[type="submit"]:hover {
 }
 
 /* Node Styles */
-.node .field-label {
+.node .field {
   margin: 1em 0 0.5em 0;
+}
+.node .field-label {
+  margin: 0;
   font-family: Georgia, serif;
   font-variant: small-caps;
   font-weight: normal;
   letter-spacing: normal;
-  font-size: 2em;
+  font-size: 20px;
+  line-height: 1.2em;
 }
 .node .field .field-items {
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
+
 .node .field-type-node-reference .field-items,
 .node .field-type-taxonomy-term-reference .field-items,
 .node .field-type-node-reference .field-items {
-  font-size: 1.5em;
+  font-size: 15px;
+}
+
+.node .node .field-type-node-reference .field-items,
+.node .node .field-type-taxonomy-term-reference .field-items,
+.node .node .field-type-node-reference .field-items {
+
+}
+.node .node .field-label {
+  
+}
+.node .field-name-field-op-main-image {
+  display: block;
+  float: left;
+  clear: none;
+  margin-right: 20px;
 }
 
 #edit-actions input {
