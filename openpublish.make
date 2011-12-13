@@ -114,7 +114,7 @@ projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 2.0-alpha2
+projects[video_embed_field][version] = 2.0-alpha3
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
