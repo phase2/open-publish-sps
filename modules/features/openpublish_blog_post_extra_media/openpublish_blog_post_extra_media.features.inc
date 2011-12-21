@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_ctools_plugin_api().
+ * Implements hook_ctools_plugin_api().
  */
 function openpublish_blog_post_extra_media_ctools_plugin_api() {
   list($module, $api) = func_get_args();

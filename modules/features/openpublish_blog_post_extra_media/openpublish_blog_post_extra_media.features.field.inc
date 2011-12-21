@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function openpublish_blog_post_extra_media_field_default_fields() {
   $fields = array();
