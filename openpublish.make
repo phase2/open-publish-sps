@@ -4,7 +4,7 @@ core = 7.0
 
 projects[field_group][subdir] = contrib
 projects[field_group][type] = module
-projects[field_group][version] = 1.0
+projects[field_group][version] = 1.1
 
 projects[references][subdir] = contrib
 projects[references][type] = module
@@ -13,10 +13,11 @@ projects[references][version] = 2.0-beta3
 projects[ctools][subdir] = contrib
 projects[ctools][type] = module
 projects[ctools][version] = 1.0-rc1
+projects[ctools][patch][] = http://drupal.org/files/1371180-add-export-module.patch
 
 projects[date][subdir] = contrib
 projects[date][type] = module
-projects[date][version] = 2.0-alpha4
+projects[date][version] = 2.0-rc1
 
 projects[diff][subdir] = contrib
 projects[diff][type] = module
@@ -36,16 +37,16 @@ projects[openidadmin][version] = 1.0
 
 projects[pathauto][subdir] = contrib
 projects[pathauto][type] = module
-projects[pathauto][version] = 1.0-rc2
+projects[pathauto][version] = 1.0
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta4
+projects[strongarm][version] = 2.0-beta5
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.0-beta7
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.0-rc3
+projects[views][version] = 3.0
 
 projects[nodequeue][subdir] = contrib
 projects[nodequeue][type] = module
@@ -82,7 +83,7 @@ projects[nodeblock][version] = 1.2
 
 projects[xmlsitemap][subdir] = contrib
 projects[xmlsitemap][type] = module
-projects[xmlsitemap][version] = 2.0-beta3
+projects[xmlsitemap][version] = 2.0-rc1
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][type] = module
@@ -114,7 +115,7 @@ projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 2.0-alpha2
+projects[video_embed_field][version] = 2.0-alpha3
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
@@ -139,7 +140,7 @@ projects[libraries][version] = 1.0
 
 projects[jcarousel][subdir] = contrib
 projects[jcarousel][type] = module
-projects[jcarousel][version] = 2.4-alpha3
+projects[jcarousel][version] = 2.6
 
 projects[field_collection][subdir] = contrib
 projects[field_collection][type] = module
@@ -163,7 +164,7 @@ projects[context][version] = 3.0-beta2
 
 projects[delta][subdir] = contrib
 projects[delta][type] = module
-projects[delta][version] = 3.0-beta8
+projects[delta][version] = 3.0-beta9
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][type] = module
