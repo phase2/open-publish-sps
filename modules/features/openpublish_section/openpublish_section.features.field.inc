@@ -331,6 +331,12 @@ function openpublish_section_field_default_fields() {
           'type' => 'hidden',
           'weight' => '2',
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
