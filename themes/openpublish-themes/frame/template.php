@@ -18,3 +18,12 @@
 function frame_form_search_block_form_alter(&$form, &$form_state) {
   $form['search_block_form']['#attributes']['placeholder'] = t('Search this site…');
 }
+
+/**
+ *  Implements hook_form_FORM_ID_alter().
+ *  Alter the search form and add our js to submit on enter keydown.
+ *  We're hiding the submit button and the form removes the enter to submit functionality
+ */
+function frame_form_search_form_alter (&$form, &$form_state, $form_id) {
+  drupal_add_js(drupal_get_path('theme', 'frame') . '/js/search.js');
+}
