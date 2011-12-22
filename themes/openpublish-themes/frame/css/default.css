@@ -509,3 +509,32 @@ input[type="submit"]:hover {
   top: 0;
   max-width: 100%;
 }
+
+/* Teaser Styles */
+
+.node-teaser .field {
+  margin-top: .5em;
+  margin-bottom:  .25em;
+}
+
+.node-teaser .field-name-field-op-video-embed {
+  display: block;
+  float: left;
+  clear: none;
+  margin-right: 20px;
+  margin-top: 0px;
+}
+
+.node-teaser .field-name-field-op-video-embed .field-items .field-item {
+  padding-top: 5px;
+}
+
+.node-teaser h2.node-title {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.node-teaser .submitted {
+  line-height: 14px;
+  margin-bottom: 0px;
+}

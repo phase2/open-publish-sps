@@ -17,7 +17,7 @@ function openpublish_listings_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'OpenPublish - Recent Content';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -32,7 +32,9 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = 0;
+  $handler->display->display_options['row_options']['comments'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -146,7 +148,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['field'] = 'limit';
   $handler->display->display_options['arguments']['limit']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['limit']['summary']['format'] = 'default_summary';
-  /* Contextual filter: Field: Sections (field_op_section_term) */
+  /* Contextual filter: Content: Section (field_op_section_term) */
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
@@ -193,12 +195,18 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Author(s) (field_op_author) */
+  /* Contextual filter: By Author(optional)[node]{bundles:profile} */
   $handler->display->display_options['arguments']['field_op_author_nid']['id'] = 'field_op_author_nid';
   $handler->display->display_options['arguments']['field_op_author_nid']['table'] = 'field_data_field_op_author';
   $handler->display->display_options['arguments']['field_op_author_nid']['field'] = 'field_op_author_nid';
+  $handler->display->display_options['arguments']['field_op_author_nid']['ui_name'] = 'By Author(optional)[node]{bundles:profile}';
   $handler->display->display_options['arguments']['field_op_author_nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_op_author_nid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['field_op_author_nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_op_author_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_op_author_nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_op_author_nid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_op_author_nid']['not'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1225,7 +1233,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['limit']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['limit']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Sections (field_op_section_term) */
+  /* Contextual filter: Content: Section (field_op_section_term) */
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
@@ -1271,6 +1279,7 @@ function openpublish_listings_views_default_views() {
   $handler = $view->new_display('block', 'Recent Articles Carousel (by section)', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recent Articles Carousel (by Section)';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -1289,6 +1298,34 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Main Image */
+  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1384,10 +1421,6 @@ function openpublish_listings_views_default_views() {
     'trim_length' => '300',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Content: Main Image */
-  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author(s) (field_op_author) */
   $handler->display->display_options['arguments']['field_op_author_nid']['id'] = 'field_op_author_nid';
@@ -1401,7 +1434,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['field'] = 'limit';
   $handler->display->display_options['arguments']['limit']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['limit']['summary']['format'] = 'default_summary';
-  /* Contextual filter: Field: Sections (field_op_section_term) */
+  /* Contextual filter: Content: Section (field_op_section_term) */
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';
@@ -1447,6 +1480,7 @@ function openpublish_listings_views_default_views() {
   $handler = $view->new_display('block', 'Recent Blogs Carousel (by section)', 'block_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recent Blogs Carousel (by Section)';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = 'both';
@@ -1560,6 +1594,30 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
   $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
   $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author(s) (field_op_author) */
   $handler->display->display_options['arguments']['field_op_author_nid']['id'] = 'field_op_author_nid';
@@ -1573,7 +1631,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['field'] = 'limit';
   $handler->display->display_options['arguments']['limit']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['limit']['summary']['format'] = 'default_summary';
-  /* Contextual filter: Field: Sections (field_op_section_term) */
+  /* Contextual filter: Content: Section (field_op_section_term) */
   $handler->display->display_options['arguments']['field_op_section_term_tid']['id'] = 'field_op_section_term_tid';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['table'] = 'field_data_field_op_section_term';
   $handler->display->display_options['arguments']['field_op_section_term_tid']['field'] = 'field_op_section_term_tid';

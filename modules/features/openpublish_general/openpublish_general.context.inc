@@ -26,17 +26,17 @@ function openpublish_general_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => '1',
-        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
           'region' => 'branding_inline',
-          'weight' => '0',
+          'weight' => 0,
+        ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => 0,
         ),
       ),
     ),

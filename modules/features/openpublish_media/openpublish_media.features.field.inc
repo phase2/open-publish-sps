@@ -197,7 +197,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -342,14 +342,14 @@ function openpublish_media_field_default_fields() {
           'label' => 'hidden',
           'module' => 'field_collection',
           'settings' => array(
-            'add' => 'Add',
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
+            'add' => '',
+            'delete' => '',
+            'description' => 0,
+            'edit' => '',
             'view_mode' => 'full',
           ),
           'type' => 'field_collection_view',
-          'weight' => '4',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -411,13 +411,9 @@ function openpublish_media_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => 'file',
-            'image_style' => 'full_width',
-          ),
-          'type' => 'image',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -516,8 +512,11 @@ function openpublish_media_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => '140',
+          ),
+          'type' => 'text_summary_or_trimmed',
           'weight' => '1',
         ),
       ),
@@ -603,7 +602,7 @@ function openpublish_media_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
@@ -667,10 +666,10 @@ function openpublish_media_field_default_fields() {
           'label' => 'hidden',
           'module' => 'video_embed_field',
           'settings' => array(
-            'description' => '0',
-            'video_style' => 'teaser',
+            'description' => 1,
+            'image_style' => 'list-page-thumbnail',
           ),
-          'type' => 'video_embed_field',
+          'type' => 'video_embed_field_thumbnail',
           'weight' => '0',
         ),
       ),

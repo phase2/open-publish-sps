@@ -29,7 +29,7 @@ projects[entity][version] = 1.0-rc1
 
 projects[features][subdir] = contrib
 projects[features][type] = module
-projects[features][version] = 1.0-beta4
+projects[features][version] = 1.0-beta5
 
 projects[openidadmin][subdir] = contrib
 projects[openidadmin][type] = module

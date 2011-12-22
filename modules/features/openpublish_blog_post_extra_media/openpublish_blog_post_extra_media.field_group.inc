@@ -21,12 +21,10 @@ function openpublish_blog_post_extra_media_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '33',
+    'weight' => '7',
     'children' => array(
       0 => 'field_op_main_image',
-      1 => 'field_op_photo_gallery',
-      2 => 'field_op_video',
-      3 => 'field_op_caption',
+      1 => 'field_op_caption',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
