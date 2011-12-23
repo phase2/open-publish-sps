@@ -24,7 +24,7 @@ function openpublish_apps_servers_info() {
      'description' => "Apps for the OpenPublish distribution",
      'manifest' => 'http://appserver.openpublishapp.com/app/query/openpublish',
      'profile' => 'Openpublish',
-     'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.0-beta1',
+     'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.0-alpha2',
      'server_name' => $_SERVER['SERVER_NAME'],
      'server_ip' => $_SERVER['SERVER_ADDR'],
    ),
