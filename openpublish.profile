@@ -41,7 +41,8 @@ function openpublish_init() {
  }
  else {
    $info =  drupal_parse_info_file(dirname(__file__) . '/openpublish.info');
-   $data = array("profile" => "openpublish", "profile_version" => $info['version']);
+   $version = array_key_exists('version', $info) ? $info['version'] : '7.x-1.x';
+   $data = array("profile" => "openpublish", "profile_version" => $version);
    cache_set("openpublish_info", $data);
  }
  drupal_add_js($data, 'setting');
