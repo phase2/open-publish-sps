@@ -69,8 +69,6 @@ projects[nodeconnect][version] = 1.0-alpha1
 
 projects[apps][type] = module
 projects[apps][subdir] = contrib
-projects[apps][version] = 1.0-beta3
-projects[apps][subdir] = custom
 projects[apps][version] = 1.0-beta4
 
 projects[imce][subdir] = contrib
