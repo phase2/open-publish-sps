@@ -175,7 +175,7 @@ projects[omega_tools][version] = 3.0-rc3
 
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
-projects[boxes][version] = 1.0-beta6
+projects[boxes][version] = 1.0-beta7
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
