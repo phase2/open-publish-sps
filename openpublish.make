@@ -1,6 +1,12 @@
 ; Drupal Core
 api = 2
-core = 7.0
+core = 7.12
+
+projects[drupal][type] = core
+projects[drupal][patch][] = http://drupal.org/files/issues/object_conversion_menu_router_build-972536-1.patch
+projects[drupal][patch][] = http://drupal.org/files/issues/992540-3-reset_flood_limit_on_password_reset-drush.patch
+; allow simpletest to look into profiles for modules
+projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
 
 projects[field_group][subdir] = contrib
 projects[field_group][type] = module
@@ -8,7 +14,7 @@ projects[field_group][version] = 1.1
 
 projects[references][subdir] = contrib
 projects[references][type] = module
-projects[references][version] = 2.0-beta3
+projects[references][version] = 2.0
 
 projects[ctools][subdir] = contrib
 projects[ctools][type] = module
@@ -17,7 +23,7 @@ projects[ctools][patch][] = http://drupal.org/files/1371180-add-export-module.pa
 
 projects[date][subdir] = contrib
 projects[date][type] = module
-projects[date][version] = 2.0-rc1
+projects[date][version] = 2.0-rc2
 
 projects[diff][subdir] = contrib
 projects[diff][type] = module
@@ -29,7 +35,7 @@ projects[entity][version] = 1.0-rc1
 
 projects[features][subdir] = contrib
 projects[features][type] = module
-projects[features][version] = 1.0-beta5
+projects[features][version] = 1.0-beta6
 
 projects[openidadmin][subdir] = contrib
 projects[openidadmin][type] = module
@@ -43,10 +49,10 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta5
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0-beta7
+projects[token][version] = 1.0-rc1
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.0
+projects[views][version] = 3.1
 
 projects[vntf][subdir] = contrib
 projects[vntf][version] = 1.0-beta5
@@ -65,11 +71,11 @@ projects[conditional_styles][version] = 2.0
 
 projects[nodeconnect][type] = module
 projects[nodeconnect][subdir] = contrib
-projects[nodeconnect][version] = 1.0-alpha1
+projects[nodeconnect][version] = 1.x-dev
 
 projects[apps][type] = module
 projects[apps][subdir] = contrib
-projects[apps][version] = 1.0-beta4
+projects[apps][version] = 1.0-beta5
 
 projects[imce][subdir] = contrib
 projects[imce][version] = 1.5
@@ -147,7 +153,7 @@ projects[jcarousel][version] = 2.6
 
 projects[field_collection][subdir] = contrib
 projects[field_collection][type] = module
-projects[field_collection][version] = 1.x-dev
+projects[field_collection][version] = 1.0-beta3
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 ; Themes
@@ -175,7 +181,7 @@ projects[omega_tools][version] = 3.0-rc3
 
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
-projects[boxes][version] = 1.0-beta7
+projects[boxes][version] = 1.0-beta6
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
@@ -183,7 +189,7 @@ projects[context_field][version] = 1.0-beta2
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][type] = module
-projects[views_boxes][version] = 1.0-beta6
+projects[views_boxes][version] = 1.0-beta7
 
 projects[entity_autocomplete][subdir] = contrib
 projects[entity_autocomplete][type] = module
@@ -193,14 +199,7 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
 projects[views_arguments_extras][version] = 1.0-beta1
 
-//add feeds, but don't turn it on
+; add feeds, but don't turn it on
 projects[feeds][subdir] = contrib
 projects[feeds][type] = module
 projects[feeds][version] = 2.0-alpha4
-
-// allow simpletest to look into profiles for modules
-projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
-projects[drupal][type] = core
-projects[drupal][patch][] = http://drupal.org/files/issues/object_conversion_menu_router_build-972536-1.patch
-projects[drupal][patch][] = http://drupal.org/files/issues/992540-3-reset_flood_limit_on_password_reset-drush.patch
-
