@@ -189,7 +189,7 @@ projects[context_field][version] = 1.0-beta2
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][type] = module
-projects[views_boxes][version] = 1.0-beta7
+projects[views_boxes][version] = 1.x-dev
 
 projects[entity_autocomplete][subdir] = contrib
 projects[entity_autocomplete][type] = module
