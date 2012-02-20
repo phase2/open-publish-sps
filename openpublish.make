@@ -124,7 +124,7 @@ projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 2.0-beta2
+projects[video_embed_field][version] = 2.0-beta4
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
@@ -194,6 +194,7 @@ projects[views_boxes][version] = 1.0-beta8
 projects[entity_autocomplete][subdir] = contrib
 projects[entity_autocomplete][type] = module
 projects[entity_autocomplete][version] = 1.0-beta1
+projects[entity_autocomplete][patch][] = http://drupal.org/files/fix-issue-with-taxonomy-bundles-1447178-1_0.patch
 
 projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][type] = module
