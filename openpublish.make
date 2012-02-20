@@ -135,14 +135,6 @@ projects[ga_stats][subdir] = contrib
 projects[ga_stats][type] = module
 projects[ga_stats][version] = 1.0-beta1
 
-projects[views_infinite_scroll][subdir] = contrib
-projects[views_infinite_scroll][type] = module
-projects[views_infinite_scroll][version] = 1.0
-
-libraries[views_infinite_scroll][download][type] = get
-libraries[views_infinite_scroll][download][url] = http://lagoscript.org/files/jquery/autopager/jquery.autopager-1.0.0.js
-libraries[views_infinite_scroll][directory_name] = autopager
-
 projects[libraries][subdir] = contrib
 projects[libraries][type] = module
 projects[libraries][version] = 1.0
