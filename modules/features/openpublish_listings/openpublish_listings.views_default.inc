@@ -135,7 +135,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['field_op_author']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_op_author']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['field_op_author']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_op_author']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_author']['hide_empty'] = 1;
   $handler->display->display_options['fields']['field_op_author']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_op_author']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_op_author']['settings'] = array(
@@ -150,7 +150,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'on';
+  $handler->display->display_options['fields']['created']['label'] = 'On';
   $handler->display->display_options['fields']['created']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['created']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['created']['alter']['absolute'] = 0;
