@@ -46,6 +46,31 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['relationships']['field_op_author_nid']['label'] = 'author';
   $handler->display->display_options['relationships']['field_op_author_nid']['required'] = 0;
   $handler->display->display_options['relationships']['field_op_author_nid']['delta'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['type']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['type']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['type']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['type']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['type']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['type']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['type']['link_to_node'] = 0;
+  $handler->display->display_options['fields']['type']['machine_name'] = 0;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_profile_photo']['id'] = 'field_profile_photo';
   $handler->display->display_options['fields']['field_profile_photo']['table'] = 'field_data_field_profile_photo';
@@ -172,6 +197,28 @@ function openpublish_listings_views_default_views() {
     'trim_length' => '300',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
+  /* Field: Node: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['view_node']['alter']['text'] = 'Read Full [type]';
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['view_node']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['view_node']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['view_node']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['view_node']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['view_node']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['view_node']['hide_alter_empty'] = 1;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -195,6 +242,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['field'] = 'limit';
   $handler->display->display_options['arguments']['limit']['ui_name'] = 'Limit (optional - defaults to 5)';
   $handler->display->display_options['arguments']['limit']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['limit']['title_enable'] = 1;
   $handler->display->display_options['arguments']['limit']['title'] = '%1';
   $handler->display->display_options['arguments']['limit']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['limit']['default_argument_options']['argument'] = '5';
