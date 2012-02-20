@@ -105,7 +105,7 @@ projects[addthis][version] = 2.1-beta1
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.2
 
-projects[captcha][version] = 1.0-alpha3
+projects[captcha][version] = 1.0-beta2
 projects[captcha][subdir] = contrib
 projects[captcha][type] = module
 projects[captcha][patch][] = http://drupal.org/files/issues/825088-19-captcha_ctools_export.patch
@@ -146,10 +146,10 @@ projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.pa
 
 ; Themes
 projects[tao][type] = theme
-projects[tao][version] = 3.0-beta3
+projects[tao][version] = 3.0-beta4
 
 projects[rubik][type] = theme
-projects[rubik][version] = 4.0-beta6
+projects[rubik][version] = 4.0-beta7
 
 projects[omega][type] = theme
 projects[omega][version] = 3.1
