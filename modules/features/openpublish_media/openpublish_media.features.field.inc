@@ -656,7 +656,7 @@ function openpublish_media_field_default_fields() {
           'label' => 'hidden',
           'module' => 'video_embed_field',
           'settings' => array(
-            'description' => '1',
+            'description' => 1,
             'video_style' => 'normal',
           ),
           'type' => 'video_embed_field',
