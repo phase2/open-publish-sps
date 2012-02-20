@@ -23,7 +23,7 @@ projects[ctools][patch][] = http://drupal.org/files/1371180-add-export-module.pa
 
 projects[date][subdir] = contrib
 projects[date][type] = module
-projects[date][version] = 2.0-rc2
+projects[date][version] = 2.1
 
 projects[diff][subdir] = contrib
 projects[diff][type] = module
@@ -71,7 +71,7 @@ projects[conditional_styles][version] = 2.0
 
 projects[nodeconnect][type] = module
 projects[nodeconnect][subdir] = contrib
-projects[nodeconnect][version] = 1.x-dev
+projects[nodeconnect][version] = 1.0-alpha2
 
 projects[apps][type] = module
 projects[apps][subdir] = contrib
@@ -124,7 +124,7 @@ projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][type] = module
-projects[video_embed_field][version] = 2.0-alpha3
+projects[video_embed_field][version] = 2.0-beta2
 
 projects[vntf][subdir] = contrib
 projects[vntf][type] = module
@@ -164,7 +164,7 @@ projects[rubik][type] = theme
 projects[rubik][version] = 4.0-beta6
 
 projects[omega][type] = theme
-projects[omega][version] = 3.0
+projects[omega][version] = 3.1
 
 ; Page Layout + Administration
 projects[context][subdir] = contrib
@@ -177,11 +177,11 @@ projects[delta][version] = 3.0-beta9
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][type] = module
-projects[omega_tools][version] = 3.0-rc3
+projects[omega_tools][version] = 3.0-rc4
 
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
-projects[boxes][version] = 1.0-beta6
+projects[boxes][version] = 1.0-beta7
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
@@ -189,7 +189,7 @@ projects[context_field][version] = 1.0-beta2
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][type] = module
-projects[views_boxes][version] = 1.0-beta7
+projects[views_boxes][version] = 1.0-beta8
 
 projects[entity_autocomplete][subdir] = contrib
 projects[entity_autocomplete][type] = module
