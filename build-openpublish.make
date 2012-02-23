@@ -9,4 +9,4 @@ projects[drupal][patch][] = http://drupal.org/files/issues/911354.46.patch
 projects[openpublish][type] = profile
 projects[openpublish][download][type] = git
 projects[openpublish][download][url] = http://git.drupal.org/project/openpublish.git
-projects[openpublish][download][branch] = 7.x-1.x
+projects[openpublish][download][tag] = 7.x-1.0-alpha6
