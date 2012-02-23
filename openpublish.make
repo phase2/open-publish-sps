@@ -52,7 +52,7 @@ projects[token][subdir] = contrib
 projects[token][version] = 1.0-rc1
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.1
+projects[views][version] = 3.3
 
 projects[vntf][subdir] = contrib
 projects[vntf][version] = 1.0-beta5
@@ -146,10 +146,10 @@ projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.pa
 
 ; Themes
 projects[tao][type] = theme
-projects[tao][version] = 3.0-beta3
+projects[tao][version] = 3.0-beta4
 
 projects[rubik][type] = theme
-projects[rubik][version] = 4.0-beta6
+projects[rubik][version] = 4.0-beta8
 
 projects[omega][type] = theme
 projects[omega][version] = 3.1
