@@ -149,11 +149,7 @@ projects[tao][type] = theme
 projects[tao][version] = 3.0-beta4
 
 projects[rubik][type] = theme
-<<<<<<< HEAD
-projects[rubik][version] = 4.0-beta7
-=======
 projects[rubik][version] = 4.0-beta8
->>>>>>> 7.x-1.x
 
 projects[omega][type] = theme
 projects[omega][version] = 3.1
