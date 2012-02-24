@@ -11,10 +11,9 @@
   font-style: normal;
 }
 
-body {
-  background: #f5f5f3;
-}
-
+/*
+ * HTML elements
+ */
 h1, h2, h3, h4, h5, h6 {
     font-family: League Gothic, Arial, Helvetica, sans-serif;
     font-variant: normal
@@ -22,4 +21,106 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: normal;
     margin: 1em 0 0.5em;
     text-transform: uppercase;
+}
+a, a:link,
+li a.active {
+  color:#7b969d;
+  border-bottom: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/*
+ * Page Structure
+ */
+body {
+  background: #f5f5f3;
+}
+#region-page-top {
+  display: none;
+}
+#zone-header-wrapper {
+  background: url(../img/bg-header.png) repeat;
+  height: 115px;
+  border-bottom: 8px solid #323232;
+  box-shadow:0px -4px 4px rgba(0,0,0,0.4) inset;
+}
+#zone-user-wrapper {
+  background: url(../img/bg-header-light.png) repeat;
+}
+#zone-user-wrapper .zone-wrapper-inner,
+#zone-menu-wrapper .zone-wrapper-inner {
+  background: url(../img/border-horizontal.png) repeat-x bottom;
+}
+#zone-branding-wrapper {
+  background: url(../img/bg-header.png) repeat;
+  border-bottom: 22px solid #323232;
+}
+#zone-branding-wrapper,
+#zone-branding-wrapper .zone-wrapper-inner,
+#zone-branding {
+  height: 133px;
+}
+#zone-menu-wrapper {
+  background: #fff;
+}
+#region-user-second {
+  background: #536e75;
+  height: 205px;
+  width: 156px;
+  margin: -37px 0 0 0;
+}
+
+/* Utility Nav */
+#block-menu-menu-utility-nav .block-title {
+  display: none;
+}
+#block-menu-menu-utility-nav ul.menu {
+  float: right;
+  padding: 2px;
+}
+#block-menu-menu-utility-nav ul.menu li.leaf {
+  list-style: none;
+  display: inline;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/* Site Name */
+h1.site-name,
+h2.site-name {
+  font-size: 132px;
+  margin: 2px 0 0;
+}
+h1.site-name a,
+h2.site-name a {
+  color: #333;
+}
+
+/*
+ * Main navigation
+ */
+#region-menu {
+  
+}
+#main-menu {
+  font-size: 15px;
+  margin: -18px 0 0 0;
+  height: 34px;
+}
+ul.main-menu li {
+  border-right:none;
+  padding: 11px 16px 9px 0px;
+  background: url(../img/bg-nav-item.png) no-repeat top right;
+}
+#main-menu li a {
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:bold;
+  color: #323232;
+  padding: 10px 15px 11px;
+}
+#main-menu li a.active {
+  background: #54bbc4;
 }
