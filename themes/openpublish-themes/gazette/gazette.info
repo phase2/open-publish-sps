@@ -1,4 +1,4 @@
-name = Gazette
+name = Publisher's Gazette
 description = A demo theme for OpenPublish built on Frame, based on <a href="http://drupal.org/project/omega">Omega</a>.
 core = 7.x
 engine = phptemplate
