@@ -29,11 +29,17 @@ function openpublish_blog_post_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'boxes-ad_300x250_1' => array(
+          'module' => 'boxes',
+          'delta' => 'ad_300x250_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-5ce78ee8d7030d935fd275a05708281b' => array(
           'module' => 'views',
           'delta' => '5ce78ee8d7030d935fd275a05708281b',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
