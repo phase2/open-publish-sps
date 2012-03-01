@@ -29,11 +29,17 @@ function phase2_profile_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'boxes-ad_300x250_1' => array(
+          'module' => 'boxes',
+          'delta' => 'ad_300x250_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-op_recent_content-block_2' => array(
           'module' => 'views',
           'delta' => 'op_recent_content-block_2',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
