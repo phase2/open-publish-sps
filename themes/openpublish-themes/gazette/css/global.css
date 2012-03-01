@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-size: 45px;
+  line-height: normal;
 }
 h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -291,4 +292,11 @@ h2.block-title .block-title-icon {
   display: block;
   float: left;
   margin: 0 12px 0 4px;
+}
+
+/*
+ * Node detail page styles
+ */
+.node .field-name-field-op-main-image {
+  float: none;
 }

@@ -278,7 +278,7 @@ function openpublish_blog_post_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'large',
+            'image_style' => '620px_wide',
           ),
           'type' => 'image',
           'weight' => '2',
