@@ -300,3 +300,87 @@ h2.block-title .block-title-icon {
 .node .field-name-field-op-main-image {
   float: none;
 }
+
+/*
+ * Views
+ */
+
+/* Featured Story */
+.view-id-op_recent_content.view-display-id-block_7 .views-row {
+  background: #fffeff;
+  padding: 12px 13px;
+  box-shadow: 0 1px 2px #8b8b89;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image {
+  float: left;
+  margin-right: 11px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image img {
+  border: 1px solid #202020;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text {
+  float: left;
+  width: 277px;
+  height: 389px;
+  padding: 30px 14px;
+  background: #ebebeb url(../img/bg-header.png) repeat;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.15) inset;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field {
+  padding: 0 12px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-title {
+  font-family: League Gothic, Arial, Helvetica, sans-serif;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-title a {
+  color: #333;
+  font-size: 31px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-field-op-author,
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-created {
+  font-family: 'Courier New', Courier, monospace;
+  font-size:11px;
+  font-weight: bold;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-field-op-author {
+  padding: 0 0 0 30px;
+  background: url(../img/arrow-featured-story.png) no-repeat 12px center;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-field-op-author .views-label {
+  font-style: italic;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-created {
+  padding: 0;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-body {
+  background: url(../img/divider-featured-story.png) no-repeat center top;
+  margin-top: 15px;
+  padding-top:20px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-body p {
+  font-size: 13px;
+  line-height: 17px;
+  
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-view-node {
+  background: url(../img/border-horizontal.png) repeat-x top;
+  text-align: center;
+  padding-top: 12px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-view-node a {
+  display: inline-block;
+  width: 82px;
+  height: 24px;
+  background: url(../img/btn-read-more.png) no-repeat top left;
+  color: #000200;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 4px;
+}

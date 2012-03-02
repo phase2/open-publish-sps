@@ -10,3 +10,15 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+function gazette_preprocess_views_view_unformatted(&$vars) {
+  foreach($vars['classes'] as &$rowclasses) {
+    $rowclasses[] = 'clearfix';
+  }
+  foreach($vars['classes_array'] as &$rowclasses) {
+    $rowclasses .= ' clearfix';
+  }
+  foreach($vars['attributes_array']['class'] as &$rowclasses) {
+    $rowclasses .= ' clearfix';
+  }
+}
+ 
