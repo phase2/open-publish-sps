@@ -170,6 +170,7 @@ projects[omega_tools][version] = 3.0-rc4
 projects[boxes][subdir] = contrib
 projects[boxes][type] = module
 projects[boxes][version] = 1.0-beta7
+projects[boxes][patch][] = http://drupal.org/files/boxes-base_path-needed-for-ckeditor-1464014-1.patch
 
 projects[context_field][subdir] = contrib
 projects[context_field][type] = module
