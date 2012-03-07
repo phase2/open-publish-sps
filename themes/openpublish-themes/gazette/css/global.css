@@ -293,6 +293,22 @@ h2.block-title .block-title-icon {
   float: left;
   margin: 0 12px 0 4px;
 }
+.region-sidebar-first h2.block-title,
+.region-sidebar-second h2.block-title {
+  background: url(../img/bg-sidebar-block-title.jpg) repeat-x;
+  height: 33px;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform:none;
+  color: #f6f5f3;
+  font-weight: bold;
+  padding: 2px 10px 0;
+  font-size: 17px;
+  box-shadow: 0 0 2px #afafad;
+}
+.region-sidebar-first h2.block-title .block-title-icon,
+.region-sidebar-second h2.block-title .block-title-icon {
+  display: none;
+}
 
 /*
  * Node detail page styles
