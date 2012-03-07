@@ -431,6 +431,27 @@ h2.block-title .block-title-icon {
   line-height: 17px;
 }
 
+/* Videos */
+.view-id-op_recent_content.view-display-id-block_3 .views-row,
+.view-id-op_recent_content.view-display-id-block_4 .views-row {
+  padding: 17px;
+  background: url(../img/border-horizontal.png) repeat-x bottom;
+}
+.view-id-op_recent_content.view-display-id-block_3 .views-field-field-op-video-embed,
+.view-id-op_recent_content.view-display-id-block_4 .views-field-field-op-video-embed {
+  margin-bottom: 17px;
+}
+.view-id-op_recent_content.view-display-id-block_3 .views-field-field-op-video-embed img,
+.view-id-op_recent_content.view-display-id-block_4 .views-field-field-op-video-embed img {
+  border: 4px solid #cdcdcd;
+}
+.view-id-op_recent_content.view-display-id-block_3 .views-field-title a,
+.view-id-op_recent_content.view-display-id-block_4 .views-field-title a {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4b565a;
+}
+
 /*
  * Global elements used across views
  */
