@@ -122,6 +122,7 @@ body {
   display: block;
   float: left;
   width: 140px;
+  margin: 3px 0 0;
 }
 .block-search div.form-actions,
 .search-form #edit-submit {
@@ -131,8 +132,21 @@ body {
 }
 .block-search input.form-text {
   background: #fafafa;
-  height:19px;
+  height:21px;
   border: 1px solid #546b71;
+  color: #56bac9;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:12px;
+}
+#block-search-form .form-submit {
+  width: 20px;
+  height: 19px;
+  background: url(../img/btn-search.png) no-repeat;
+  padding: 0;
+  border: none;
+  text-indent:-9999px;
+  font-size: 0;
+  margin: 4px 0 0;
 }
 
 /* Utility Nav */
