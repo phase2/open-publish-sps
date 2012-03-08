@@ -448,13 +448,14 @@ h2.block-title .block-title-icon {
 }
 .region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-body p {
   font-size: 12px;
-  line-height: normal;
+  line-height: 17px;
 }
 .view-id-op_recent_content.view-display-id-block_top_stories .views-field-view-node a {
   color: #36c8ef;
   font-family: 'Courier New', Courier, monospace;
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: bold;
 }
 
 /* Recent Articles */
@@ -546,6 +547,50 @@ h2.block-title .block-title-icon {
   font-weight: bold;
   font-size: 14px;
   color: #4b565a;
+}
+
+/* Galleries */
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-row,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-row {
+  float: left;
+  width: 30%;
+  margin-right: 3%;
+  padding-top: 15px;
+}
+.region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title,
+.region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title {
+  line-height:normal;
+  border-bottom: 1px solid #81817f;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title a,
+.region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title a {
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: uppercase;
+  line-height: normal;
+  color: #333;
+}
+.region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title a:hover,
+.region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title a:hover {
+  text-decoration: underline;
+}
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-field-op-main-image,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-field-field-op-main-image {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-field-op-main-image img,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-field-field-op-main-image img {
+  border: 1px solid #000;
+}
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-body p,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-field-body p {
+  font-size: 12px;
+  line-height: normal;
 }
 
 /*
