@@ -593,6 +593,42 @@ h2.block-title .block-title-icon {
   line-height: normal;
 }
 
+/* Most Popular, Also see */
+.view-id-op_most_popular.view-display-id-block_popular_section_24h,
+.view-id-openpublish_related_content.view-display-id-block {
+  background: #fff;
+  padding: 15px 20px;
+  font-size: 12px;
+}
+.view-id-op_most_popular.view-display-id-block_popular_section_24h .views-field-title a {
+  font-size: 12px;
+}
+
+/* Recent Articles */
+.view-id-op_recent_content.view-display-id-block_6 {
+  background: #fff;
+  padding: 0 0 15px;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-row {
+  padding: 15px;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-row-even {
+  background: #f4f8f9;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-field-title {
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-field-title a {
+  color: #49575a;
+  font-weight: bold;
+  font-size: 14px;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-field-created {
+  color: #999;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /*
  * Global elements used across views
  */
