@@ -291,6 +291,9 @@ ul.main-menu li,
 .block {
   margin:0 0 30px;
 }
+#block-system-main {
+  margin: 0;
+}
 h2.block-title {
   font-family: League Gothic, Arial, Helvetica, sans-serif;
   text-transform:uppercase;
@@ -321,6 +324,26 @@ h2.block-title .block-title-icon {
 }
 .region-sidebar-first h2.block-title .block-title-icon,
 .region-sidebar-second h2.block-title .block-title-icon {
+  display: none;
+}
+/*
+ * Section Front title
+ */
+.block-delta-blocks-page-title {
+  text-align: center;
+  margin: 0 0 5px
+}
+.block-delta-blocks-page-title h1 {
+  text-transform: uppercase;
+  font-size: 75px;
+  border-bottom: 16px solid #54bbc4;
+  margin: 10px 0 0;
+  color: #333;
+}
+.node-type-section-front .region-content h1#page-title {
+  display: none;
+}
+.front .block-delta-blocks-page-title {
   display: none;
 }
 
