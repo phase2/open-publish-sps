@@ -140,6 +140,7 @@ body {
   color: #56bac9;
   font-family: 'Courier New', Courier, monospace;
   font-size:12px;
+  line-height: 13px;
 }
 #block-search-form .form-submit {
   width: 20px;
@@ -231,6 +232,10 @@ h2.site-name a {
 #block-menu-menu-footer-links,
 #block-menu-menu-utility-nav {
   margin: 0;
+}
+#block-menu-menu-utility-nav {
+  width: 600px;
+  float: right;
 }
 .block-menu-footer-links h2.block-title {
   display: none;
@@ -594,13 +599,13 @@ h2.block-title .block-title-icon {
 }
 
 /* Most Popular, Also see */
-.view-id-op_most_popular.view-display-id-block_popular_section_24h,
+.view-id-op_most_popular,
 .view-id-openpublish_related_content.view-display-id-block {
   background: #fff;
   padding: 15px 20px;
   font-size: 12px;
 }
-.view-id-op_most_popular.view-display-id-block_popular_section_24h .views-field-title a {
+.view-id-op_most_popular .views-field-title a {
   font-size: 12px;
 }
 
