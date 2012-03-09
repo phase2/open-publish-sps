@@ -133,10 +133,12 @@ function openpublish_article_field_default_fields() {
       'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Article.',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'node_reference',
-          'settings' => array(),
-          'type' => 'node_reference_default',
+          'label' => 'hidden',
+          'module' => 'node_reference_view_formatter',
+          'settings' => array(
+            'view' => 'openpublish_related_content block_1',
+          ),
+          'type' => 'node_reference_view',
           'weight' => '0',
         ),
         'teaser' => array(
