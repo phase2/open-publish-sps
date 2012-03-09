@@ -632,22 +632,29 @@ h2.block-title .block-title-icon {
   font-size: 12px;
 }
 
-/* Recent Articles */
-.view-id-op_recent_content.view-display-id-block_6 {
+/* Recent Articles Sidebar */
+.view-id-op_recent_content.view-display-id-block_6,
+.view-id-op_recent_content.view-display-id-block_2 {
   background: #fff;
   padding: 0 0 15px;
 }
-.view-id-op_recent_content.view-display-id-block_6 .views-row {
+.view-id-op_recent_content.view-display-id-block_6 .views-row,
+.view-id-op_recent_content.view-display-id-block_2 .views-row {
   padding: 15px;
 }
-.view-id-op_recent_content.view-display-id-block_6 .views-row-even {
+.view-id-op_recent_content.view-display-id-block_6 .views-row-even,
+.view-id-op_recent_content.view-display-id-block_2 .views-row-even {
   background: #f4f8f9;
 }
 .view-id-op_recent_content.view-display-id-block_6 .views-field-title {
   line-height: normal;
   margin-bottom: 5px;
 }
-.view-id-op_recent_content.view-display-id-block_6 .views-field-title a {
+.view-id-op_recent_content.view-display-id-block_2 .views-field-title {
+  line-height: normal;
+}
+.view-id-op_recent_content.view-display-id-block_6 .views-field-title a,
+.view-id-op_recent_content.view-display-id-block_2 .views-field-title a {
   color: #49575a;
   font-weight: bold;
   font-size: 14px;
