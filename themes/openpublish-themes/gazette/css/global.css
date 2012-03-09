@@ -32,7 +32,8 @@ h2 {
   font-weight: bold;
   font-size: 22px;
 }
-h3 {
+h3,
+.node .field-label {
   font-family: 'Courier New', Courier, monospace;
   text-transform:uppercase;
   font-weight: bold;
@@ -113,6 +114,9 @@ body {
   height: 205px;
   width: 156px;
   margin: -37px 0 0 0;
+}
+#region-footer-second {
+  background: url(../img/icn-built-with-op.png) no-repeat top right;
 }
 
 /* Search bar */
