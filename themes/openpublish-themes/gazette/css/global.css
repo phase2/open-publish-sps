@@ -341,11 +341,13 @@ h2.block-title .block-title-icon {
 /*
  * Section Front title
  */
-.block-delta-blocks-page-title {
+.block-delta-blocks-page-title,
+.page-taxonomy-term h1#page-title {
   text-align: center;
   margin: 0 0 5px
 }
-.block-delta-blocks-page-title h1 {
+.block-delta-blocks-page-title h1,
+.page-taxonomy-term h1#page-title {
   text-transform: uppercase;
   font-size: 75px;
   border-bottom: 16px solid #54bbc4;
@@ -428,8 +430,9 @@ h2.block-title .block-title-icon {
   padding-top: 12px;
 }
 
-/* Top stories */
-.view-id-op_recent_content.view-display-id-block_top_stories .views-row {
+/* Top stories, Blogs list */
+.view-id-op_recent_content.view-display-id-block_top_stories .views-row,
+.node-openpublish-blog-post.node-teaser {
   background: url(../img/border-horizontal.png) repeat-x bottom;
   padding: 15px;
 }
@@ -440,11 +443,13 @@ h2.block-title .block-title-icon {
 .view-id-op_recent_content.view-display-id-block_top_stories .views-field-field-op-main-image img {
   border: 1px solid #000;
 }
-.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title {
+.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title,
+.node-openpublish-blog-post.node-teaser h2.node-title {
   line-height: 14px;
   margin-bottom: 3px;
 }
-.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title a {
+.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title a,
+.node-openpublish-blog-post.node-teaser h2.node-title a {
   font-family: 'Courier New', Courier, monospace;
   font-variant:normal;
   text-transform: uppercase;
@@ -452,10 +457,12 @@ h2.block-title .block-title-icon {
   color: #333;
   font-weight: bold;
 }
-.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title a:hover {
+.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-title a:hover,
+.node-openpublish-blog-post.node-teaser h2.node-title a:hover {
   text-decoration: underline;
 }
-.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-body p {
+.region-content .view-id-op_recent_content.view-display-id-block_top_stories .views-field-body p,
+.node-openpublish-blog-post.node-teaser .field-name-body p {
   font-size: 12px;
   line-height: 17px;
 }
@@ -465,6 +472,35 @@ h2.block-title .block-title-icon {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
+}
+.node-openpublish-blog-post.node-teaser footer.submitted {
+  display: none;
+}
+.node-openpublish-blog-post.node-teaser .field-name-field-op-blogpost-blog,
+.node-openpublish-blog-post.node-teaser .field-name-field-op-author {
+  font-size: 12px;
+  color:#666;
+  font-family: 'Courier New', Courier, monospace;
+  font-style:italic;
+}
+.node-openpublish-blog-post.node-teaser .field-label {
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: none;
+  font-variant: normal;
+}
+.node-openpublish-blog-post.node-teaser .field-name-field-op-blogpost-blog .field-items,
+.node-openpublish-blog-post.node-teaser .field-name-field-op-author .field-items {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+}
+.node-openpublish-blog-post.node-teaser .field-name-body {
+  margin-top: 20px;
+}
+div.feed-icon {
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 /* Recent Articles */
@@ -697,7 +733,8 @@ h2.block-title .block-title-icon {
 /* Read more button */
 .view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-view-node a,
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-field-view-node a,
-.view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-field-view-node a {
+.view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-field-view-node a,
+.node-readmore a {
   display: inline-block;
   width: 82px;
   height: 24px;
