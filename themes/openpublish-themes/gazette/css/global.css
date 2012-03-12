@@ -81,6 +81,9 @@ body {
   background: #f5f5f3;
   color: #333;
 }
+h1#page-title {
+  margin: 0 0 0.5em;
+}
 #section-header {
   margin-bottom: 25px;
 }
@@ -346,7 +349,7 @@ h2.block-title .block-title-icon {
   text-align: center;
   margin: 0 0 5px
 }
-.block-delta-blocks-page-title h1,
+.block-delta-blocks-page-title h1#page-title,
 .page-taxonomy-term h1#page-title {
   text-transform: uppercase;
   font-size: 75px;
@@ -746,4 +749,43 @@ div.feed-icon {
   text-transform: uppercase;
   padding-top: 4px;
   text-align: center;
+}
+
+/*
+ * Search results page
+ */
+.block-system-main .search-form #edit-keys {
+  float: left;
+  width: 85%;
+}
+.block-system-main .search-form #edit-submit {
+  width: auto;
+  height: 45px;
+  margin-left: 5px;
+}
+.block-system-main .search-form #edit-advanced {
+  clear: both;
+}
+.search-results li {
+  background: url(../img/border-horizontal.png) repeat-x bottom;
+}
+.search-results .title {
+  line-height: normal;
+  font-size: 18px;
+}
+.search-results .title a {
+  color:#2E3336;
+}
+.search-results .title a:hover {
+  text-decoration: underline;
+}
+.search-results .search-snippet-info {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.search-snippet-info p.search-info {
+  display: none;
+  padding-bottom: 1em;
 }
