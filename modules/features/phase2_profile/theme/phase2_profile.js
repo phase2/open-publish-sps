@@ -54,6 +54,7 @@ Drupal.behaviors.phase2_profile_name = {
 
     reset.click(function(){
       $('#edit-title').removeClass('custom');
+      $(reset).addClass('element-hidden');
       setContent();
     });
 
