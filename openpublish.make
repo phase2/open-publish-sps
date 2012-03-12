@@ -144,6 +144,10 @@ projects[field_collection][type] = module
 projects[field_collection][version] = 1.0-beta3
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
+projects[node_reference_view_formatter][subdir] = contrib
+projects[node_reference_view_formatter][type] = module
+projects[node_reference_view_formatter][version] = 1.0-beta2
+
 ; Themes
 projects[tao][type] = theme
 projects[tao][version] = 3.0-beta4

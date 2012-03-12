@@ -49,6 +49,7 @@ dependencies[] = omega_tools
 dependencies[] = openidadmin
 dependencies[] = pathauto
 dependencies[] = node_reference
+dependencies[] = node_reference_view_formatter
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = views

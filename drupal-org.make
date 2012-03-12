@@ -96,5 +96,7 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][version] = 1.0-beta1
 projects[feeds][subdir] = contrib
 projects[feeds][version] = 2.0-alpha4
+projects[node_reference_view_formatter][subdir] = contrib
+projects[node_reference_view_formatter][version] = 1.0-beta2
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz

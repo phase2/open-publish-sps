@@ -96,6 +96,14 @@ function openpublish_related_content_views_default_views() {
   /* Display: Node Author */
   $handler = $view->new_display('block', 'Node Author', 'block_1');
   $handler->display->display_options['display_description'] = 'Displays an image and name of the node author, as well as the node date.';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 1;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author(s) (field_op_author) - reverse */
   $handler->display->display_options['relationships']['reverse_field_op_author_node']['id'] = 'reverse_field_op_author_node';
