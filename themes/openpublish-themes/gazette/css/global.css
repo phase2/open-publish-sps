@@ -82,7 +82,8 @@ body {
   color: #333;
 }
 h1#page-title {
-  margin: 0 0 0.5em;
+  margin: 0;
+  background: url(../img/border-horizontal.png) repeat-x bottom;
 }
 #section-header {
   margin-bottom: 25px;
@@ -371,6 +372,10 @@ h2.block-title .block-title-icon {
  */
 .node .field-name-field-op-main-image {
   float: none;
+}
+.view-id-openpublish_related_content.view-display-id-block_1 {
+  padding: 0 10px 10px;
+  background: url(../img/border-horizontal.png) repeat-x bottom;
 }
 
 /*
@@ -768,6 +773,7 @@ div.feed-icon {
 }
 .search-results li {
   background: url(../img/border-horizontal.png) repeat-x bottom;
+  padding-bottom: 1em;
 }
 .search-results .title {
   line-height: normal;
