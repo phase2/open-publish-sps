@@ -26,22 +26,22 @@ function openpublish_general_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'user_first',
+          'weight' => 0,
+        ),
         'menu-menu-utility-nav' => array(
           'module' => 'menu',
           'delta' => 'menu-utility-nav',
           'region' => 'user_first',
-          'weight' => 0,
+          'weight' => 1,
         ),
         'system-user-menu' => array(
           'module' => 'system',
           'delta' => 'user-menu',
           'region' => 'user_second',
-          'weight' => 0,
-        ),
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
-          'region' => 'branding_inline',
           'weight' => 0,
         ),
         'system-main' => array(

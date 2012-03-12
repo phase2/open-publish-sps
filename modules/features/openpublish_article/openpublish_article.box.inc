@@ -19,9 +19,10 @@ function openpublish_article_default_box() {
   $box->description = 'Ad: 300x250';
   $box->options = array(
     'body' => array(
-      'value' => '<p><img alt="&quot;We help you be awesome!&quot; - Phase2 Technology" src="/sites/default/files/main/banner_phase2.jpg" style="width: 300px; height: 250px; " /></p>',
+      'value' => '<p><img alt="&quot;We help you be awesome!&quot; - Phase2 Technology" src="/sites/default/files/main/banner_phase2.jpg" /></p>',
       'format' => 'full_html',
     ),
+    'additional_classes' => '',
   );
   $export['ad_300x250_1'] = $box;
 
