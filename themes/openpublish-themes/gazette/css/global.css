@@ -83,7 +83,8 @@ body {
 }
 h1#page-title {
   margin: 0;
-  background: url(../img/border-horizontal.png) repeat-x bottom;
+  background: url(../img/border-horizontal.png) repeat-x top;
+  padding: 15px 0;
 }
 #section-header {
   margin-bottom: 25px;
@@ -359,6 +360,7 @@ h2.block-title .block-title-icon {
   color: #333;
   line-height: 62px;
   padding-bottom: 10px;
+  background: none;
 }
 .node-type-section-front .region-content h1#page-title {
   display: none;
@@ -370,12 +372,39 @@ h2.block-title .block-title-icon {
 /*
  * Node detail page styles
  */
+.node {
+  background: url(../img/border-horizontal.png) repeat-x top;
+  padding-top: 10px;
+}
+.node-section-front {
+  background: none;
+  padding-top: 0;
+}
+.node .field-name-field-op-author {
+  margin: 0;
+}
 .node .field-name-field-op-main-image {
   float: none;
 }
 .view-id-openpublish_related_content.view-display-id-block_1 {
   padding: 0 10px 10px;
   background: url(../img/border-horizontal.png) repeat-x bottom;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:14px;
+  line-height: 18px;
+}
+.view-id-openpublish_related_content.view-display-id-block_1 .views-field-field-profile-photo {
+  float: left;
+  margin-right: 10px;
+}
+.view-id-openpublish_related_content.view-display-id-block_1 .views-field-title {
+  padding-top: 8px;
+}
+.view-id-openpublish_related_content.view-display-id-block_1 .views-field-title .views-label {
+  font-style: italic;
+}
+.view-id-openpublish_related_content.view-display-id-block_1 .views-field-title a {
+    font-size: 15px;
 }
 
 /*
