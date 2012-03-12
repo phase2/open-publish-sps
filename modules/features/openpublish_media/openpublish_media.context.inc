@@ -29,23 +29,23 @@ function openpublish_media_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-ec0f800b3db8af0ee17f07e48a1161df' => array(
-          'module' => 'views',
-          'delta' => 'ec0f800b3db8af0ee17f07e48a1161df',
-          'region' => 'content',
-          'weight' => 1,
-        ),
         'boxes-ad_300x250_1' => array(
           'module' => 'boxes',
           'delta' => 'ad_300x250_1',
           'region' => 'sidebar_second',
-          'weight' => 0,
+          'weight' => '-10',
         ),
         'views-5ce78ee8d7030d935fd275a05708281b' => array(
           'module' => 'views',
           'delta' => '5ce78ee8d7030d935fd275a05708281b',
           'region' => 'sidebar_second',
-          'weight' => 1,
+          'weight' => '-9',
+        ),
+        'views-ec0f800b3db8af0ee17f07e48a1161df' => array(
+          'module' => 'views',
+          'delta' => 'ec0f800b3db8af0ee17f07e48a1161df',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
         ),
       ),
     ),

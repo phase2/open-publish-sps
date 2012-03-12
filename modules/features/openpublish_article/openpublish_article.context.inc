@@ -41,9 +41,9 @@ function openpublish_article_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
-        'views-op_recent_content-block_6' => array(
+        'views-dec424de5c549cdde5524a32ab930497' => array(
           'module' => 'views',
-          'delta' => 'op_recent_content-block_6',
+          'delta' => 'dec424de5c549cdde5524a32ab930497',
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
