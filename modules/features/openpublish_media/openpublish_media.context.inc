@@ -35,18 +35,6 @@ function openpublish_media_context_default_contexts() {
           'region' => 'content',
           'weight' => '1',
         ),
-        'boxes-ad_300x250_1' => array(
-          'module' => 'boxes',
-          'delta' => 'ad_300x250_1',
-          'region' => 'sidebar_second',
-          'weight' => '0',
-        ),
-        'views-5ce78ee8d7030d935fd275a05708281b' => array(
-          'module' => 'views',
-          'delta' => '5ce78ee8d7030d935fd275a05708281b',
-          'region' => 'sidebar_second',
-          'weight' => '1',
-        ),
       ),
     ),
   );

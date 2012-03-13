@@ -883,3 +883,32 @@ div.feed-icon {
   display: none;
   padding-bottom: 1em;
 }
+
+/*
+ * Photo Gallery
+ */
+.node-type-openpublish-photo-gallery .field-name-field-op-gallery-image-caption {
+  display: none;
+}
+.field-collection-view,
+.field-collection-container {
+  border-bottom: none;
+}
+.node-openpublish-photo-gallery .field-collection-view {
+  padding: 0;
+}
+.node-openpublish-photo-gallery .field-collection-container,
+.node-openpublish-photo-gallery .field-name-field-op-main-image,
+.node-openpublish-photo-gallery .field-name-field-op-author,
+.node-type-openpublish-photo-gallery #block-views-ec0f800b3db8af0ee17f07e48a1161df {
+  width: 620px;
+}
+.node-openpublish-photo-gallery .field-name-body {
+  float: right;
+  width: 300px;
+}
+.node-type-openpublish-photo-gallery .node,
+.node-type-openpublish-photo-gallery h1#page-title {
+  background: none;
+  padding: 0;
+}

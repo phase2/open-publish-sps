@@ -197,7 +197,7 @@ function openpublish_media_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -282,10 +282,9 @@ function openpublish_media_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -349,7 +348,7 @@ function openpublish_media_field_default_fields() {
             'view_mode' => 'full',
           ),
           'type' => 'field_collection_view',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -411,9 +410,13 @@ function openpublish_media_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '3',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'file',
+            'image_style' => '620px_wide',
+          ),
+          'type' => 'image',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
