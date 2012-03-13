@@ -49,7 +49,7 @@ function openpublish_blog_post_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -133,11 +133,13 @@ function openpublish_blog_post_field_default_fields() {
       'description' => 'Create and/or reference one or more Profile nodes that represent the Author(s) of this Blog Post.',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'node_reference',
-          'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => '1',
+          'label' => 'hidden',
+          'module' => 'node_reference_view_formatter',
+          'settings' => array(
+            'view' => 'openpublish_related_content block_1',
+          ),
+          'type' => 'node_reference_view',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -209,10 +211,9 @@ function openpublish_blog_post_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -281,7 +282,7 @@ function openpublish_blog_post_field_default_fields() {
             'image_style' => '620px_wide',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',

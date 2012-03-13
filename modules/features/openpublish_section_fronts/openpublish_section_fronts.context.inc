@@ -33,7 +33,7 @@ function openpublish_section_fronts_context_default_contexts() {
           'module' => 'delta_blocks',
           'delta' => 'page-title',
           'region' => 'header_second',
-          'weight' => '-10',
+          'weight' => 0,
         ),
       ),
     ),

@@ -127,7 +127,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'editors_choice' => array(
           'label' => 'above',
@@ -423,7 +423,7 @@ function phase2_profile_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'editors_choice' => array(
           'label' => 'above',
@@ -574,7 +574,7 @@ function phase2_profile_field_default_fields() {
             'image_style' => 'medium',
           ),
           'type' => 'image',
-          'weight' => '3',
+          'weight' => '0',
         ),
         'editors_choice' => array(
           'label' => 'hidden',
