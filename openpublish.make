@@ -16,6 +16,10 @@ projects[references][subdir] = contrib
 projects[references][type] = module
 projects[references][version] = 2.0
 
+project[node_reference_view_formatter][subdir] = contrib
+project[node_reference_view_formatter][type] = module
+project[node_reference_view_formatter][version] = 7.x-1.0-beta2
+
 projects[ctools][subdir] = contrib
 projects[ctools][type] = module
 projects[ctools][version] = 1.0-rc1
