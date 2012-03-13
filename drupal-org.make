@@ -6,8 +6,8 @@ projects[field_group][version] = 1.1
 projects[references][subdir] = contrib
 projects[references][version] = 2.0
 
-project[node_reference_view_formatter][subdir] = contrib
-project[node_reference_view_formatter][version] = 7.x-1.0-beta2
+projects[node_reference_view_formatter][subdir] = contrib
+projects[node_reference_view_formatter][version] = 7.x-1.0-beta2
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.0-rc1
