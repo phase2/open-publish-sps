@@ -26,6 +26,12 @@ function openpublish_general_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'header_first',
+          'weight' => 0,
+        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',

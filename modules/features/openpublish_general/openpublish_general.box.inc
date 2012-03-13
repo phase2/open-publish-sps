@@ -16,12 +16,13 @@ function openpublish_general_default_box() {
   $box->delta = 'ad_728x90_1';
   $box->plugin_key = 'simple';
   $box->title = '';
-  $box->description = 'Ad: 728x90';
+  $box->description = 'Ad: 728x90 Bottom';
   $box->options = array(
     'body' => array(
       'value' => '<p><img alt="OpenPublish: A smart solution for today\'s publishers." src="/sites/default/files/main/banner_openpublish.jpg" style="width: 728px; height: 90px; " /></p>',
       'format' => 'full_html',
     ),
+    'additional_classes' => '',
   );
   $export['ad_728x90_1'] = $box;
 
