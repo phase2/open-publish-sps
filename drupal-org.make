@@ -50,7 +50,7 @@ projects[entitycache][subdir] = contrib
 projects[entitycache][version] = 1.1
 
 projects[conditional_styles][subdir] = contrib
-projects[conditional_styles][version] = 2.1
+projects[conditional_styles][version] = 2.2
 
 projects[nodeconnect][subdir] = contrib
 projects[nodeconnect][version] = 1.0-alpha2
