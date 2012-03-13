@@ -73,6 +73,20 @@ li a.active {
 a:hover {
   text-decoration: underline;
 }
+blockquote {
+  background: url(../img/big-quote.png) no-repeat top left;
+  border: none;
+  margin-left: 40px;
+  padding: 0 0 0 80px;
+  font-family: League Gothic, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #748f98;
+  font-size: 45px;
+}
+blockquote p {
+  font-size: 45px;
+  line-height: normal;
+}
 
 /*
  * Page Structure
@@ -738,6 +752,9 @@ div.feed-icon {
   background: #fff;
   padding: 15px 20px;
   font-size: 12px;
+}
+.view-id-op_most_popular .views-row {
+  margin-bottom: 10px;
 }
 .view-id-op_most_popular .views-field-title a {
   font-size: 12px;
