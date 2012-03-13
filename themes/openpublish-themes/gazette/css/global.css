@@ -91,9 +91,14 @@ h1#page-title {
 }
 #zone-header-wrapper {
   background: url(../img/bg-header.png) repeat;
-  height: 115px;
+  height: 105px;
+  padding: 10px 0 0;
   border-bottom: 8px solid #323232;
   box-shadow:0px -4px 4px rgba(0,0,0,0.4) inset;
+}
+#zone-header-wrapper .block,
+#zone-header-wrapper p {
+  margin: 0;
 }
 #zone-user-wrapper {
   background: url(../img/bg-header-light.png) repeat;
