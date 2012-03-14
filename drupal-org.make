@@ -101,9 +101,6 @@ projects[ga_stats][version] = 1.0-beta1
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
 
-projects[jcarousel][subdir] = contrib
-projects[jcarousel][version] = 2.6
-
 projects[colorbox][subdir] = contrib
 projects[colorbox][version] = 1.2
 
