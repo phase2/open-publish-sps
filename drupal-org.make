@@ -7,7 +7,7 @@ projects[references][subdir] = contrib
 projects[references][version] = 2.0
 
 projects[node_reference_view_formatter][subdir] = contrib
-projects[node_reference_view_formatter][version] = 7.x-1.0-beta2
+projects[node_reference_view_formatter][version] = 1.0-beta2
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.0-rc1
@@ -50,7 +50,7 @@ projects[entitycache][subdir] = contrib
 projects[entitycache][version] = 1.1
 
 projects[conditional_styles][subdir] = contrib
-projects[conditional_styles][version] = 2.2
+projects[conditional_styles][version] = 2.1
 
 projects[nodeconnect][subdir] = contrib
 projects[nodeconnect][version] = 1.0-alpha2
