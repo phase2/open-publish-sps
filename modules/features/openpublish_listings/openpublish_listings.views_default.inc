@@ -28,8 +28,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -243,6 +242,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['arguments']['limit']['field'] = 'limit';
   $handler->display->display_options['arguments']['limit']['ui_name'] = 'Limit (optional - defaults to 5)';
   $handler->display->display_options['arguments']['limit']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['limit']['title_enable'] = 1;
   $handler->display->display_options['arguments']['limit']['title'] = '%1';
   $handler->display->display_options['arguments']['limit']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['limit']['default_argument_options']['argument'] = '5';
@@ -1770,7 +1770,8 @@ function openpublish_listings_views_default_views() {
   $handler = $view->new_display('block', 'Recent Articles Sidebar', 'block_6');
   $handler->display->display_options['display_description'] = 'A block display of the most recent articles with limited information, intended for use in a sidebar.';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
