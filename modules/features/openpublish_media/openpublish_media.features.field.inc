@@ -106,12 +106,15 @@ function openpublish_media_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
+          'module' => 'colorbox',
           'settings' => array(
-            'image_link' => 'file',
-            'image_style' => 'large',
+            'colorbox_caption' => 'title',
+            'colorbox_gallery' => 'page',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_node_style' => 'large',
           ),
-          'type' => 'image',
+          'type' => 'colorbox',
           'weight' => '0',
         ),
       ),
@@ -341,10 +344,10 @@ function openpublish_media_field_default_fields() {
           'label' => 'hidden',
           'module' => 'field_collection',
           'settings' => array(
-            'add' => '',
-            'delete' => '',
-            'description' => 0,
-            'edit' => '',
+            'add' => 'Add',
+            'delete' => 'Delete',
+            'description' => TRUE,
+            'edit' => 'Edit',
             'view_mode' => 'full',
           ),
           'type' => 'field_collection_view',
@@ -410,12 +413,15 @@ function openpublish_media_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
+          'module' => 'colorbox',
           'settings' => array(
-            'image_link' => 'file',
-            'image_style' => '620px_wide',
+            'colorbox_caption' => 'title',
+            'colorbox_gallery' => 'page',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_node_style' => '620px_wide',
           ),
-          'type' => 'image',
+          'type' => 'colorbox',
           'weight' => '1',
         ),
         'teaser' => array(

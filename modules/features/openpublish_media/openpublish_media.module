@@ -17,4 +17,19 @@ function openpublish_media_form_openpublish_video_node_form_alter(&$form, &$form
     $lang = $form['field_op_video_embed_code']['#language'];    
     $form['field_op_video_embed_code'][$lang][0]['#wysiwyg'] = FALSE;
   }
+} 
+
+/**
+ *  Implementation of hook_preprocess_entity
+ *  Add the caption as the title for each image
+ */
+function openpublish_media_preprocess_field(&$vars) {
+  if ($vars['element']['#field_name'] == 'field_op_gallery_image') {
+    foreach ($vars['element']['#items'] as $index => $item) {
+      $entity = &$vars['items'][$index]['entity']['field_collection_item'][$item['value']];
+      
+      $title = $entity['field_op_gallery_image_caption'][0]['#markup'];
+      $entity['field_op_gallery_image_image'][0]['#item']['title'] = $title;
+    }
+  }
 }
