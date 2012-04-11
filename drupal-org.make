@@ -10,11 +10,10 @@ projects[node_reference_view_formatter][subdir] = contrib
 projects[node_reference_view_formatter][version] = 1.0-beta2
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = 1.0-rc1
-projects[ctools][patch][] = http://drupal.org/files/1371180-add-export-module.patch
+projects[ctools][version] = 1.0
 
 projects[date][subdir] = contrib
-projects[date][version] = 2.2
+projects[date][version] = 2.3
 
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
@@ -32,10 +31,10 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.0
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta5
+projects[strongarm][version] = 2.0-rc1
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0-rc1
+projects[token][version] = 1.0
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.3
@@ -108,7 +107,7 @@ projects[colorbox][subdir] = contrib
 projects[colorbox][version] = 1.2
 
 projects[field_collection][subdir] = contrib
-projects[field_collection][version] = 1.0-beta3
+projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 projects[context][subdir] = contrib
@@ -119,7 +118,7 @@ projects[boxes][version] = 1.0-beta7
 projects[boxes][patch][] = http://drupal.org/files/boxes-base_path-needed-for-ckeditor-1464014-1.patch
 
 projects[context_field][subdir] = contrib
-projects[context_field][version] = 1.0-beta2
+projects[context_field][version] = 1.0-beta3
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][version] = 1.0-beta8
