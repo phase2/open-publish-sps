@@ -92,7 +92,6 @@ h2.site-name {
 h2.block-title {
   font-size: 24px;
   margin: 0;
-  padding-left: 3px;
   margin-top: 15px;
 }
 
@@ -581,7 +580,6 @@ input[type="submit"]:hover {
   float: left;
   width: 30%;
   margin-right: 3%;
-  padding-top: 15px;
 }
 
 .region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title,
@@ -595,7 +593,7 @@ input[type="submit"]:hover {
 
 .region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title a,
 .region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title a {
-  font-size: 14px;
+  font-size: 26px;
 }
 
 .block-menu-footer-links h2.block-title {
@@ -662,10 +660,6 @@ input[type="submit"]:hover {
 .view-id-op_recent_content.view-display-id-block_5 .views-field-title a:hover {
   text-decoration: underline;
   color: #00578A;
-}
-
-.view-id-op_recent_content .views-row{
-  padding-top: 20px;
 }
 
 .region-header-second-inner {
