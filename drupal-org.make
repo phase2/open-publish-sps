@@ -69,6 +69,9 @@ projects[filefield_sources][version] = 1.4
 projects[nodeblock][subdir] = contrib
 projects[nodeblock][version] = 1.2
 
+projects[colorbox][subdir] = contrib
+projects[colorbox][version] = 1.3
+
 projects[xmlsitemap][subdir] = contrib
 projects[xmlsitemap][version] = 2.0-rc1
 
