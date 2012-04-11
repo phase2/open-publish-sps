@@ -94,9 +94,6 @@ h2.block-title {
   margin: 0;
   padding-left: 3px;
   margin-top: 15px;
-  border-top: 1px solid #888;
-  border-bottom: 1px solid #888;
-  background: #F6F6F6;
 }
 
 h3 {
@@ -681,20 +678,16 @@ input[type="submit"]:hover {
 
 #zone-footer-wrapper {
   background: #F6F6F6;
+  padding-top:15px;
   margin-top: 30px;
-  border-top: 5px solid #888;
-  border-bottom: 5px solid #888;
 }
 
 #zone-branding-wrapper {
-  border-bottom: 5px solid #888;
   padding-bottom: 10px;
 }
 
 #zone-menu-wrapper {
-  border-bottom: 1px solid #888;
   margin-bottom: 15px;
-  background: #F6F6F6;
 }
 
 .node-openpublish-photo-gallery .field-name-field-op-main-image {

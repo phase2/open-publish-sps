@@ -26,47 +26,41 @@ function openpublish_general_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-2' => array(
-          'module' => 'block',
-          'delta' => '2',
-          'region' => 'header_first',
-          'weight' => 0,
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '0',
         ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
           'region' => 'user_first',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'menu-menu-utility-nav' => array(
           'module' => 'menu',
           'delta' => 'menu-utility-nav',
           'region' => 'user_first',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'system-user-menu' => array(
           'module' => 'system',
           'delta' => 'user-menu',
           'region' => 'user_second',
-          'weight' => 0,
-        ),
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'menu-menu-footer-links' => array(
           'module' => 'menu',
           'delta' => 'menu-footer-links',
           'region' => 'footer_first',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'boxes-ad_728x90_1' => array(
           'module' => 'boxes',
           'delta' => 'ad_728x90_1',
           'region' => 'footer_second',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
     ),

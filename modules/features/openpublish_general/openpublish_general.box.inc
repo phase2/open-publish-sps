@@ -19,7 +19,7 @@ function openpublish_general_default_box() {
   $box->description = 'Ad: 728x90 Bottom';
   $box->options = array(
     'body' => array(
-      'value' => '<p><img alt="OpenPublish: A smart solution for today\'s publishers." src="'.$GLOBALS['base_url'].'/sites/default/files/main/banner_openpublish.jpg" style="width: 728px; height: 90px; " /></p>',
+      'value' => '<p><img alt="OpenPublish: A smart solution for today\'s publishers." src="http://jcaldwell.openpublish.dev6.fayze2.com/profiles/openpublish/images/banner_openpublish.jpg" style="width: 728px; height: 90px; " /></p>',
       'format' => 'full_html',
     ),
     'additional_classes' => '',
