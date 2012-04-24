@@ -114,6 +114,11 @@ h1#page-title {
 #zone-header-wrapper p {
   margin: 0;
 }
+
+#zone-branding-wrapper {
+  padding:0;
+}
+
 #zone-user-wrapper {
   background: url(../img/bg-header-light.png) repeat;
 }
@@ -453,6 +458,7 @@ h2.block-title .block-title-icon {
 .view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image {
   float: left;
   margin-right: 11px;
+  border:0;
 }
 .view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image img {
   border: 1px solid #202020;
@@ -583,7 +589,10 @@ div.feed-icon {
   box-sizing: border-box;
   float: left;
   background: url(../img/border-horizontal.png) repeat-x top;
+  margin:0;
+  padding-bottom:0;
   margin-bottom: 22px;
+
 }
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-row-odd,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row-odd,
