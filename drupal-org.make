@@ -98,7 +98,7 @@ projects[ga_stats][subdir] = contrib
 projects[ga_stats][version] = 1.0-beta1
 
 projects[schemaorg][subdir] = contrib
-projects[schemaorg][version] = 7.x-1.0-beta2
+projects[schemaorg][version] = 1.0-beta2
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
@@ -142,6 +142,7 @@ projects[delta][version] = 3.0-beta9
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
+projects[omega_tools][type] = module
 
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
