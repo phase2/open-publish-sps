@@ -97,6 +97,9 @@ projects[video_embed_field][version] = 2.0-beta4
 projects[ga_stats][subdir] = contrib
 projects[ga_stats][version] = 1.0-beta1
 
+projects[schemaorg][subdir] = contrib
+projects[schemaorg][version] = 7.x-1.0-beta2
+
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
 
