@@ -7,34 +7,34 @@ projects[references][subdir] = contrib
 projects[references][version] = 2.0
 
 projects[node_reference_view_formatter][subdir] = contrib
-projects[node_reference_view_formatter][version] = 1.0-beta2
+projects[node_reference_view_formatter][version] = 1.0-beta3
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.0
 
 projects[date][subdir] = contrib
-projects[date][version] = 2.3
+projects[date][version] = 2.5
 
 projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
 
 projects[entity][subdir] = contrib
-projects[entity][version] = 1.0-rc1
+projects[entity][version] = 1.0-rc2
 
 projects[features][subdir] = contrib
-projects[features][version] = 1.0-beta6
+projects[features][version] = 1.0-rc2
 
 projects[openidadmin][subdir] = contrib
 projects[openidadmin][version] = 1.0
 
 projects[pathauto][subdir] = contrib
-projects[pathauto][version] = 1.0
+projects[pathauto][version] = 1.1
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-rc1
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.0
+projects[token][version] = 1.1
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.3
@@ -55,7 +55,7 @@ projects[nodeconnect][subdir] = contrib
 projects[nodeconnect][version] = 1.0-alpha2
 
 projects[apps][subdir] = contrib
-projects[apps][version] = 1.0-beta5
+projects[apps][version] = 1.0-beta6
 
 projects[imce][subdir] = contrib
 projects[imce][version] = 1.5
@@ -114,8 +114,7 @@ projects[context][subdir] = contrib
 projects[context][version] = 3.0-beta2
 
 projects[boxes][subdir] = contrib
-projects[boxes][version] = 1.0-beta7
-projects[boxes][patch][] = http://drupal.org/files/boxes-base_path-needed-for-ckeditor-1464014-1.patch
+projects[boxes][version] = 1.0
 
 projects[context_field][subdir] = contrib
 projects[context_field][version] = 1.0-beta3
@@ -124,8 +123,7 @@ projects[views_boxes][subdir] = contrib
 projects[views_boxes][version] = 1.0-beta8
 
 projects[entity_autocomplete][subdir] = contrib
-projects[entity_autocomplete][version] = 1.0-beta1
-projects[entity_autocomplete][patch][] = http://drupal.org/files/fix-issue-with-taxonomy-bundles-1447178-1_0.patch
+projects[entity_autocomplete][version] = 1.0-beta2
 
 projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][version] = 1.0-beta1
