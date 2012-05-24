@@ -119,3 +119,97 @@ function openpublish_article_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_rdf_default_mappings().
+ */
+function openpublish_article_rdf_default_mappings() {
+  $schemaorg = array();
+
+  // Exported RDF mapping: openpublish_article
+  $schemaorg['node']['openpublish_article'] = array(
+    'rdftype' => array(
+      0 => 'rNews:Article',
+      1 => 'schema:NewsArticle',
+    ),
+    'title' => array(
+      'predicates' => array(
+        0 => 'rnews:name',
+        1 => 'schema:name',
+      ),
+      'type' => 'property',
+    ),
+    'created' => array(
+      'predicates' => array(
+        0 => 'rnews:dateCreated',
+        1 => 'schema:dateCreated',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'changed' => array(
+      'predicates' => array(
+        0 => 'rnews:dateModified',
+        1 => 'schema:dateModified',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'body' => array(
+      'predicates' => array(
+        0 => 'rnews:articlebody',
+        1 => 'schema:articleBody',
+      ),
+      'type' => 'property',
+    ),
+    'uid' => array(
+      'predicates' => array(
+        0 => 'sioc:has_creator',
+      ),
+      'type' => 'rel',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'comment_count' => array(
+      'predicates' => array(
+        0 => 'sioc:num_replies',
+      ),
+      'datatype' => 'xsd:integer',
+    ),
+    'last_activity' => array(
+      'predicates' => array(
+        0 => 'sioc:last_activity_date',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'field_op_author' => array(
+      'type' => 'rel',
+      'predicates' => array(
+        0 => 'rnews:creator',
+        1 => 'schema:creator',
+      ),
+    ),
+    'field_op_main_image' => array(
+      'type' => 'rel',
+      'predicates' => array(
+        0 => 'rnews:associatedMedia',
+        1 => 'schema:associatedMedia',
+      ),
+    ),
+  );
+
+  return $schemaorg;
+}
+
+/**
+ * Implements hook_rdf_namespaces().
+ */
+function openpublish_article_rdf_namespaces() {
+  return array(
+    'rnews'  => 'http://iptc.org/std/rNews/2011-10-07#',
+  );
+}
