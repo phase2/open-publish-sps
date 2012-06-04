@@ -98,7 +98,7 @@ projects[ga_stats][subdir] = contrib
 projects[ga_stats][version] = 1.0-beta1
 
 projects[schemaorg][subdir] = contrib
-projects[schemaorg][version] = 1.0-beta2
+projects[schemaorg][version] = 1.0-beta3
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
