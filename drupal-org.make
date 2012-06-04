@@ -111,7 +111,7 @@ projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta2
+projects[context][version] = 3.0-beta3
 
 projects[boxes][subdir] = contrib
 projects[boxes][version] = 1.0
