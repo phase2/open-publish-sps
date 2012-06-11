@@ -414,6 +414,9 @@ h2.block-title .block-title-icon {
 .node .field-name-field-op-author {
   margin: 0;
 }
+.node-openpublish-video .field-name-field-op-author div {
+  line-height: 25px;
+}
 .node .field-name-field-op-main-image {
   float: none;
   margin-right: 0;
