@@ -899,3 +899,12 @@ div.feed-icon {
   background: none;
   padding: 0;
 }
+
+/*
+ * Ads
+ */
+#zone-header #block-block-2,
+.block-ad-300x250-1,
+.block-ad-728x90-1 {
+  display:none;
+}

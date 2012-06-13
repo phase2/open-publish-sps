@@ -67,3 +67,12 @@
 .view-id-op_recent_content.view-display-id-block_5 .views-row-2 .row-wrapper-1 {
   background-position:left top;
 }
+
+/*
+ * Ads
+ */
+#zone-header #block-block-2,
+.block-ad-300x250-1,
+.block-ad-728x90-1 {
+  display:block;
+}
