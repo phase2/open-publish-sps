@@ -150,6 +150,7 @@ h1#page-title {
 
 /* Search bar */
 #block-search-form {
+  display:none;
   float: left;
   width: 160px;
   margin: 0;
