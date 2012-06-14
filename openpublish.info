@@ -38,6 +38,7 @@ dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entitycache
 dependencies[] = features
+dependencies[] = features_override
 dependencies[] = field_group
 dependencies[] = googleanalytics
 dependencies[] = imce
