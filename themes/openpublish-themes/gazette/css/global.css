@@ -688,9 +688,10 @@ div.feed-icon {
 .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-row,
 .view-id-op_recent_content.view-display-id-block_more_galleries .views-row {
   float: left;
-  width: 30%;
+  width: 47%;
   margin-right: 3%;
   padding-top: 15px;
+  height:200px;
 }
 .region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title,
 .region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title {
@@ -715,8 +716,7 @@ div.feed-icon {
 }
 .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-field-op-main-image,
 .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-field-op-main-image {
-  float: left;
-  margin: 0 10px 10px 0;
+  margin: 0 0 10px 0;
 }
 .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-field-op-main-image img,
 .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-field-op-main-image img {

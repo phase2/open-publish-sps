@@ -875,6 +875,36 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Main Image */
+  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
+    'image_style' => 'list-page-thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -899,35 +929,6 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
-  /* Field: Content: Main Image */
-  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -996,6 +997,36 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Main Image */
+  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
+  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
+    'image_style' => 'list-page-thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1020,35 +1051,6 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
-  /* Field: Content: Main Image */
-  $handler->display->display_options['fields']['field_op_main_image']['id'] = 'field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['table'] = 'field_data_field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['field'] = 'field_op_main_image';
-  $handler->display->display_options['fields']['field_op_main_image']['label'] = '';
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_op_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_op_main_image']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_op_main_image']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
