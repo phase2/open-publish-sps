@@ -40,8 +40,8 @@ css[default.css][name] = 'Frame - Default Styles'
 css[default.css][description] = 'Default CSS styles for OpenPublish Wireframe.'
 css[default.css][options][weight] = '10'
 
-css[tabs.css][name] = 'Frame - Move Tabs'
-css[tabs.css][description] = 'Move the tabs and action links to the toolbar drawer (if it exists).'
+css[tabs.css][name] = 'Frame - Style Page Tabs'
+css[tabs.css][description] = 'Style the tabs and action links in the toolbar drawer.'
 css[tabs.css][options][weight] = '11'
 
 settings[toggle_logo] = '1'
