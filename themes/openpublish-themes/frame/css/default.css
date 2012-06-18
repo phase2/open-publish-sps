@@ -481,6 +481,9 @@ input[type="submit"]:hover {
 .node-openpublish-photo-gallery  ul.action-links {
   font-size: 1em;
 }
+.node-openpublish-photo-gallery .field-collection-container .field-collection-description {
+  display:none;
+}
 
 /* Video Page */
 .node-openpublish-video {
