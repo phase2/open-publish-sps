@@ -2,3 +2,40 @@
  * that are loaded using the 
  * medium layout.
  */
+
+/*
+ * Header
+ */
+#region-branding,
+#region-menu {
+  width:98%;
+}
+#region-user-first {
+  width:98%;
+  padding:0;
+}
+#zone-user-wrapper {
+  padding-top: 0;
+}
+#zone-branding-wrapper,
+#zone-branding-wrapper .zone-wrapper-inner,
+#zone-branding {
+  height:auto;
+}
+.site-name-slogan {
+  float: none;
+  text-align:center;
+}
+h1.site-name,
+h2.site-name {
+  font-size:80px;
+}
+
+.view-id-op_recent_content.view-display-id-block_recent_articles .views-row-even .row-wrapper-1,
+.view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row-even .row-wrapper-1,
+.view-id-op_recent_content.view-display-id-block_5 .views-row-even .row-wrapper-1,
+.view-id-op_recent_content.view-display-id-block_recent_articles .views-row-odd .row-wrapper-1,
+.view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .row-wrapper-1,
+.view-id-op_recent_content.view-display-id-block_5 .row-wrapper-1 {
+  background-image: none;
+}

@@ -2,9 +2,40 @@
  * that are loaded using the 
  * 960px layout. 
  */
+
+/*
+ * Header
+ */
+h1.site-name,
+h2.site-name {
+  font-size: 132px;
+  padding:0;
+}
+#region-user-second {
+  display:block;
+}
+ul.main-menu li {
+  background: url(../img/bg-nav-item.png) no-repeat top right;
+}
+#main-menu {
+  margin: -23px 0 0 0;
+  text-align:left;
+}
+
 #block-search-form {
   display:block;
 }
+
+/*
+ * Featured photo
+ */
+.view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image {
+  float: left;
+}
+
+/*
+ * Listings
+ */
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-field-body,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-field-body,
 .view-id-op_recent_content.view-display-id-block_5 .views-field-body {

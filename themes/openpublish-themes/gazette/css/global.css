@@ -105,8 +105,8 @@ h1#page-title {
 }
 #zone-header-wrapper {
   background: url(../img/bg-header.png) repeat;
-  height: 105px;
-  padding: 10px 0 0;
+  height: 0;
+  padding: 0;
   border-bottom: 8px solid #323232;
   box-shadow:0px -4px 4px rgba(0,0,0,0.4) inset;
 }
@@ -121,6 +121,7 @@ h1#page-title {
 
 #zone-user-wrapper {
   background: url(../img/bg-header-light.png) repeat;
+  display:none;
 }
 #zone-user-wrapper .zone-wrapper-inner,
 #zone-menu-wrapper .zone-wrapper-inner {
@@ -130,11 +131,7 @@ h1#page-title {
   background: url(../img/bg-header.png) repeat;
   border-bottom: 22px solid #323232;
 }
-#zone-branding-wrapper,
-#zone-branding-wrapper .zone-wrapper-inner,
-#zone-branding {
-  height: 133px;
-}
+
 #zone-menu-wrapper {
   background: #fff;
 }
@@ -143,6 +140,7 @@ h1#page-title {
   height: 205px;
   width: 156px;
   margin: -37px 0 0 0;
+  display:none;
 }
 #region-footer-second {
   background: url(../img/icn-built-with-op.png) no-repeat top right;
@@ -205,11 +203,13 @@ h1#page-title {
 /* Site Name */
 h1.site-name,
 h2.site-name {
-  font-size: 132px;
+  font-size: 38px;
   margin: 2px 0 0;
   font-family: League Gothic, Arial, Helvetica, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
+  width:150px;
+  padding:10px 0;
 }
 h1.site-name a,
 h2.site-name a {
@@ -282,8 +282,8 @@ h2.site-name a {
 }
 #main-menu {
   font-size: 15px;
-  margin: -23px 0 0 0;
-  height: 34px;
+  margin: -10px 0 0 0;
+  text-align: center;
 }
 .block-menu-footer-links {
   font-size: 15px;
@@ -294,13 +294,13 @@ h2.site-name a {
 ul.main-menu li,
 .block-menu-footer-links ul.menu li {
   border-right:none;
-  padding: 0 16px 0;
-  background: url(../img/bg-nav-item.png) no-repeat top right;
-  display: block;
-  float: left;
+  padding: 0 3%;
+  display: inline-block;
 }
 .block-menu-footer-links ul.menu li {
   background: none;
+  margin:0;
+  padding:0 1%;
 }
 #main-menu li a,
 .block-menu-footer-links ul.menu li a {
@@ -308,8 +308,11 @@ ul.main-menu li,
   font-family: 'Courier New', Courier, monospace;
   font-weight:bold;
   color: #323232;
-  padding: 6px 15px;
+  padding: 6px 10%;
   display: block;
+}
+.block-menu-footer-links ul.menu li a {
+  padding: 6px 18%;
 }
 #main-menu li a.active,
 .block-menu-footer-links ul.menu li a.active {
@@ -466,7 +469,7 @@ h2.block-title .block-title-icon {
   box-shadow: 0 1px 2px #8b8b89;
 }
 .view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image {
-  float: left;
+  float: none;
   margin-right: 11px;
   border:0;
 }

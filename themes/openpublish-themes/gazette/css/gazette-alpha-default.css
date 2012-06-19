@@ -4,6 +4,26 @@
  * but not the single column layout 
  */
 
+/*
+ * Header
+ */
+h1.site-name,
+h2.site-name {
+  width:auto;
+}
+#zone-header-wrapper {
+  height:105px;
+  padding: 10px 0 0;
+}
+#zone-user-wrapper {
+  display:block;
+}
+#zone-branding-wrapper,
+#zone-branding-wrapper .zone-wrapper-inner,
+#zone-branding {
+  height: 133px;
+}
+
 /* Recent Articles, Recent Blogs */
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-row,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row,
@@ -15,7 +35,6 @@
   float: left;
   margin:0;
   margin-bottom: 22px;
-
 }
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-row-odd,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row-odd,
