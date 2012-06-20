@@ -31,6 +31,12 @@ h2.site-name {
   font-size:80px;
 }
 
+/* Featured Story */
+.view-id-op_recent_content.view-display-id-block_7 .views-field-view-node {
+  display:none;
+}
+
+
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-row-even .row-wrapper-1,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row-even .row-wrapper-1,
 .view-id-op_recent_content.view-display-id-block_5 .views-row-even .row-wrapper-1,

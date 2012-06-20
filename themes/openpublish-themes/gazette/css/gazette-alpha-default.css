@@ -24,6 +24,34 @@ h2.site-name {
   height: 133px;
 }
 
+/* Featured Story */
+.view-id-op_recent_content.view-display-id-block_7 .views-row {
+  background: #fffeff;
+  padding: 12px 13px;
+  box-shadow: 0 1px 2px #8b8b89;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-main-image {
+  margin:0;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-title {
+  margin: -1px 0 15px;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-body {
+  margin:0;
+  background: none;
+  padding-left:23%;
+  padding-top:0;
+}
+.view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-author,
+.view-id-op_recent_content.view-display-id-block_7 .views-field-created {
+  display:block;
+  float:left;
+  clear:left;
+  width:21%;
+  padding-left:2%;
+  color:#999;
+}
+
 /* Recent Articles, Recent Blogs */
 .view-id-op_recent_content.view-display-id-block_recent_articles .views-row,
 .view-id-op_recent_content.view-display-id-block_recent_articles_taxonomy .views-row,
