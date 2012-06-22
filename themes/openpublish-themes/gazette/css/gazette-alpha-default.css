@@ -66,6 +66,15 @@ nav.navigation h2 {
   color:#323232;
 }
 
+/* Responsive footer menu */
+.block-menu-footer-links ul.menu li {
+  display:inline-block;
+  float:left;
+}
+.block-menu-footer-links ul.menu li a {
+  padding: 6px 18%;
+}
+
 
 /* Featured Story */
 .view-id-op_recent_content.view-display-id-block_7 .views-row {

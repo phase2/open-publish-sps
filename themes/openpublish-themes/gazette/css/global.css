@@ -308,9 +308,6 @@ ul.main-menu li,
   padding: 6px 10%;
   display: block;
 }
-.block-menu-footer-links ul.menu li a {
-  padding: 6px 18%;
-}
 #main-menu li a.active,
 .block-menu-footer-links ul.menu li a.active {
   background: #54bbc4;
@@ -357,6 +354,15 @@ nav.navigation.active #main-menu {
 #main-menu li a {
   padding:6px 0;
   color:#fff;
+}
+
+/* Responsive footer menu */
+.block-menu-footer-links ul.menu li {
+  display:block;
+  float:none;
+}
+.block-menu-footer-links ul.menu li a {
+  padding: 6px 0;
 }
 
 /* Footer */
