@@ -23,6 +23,49 @@ h2.site-name {
 #zone-branding {
   height: 133px;
 }
+#zone-branding-wrapper {
+  border-bottom: 22px solid #323232;
+}
+#section-header {
+  margin-bottom: 25px;
+}
+#zone-menu-wrapper {
+  margin-bottom: 15px;
+}
+
+/* Main navigation dropdown for small screens */
+nav.navigation {
+  margin-top:1em;
+}
+nav.navigation h2 {
+  clip:rect(1px, 1px, 1px, 1px);
+}
+#region-menu {
+  margin-left:1%;
+  margin-right:1%;
+}
+#main-menu {
+  display:block;
+  position: static;
+  background:none;
+  width:auto;
+  text-align:center;
+  margin:-10px 0 0;
+}
+#main-menu li,
+#main-menu li.first {
+  display:inline-block;
+  padding:0 3%;
+  background: none;
+}
+#main-menu li.first {
+  padding-left:0;
+}
+#main-menu li a {
+  padding:6px 10%;
+  color:#323232;
+}
+
 
 /* Featured Story */
 .view-id-op_recent_content.view-display-id-block_7 .views-row {

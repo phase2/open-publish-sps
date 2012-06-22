@@ -100,9 +100,6 @@ h1#page-title {
   background: url(../img/border-horizontal.png) repeat-x top;
   padding: 15px 0;
 }
-#section-header {
-  margin-bottom: 25px;
-}
 #zone-header-wrapper {
   background: url(../img/bg-header.png) repeat;
   height: 0;
@@ -129,11 +126,11 @@ h1#page-title {
 }
 #zone-branding-wrapper {
   background: url(../img/bg-header.png) repeat;
-  border-bottom: 22px solid #323232;
 }
 
 #zone-menu-wrapper {
   background: #fff;
+  margin-bottom: 0;
 }
 #region-user-second {
   background: #536e75 url(../img/bg-date-banner.jpg) no-repeat;
@@ -317,6 +314,49 @@ ul.main-menu li,
 #main-menu li a.active,
 .block-menu-footer-links ul.menu li a.active {
   background: #54bbc4;
+}
+
+/* Main navigation dropdown for small screens */
+nav.navigation {
+  margin:0;
+}
+nav.navigation h2 {
+  clip:auto;
+  width:50px;
+  height:50px;
+  text-indent:-9999px;
+  font-size:0;
+  background:url(../img/icn-menu-sprite.png) no-repeat;
+  right:10px;
+  top:-50px;
+}
+nav.navigation.active h2 {
+  background:#54bbc4 url(../img/icn-menu-sprite.png) 0 -50px no-repeat;
+}
+#region-menu {
+  margin:0;
+}
+#main-menu {
+  display:none;
+  position: absolute;
+  z-index: 1;
+  background:#54bbc4;
+  width:100%;
+  text-align:left;
+  margin:0;
+}
+nav.navigation.active #main-menu {
+  display:block;
+}
+#main-menu li,
+#main-menu li.first {
+  display:block;
+  padding:0 20px;
+  background: url("../img/border-horizontal-green.png") repeat-x center bottom;
+}
+#main-menu li a {
+  padding:6px 0;
+  color:#fff;
 }
 
 /* Footer */
