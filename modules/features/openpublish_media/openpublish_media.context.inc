@@ -10,7 +10,7 @@
 function openpublish_media_context_default_contexts() {
   $export = array();
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'photo_gallery_detail_page';
@@ -58,7 +58,7 @@ function openpublish_media_context_default_contexts() {
   t('Used to place blocks on Photo Gallery node pages.');
   $export['photo_gallery_detail_page'] = $context;
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'video_detail_page';

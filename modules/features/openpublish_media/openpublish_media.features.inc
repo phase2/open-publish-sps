@@ -24,7 +24,7 @@ function openpublish_media_ctools_plugin_api() {
 function openpublish_media_image_default_styles() {
   $styles = array();
 
-  // Exported image style: full_width
+  // Exported image style: full_width.
   $styles['full_width'] = array(
     'name' => 'full_width',
     'effects' => array(
@@ -158,13 +158,4 @@ function openpublish_media_rdf_default_mappings() {
   );
 
   return $schemaorg;
-}
-
-/**
- * Implements hook_rdf_namespaces().
- */
-function openpublish_media_rdf_namespaces() {
-  return array(
-    'rnews'  => 'http://iptc.org/std/rNews/2011-10-07#',
-  );
 }

@@ -71,9 +71,6 @@ projects[filefield_sources][version] = 1.4
 projects[nodeblock][subdir] = contrib
 projects[nodeblock][version] = 1.2
 
-projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 1.3
-
 projects[xmlsitemap][subdir] = contrib
 projects[xmlsitemap][version] = 2.0-rc1
 
@@ -108,9 +105,6 @@ projects[schemaorg][version] = 1.0-beta2
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
-
-projects[colorbox][subdir] = contrib
-projects[colorbox][version] = 1.2
 
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta4
@@ -151,5 +145,3 @@ projects[omega_tools][type] = module
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
 
-libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = http://jacklmoore.com/colorbox/colorbox.zip
