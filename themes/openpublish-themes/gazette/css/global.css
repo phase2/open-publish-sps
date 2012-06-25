@@ -130,7 +130,6 @@ h1#page-title {
 
 #zone-menu-wrapper {
   background: #fff;
-  margin-bottom: 0;
 }
 #region-user-second {
   background: #536e75 url(../img/bg-date-banner.jpg) no-repeat;
@@ -913,11 +912,10 @@ div.feed-icon {
 .node-openpublish-photo-gallery .field-name-field-op-main-image,
 .node-openpublish-photo-gallery .field-name-field-op-author,
 .node-type-openpublish-photo-gallery #block-views-ec0f800b3db8af0ee17f07e48a1161df {
-  width: 620px;
+  width: auto;
 }
-.node-openpublish-photo-gallery .field-name-body {
-  float: right;
-  width: 300px;
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image-image img {
+  height:auto;
 }
 .node-type-openpublish-photo-gallery .node,
 .node-type-openpublish-photo-gallery h1#page-title {
