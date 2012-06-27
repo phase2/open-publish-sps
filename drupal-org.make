@@ -147,3 +147,6 @@ libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEdi
 
 libraries[photoswipe][download][type] = get
 libraries[photoswipe][download][url] = http://github.com/downloads/codecomputerlove/PhotoSwipe/code.photoswipe-3.0.5.zip
+
+libraries[jquery-1.7][download][type] = get
+libraries[jquery-1.7][download][url] = http://code.jquery.com/jquery-1.7.2.min.js
