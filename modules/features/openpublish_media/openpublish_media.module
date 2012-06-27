@@ -46,7 +46,7 @@ function openpublish_media_preprocess_html(&$vars) {
  * Upgrade jQuery to 1.7.2
  */
 function openpublish_media_js_alter(&$js) {
-  $path = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+  $path = libraries_get_path('jquery-1.7') . '/jquery-1.7.2.min.js';
 
   // Copy the current jQuery file settings and change
   $js[$path] = $js['misc/jquery.js'];
