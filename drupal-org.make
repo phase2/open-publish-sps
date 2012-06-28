@@ -54,8 +54,8 @@ projects[entitycache][version] = 1.1
 projects[conditional_styles][subdir] = contrib
 projects[conditional_styles][version] = 2.1
 
-projects[nodeconnect][subdir] = contrib
-projects[nodeconnect][version] = 1.0-alpha2
+projects[references_dialog][subdir] = contrib
+projects[references_dialog][version] = 1.0-alpha4
 
 projects[apps][subdir] = contrib
 projects[apps][version] = 1.0-beta6
