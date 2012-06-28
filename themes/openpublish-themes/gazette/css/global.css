@@ -141,6 +141,7 @@ h1#page-title {
 }
 #region-footer-second {
   background: url(../img/icn-built-with-op.png) no-repeat top right;
+  min-height:50px;
 }
 
 /* Search bar */

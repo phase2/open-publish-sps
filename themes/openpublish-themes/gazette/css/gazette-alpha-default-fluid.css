@@ -4,7 +4,7 @@
  */
 
 /*
- * Header
+ * Page structure
  */
 #region-branding,
 #region-menu {
@@ -29,6 +29,9 @@
 h1.site-name,
 h2.site-name {
   font-size:80px;
+}
+#region-footer-second {
+  background: none;
 }
 
 /* Featured Story */
