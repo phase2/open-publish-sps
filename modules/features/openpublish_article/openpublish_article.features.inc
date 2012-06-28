@@ -32,7 +32,7 @@ function openpublish_article_ctools_plugin_api() {
 function openpublish_article_image_default_styles() {
   $styles = array();
 
-  // Exported image style: 400px_wide
+  // Exported image style: 400px_wide.
   $styles['400px_wide'] = array(
     'name' => '400px_wide',
     'effects' => array(
@@ -55,7 +55,7 @@ function openpublish_article_image_default_styles() {
     ),
   );
 
-  // Exported image style: 620px_wide
+  // Exported image style: 620px_wide.
   $styles['620px_wide'] = array(
     'name' => '620px_wide',
     'effects' => array(
@@ -78,7 +78,7 @@ function openpublish_article_image_default_styles() {
     ),
   );
 
-  // Exported image style: author_thumbnail
+  // Exported image style: author_thumbnail.
   $styles['author_thumbnail'] = array(
     'name' => 'author_thumbnail',
     'effects' => array(
