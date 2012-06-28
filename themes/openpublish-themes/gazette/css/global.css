@@ -119,6 +119,7 @@ h1#page-title {
 #zone-user-wrapper {
   background: url(../img/bg-header-light.png) repeat;
   display:none;
+  padding-top:0;
 }
 #zone-user-wrapper .zone-wrapper-inner,
 #zone-menu-wrapper .zone-wrapper-inner {
@@ -148,6 +149,7 @@ h1#page-title {
   float: left;
   width: 160px;
   margin: 0;
+  padding-bottom: 5px;
 }
 .block-search .form-item-search-block-form {
   display: block;
@@ -237,7 +239,8 @@ h2.site-name a {
 #date-widget {
   font-family: League Gothic, Arial, Helvetica, sans-serif;
   color: #333;
-  position: relative;
+  position: absolute;
+  top:57px;
 }
 #date-widget #month {
   font-size: 21px;
@@ -270,8 +273,9 @@ h2.site-name a {
   margin: 0;
 }
 #block-menu-menu-utility-nav {
-  width: 600px;
+  width: 400px;
   float: right;
+  line-height: 22px;
 }
 .block-menu-footer-links h2.block-title {
   display: none;
