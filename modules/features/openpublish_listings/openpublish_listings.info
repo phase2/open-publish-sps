@@ -13,5 +13,6 @@ features[ctools][] = boxes:box:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[image][] = featured_story
+features[image][] = image_gallery_list_thumbnail
 features[image][] = video_thumbnail
 features[views_view][] = op_recent_content
