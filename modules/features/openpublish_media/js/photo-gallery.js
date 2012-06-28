@@ -2,8 +2,8 @@
 
   Drupal.behaviors.openpublish_media = {
     attach: function (context, settings) {
-      if ($('.node-openpublish-photo-gallery a', context).length > 0) {
-        var photoswipe = $('.node-openpublish-photo-gallery a', context).photoSwipe({
+      if ($('.node-openpublish-photo-gallery .field-name-field-op-main-image .field-item a, .node-openpublish-photo-gallery .field-name-field-op-gallery-image-image .field-item a', context).length > 0) {
+        var photoswipe = $('.node-openpublish-photo-gallery .field-name-field-op-main-image .field-item a, .node-openpublish-photo-gallery .field-name-field-op-gallery-image-image .field-item a', context).photoSwipe({
           getImageCaption: function(el){
             var caption = $(el).closest('.field-collection-item-field-op-gallery-image', context).find('.field-name-field-op-gallery-image-caption .field-item', context).text();
             if (caption != '') {
