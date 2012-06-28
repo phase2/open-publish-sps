@@ -10,7 +10,7 @@
 function openpublish_article_default_box() {
   $export = array();
 
-  $box = new stdClass;
+  $box = new stdClass();
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
   $box->delta = 'ad_300x250_1';
