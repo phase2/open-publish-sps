@@ -27,7 +27,7 @@ function openpublish_listings_views_api() {
 function openpublish_listings_image_default_styles() {
   $styles = array();
 
-  // Exported image style: featured_story
+  // Exported image style: featured_story.
   $styles['featured_story'] = array(
     'name' => 'featured_story',
     'effects' => array(
@@ -49,7 +49,29 @@ function openpublish_listings_image_default_styles() {
     ),
   );
 
-  // Exported image style: video_thumbnail
+  // Exported image style: image_gallery_list_thumbnail.
+  $styles['image_gallery_list_thumbnail'] = array(
+    'name' => 'image_gallery_list_thumbnail',
+    'effects' => array(
+      2 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '297',
+          'height' => '220',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported image style: video_thumbnail.
   $styles['video_thumbnail'] = array(
     'name' => 'video_thumbnail',
     'effects' => array(

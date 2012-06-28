@@ -901,7 +901,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
-    'image_style' => 'list-page-thumbnail',
+    'image_style' => 'image_gallery_list_thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;
@@ -1023,7 +1023,7 @@ function openpublish_listings_views_default_views() {
   $handler->display->display_options['fields']['field_op_main_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_op_main_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_op_main_image']['settings'] = array(
-    'image_style' => 'list-page-thumbnail',
+    'image_style' => 'image_gallery_list_thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_op_main_image']['field_api_classes'] = 0;

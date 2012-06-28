@@ -45,3 +45,25 @@ h2.site-name {
 .view-id-op_recent_content.view-display-id-block_5 .row-wrapper-1 {
   background-image: none;
 }
+
+/* Photo gallery view */
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-row,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-row {
+  float: none;
+  width: auto;
+  margin-right: 0;
+  padding-top: 15px;
+}
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-field-op-main-image,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-field-field-op-main-image {
+  float:left;
+  width:26%;
+  margin-right: 4%;
+}
+.region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title,
+.region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title,
+.region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-body,
+.region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-body {
+  float:left;
+  width:70%;
+}

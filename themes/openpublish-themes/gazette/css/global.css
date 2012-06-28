@@ -714,10 +714,13 @@ div.feed-icon {
 .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-row,
 .view-id-op_recent_content.view-display-id-block_more_galleries .views-row {
   float: left;
-  width: 47%;
-  margin-right: 3%;
+  width: 48%;
+  margin-right: 4%;
   padding-top: 15px;
-  height:200px;
+}
+.view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-row-even,
+.view-id-op_recent_content.view-display-id-block_more_galleries .views-row-even {
+  margin-right:0;
 }
 .region-content .view-id-op_recent_content.view-display-id-block_recent_galleries_section .views-field-title,
 .region-content .view-id-op_recent_content.view-display-id-block_more_galleries .views-field-title {
