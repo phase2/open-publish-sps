@@ -366,7 +366,7 @@ nav.navigation.active #main-menu {
   float:none;
 }
 .block-menu-footer-links ul.menu li a {
-  padding: 6px 0;
+  padding: 6px 10px;
 }
 
 /* Footer */
