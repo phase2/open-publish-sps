@@ -227,7 +227,8 @@ h2.site-name a {
   display: inline-block;
   float: none;
   margin:0;
-  padding:2px 5px 0;
+  padding:12px 5px 0;
+  line-height:normal;
 }
 #block-system-user-menu ul.menu li a {
   font-family: 'Courier New', Courier, monospace;
