@@ -45,3 +45,4 @@ features[variable][] = menu_parent_openpublish_article
 features[variable][] = node_options_openpublish_article
 features[variable][] = node_preview_openpublish_article
 features[variable][] = node_submitted_openpublish_article
+features[variable][] = pathauto_node_openpublish_article_pattern

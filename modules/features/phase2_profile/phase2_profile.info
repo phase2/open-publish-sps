@@ -42,3 +42,4 @@ features[variable][] = comment_profile
 features[variable][] = comment_subject_field_profile
 features[variable][] = node_options_profile
 features[variable][] = node_submitted_profile
+features[variable][] = pathauto_node_profile_pattern

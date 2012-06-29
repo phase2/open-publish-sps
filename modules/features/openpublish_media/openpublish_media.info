@@ -58,3 +58,5 @@ features[variable][] = node_preview_openpublish_photo_gallery
 features[variable][] = node_preview_openpublish_video
 features[variable][] = node_submitted_openpublish_photo_gallery
 features[variable][] = node_submitted_openpublish_video
+features[variable][] = pathauto_node_openpublish_photo_gallery_pattern
+features[variable][] = pathauto_node_openpublish_video_pattern
