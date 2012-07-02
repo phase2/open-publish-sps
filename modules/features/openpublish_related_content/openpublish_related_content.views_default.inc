@@ -92,6 +92,19 @@ function openpublish_related_content_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Related Content (field_op_related_nref) */
+  $handler->display->display_options['filters']['field_op_related_nref_nid']['id'] = 'field_op_related_nref_nid';
+  $handler->display->display_options['filters']['field_op_related_nref_nid']['table'] = 'field_data_field_op_related_nref';
+  $handler->display->display_options['filters']['field_op_related_nref_nid']['field'] = 'field_op_related_nref_nid';
+  $handler->display->display_options['filters']['field_op_related_nref_nid']['operator'] = 'not empty';
 
   /* Display: Node Author */
   $handler = $view->new_display('block', 'Node Author', 'block_1');
