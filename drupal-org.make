@@ -19,7 +19,7 @@ projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
 
 projects[entity][subdir] = contrib
-projects[entity][version] = 1.0-rc2
+projects[entity][version] = 1.0-rc3
 
 projects[features][subdir] = contrib
 projects[features][version] = 1.0-rc3
@@ -34,7 +34,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.1
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-rc1
+projects[strongarm][version] = 2.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.1
@@ -95,13 +95,13 @@ projects[link][subdir] = contrib
 projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
-projects[video_embed_field][version] = 2.0-beta4
+projects[video_embed_field][version] = 2.0-beta5
 
 projects[ga_stats][subdir] = contrib
 projects[ga_stats][version] = 1.0-beta1
 
 projects[schemaorg][subdir] = contrib
-projects[schemaorg][version] = 1.0-beta2
+projects[schemaorg][version] = 1.0-beta3
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
@@ -111,7 +111,7 @@ projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta2
+projects[context][version] = 3.0-beta3
 
 projects[boxes][subdir] = contrib
 projects[boxes][version] = 1.0
@@ -136,7 +136,7 @@ projects[rubik] = 4.0-beta8
 projects[omega] = 3.1
 
 projects[delta][subdir] = contrib
-projects[delta][version] = 3.0-beta9
+projects[delta][version] = 3.0-beta10
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
