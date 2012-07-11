@@ -25,7 +25,6 @@ features[field][] = node-openpublish_blog_post-body
 features[field][] = node-openpublish_blog_post-field_op_author
 features[field][] = node-openpublish_blog_post-field_op_blogpost_blog
 features[field][] = node-openpublish_blog_post-field_op_main_image
-features[field_group][] = group_op_blogpost_media|node|openpublish_blog_post|form
 features[node][] = openpublish_blog_post
 features[schemaorg][] = node-openpublish_blog_post
 features[taxonomy][] = blog
