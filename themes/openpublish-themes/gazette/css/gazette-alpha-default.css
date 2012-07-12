@@ -91,6 +91,9 @@ nav.navigation h2 {
   padding-left:23%;
   padding-top:0;
 }
+.view-id-op_recent_content.view-display-id-block_7 .views-field-view-node {
+  margin:0;
+}
 .view-id-op_recent_content.view-display-id-block_7 .views-field-field-op-author,
 .view-id-op_recent_content.view-display-id-block_7 .views-field-created {
   display:block;

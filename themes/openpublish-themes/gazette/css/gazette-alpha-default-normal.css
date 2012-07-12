@@ -97,15 +97,14 @@ ul.main-menu li {
   clear:none;
   width:auto;
   color:#333;
-  display:inline;
 }
 .view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-created {
   float:none;
   clear:none;
   width:auto;
   color:#333;
-  display:inline;
-  padding:0;
+  display:block;
+  padding:0 0 0 30px;
 }
 .view-id-op_recent_content.view-display-id-block_7 .views-fieldgroup-text .views-field-body {
   background: url(../img/divider-featured-story.png) no-repeat center top;
