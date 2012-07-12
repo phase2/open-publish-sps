@@ -147,7 +147,7 @@ h1#page-title {
 #block-search-form {
   display:none;
   float: left;
-  width: 160px;
+  min-width:0;
   margin: 0;
   padding-bottom: 5px;
 }
@@ -172,7 +172,7 @@ h1#page-title {
   font-size:12px;
   line-height: 13px;
 }
-#block-search-form .form-submit {
+.block-search .form-submit {
   width: 20px;
   height: 19px;
   background: url(../img/btn-search.png) no-repeat;
@@ -215,21 +215,21 @@ h2.site-name a {
 }
 
 /* Date widget */
-#block-system-user-menu h2.block-title {
+#block-system-user-menu--2 h2.block-title {
   display:none;
 }
-#block-system-user-menu ul.menu {
+#block-system-user-menu--2 ul.menu {
   text-align: center;
   margin:0;
 }
-#block-system-user-menu ul.menu li {
+#block-system-user-menu--2 ul.menu li {
   display: inline-block;
   float: none;
   margin:0;
   padding:12px 5px 0;
   line-height:normal;
 }
-#block-system-user-menu ul.menu li a {
+#block-system-user-menu--2 ul.menu li a {
   font-family: 'Courier New', Courier, monospace;
   color:#fff;
   text-transform: uppercase;
@@ -385,6 +385,29 @@ nav.navigation.active #main-menu {
   background: url("../img/bg-header.png") repeat;
   border-bottom: 21px solid #333;
   padding: 20px 0;
+}
+#block-search-form--2 {
+  margin:15px 0;
+}
+#block-search-form--2 .form-item-search-block-form {
+  width:91%;
+}
+#block-search-form--2 input.form-text {
+  font-size: 14px;
+  height: 30px;
+}
+#block-search-form--2 .form-submit {
+  background:url("../img/btn-search.png") no-repeat 5px 4px #54BBC4;
+  height:28px;
+  width:30px;
+}
+#block-system-user-menu--3 h2.block-title {
+  display:none;
+}
+#block-system-user-menu--3 ul li.leaf {
+  list-style-type: none;
+  list-style-image:none;
+  margin:0;
 }
 
 /*

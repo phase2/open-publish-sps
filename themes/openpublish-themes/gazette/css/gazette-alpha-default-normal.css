@@ -21,9 +21,8 @@ ul.main-menu li {
   margin: -23px 0 0 0;
   text-align:left;
 }
-
-#block-search-form {
-  display:block;
+#block-system-user-menu {
+  display:none;
 }
 
 /*

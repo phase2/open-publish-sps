@@ -25,6 +25,13 @@ h2.site-name {
 #section-header {
   margin-bottom: 25px;
 }
+#block-search-form {
+  display:block;
+}
+#block-search-form--2,
+#block-system-user-menu--3 {
+  display:none;
+}
 
 /* Main navigation dropdown for small screens */
 nav.navigation {
