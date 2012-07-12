@@ -102,7 +102,6 @@ h1#page-title {
 }
 #zone-header-wrapper {
   background: url(../img/bg-header.png) repeat;
-  height: 0;
   padding: 0;
   border-bottom: 8px solid #323232;
   box-shadow:0px -4px 4px rgba(0,0,0,0.4) inset;
