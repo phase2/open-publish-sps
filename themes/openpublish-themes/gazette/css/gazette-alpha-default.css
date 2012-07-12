@@ -52,14 +52,14 @@ nav.navigation h2 {
 #main-menu li,
 #main-menu li.first {
   display:inline-block;
-  padding:0 3%;
+  padding:0 2%;
   background: none;
 }
 #main-menu li.first {
   padding-left:0;
 }
 #main-menu li a {
-  padding:6px 10%;
+  padding:6px 12px;
   color:#323232;
 }
 
@@ -69,7 +69,7 @@ nav.navigation h2 {
   float:left;
 }
 .block-menu-footer-links ul.menu li a {
-  padding: 6px 18%;
+  padding: 6px 12px;
 }
 
 

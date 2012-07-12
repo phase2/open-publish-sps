@@ -8,6 +8,7 @@
         if (navigator.userAgent.indexOf("WebKit") != -1) {
           var width = $(document).width();
         } else {
+          //webkit
           var width = window.innerWidth;
         }
         
