@@ -43,9 +43,13 @@ function openpublish_media_preprocess_html(&$vars) {
 
 /**
  * Implementation of hook_js_alter
- * Upgrade jQuery to 1.7.2
+ * Upgrade jQuery to 1.7.2 but only on photo gallery pages
  */
 function openpublish_media_js_alter(&$js) {
+  $object = menu_get_object();
+  if (!isset($object) || $object->type != 'openpublish_photo_gallery') {
+    return;
+  }
   $path = libraries_get_path('jquery-1.7') . '/jquery-1.7.2.min.js';
 
   // Copy the current jQuery file settings and change
