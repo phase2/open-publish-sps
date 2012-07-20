@@ -19,10 +19,13 @@ projects[diff][subdir] = contrib
 projects[diff][version] = 2.0
 
 projects[entity][subdir] = contrib
-projects[entity][version] = 1.0-rc2
+projects[entity][version] = 1.0-rc3
 
 projects[features][subdir] = contrib
-projects[features][version] = 1.0-rc2
+projects[features][version] = 1.0-rc3
+
+projects[features_override][subdir] = contrib
+projects[features_override][version] = 2.0-beta1
 
 projects[openidadmin][subdir] = contrib
 projects[openidadmin][version] = 1.0
@@ -31,7 +34,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.1
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-rc1
+projects[strongarm][version] = 2.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.1
@@ -51,8 +54,8 @@ projects[entitycache][version] = 1.1
 projects[conditional_styles][subdir] = contrib
 projects[conditional_styles][version] = 2.1
 
-projects[nodeconnect][subdir] = contrib
-projects[nodeconnect][version] = 1.0-alpha2
+projects[references_dialog][subdir] = contrib
+projects[references_dialog][version] = 1.0-alpha4
 
 projects[apps][subdir] = contrib
 projects[apps][version] = 1.0-beta6
@@ -92,7 +95,7 @@ projects[link][subdir] = contrib
 projects[link][version] = 1.0
 
 projects[video_embed_field][subdir] = contrib
-projects[video_embed_field][version] = 2.0-beta4
+projects[video_embed_field][version] = 2.0-beta5
 
 projects[ga_stats][subdir] = contrib
 projects[ga_stats][version] = 1.0-beta1
@@ -103,21 +106,26 @@ projects[schemaorg][version] = 1.0-beta3
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 1.0
 
-projects[jcarousel][subdir] = contrib
-projects[jcarousel][version] = 2.6
-
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta3
+projects[context][version] = 7.x-3.x
+projects[context][download][type] = git
+projects[context][download][url] = http://git.drupal.org/project/context.git
+projects[context][download][revision] = 92d0c33bbe931e99b89f3137fd7eccc7143f337b
+projects[context][patch][] = http://drupal.org/files/context-context-ui-revamp-1050724-29.patch
 
 projects[boxes][subdir] = contrib
 projects[boxes][version] = 1.0
 
 projects[context_field][subdir] = contrib
-projects[context_field][version] = 1.0-beta3
+projects[context_field][version] = 7.x-1.x
+projects[context_field][download][type] = git
+projects[context_field][download][url] = http://git.drupal.org/project/context_field.git
+projects[context_field][download][revision] = 32b86494fb715af627589a075e9c9da7c0f05616
+projects[context_field][patch][] = http://drupal.org/files/1491008_Remove_Context_layout_link_0.patch
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][version] = 1.0-beta8
@@ -136,7 +144,7 @@ projects[rubik] = 4.0-beta8
 projects[omega] = 3.1
 
 projects[delta][subdir] = contrib
-projects[delta][version] = 3.0-beta9
+projects[delta][version] = 3.0-beta10
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
@@ -144,3 +152,9 @@ projects[omega_tools][type] = module
 
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.5/ckeditor_3.5.tar.gz
+
+libraries[photoswipe][download][type] = get
+libraries[photoswipe][download][url] = http://github.com/downloads/codecomputerlove/PhotoSwipe/code.photoswipe-3.0.5.zip
+
+libraries[jquery-1.7][download][type] = get
+libraries[jquery-1.7][download][url] = http://code.jquery.com/jquery-1.7.2.min.js

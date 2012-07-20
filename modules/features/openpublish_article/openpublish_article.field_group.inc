@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * openpublish_article_extra_media.field_group.inc
+ * openpublish_article.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function openpublish_article_extra_media_field_group_info() {
+function openpublish_article_field_group_info() {
   $export = array();
 
-  $field_group = new stdClass;
+  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_op_article_media|node|openpublish_article|form';

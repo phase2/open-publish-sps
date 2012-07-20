@@ -10,7 +10,7 @@
 function openpublish_article_context_default_contexts() {
   $export = array();
 
-  $context = new stdClass;
+  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'article_detail_page';
@@ -29,17 +29,23 @@ function openpublish_article_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'boxes-ad_300x250_1' => array(
+          'module' => 'boxes',
+          'delta' => 'ad_300x250_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-5ce78ee8d7030d935fd275a05708281b' => array(
           'module' => 'views',
           'delta' => '5ce78ee8d7030d935fd275a05708281b',
           'region' => 'sidebar_second',
-          'weight' => '-22',
+          'weight' => '-9',
         ),
-        'views-dec424de5c549cdde5524a32ab930497' => array(
+        'views-op_recent_content-block_6' => array(
           'module' => 'views',
-          'delta' => 'dec424de5c549cdde5524a32ab930497',
+          'delta' => 'op_recent_content-block_6',
           'region' => 'sidebar_second',
-          'weight' => '-21',
+          'weight' => '-8',
         ),
       ),
     ),
