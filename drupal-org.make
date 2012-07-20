@@ -125,7 +125,7 @@ projects[context_field][version] = 7.x-1.x
 projects[context_field][download][type] = git
 projects[context_field][download][url] = http://git.drupal.org/project/context_field.git
 projects[context_field][download][revision] = 32b86494fb715af627589a075e9c9da7c0f05616
-projects[context_field][patch] = http://drupal.org/files/1491008_Remove_Context_layout_link_0.patch
+projects[context_field][patch][] = http://drupal.org/files/1491008_Remove_Context_layout_link_0.patch
 
 projects[views_boxes][subdir] = contrib
 projects[views_boxes][version] = 1.0-beta8
