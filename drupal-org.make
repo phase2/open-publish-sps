@@ -22,7 +22,7 @@ projects[entity][subdir] = contrib
 projects[entity][version] = 1.0-rc3
 
 projects[features][subdir] = contrib
-projects[features][version] = 1.0-rc3
+projects[features][version] = 1.0
 
 projects[features_override][subdir] = contrib
 projects[features_override][version] = 2.0-beta1
@@ -137,14 +137,14 @@ projects[views_arguments_extras][subdir] = contrib
 projects[views_arguments_extras][version] = 1.0-beta1
 
 projects[feeds][subdir] = contrib
-projects[feeds][version] = 2.0-alpha4
+projects[feeds][version] = 2.0-alpha5
 
 projects[tao] = 3.0-beta4
 projects[rubik] = 4.0-beta8
 projects[omega] = 3.1
 
 projects[delta][subdir] = contrib
-projects[delta][version] = 3.0-beta10
+projects[delta][version] = 3.0-beta11
 
 projects[omega_tools][subdir] = contrib
 projects[omega_tools][version] = 3.0-rc4
