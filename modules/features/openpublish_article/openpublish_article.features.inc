@@ -204,12 +204,3 @@ function openpublish_article_rdf_default_mappings() {
 
   return $schemaorg;
 }
-
-/**
- * Implements hook_rdf_namespaces().
- */
-function openpublish_article_rdf_namespaces() {
-  return array(
-    'rnews'  => 'http://iptc.org/std/rNews/2011-10-07#',
-  );
-}
