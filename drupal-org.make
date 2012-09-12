@@ -111,7 +111,10 @@ projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
 projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta4
+projects[context][version] = 7.x-3.x
+projects[context][download][type] = git
+projects[context][download][url] = http://git.drupal.org/project/context.git
+projects[context][download][revision] = c4d47fb08a5aa3f7a258adb10007906029cee44c
 
 projects[boxes][subdir] = contrib
 projects[boxes][version] = 1.0
