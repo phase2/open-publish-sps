@@ -131,6 +131,9 @@ projects[views_arguments_extras][version] = 1.0-beta1
 projects[feeds][subdir] = contrib
 projects[feeds][version] = 2.0-alpha5
 
+projects[job_scheduler][subdir] = contrib
+projects[job_scheduler][version] = 2.0-alpha3
+
 projects[tao] = 3.0-beta4
 projects[rubik] = 4.0-beta8
 projects[omega] = 3.1
