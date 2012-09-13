@@ -31,16 +31,16 @@ projects[openidadmin][subdir] = contrib
 projects[openidadmin][version] = 1.0
 
 projects[pathauto][subdir] = contrib
-projects[pathauto][version] = 1.1
+projects[pathauto][version] = 1.2
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.1
+projects[token][version] = 1.3
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.3
+projects[views][version] = 3.5
 
 projects[vntf][subdir] = contrib
 projects[vntf][version] = 1.0-beta6
@@ -66,7 +66,7 @@ projects[imce_wysiwyg][subdir] = contrib
 projects[imce_wysiwyg][version] = 1.0
 
 projects[filefield_sources][subdir] = contrib
-projects[filefield_sources][version] = 1.4
+projects[filefield_sources][version] = 1.5
 
 projects[nodeblock][subdir] = contrib
 projects[nodeblock][version] = 1.2
