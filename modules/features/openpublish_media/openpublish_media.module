@@ -51,14 +51,15 @@ function openpublish_media_js_alter(&$js) {
     return;
   }
   $path = libraries_get_path('jquery-1.7') . '/jquery-1.7.2.min.js';
+  if (!empty($path) && isset($js['misc/jquery.js'])) {
+    // Copy the current jQuery file settings and change
+    $js[$path] = $js['misc/jquery.js'];
 
-  // Copy the current jQuery file settings and change
-  $js[$path] = $js['misc/jquery.js'];
+    // Update necessary settings
+    $js[$path]['version'] = 1.7;
+    $js[$path]['data'] = $path;
 
-  // Update necessary settings
-  $js[$path]['version'] = 1.7;
-  $js[$path]['data'] = $path;
-
-  // Finally remove the original jQuery
-  unset($js['misc/jquery.js']);
+    // Finally remove the original jQuery
+    unset($js['misc/jquery.js']);
+  }
 }
