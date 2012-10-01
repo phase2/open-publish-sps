@@ -110,6 +110,12 @@ projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta4
 projects[field_collection][patch][] = http://drupal.org/files/issue_1329856_1.patch
 
+projects[field_collection_bulkupload][subdir] = contrib
+projects[field_collection_bulkupload][version] = 1.0-alpha1
+
+projects[plupload][subdir] = contrib
+projects[plupload][version] = 1.0
+
 projects[context][subdir] = contrib
 projects[context][version] = 3.x-dev
 projects[context][download][type] = git
@@ -153,3 +159,6 @@ libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEdi
 
 libraries[photoswipe][download][type] = get
 libraries[photoswipe][download][url] = http://github.com/downloads/codecomputerlove/PhotoSwipe/code.photoswipe-3.0.5.zip
+
+libraries[plupload][download][type] = get
+libraries[plupload][download][url] = https://github.com/downloads/moxiecode/plupload/plupload_1_5_4.zip

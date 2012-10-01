@@ -16,6 +16,7 @@ dependencies[] = openpublish_section
 dependencies[] = schemaorg
 dependencies[] = strongarm
 dependencies[] = video_embed_field
+dependencies[] = field_collection_bulkupload
 features[context][] = photo_gallery_detail_page
 features[context][] = video_detail_page
 features[ctools][] = context:context:3
