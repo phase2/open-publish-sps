@@ -37,7 +37,7 @@ projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
 projects[token][subdir] = contrib
-projects[token][version] = 1.3
+projects[token][version] = 1.4
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.5
@@ -66,7 +66,7 @@ projects[imce_wysiwyg][subdir] = contrib
 projects[imce_wysiwyg][version] = 1.0
 
 projects[filefield_sources][subdir] = contrib
-projects[filefield_sources][version] = 1.5
+projects[filefield_sources][version] = 1.6
 
 projects[nodeblock][subdir] = contrib
 projects[nodeblock][version] = 1.2
@@ -75,7 +75,7 @@ projects[xmlsitemap][subdir] = contrib
 projects[xmlsitemap][version] = 2.0-rc1
 
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][version] = 2.1
+projects[wysiwyg][version] = 2.2
 projects[wysiwyg][patch][] = http://drupal.org/files/issues/wysiwyg-835682-12.patch
 
 projects[addthis][subdir] = contrib
@@ -98,7 +98,7 @@ projects[video_embed_field][subdir] = contrib
 projects[video_embed_field][version] = 2.0-beta5
 
 projects[ga_stats][subdir] = contrib
-projects[ga_stats][version] = 1.0-beta1
+projects[ga_stats][version] = 1.0-beta2
 
 projects[schemaorg][subdir] = contrib
 projects[schemaorg][version] = 1.0-beta3
