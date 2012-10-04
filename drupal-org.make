@@ -76,7 +76,6 @@ projects[xmlsitemap][version] = 2.0-rc1
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.2
-projects[wysiwyg][patch][] = http://drupal.org/files/issues/wysiwyg-835682-12.patch
 
 projects[addthis][subdir] = contrib
 projects[addthis][version] = 2.1-beta1
