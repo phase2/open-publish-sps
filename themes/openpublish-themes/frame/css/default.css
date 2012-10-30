@@ -464,12 +464,12 @@ input[type="submit"]:hover {
   padding: 0;
   padding-bottom: 20px;
 }
-.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item .field-collection-view {
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item {
   float: left;
   width: 32%;
   margin-right: 2%;
 }
-.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item .row-end {
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item.row-end {
   margin-right: 0;
 }
 

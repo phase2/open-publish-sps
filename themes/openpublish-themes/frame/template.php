@@ -37,17 +37,36 @@ function frame_preprocess_toolbar(&$vars) {
   $vars['toolbar']['toolbar_drawer'][0]['menu_local_tabs']['#primary'][] = menu_local_actions();
 }
 
+
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements THEMENAME_field__field_name().
  *
- * Add a class to the last item in a row for the photogallery
- * and a break after that item.
+ * Add breaks after every 3rd element
  */
-function frame_preprocess_field(&$vars) {
-  if ($vars['element']['#field_name'] == 'field_op_gallery_image') {
-    for ($i = 2; $i < count($vars['items']); $i+=3) {
-      $vars['items'][$i]['#attributes']['class'][] = 'row-end';
-      $vars['items'][$i]['#suffix'] = '<br class="clearfix" />';
+function frame_field__field_op_gallery_image(&$variables) {
+  $output = '';
+
+  // Render the label, if it's not hidden.
+  if (!$variables['label_hidden']) {
+    $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
+  }
+
+  // Render the items.
+  $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+  foreach ($variables['items'] as $delta => $item) {
+    $third = !(($delta+1) % 3) && $delta;
+    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    $classes .= $third ? ' row-end' : '';
+    $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+
+    if ($third) {
+      $output .= '<div class="clearfix"></div>';
     }
   }
+  $output .= '</div>';
+
+  // Render the top-level DIV.
+  $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+
+  return $output;
 }
