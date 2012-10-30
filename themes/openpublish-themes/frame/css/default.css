@@ -464,12 +464,12 @@ input[type="submit"]:hover {
   padding: 0;
   padding-bottom: 20px;
 }
-.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item {
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item .field-collection-view {
   float: left;
   width: 32%;
   margin-right: 2%;
 }
-.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item:nth-of-type(3n+3) {
+.node-openpublish-photo-gallery .field-name-field-op-gallery-image > .field-items > .field-item .row-end {
   margin-right: 0;
 }
 
@@ -477,7 +477,7 @@ input[type="submit"]:hover {
   margin-bottom: 0;
 }
 
-.node-openpublish-photo-gallery  ul.field-collection-view-links, 
+.node-openpublish-photo-gallery  ul.field-collection-view-links,
 .node-openpublish-photo-gallery  ul.action-links {
   font-size: 1em;
 }
