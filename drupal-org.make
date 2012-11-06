@@ -151,8 +151,7 @@ projects[xautoload][subdir] = contrib
 projects[xautoload][version] = 2.x-dev
 projects[xautoload][download][type] = git
 projects[xautoload][download][url] = http://git.drupal.org/project/xautoload.git
-projects[xautoload][download][revision] = ca82b1e9ccf278e1c14b6f4dee6d15e9cfb0682a
-projects[xautoload][patch][] = http://drupal.org/files/1833382-libraries.patch
+projects[xautoload][download][branch] = "7.x-2.x"
 
 projects[iib][subdir] = contrib
 projects[iib][version] = 1.x-dev
