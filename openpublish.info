@@ -65,6 +65,12 @@ dependencies[] = views_node_taxonomy_filter
 ; dependencies[] = ga_stats
 dependencies[] = libraries
 
+; SPS
+dependencies[] = sps
+dependencies[] = nra
+dependencies[] = collection_field
+dependencies[] = collection_sps
+dependencies[] = collection
 
 ; OpenPublish
 dependencies[] = openpublish_article

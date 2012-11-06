@@ -79,9 +79,67 @@ function openpublish_article_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
       ),
       'widget_type' => 'text_textarea_with_summary',
+    ),
+  );
+
+  // Exported field: 'node-openpublish_article-field_collection'.
+  $fields['node-openpublish_article-field_collection'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_collection',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'collection' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'collection_field',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'openpublish_article',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_collection',
+      'label' => 'Collection',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'collection',
+        'settings' => array(
+          'autocomplete_path' => 'collection/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'collection',
+        'weight' => '2',
+      ),
     ),
   );
 
@@ -276,6 +334,7 @@ function openpublish_article_field_default_fields() {
   t('<b>Note</b>: The "Edit Summary" function above can be used to provide a custom teaser for your Article that appears in certain lists/views.');
   t('Author(s)');
   t('Body');
+  t('Collection');
   t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Article.');
   t('Main Image');
   t('Select a Main Image for your Article, which will appear on the Article\'s node page and will also represent the Article in lists.');

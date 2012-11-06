@@ -62,6 +62,45 @@ function openpublish_article_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__openpublish_article';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '7',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__openpublish_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_openpublish_article';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -80,7 +119,8 @@ function openpublish_article_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_openpublish_article';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_openpublish_article'] = $strongarm;
 
@@ -104,6 +144,13 @@ function openpublish_article_strongarm() {
   $strongarm->name = 'pathauto_node_openpublish_article_pattern';
   $strongarm->value = 'article/[node:title]';
   $export['pathauto_node_openpublish_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_moderation_default_state_openpublish_article';
+  $strongarm->value = 'draft';
+  $export['workbench_moderation_default_state_openpublish_article'] = $strongarm;
 
   return $export;
 }

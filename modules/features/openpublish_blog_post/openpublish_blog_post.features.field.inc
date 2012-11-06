@@ -79,9 +79,67 @@ function openpublish_blog_post_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '3',
+        'weight' => '4',
       ),
       'widget_type' => 'text_textarea_with_summary',
+    ),
+  );
+
+  // Exported field: 'node-openpublish_blog_post-field_collection'.
+  $fields['node-openpublish_blog_post-field_collection'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_collection',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'collection' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'collection_field',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'openpublish_blog_post',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_collection',
+      'label' => 'Collection',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'collection',
+        'settings' => array(
+          'autocomplete_path' => 'collection/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'collection',
+        'weight' => '3',
+      ),
     ),
   );
 
@@ -349,6 +407,7 @@ function openpublish_blog_post_field_default_fields() {
   t('Author(s)');
   t('Blog');
   t('Body');
+  t('Collection');
   t('Create and/or reference one or more Profile nodes that represent the Author(s) of this Blog Post.');
   t('Main Image');
   t('Select a Main Image for your Blog Post, which will appear on the Blog Post\'s node page and will also represent the Blog Post in lists.');

@@ -20,9 +20,6 @@ projects[diff][version] = 2.0
 
 projects[entity][subdir] = contrib
 projects[entity][version] = 1.x-dev
-projects[entity][download][type] = git
-projects[entity][download][url] = http://git.drupal.org/project/entity.git
-projects[entity][download][revision] = 5731f741e3366889e95b5357f1f85b0acc51a9fe
 
 projects[features][subdir] = contrib
 projects[features][version] = 1.0
@@ -146,6 +143,42 @@ projects[feeds][version] = 2.0-alpha7
 
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha3
+
+projects[sps][subdir] = contrib
+projects[sps][version] = 1.x-dev
+
+projects[xautoload][subdir] = contrib
+projects[xautoload][version] = 2.x-dev
+projects[xautoload][download][type] = git
+projects[xautoload][download][url] = http://git.drupal.org/project/xautoload.git
+projects[xautoload][download][revision] = ca82b1e9ccf278e1c14b6f4dee6d15e9cfb0682a
+projects[xautoload][patch][] = http://drupal.org/files/1833382-libraries.patch
+
+projects[iib][subdir] = contrib
+projects[iib][version] = 1.x-dev
+
+projects[nra][subdir] = contrib
+projects[nra][version] = 1.x-dev
+
+projects[collections][subdir] = contrib
+projects[collections][version] = 1.x-dev
+
+projects[nra_workbench_moderation][subdir] = contrib
+projects[nra_workbench_moderation][version] = 1.x-dev
+projects[nra_workbench_moderation][download][type] = "git"
+projects[nra_workbench_moderation][download][branch] = "7.x-1.x"
+
+projects[workbench_moderation][subdir] = contrib
+projects[workbench_moderation][version] = 1.x-dev
+projects[workbench_moderation][patch][] = http://drupal.org/files/workbench-moderation-1715782-add-iib-support.patch
+
+projects[state_machine][subdir] = "contrib"
+projects[state_machine][type] = "module"
+projects[state_machine][download][type] = "git"
+projects[state_machine][download][branch] = "7.x-2.x"
+
+projects[bean][subdir] = contrib
+projects[bean][version] = 1.x-dev
 
 projects[tao] = 3.0-beta4
 projects[rubik] = 4.0-beta8
