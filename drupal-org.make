@@ -163,10 +163,10 @@ projects[nra][version] = 1.x-dev
 projects[collections][subdir] = contrib
 projects[collections][version] = 1.x-dev
 
-projects[nra_workbench_moderation][subdir] = contrib
-projects[nra_workbench_moderation][version] = 1.x-dev
-projects[nra_workbench_moderation][download][type] = "git"
-projects[nra_workbench_moderation][download][branch] = "7.x-1.x"
+;projects[nra_workbench_moderation][subdir] = contrib
+;projects[nra_workbench_moderation][version] = 1.x-dev
+;projects[nra_workbench_moderation][download][type] = "git"
+;projects[nra_workbench_moderation][download][branch] = "7.x-1.x"
 
 projects[workbench_moderation][subdir] = contrib
 projects[workbench_moderation][version] = 1.x-dev
